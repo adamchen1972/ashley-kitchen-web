@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Applications — Residential, Commercial &amp; Hospitality | Ashley Kitchen</title>
+<meta name="description" content="Match plyē and Nalexible materials to residential, commercial, hospitality, and exterior applications — flooring, stone surfaces, acoustic doors, and lighter panel systems.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--red:#E53935;--red-d:#B71C1C;--stone:#4A4A4A;--warm:#6B6B6B;--sand:#D9C5A1;--cream:#F5F5F5;--dark:#1A1714;--bg:#F5F5F5}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:170px}
+body{font-family:'Poppins','Noto Sans TC','DM Sans',-apple-system,sans-serif;background:linear-gradient(180deg,#fafafa 0%,#f4f4f5 100%);color:var(--stone);overflow-x:hidden}
+/* LANG BAR */
+.lang-bar{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(255,255,255,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:0 52px;height:34px;display:flex;justify-content:flex-end;align-items:center;gap:0;border-bottom:1px solid rgba(26,23,20,.08)}
+.lang-btn{font-size:11px;letter-spacing:.04em;text-transform:none;color:rgba(26,23,20,.72);background:none;border:none;cursor:pointer;padding:6px 14px;transition:color .2s;font-family:'DM Sans',sans-serif;position:relative}
+.lang-btn.active{color:var(--stone)}
+.lang-btn.active::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--red)}
+.lang-sep{color:rgba(26,23,20,.22);font-size:10px;user-select:none}
+/* NAV */
+nav{position:fixed;top:34px;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:66px;background:rgba(248,248,250,.9);backdrop-filter:blur(24px) saturate(170%);-webkit-backdrop-filter:blur(24px) saturate(170%);border-bottom:1px solid rgba(15,23,42,.08);box-shadow:0 10px 40px rgba(15,23,42,.06);transition:background .4s,box-shadow .4s,border-color .4s}
+nav.nav-scrolled{background:rgba(248,248,250,.84);backdrop-filter:blur(24px) saturate(170%);-webkit-backdrop-filter:blur(24px) saturate(170%);box-shadow:0 10px 40px rgba(15,23,42,.06);border-bottom:1px solid rgba(15,23,42,.08)}
+nav.nav-scrolled ul a{color:var(--stone)!important;text-shadow:none!important}
+.nav-current{color:var(--stone)!important;border-bottom:1px solid var(--red);padding-bottom:2px}
+nav.nav-scrolled .nav-current{color:var(--stone)!important;border-bottom-color:var(--red)}
+nav.nav-scrolled .logo-wm{color:var(--stone)}
+.logo-circle{width:38px;height:38px;background:#E53935;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
+.l1{font-family:'Poppins',sans-serif;font-size:10px;font-weight:700;color:white;line-height:1.1}
+.l2{font-size:5px;font-weight:400;color:rgba(255,255,255,.72);letter-spacing:1.5px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-wm{font-family:'Poppins',sans-serif;font-size:15px;font-weight:400;color:var(--stone);white-space:nowrap;transition:color .4s}
+.logo-wm em{font-style:italic;font-weight:300;color:var(--red)}
+nav ul{list-style:none;display:flex;align-items:center;gap:36px}
+nav ul a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);text-decoration:none;transition:color .2s;font-family:'Poppins',sans-serif;font-weight:500;white-space:nowrap}
+nav ul a:hover{color:var(--red)}
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{cursor:pointer}
+.nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;background:transparent;opacity:0;visibility:hidden;transition:opacity .2s;z-index:220}
+.nav-dropdown-menu-inner{background:rgba(20,20,20,.97);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:12px 0;min-width:200px}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible}
+.nav-dropdown-menu-inner a{display:block;padding:10px 20px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.68)!important;text-decoration:none;font-family:'Poppins',sans-serif;transition:color .15s,background .15s;white-space:nowrap}
+.nav-dropdown-menu-inner a:hover{color:white!important;background:rgba(255,255,255,.06)}
+.nav-cta{background:#111827!important;color:white!important;padding:10px 22px;font-size:10px!important;letter-spacing:2px!important;font-weight:600!important;transition:background .2s,transform .2s!important;border-radius:999px;box-shadow:0 10px 24px rgba(17,24,39,.16)}
+.nav-cta:hover{background:#000!important;transform:translateY(-1px)}
+.nav-burger{display:none;flex-direction:column;gap:5.5px;cursor:pointer;padding:8px;background:none;border:none;z-index:610}
+.nav-burger span{display:block;width:24px;height:1.5px;background:var(--stone);transition:transform .3s,opacity .3s}
+nav.nav-scrolled .nav-burger span{background:var(--stone)}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-overlay{position:fixed;inset:0;background:rgba(12,12,13,.84);backdrop-filter:blur(28px) saturate(140%);-webkit-backdrop-filter:blur(28px) saturate(140%);z-index:600;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:36px;opacity:0;pointer-events:none;transition:opacity .35s}
+.nav-overlay.open{opacity:1;pointer-events:auto}
+.nav-overlay a{font-family:'Poppins',sans-serif;font-size:20px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.65);text-decoration:none;transition:color .2s}
+.nav-overlay a:hover{color:white}
+.nav-overlay .nav-ov-cta{margin-top:8px;background:var(--red);color:white!important;padding:14px 40px;font-size:11px!important;letter-spacing:3px;font-weight:600}
+/* PAGE HERO */
+.page-hero{padding:160px 80px 100px;background:linear-gradient(180deg,#171513 0%,#11100f 100%);position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url('images/plye/plye-lifestyle-scandinavian-open-plan.jpg') center/cover no-repeat;opacity:.2}
+.page-hero-inner{position:relative;z-index:1;max-width:720px}
+.ph-eyebrow-sm{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--sand);margin-bottom:20px;display:flex;align-items:center;gap:12px;font-family:'DM Sans',sans-serif}
+.ph-eyebrow-sm::before{content:'';width:28px;height:1px;background:rgba(217,197,161,.5)}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(46px,5vw,76px);font-weight:300;color:white;line-height:1.02;margin-bottom:24px;letter-spacing:-.03em}
+.page-hero h1 em{font-style:italic;color:var(--sand)}
+.page-hero p{font-size:16px;line-height:1.9;color:rgba(255,255,255,.62);max-width:560px}
+/* APP TABS */
+.app-tabs{background:rgba(255,255,255,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(0,0,0,.08);position:sticky;top:100px;z-index:100;display:flex;gap:0;padding:0 80px}
+.app-tab{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(74,74,74,.45);text-decoration:none;padding:18px 0;border-bottom:2px solid transparent;margin-right:40px;font-family:'Poppins',sans-serif;font-weight:500;transition:color .2s,border-color .2s}
+.app-tab:hover,.app-tab.active{color:var(--stone);border-color:var(--red)}
+/* Matrix cells */
+.matrix-cell{position:relative;overflow:hidden;aspect-ratio:4/3;cursor:pointer;background:#eee}
+.matrix-cell img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.matrix-cell:hover img{transform:scale(1.05)}
+.mc-overlay{
+  position:absolute;left:14px;right:14px;bottom:14px;inset:auto 14px 14px 14px;
+  display:flex;flex-direction:column;justify-content:flex-end;padding:12px 14px 13px;border-radius:18px;
+  background:linear-gradient(180deg,rgba(17,18,24,.54),rgba(17,18,24,.74));
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 14px 30px rgba(15,23,42,.16);opacity:0;transform:translateY(6px);transition:opacity .24s ease,transform .24s ease
+}
+.matrix-cell:hover .mc-overlay{opacity:1;transform:translateY(0)}
+.mc-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sand);font-family:'DM Sans',sans-serif;margin-bottom:7px}
+.mc-desc{
+  font-size:12px;font-weight:300;color:rgba(255,255,255,.84);line-height:1.55;margin-bottom:0;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden
+}
+.mc-link{
+  font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:white;text-decoration:none;font-family:'DM Sans',sans-serif;
+  border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px;display:inline-block;transition:border-color .2s;
+  margin-top:10px
+}
+.mc-link:hover{border-color:white}
+/* SECTION SHARED */
+.app-section{padding:110px 80px}
+.app-section:nth-child(even){background:white}
+.app-section-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.app-section-inner.reverse{direction:rtl}
+.app-section-inner.reverse>*{direction:ltr}
+.app-text .s-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--red);font-family:'Poppins',sans-serif;font-weight:500;margin-bottom:16px;display:block}
+.app-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.5vw,52px);font-weight:300;color:var(--dark);line-height:1.1;margin-bottom:20px}
+.app-text h2 em{font-style:italic}
+.app-text .app-tagline{font-size:16px;font-weight:500;color:var(--stone);margin-bottom:16px;line-height:1.5}
+.app-text p{font-size:15px;line-height:1.85;color:var(--warm);margin-bottom:32px}
+/* BENEFIT PILLS */
+.benefit-list{display:flex;flex-direction:column;gap:14px;margin-bottom:36px}
+.benefit-item{display:flex;align-items:flex-start;gap:14px}
+.benefit-icon{width:36px;height:36px;border-radius:50%;background:rgba(229,57,53,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.benefit-content{}
+.benefit-title{font-size:13px;font-weight:600;color:var(--dark);letter-spacing:.3px;margin-bottom:3px}
+.benefit-desc{font-size:13px;color:var(--warm);line-height:1.6}
+/* PRODUCT TAGS */
+.product-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.ptag{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--stone);border:1px solid rgba(74,74,74,.18);padding:7px 14px;border-radius:999px;font-family:'Poppins',sans-serif;background:rgba(255,255,255,.7)}
+.ptag a{color:inherit;text-decoration:none;transition:color .2s}
+.ptag a:hover{color:var(--red)}
+/* CTA BUTTONS */
+.app-cta-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn-red{background:#111827;color:white;padding:12px 24px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;text-decoration:none;border-radius:999px;transition:background .2s,transform .2s;box-shadow:0 10px 24px rgba(17,24,39,.14)}
+.btn-red:hover{background:#000;transform:translateY(-1px)}
+.btn-outline{color:var(--stone);font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(74,74,74,.3);padding-bottom:2px;transition:color .2s,border-color .2s}
+.btn-outline:hover{color:var(--red);border-color:var(--red)}
+/* IMAGE */
+.app-img-wrap{border-radius:24px;overflow:hidden;aspect-ratio:4/3;position:relative;box-shadow:0 16px 40px rgba(15,23,42,.08)}
+.app-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.app-img-wrap:hover img{transform:scale(1.03)}
+/* IMAGE GRID */
+.app-img-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;border-radius:3px;overflow:hidden}
+.app-img-item{position:relative;overflow:hidden}
+.app-img-item img{width:100%;aspect-ratio:1;object-fit:cover;display:block;transition:transform .5s}
+.app-img-item:hover img{transform:scale(1.04)}
+/* MATERIAL LABEL OVERLAY */
+.app-img-lbl{position:absolute;bottom:0;left:0;right:0;padding:10px 12px 11px;background:linear-gradient(transparent,rgba(0,0,0,.72));color:white;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;font-family:'DM Sans',sans-serif;font-weight:400;opacity:0;transform:translateY(4px);transition:opacity .25s,transform .25s;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.app-img-item:hover .app-img-lbl,.app-img-wrap:hover .app-img-lbl{opacity:1;transform:translateY(0)}
+/* SPEC STRIP */
+.spec-strip{background:var(--dark);padding:48px 80px;display:flex;gap:0;justify-content:center}
+.spec-item{flex:1;text-align:center;padding:0 24px;border-right:1px solid rgba(255,255,255,.08)}
+.spec-item:last-child{border-right:none}
+.spec-n{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:white;display:block;line-height:1}
+.spec-l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:8px;display:block}
+/* PAGE CTA */
+.page-cta-strip{background:linear-gradient(180deg,#171513 0%,#11100f 100%);padding:72px 80px}
+.pcta-inner{display:flex;align-items:center;justify-content:space-between;gap:48px;max-width:1200px;margin:0 auto}
+.pcta-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--sand);margin-bottom:14px}
+.pcta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,44px);font-weight:300;color:white;line-height:1.15}
+.pcta-title em{font-style:italic;color:var(--sand)}
+.pcta-desc{font-size:14px;color:rgba(255,255,255,.4);margin-top:12px;line-height:1.7}
+.pcta-actions{display:flex;flex-direction:column;align-items:flex-start;gap:16px;flex-shrink:0}
+.pcta-btn{background:var(--red);color:white;padding:14px 36px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;text-decoration:none;border-radius:2px;transition:background .2s}
+.pcta-btn:hover{background:var(--red-d)}
+.pcta-link{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:2px}
+.pcta-link:hover{color:white}
+/* FOOTER */
+footer{background:linear-gradient(180deg,#141416 0%,#0d0d0f 100%);padding:0}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding:72px 80px 52px}
+.f-tagline{font-size:13px;color:rgba(255,255,255,.35);margin:20px 0 24px;line-height:1.7;font-style:italic}
+.f-about{margin-top:12px}
+.f-about p{font-size:12px;line-height:1.8;color:rgba(255,255,255,.22);max-width:280px}
+.f-stats{display:flex;gap:28px;margin-top:20px}
+.f-stat-n{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:white;display:block}
+.f-stat-l{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.25);display:block;margin-top:2px}
+.footer-col h4{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:20px;font-weight:500}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col a{font-size:13px;font-weight:300;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s}
+.footer-col a:hover{color:white}
+.footer-social{padding:0 80px 28px;display:flex;gap:24px;border-top:1px solid rgba(255,255,255,.06);padding-top:28px}
+.fsoc-link{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.3);text-decoration:none;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}
+.fsoc-link:hover{color:white}
+.footer-bottom{padding:20px 80px;border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-between;align-items:center;gap:24px}
+.f-copy{font-size:11px;color:rgba(255,255,255,.18);line-height:1.6}
+.f-copy a{color:rgba(255,255,255,.25);text-decoration:none}
+.f-brands{display:flex;gap:8px}
+.f-pill{font-size:9px;letter-spacing:1px;color:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.06);padding:3px 9px;border-radius:20px}
+/* STICKY CTA */
+.sticky-cta{position:fixed;bottom:18px;left:18px;right:18px;z-index:500;background:rgba(18,18,20,.82);backdrop-filter:blur(24px) saturate(150%);-webkit-backdrop-filter:blur(24px) saturate(150%);display:flex;align-items:center;justify-content:space-between;padding:16px 18px 16px 22px;border:1px solid rgba(255,255,255,.1);border-radius:22px;box-shadow:0 24px 70px rgba(0,0,0,.24);transform:translateY(calc(100% + 24px));transition:transform .4s ease}
+.sticky-cta.visible{transform:translateY(0)}
+.sticky-cta-copy{font-size:13px;color:rgba(255,255,255,.55);letter-spacing:.5px}
+.sticky-cta-copy strong{color:#fff}
+.sticky-cta-btn{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.14);cursor:pointer;padding:12px 24px;font-size:12px;letter-spacing:1.5px;font-weight:600;text-transform:uppercase;border-radius:999px;text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s,transform .2s;min-height:44px}
+.sticky-cta-btn:hover{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.25);transform:translateY(-1px)}
+@media(max-width:768px){.sticky-cta{padding:12px 14px 12px 16px;gap:12px;bottom:12px;left:12px;right:12px}.sticky-cta-copy{font-size:11px}.sticky-cta-btn{padding:10px 20px;font-size:11px}}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+/* RESPONSIVE */
+@media(max-width:900px){
+  .app-section{padding:72px 28px}
+  .app-section-inner{grid-template-columns:1fr;gap:48px}
+  .app-section-inner.reverse{direction:ltr}
+  .page-hero{padding:120px 28px 72px}
+  .app-tabs{padding:0 28px}
+  .spec-strip{padding:40px 28px;flex-wrap:wrap;gap:24px}
+  .spec-item{border-right:none;min-width:calc(50% - 12px)}
+  .footer-top{grid-template-columns:1fr 1fr;gap:36px;padding:52px 28px 36px}
+  .footer-social,.footer-bottom{padding-left:28px;padding-right:28px}
+  .pcta-inner{flex-direction:column;align-items:flex-start}
+  .page-cta-strip{padding:52px 28px}
+}
+</style>
+</head>
+<body>
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('en')" id="lb-en">English</button>
+  <span class="lang-sep">&nbsp;|&nbsp;</span>
+  <button class="lang-btn" onclick="setLang('zh')" id="lb-zh">繁體中文</button>
+</div>
+<!-- NAV -->
+<header>
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <div class="logo-circle"><span class="l1">Ashley</span><span class="l2">kitchen</span></div>
+    <span class="logo-wm"><em>Ashley</em> Kitchen</span>
+  </a>
+  <ul id="nav-links">
+    <li class="nav-dropdown">
+      <a href="index.html#products" id="nl-products" class="nav-dropdown-trigger">Products ▾</a>
+      <div class="nav-dropdown-menu">
+        <div class="nav-dropdown-menu-inner">
+          <a href="plye.html">plyē Flooring</a>
+          <a href="nalexible-stone.html">Nalexible Stone</a>
+          <a href="nalexible-fiberboard.html">Nalexible Fiberboard</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="catalog.html" id="nl-catalog">Catalog</a></li>
+    <li><a href="applications.html" id="nl-app" class="nav-current">Applications</a></li>
+    <li><a href="projects.html" id="nl-proj">Projects</a></li>
+    <li><a href="about.html" id="nl-about">About</a></li>
+    <li><a href="contact.html" class="nav-cta" id="nl-contact">Contact</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+</header>
+<main>
+<div class="nav-overlay" id="nav-overlay">
+  <a href="catalog.html" onclick="closeNavOverlay()">Catalog</a>
+  <a href="plye.html" onclick="closeNavOverlay()">plyē</a>
+  <a href="nalexible-stone.html" onclick="closeNavOverlay()">Stone</a>
+  <a href="nalexible-fiberboard.html" onclick="closeNavOverlay()">Fiberboard</a>
+  <a href="applications.html" onclick="closeNavOverlay()">Applications</a>
+  <a href="projects.html" onclick="closeNavOverlay()">Projects</a>
+  <a href="about.html" onclick="closeNavOverlay()">About</a>
+  <a href="contact.html" class="nav-ov-cta" onclick="closeNavOverlay()">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="ph-eyebrow-sm" id="app-eyebrow">Applications</div>
+    <h1 id="app-h1">Start with the space,<br><em>then choose the material</em></h1>
+    <p id="app-desc">Use this page to match flooring, stone, and fiberboard systems to the right setting before moving deeper into product detail, samples, and specification conversations.</p>
+  </div>
+</section>
+
+<div class="app-tabs">
+  <a href="#residential" class="app-tab active" id="tab-res">Residential</a>
+  <a href="#commercial" class="app-tab" id="tab-com">Commercial</a>
+  <a href="#hospitality" class="app-tab" id="tab-hos">Hospitality</a>
+  <a href="#outdoor" class="app-tab" id="tab-out">Outdoor</a>
+</div>
+
+<section style="padding:30px 80px 0;background:transparent">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:18px">
+    <div style="background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.82));border:1px solid rgba(26,23,20,.08);border-radius:24px;padding:24px 24px 22px;box-shadow:0 16px 40px rgba(15,23,42,.06)">
+      <div style="font-size:9px;letter-spacing:2.4px;text-transform:uppercase;color:rgba(26,23,20,.44);font-family:'DM Sans',sans-serif;margin-bottom:12px">Application</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:29px;line-height:1.02;color:var(--stone);margin-bottom:10px">Residential</div>
+      <p style="font-size:13px;line-height:1.75;color:rgba(26,23,20,.58)">Homes, apartments, and renovations where comfort, texture, acoustics, and material warmth shape everyday living.</p>
+    </div>
+    <div style="background:linear-gradient(180deg,#191715 0%,#12110f 100%);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:24px 24px 22px;box-shadow:0 18px 46px rgba(0,0,0,.18)">
+      <div style="font-size:9px;letter-spacing:2.4px;text-transform:uppercase;color:rgba(217,197,161,.5);font-family:'DM Sans',sans-serif;margin-bottom:12px">Application</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:29px;line-height:1.02;color:white;margin-bottom:10px">Commercial</div>
+      <p style="font-size:13px;line-height:1.75;color:rgba(255,255,255,.48)">Retail, office, and branded spaces where performance and finish quality need to hold up to higher traffic and scrutiny.</p>
+    </div>
+    <div style="background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.82));border:1px solid rgba(26,23,20,.08);border-radius:24px;padding:24px 24px 22px;box-shadow:0 16px 40px rgba(15,23,42,.06)">
+      <div style="font-size:9px;letter-spacing:2.4px;text-transform:uppercase;color:rgba(26,23,20,.44);font-family:'DM Sans',sans-serif;margin-bottom:12px">Application</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:29px;line-height:1.02;color:var(--stone);margin-bottom:10px">Hospitality</div>
+      <p style="font-size:13px;line-height:1.75;color:rgba(26,23,20,.58)">Guest-facing environments where atmosphere, texture, and memorable material moments help define the brand experience.</p>
+    </div>
+    <div style="background:linear-gradient(180deg,#191715 0%,#12110f 100%);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:24px 24px 22px;box-shadow:0 18px 46px rgba(0,0,0,.18)">
+      <div style="font-size:9px;letter-spacing:2.4px;text-transform:uppercase;color:rgba(217,197,161,.5);font-family:'DM Sans',sans-serif;margin-bottom:12px">Application</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:29px;line-height:1.02;color:white;margin-bottom:10px">Outdoor</div>
+      <p style="font-size:13px;line-height:1.75;color:rgba(255,255,255,.48)">Façades and exterior surfaces where UV resistance, lower weight, and easier installation create real project advantages.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MATRIX -->
+<section style="background:white;padding:72px 0 80px">
+  <div style="max-width:1400px;margin:0 auto;padding:0 48px">
+
+    <!-- Column headers -->
+    <div id="residential" style="display:grid;grid-template-columns:160px 1fr 1fr 1fr;gap:3px;margin-bottom:3px">
+      <div style="background:#F5F5F5;padding:18px 16px;display:flex;align-items:flex-end">
+        <span style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(74,74,74,.4);font-family:'DM Sans',sans-serif">Product →<br>Application ↓</span>
+      </div>
+      <a href="plye.html" style="text-decoration:none;background:var(--dark);padding:20px 22px;display:block">
+        <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.38);font-family:'DM Sans',sans-serif;margin-bottom:6px">Engineered Flooring</div>
+        <div style="font-family:'Poppins',sans-serif;font-size:17px;font-weight:600;color:white;letter-spacing:-.3px">plyē <span style="font-weight:300;font-size:12px;letter-spacing:1px;color:rgba(255,255,255,.4)">ORIGIN</span></div>
+      </a>
+      <a href="nalexible-stone.html" style="text-decoration:none;background:var(--dark);padding:20px 22px;display:block;border-left:1px solid rgba(255,255,255,.06)">
+        <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.38);font-family:'DM Sans',sans-serif;margin-bottom:6px">Flexible Stone Veneer</div>
+        <div style="font-family:'Poppins',sans-serif;font-size:17px;font-weight:600;color:white;letter-spacing:-.3px">Nalexible <span style="font-weight:300;font-size:12px;letter-spacing:1px;color:rgba(255,255,255,.4)">STONE</span></div>
+      </a>
+      <a href="nalexible-fiberboard.html" style="text-decoration:none;background:var(--dark);padding:20px 22px;display:block;border-left:1px solid rgba(255,255,255,.06)">
+        <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.38);font-family:'DM Sans',sans-serif;margin-bottom:6px">Natural Fiber Board</div>
+        <div style="font-family:'Poppins',sans-serif;font-size:17px;font-weight:600;color:white;letter-spacing:-.3px">Nalexible <span style="font-weight:300;font-size:12px;letter-spacing:1px;color:rgba(255,255,255,.4)">FIBERBOARD</span></div>
+      </a>
+    </div>
+
+    <!-- ROW 1: Residential -->
+    <div id="residential" style="display:grid;grid-template-columns:160px 1fr 1fr 1fr;gap:3px;margin-bottom:3px">
+      <div style="background:var(--dark);display:flex;align-items:center;padding:16px 18px;min-height:220px">
+        <div>
+          <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(217,197,161,.35);font-family:'DM Sans',sans-serif;margin-bottom:8px">01</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:white;font-style:italic;line-height:1.2" id="row1-label">Residential</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.28);margin-top:6px;line-height:1.5;font-weight:300">Homes · Apartments · Villas</div>
+        </div>
+      </div>
+      <div class="matrix-cell">
+        <img loading="lazy" src="images/plye/plye-lifestyle-barefoot-aerial.jpg" alt="plyē flooring in a quiet residential setting">
+        <div class="mc-overlay">
+          <div class="mc-tag" id="mc-r1p1-tag">Living Spaces</div>
+          <div class="mc-desc" id="mc-r1p1-desc">Engineered oak flooring that brings warmth, comfort, and quieter everyday living to homes and apartments.</div>
+          <a href="plye.html" class="mc-link" id="mc-r1p1-link">plyē ORIGIN →</a>
+        </div>
+      </div>
+      <div class="matrix-cell">
+        <img loading="lazy" src="images/stone/nal-case-living-room-stone-wall.jpg" alt="Nalexible stone residential living room accent wall">
+        <div class="mc-overlay">
+          <div class="mc-tag" id="mc-r1p2-tag">Feature Walls &amp; Furniture</div>
+          <div class="mc-desc" id="mc-r1p2-desc">Stone accent walls, curved columns, fireplace surrounds, and feature furniture details that sharpen the whole room.</div>
+          <a href="nalexible-stone.html" class="mc-link" id="mc-r1p2-link">Flexible Stone →</a>
+        </div>
+      </div>
+      <div class="matrix-cell">
+        <img loading="lazy" src="images/fiberboard/fb-door-barn.jpg" alt="Nalexible fiberboard residential sliding barn door">
+        <div class="mc-overlay">
+          <div class="mc-tag" id="mc-r1p3-tag">Doors &amp; Partitions</div>
+          <div class="mc-desc" id="mc-r1p3-desc">Acoustic interior doors, sliding panels, and decorative wall systems for calmer private homes.</div>
+          <a href="nalexible-fiberboard.html" class="mc-link" id="mc-r1p3-link">Fiberboard →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 2: Commercial -->
+    <div id="commercial" style="display:grid;grid-template-columns:160px 1fr 1fr 1fr;gap:3px;margin-bottom:3px">
+      <div style="background:var(--dark);display:flex;align-items:center;padding:16px 18px;min-height:220px">
+        <div>
+          <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(217,197,161,.35);font-family:'DM Sans',sans-serif;margin-bottom:8px">02</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:white;font-style:italic;line-height:1.2" id="row2-label">Commercial</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.28);margin-top:6px;line-height:1.5;font-weight:300">Offices · Retail · F&amp;B</div>
+        </div>
+      </div>
+      <div class="matrix-cell">
+        <img loading="lazy" src="images/plye/plye-lifestyle-living-room-soft-gray.jpg" alt="plyē flooring in a refined soft-gray interior">
+        <div class="mc-overlay">
+          <div class="mc-tag" id="mc-r2p1-tag">Offices &amp; Retail</div>
+          <div class="mc-desc" id="mc-r2p1-desc">Durable engineered flooring for higher-footfall commercial environments, retail fit-outs, and brand-led interiors.</div>
+          <a href="plye.html" class="mc-link" id="mc-r2p1-link">plyē ORIGIN →</a>
+        </div>
+      </div>
+      <div class="matrix-cell">
+        <img loading="lazy" src="images/stone/nal-stone-app-bar.jpg" alt="Nalexible stone commercial bar and lounge cladding">
+        <div class="mc-overlay">
+          <div class="mc-tag" id="mc-r2p2-tag">Lobbies &amp; F&amp;B</div>
+          <div class="mc-desc" id="mc-r2p2-desc">LumiSlate, sandstone-led finishes, and protected surface options make Nalexible stronger for branded commercial interiors, counters, and client-facing focal walls.</div>
+          <a href="nalexible-stone.html" class="mc-link" id="mc-r2p2-link">Flexible Stone →</a>
+        </div>
+      </div>
+      <div class="matrix-cell">
+        <img loading="lazy" src="images/fiberboard/fb-conference-room.jpg" alt="Nalexible fiberboard partition system in a commercial meeting room">
+        <div class="mc-overlay">
+          <div class="mc-tag" id="mc-r2p3-tag">Partitions &amp; Screens</div>
+          <div class="mc-desc" id="mc-r2p3-desc">Acoustic partition systems, privacy screens, and decorative wall panels for commercial fit-out.</div>
+          <a href="nalexible-fiberboard.html" class="mc-link" id="mc-r2p3-link">Fiberboard →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 3: Hospitality -->
+    <div id="hospitality" style="display:grid;grid-template-columns:160px 1fr 1fr 1fr;gap:3px;margin-bottom:3px">
+      <div style="background:var(--dark);display:flex;align-items:center;padding:16px 18px;min-height:220px">
+        <div>
+          <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(217,197,161,.35);font-family:'DM Sans',sans-serif;margin-bottom:8px">03</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:white;font-style:italic;line-height:1.2" id="row3-label">Hospitality</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.28);margin-top:6px;line-height:1.5;font-weight:300">Hotels · Resorts · Spas</div>
+        </div>
+      </div>
+      <div class="matrix-cell">
+        <img loading="lazy" src="images/plye/plye-lifestyle-bedroom-dark-luxury.jpg" alt="plyē flooring luxury hotel bedroom">
+        <div class="mc-overlay">
+          <div class="mc-tag" id="mc-r3p1-tag">Guestrooms &amp; Suites</div>
+          <div class="mc-desc" id="mc-r3p1-desc">Guestroom flooring that feels warm, refined, and dependable across hospitality rollouts.</div>
+          <a href="plye.html" class="mc-link" id="mc-r3p1-link">plyē ORIGIN →</a>
+        </div>
+      </div>
+      <div class="matrix-cell">
+        <img loading="lazy" src="images/stone/nal-com-indian-autumn-cafe.jpg" alt="Nalexible luminous stone used in a hospitality counter and feature wall setting">
+        <div class="mc-overlay">
+          <div class="mc-tag" id="mc-r3p2-tag">Lobbies &amp; Feature Spaces</div>
+          <div class="mc-desc" id="mc-r3p2-desc">Grand reception walls, sandstone-led hotel surfaces, and backlit LumiSlate moments for hospitality spaces that need a stronger identity.</div>
+          <a href="nalexible-stone.html" class="mc-link" id="mc-r3p2-link">Flexible Stone →</a>
+        </div>
+      </div>
+      <div class="matrix-cell">
+        <img loading="lazy" src="images/stone/app-fb-hospitality.jpg" alt="Nalexible fiberboard hospitality door">
+        <div class="mc-overlay">
+          <div class="mc-tag" id="mc-r3p3-tag">Guestroom Doors</div>
+          <div class="mc-desc" id="mc-r3p3-desc">Acoustic doors and panel systems for guestrooms, corridors, and quieter hospitality interiors.</div>
+          <a href="nalexible-fiberboard.html" class="mc-link" id="mc-r3p3-link">Fiberboard →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 4: Outdoor & Facade -->
+    <div id="outdoor" style="display:grid;grid-template-columns:160px 1fr 1fr 1fr;gap:3px">
+      <div style="background:var(--dark);display:flex;align-items:center;padding:16px 18px;min-height:220px">
+        <div>
+          <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(217,197,161,.35);font-family:'DM Sans',sans-serif;margin-bottom:8px">04</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:white;font-style:italic;line-height:1.2" id="row4-label">Outdoor &amp; Façade</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.28);margin-top:6px;line-height:1.5;font-weight:300">Facades · Cladding · Landscape</div>
+        </div>
+      </div>
+      <div class="matrix-cell" style="background:var(--dark);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:32px;gap:12px;cursor:default">
+        <div style="font-size:22px;opacity:.18">—</div>
+        <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.22);text-align:center;line-height:1.8" id="mc-r4p1-na">Interior use only<br>Not intended for exterior use</div>
+      </div>
+      <div class="matrix-cell">
+        <img loading="lazy" src="images/stone/nal-com-dblack-exterior.jpg" alt="Nalexible UV stone exterior facade application">
+        <div class="mc-overlay">
+          <div class="mc-tag" id="mc-r4p2-tag">Facades &amp; Cladding</div>
+          <div class="mc-desc" id="mc-r4p2-desc">UV-coated and sandstone-led stone systems for facades, hotel walls, and outdoor landscape features where lower weight matters.</div>
+          <a href="nalexible-stone.html" class="mc-link" id="mc-r4p2-link">UV Series Stone →</a>
+        </div>
+      </div>
+      <div class="matrix-cell" style="background:var(--dark);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:32px;gap:12px;cursor:default">
+        <div style="font-size:22px;opacity:.18">—</div>
+        <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.22);text-align:center;line-height:1.8" id="mc-r4p3-na">Interior use only<br>Not intended for exterior use</div>
+      </div>
+    </div>
+
+    <!-- Bottom note -->
+    <p style="margin-top:32px;font-size:11px;color:rgba(74,74,74,.4);font-weight:300;text-align:right">Need the shortlist next? We can help with samples, application fit, and product selection · <a href="contact.html" style="color:var(--red);text-decoration:none">Start the conversation →</a></p>
+  </div>
+</section>
+
+
+<!-- BOTTOM CTA -->
+<section class="page-cta-strip">
+  <div class="pcta-inner">
+    <div>
+      <div class="pcta-label">Ashley Kitchen</div>
+      <h2 class="pcta-title" id="app-pcta-title">Specify the right material<br><em>for your next project.</em></h2>
+      <p class="pcta-desc" id="app-pcta-desc">Samples, application guidance, and clearer product direction for DIY buyers, designers, and project teams.</p>
+    </div>
+    <div class="pcta-actions">
+      <a href="contact.html" class="pcta-btn">Request a Sample →</a>
+      <a href="catalog.html" class="pcta-link">View full catalog</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="logo-circle"><span class="l1">Ashley</span><span class="l2">kitchen</span></div>
+        <span class="logo-wm" style="color:rgba(255,255,255,.62)"><em>Ashley</em> Kitchen</span>
+      </div>
+      <p class="f-tagline">Smart Materials for Modern Living<br>Engineered in Taiwan, specified worldwide.</p>
+      <div class="f-about" id="f-about-block">
+        <p id="f-about-text">Ashley Kitchen brings together <strong>plyē</strong> engineered flooring — made in Taiwan with patent click-lock technology — and <strong>Nalexible</strong> flexible stone &amp; fiberboard, for which we are Taiwan's exclusive distributor. Headquartered in Neihu, Taipei.</p>
+        <div class="f-stats">
+          <div><span class="f-stat-n">30+</span><span class="f-stat-l" id="f-stat1">Years</span></div>
+          <div><span class="f-stat-n">12</span><span class="f-stat-l" id="f-stat2">Oak Shades</span></div>
+          <div><span class="f-stat-n">EU E1</span><span class="f-stat-l" id="f-stat3">Certified</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="plye.html">plyē ORIGIN Series</a></li>
+        <li><a href="plye.html#gallery">plyē 12 Color Range</a></li>
+        <li><a href="nalexible-stone.html">Nalexible Flexible Stone</a></li>
+        <li><a href="nalexible-stone.html#lumislate">Nalexible LumiSlate</a></li>
+        <li><a href="nalexible-fiberboard.html">Nalexible Fiberboard</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="catalog.html">Catalog Overview</a></li>
+        <li><a href="contact.html">Request Sample</a></li>
+        <li><a href="plye.html#diy-installation">Installation Guidance</a></li>
+        <li><a href="about.html#support-modes">Specification Support</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 id="fc3-h">Company</h4>
+      <ul>
+        <li><a href="about.html" id="fc-about">About</a></li>
+        <li><a href="projects.html" id="fc-proj">Projects</a></li>
+        <li><a href="applications.html" id="fc-tech">Applications</a></li>
+        <li><a href="catalog.html" id="fc-dl">Catalog</a></li>
+        <li><a href="contact.html" id="fc-news">Contact</a></li>
+        <li><a href="contact.html" id="fc-contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/ashleykitchen.tw/" target="_blank" rel="noopener" class="fsoc-link">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5.5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor"/></svg>
+      <span>Instagram</span>
+    </a>
+    <a href="https://www.linkedin.com/company/ashley-kitchen/" target="_blank" rel="noopener" class="fsoc-link">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" stroke-width="1.8"/><line x1="7" y1="10" x2="7" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="7" cy="7.5" r="1.1" fill="currentColor"/><path d="M11 17v-4a2 2 0 0 1 4 0v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="11" y1="10" x2="11" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span>LinkedIn</span>
+    </a>
+    <a href="https://www.youtube.com/@ashleykitchen" target="_blank" rel="noopener" class="fsoc-link">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="4" stroke="currentColor" stroke-width="1.8"/><polygon points="10,9 16,12 10,15" fill="currentColor"/></svg>
+      <span>YouTube</span>
+    </a>
+  </div>
+  <div class="footer-bottom">
+    <div class="f-copy">© 2026 Ashley Kitchen · No. 32, Alley 18, Lane 478, Ruiguang Rd, Neihu, Taipei · <a href="mailto:sales@ashleykitchen.com.tw">sales@ashleykitchen.com.tw</a></div>
+    <div class="f-brands">
+      <span class="f-pill">plyē</span>
+      <span class="f-pill">NALEXIBLE</span>
+      <span class="f-pill">Made in Taiwan 🇹🇼</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js?v=10"></script>
+<script>
+// Nav scroll
+var nav=document.getElementById('main-nav');
+window.addEventListener('scroll',function(){nav.classList[window.scrollY>40?'add':'remove']('nav-scrolled');},{passive:true});
+// Burger
+var burger=document.getElementById('nav-burger');
+var overlay=document.getElementById('nav-overlay');
+function closeNavOverlay(){overlay.classList.remove('open');burger.classList.remove('open');}
+burger.addEventListener('click',function(){overlay.classList.toggle('open');burger.classList.toggle('open');});
+// Reveal
+var reveals=document.querySelectorAll('.reveal');
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.12});
+reveals.forEach(function(r){io.observe(r);});
+// Tab click — offset scroll for sticky headers
+document.querySelectorAll('.app-tab[href^="#"]').forEach(function(link){
+  link.addEventListener('click',function(e){
+    e.preventDefault();
+    var target=document.querySelector(this.getAttribute('href'));
+    if(target){
+      var offset=document.querySelector('.lang-bar').offsetHeight+document.querySelector('nav').offsetHeight+document.querySelector('.app-tabs').offsetHeight;
+      window.scrollTo({top:target.offsetTop-offset,behavior:'smooth'});
+    }
+  });
+});
+// Tab active on scroll
+var sections=['residential','commercial','hospitality','outdoor'];
+var tabs={residential:document.getElementById('tab-res'),commercial:document.getElementById('tab-com'),hospitality:document.getElementById('tab-hos'),outdoor:document.getElementById('tab-out')};
+window.addEventListener('scroll',function(){
+  var scrollY=window.scrollY+200;
+  sections.forEach(function(id){
+    var sec=document.getElementById(id);
+    if(sec&&scrollY>=sec.offsetTop&&scrollY<sec.offsetTop+sec.offsetHeight){
+      Object.values(tabs).forEach(function(t){t.classList.remove('active');});
+      if(tabs[id])tabs[id].classList.add('active');
+    }
+  });
+},{passive:true});
+</script>
+
+<div class="sticky-cta" id="sticky-cta">
+  <div class="sticky-cta-copy" id="app-sticky-copy"><strong>plyē Engineered Flooring + Nalexible Stone &amp; Fiberboard</strong> — Taiwan's premium building materials, globally specified.</div>
+  <a href="contact.html" class="sticky-cta-btn" id="app-sticky-btn">REQUEST A SAMPLE →</a>
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('sticky-cta');
+  if(!bar)return;
+  window.addEventListener('scroll',function(){bar.classList[window.scrollY>600?'add':'remove']('visible');},{passive:true});
+})();
+</script>
+</body>
+</html>

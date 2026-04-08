@@ -1,0 +1,25 @@
+# System
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+
+# Claude Code internal state
+.claude/
+
+# Large video files (>100MB — GitHub limit)
+assets/nalexible/stone/videos/nalexible-english.mp4
+videos/nal-video-lumislate.mp4
+
+# Draft/test files (not part of deployed site)
+_card_test.html
+_duplicates.html
+_fb_master_browser.html
+_poster_candidates.html
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node
+node_modules/

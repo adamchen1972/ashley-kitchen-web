@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nalexible Stone Catalog — All Finishes | Ashley Kitchen</title>
+<meta name="description" content="Browse all Nalexible flexible stone finishes — Flexible Stone, LumiSlate, EasyStone, UV Series, and 3D Wall Panel. Taiwan exclusive distributor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Noto+Serif+TC:wght@300;400&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--red:#E53935;--stone:#4A4A4A;--warm:#6B6B6B;--sand:#D9C5A1;--dark:#1A1714;--bg:#F5F5F5;}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Poppins','Noto Sans TC','DM Sans',-apple-system,sans-serif;background:var(--dark);color:white;overflow-x:hidden}
+.lang-bar{position:fixed;top:0;left:0;right:0;z-index:300;background:var(--dark);padding:0 52px;height:34px;display:flex;justify-content:flex-end;align-items:center;gap:0;border-bottom:1px solid rgba(255,255,255,.06)}
+.lang-btn{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);background:none;border:none;cursor:pointer;padding:6px 14px;transition:color .2s;font-family:'DM Sans',sans-serif;position:relative}
+.lang-btn.active{color:white}
+.lang-btn.active::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--red)}
+.lang-sep{width:1px;height:14px;background:rgba(255,255,255,.15)}
+nav{position:fixed;top:34px;left:0;right:0;z-index:200;background:white;display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:60px;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.logo-circle{width:36px;height:36px;border-radius:50%;background:var(--red);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0}
+.l1{font-size:6.5px;letter-spacing:1.5px;text-transform:uppercase;color:white;font-weight:600;font-family:'DM Sans',sans-serif}
+.l2{font-size:6px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.75);font-family:'DM Sans',sans-serif}
+.logo-wm{font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;color:var(--stone)}
+.logo-wm em{font-style:italic;color:var(--red)}
+.nav-links{display:flex;gap:36px;align-items:center}
+.nav-links a{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);text-decoration:none;font-family:'DM Sans',sans-serif;transition:color .2s}
+.nav-links a:hover{color:var(--red)}
+.nav-cta{background:var(--red);color:white!important;padding:9px 20px;border-radius:1px}
+.nav-cta:hover{background:#C62828!important}
+
+/* Page */
+.page-header{padding:160px 72px 60px;max-width:1200px;margin:0 auto}
+.breadcrumb{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);font-family:'DM Sans',sans-serif;margin-bottom:20px}
+.breadcrumb a{color:rgba(255,255,255,.3);text-decoration:none}
+.breadcrumb a:hover{color:rgba(217,197,161,.7)}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,60px);font-weight:300;color:white;line-height:1.1}
+.page-title em{font-style:italic;color:var(--sand)}
+.page-desc{font-size:14px;font-weight:300;color:rgba(255,255,255,.45);margin-top:16px;line-height:1.75;max-width:560px}
+
+/* Tab navigation */
+.catalog-nav{position:sticky;top:94px;z-index:100;background:var(--dark);border-bottom:1px solid rgba(255,255,255,.08);padding:0 72px}
+.catalog-nav-inner{max-width:1200px;margin:0 auto;display:flex;gap:0;flex-wrap:wrap}
+.cat-tab{padding:14px 20px;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(217,197,161,.45);background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .2s,border-color .2s;font-family:'DM Sans',sans-serif;white-space:nowrap}
+.cat-tab:hover{color:rgba(217,197,161,.8)}
+.cat-tab.active{color:var(--sand);border-bottom-color:var(--red)}
+
+/* Sections */
+.catalog-section{padding:72px 72px 80px;max-width:1200px;margin:0 auto}
+.series-header{margin-bottom:36px}
+.series-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(217,197,161,.4);font-family:'DM Sans',sans-serif;margin-bottom:10px}
+.series-title{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.5vw,36px);font-weight:300;color:white}
+.series-desc{font-size:13px;font-weight:300;color:rgba(255,255,255,.42);margin-top:10px;line-height:1.75;max-width:600px}
+.series-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.series-badge{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(217,197,161,.5);border:1px solid rgba(217,197,161,.15);padding:4px 10px;border-radius:1px;font-family:'DM Sans',sans-serif}
+
+.swatch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.stone-swatch{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:2px;overflow:hidden;transition:border-color .2s,transform .2s}
+.stone-swatch:hover{border-color:rgba(217,197,161,.25);transform:translateY(-2px)}
+.stone-swatch img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.sw-name{padding:10px 12px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.55);font-family:'DM Sans',sans-serif}
+
+.section-divider{height:1px;background:rgba(255,255,255,.06);margin:0 72px}
+
+/* Footer */
+.cat-footer{padding:48px 72px;max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.cat-footer-note{font-size:11px;color:rgba(255,255,255,.25);font-weight:300}
+.cat-footer-note a{color:rgba(255,255,255,.25);text-decoration:underline;text-underline-offset:3px}
+.back-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border:1px solid rgba(217,197,161,.25);color:var(--sand);font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;font-family:'DM Sans',sans-serif;border-radius:1px;transition:background .2s}
+.back-btn:hover{background:rgba(217,197,161,.07)}
+</style>
+</head>
+<body>
+
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('en')" id="lb-en">English</button>
+  <div class="lang-sep"></div>
+  <button class="lang-btn" onclick="setLang('zh')" id="lb-zh">繁體中文</button>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none">
+    <div class="logo-circle"><span class="l1">Ashley</span><span class="l2">kitchen</span></div>
+    <span class="logo-wm"><em>Ashley</em> Kitchen</span>
+  </a>
+  <div class="nav-links">
+    <a href="nalexible-stone.html" id="sc-back-nav">← Stone Products</a>
+    <a href="contact.html" class="nav-cta" id="sc-cta-nav">Request a Sample</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="breadcrumb"><a href="index.html">Home</a> / <a href="nalexible-stone.html">Nalexible Stone</a> / <span id="sc-bc">Full Catalog</span></div>
+  <h1 class="page-title" id="sc-title">Nalexible Stone<br><em>Full Catalog</em></h1>
+  <p class="page-desc" id="sc-desc">40+ finishes across 5 series — Flexible Stone, LumiSlate, EasyStone, UV Series, and 3D Wall Panel. All 100% natural stone. Taiwan exclusive distribution by Ashley Kitchen.</p>
+</div>
+
+<!-- STICKY SERIES TABS -->
+<div class="catalog-nav">
+  <div class="catalog-nav-inner">
+    <button class="cat-tab active" onclick="scrollToSeries('flexible',this)" id="sctab-flexible">Flexible Stone</button>
+    <button class="cat-tab" onclick="scrollToSeries('lumislate',this)" id="sctab-lumislate">LumiSlate</button>
+    <button class="cat-tab" onclick="scrollToSeries('easystone',this)" id="sctab-easystone">EasyStone</button>
+    <button class="cat-tab" onclick="scrollToSeries('uv',this)" id="sctab-uv">UV Series</button>
+    <button class="cat-tab" onclick="scrollToSeries('3d',this)" id="sctab-3d">3D Wall Panel</button>
+  </div>
+</div>
+
+<!-- FLEXIBLE STONE -->
+<div id="series-flexible">
+  <div class="catalog-section">
+    <div class="series-header">
+      <div class="series-label" id="sc-flex-label">Series 01</div>
+      <h2 class="series-title" id="sc-flex-title">Flexible Stone Veneer</h2>
+      <p class="series-desc" id="sc-flex-desc">The original Nalexible series — ultra-thin natural stone backed with fibreglass resin. Bends to any surface with a radius ≥ 380mm. Fire-rated, moisture-resistant.</p>
+      <div class="series-badges">
+        <span class="series-badge" id="sc-flex-b1">1–3mm Thickness</span>
+        <span class="series-badge" id="sc-flex-b2">Flame Retardant</span>
+        <span class="series-badge" id="sc-flex-b3">Curved Surfaces</span>
+        <span class="series-badge" id="sc-flex-b4">14 Finishes</span>
+      </div>
+    </div>
+    <div class="swatch-grid">
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740467515.jpg" alt="Silver Gray"><div class="sw-name">Silver Gray</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740457121.jpg" alt="Arctic Storm"><div class="sw-name">Arctic Storm</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740457147.jpg" alt="Black"><div class="sw-name">Black</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740457230.jpg" alt="Burning Forest Copper"><div class="sw-name">Burning Forest Copper</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740457324.jpg" alt="D.Black"><div class="sw-name">D.Black</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740457475.jpg" alt="Fossil Granite"><div class="sw-name">Fossil Granite</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740457573.jpg" alt="Galaxy Black"><div class="sw-name">Galaxy Black</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740457752.jpg" alt="Indian Autumn"><div class="sw-name">Indian Autumn</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740457889.jpg" alt="Indian Autumn Rustic"><div class="sw-name">Indian Autumn Rustic</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740458148.jpg" alt="Silver Shine Gold"><div class="sw-name">Silver Shine Gold</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740458300.jpg" alt="Zebra Black"><div class="sw-name">Zebra Black</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740458448.jpg" alt="Terra Red"><div class="sw-name">Terra Red</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740458588.jpg" alt="Zebra White"><div class="sw-name">Zebra White</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740482800.jpg" alt="Sanjayani White"><div class="sw-name">Sanjayani White</div></div>
+    </div>
+  </div>
+</div>
+<div class="section-divider"></div>
+
+<!-- LUMISLATE -->
+<div id="series-lumislate">
+  <div class="catalog-section">
+    <div class="series-header">
+      <div class="series-label" id="sc-lumi-label">Series 02</div>
+      <h2 class="series-title" id="sc-lumi-title">LumiSlate — Translucent Stone</h2>
+      <p class="series-desc" id="sc-lumi-desc">Translucent resin backing allows LED backlighting to pass through — creating living glow effects unique to LumiSlate. Ideal for feature walls, counters, and hospitality lighting installations.</p>
+      <div class="series-badges">
+        <span class="series-badge" id="sc-lumi-b1">Backlit / LED Compatible</span>
+        <span class="series-badge" id="sc-lumi-b2">95% Light Transmittance</span>
+        <span class="series-badge" id="sc-lumi-b3">Warm &amp; Cold Light</span>
+        <span class="series-badge" id="sc-lumi-b4">5 Finishes</span>
+      </div>
+    </div>
+    <div class="swatch-grid">
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740458951.jpg" alt="Black"><div class="sw-name">Black</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740458994.jpg" alt="D.Black"><div class="sw-name">D.Black</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740458876.jpg" alt="Indian Autumn"><div class="sw-name">Indian Autumn</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740458827.jpg" alt="Terra Red"><div class="sw-name">Terra Red</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740459046.jpg" alt="Indian Autumn Rustic"><div class="sw-name">Indian Autumn Rustic</div></div>
+    </div>
+  </div>
+</div>
+<div class="section-divider"></div>
+
+<!-- EASYSTONE -->
+<div id="series-easystone">
+  <div class="catalog-section">
+    <div class="series-header">
+      <div class="series-label" id="sc-easy-label">Series 03</div>
+      <h2 class="series-title" id="sc-easy-title">EasyStone</h2>
+      <p class="series-desc" id="sc-easy-desc">Simplified installation format — self-adhesive backing for flat wall applications. Same natural stone, same 1–3mm profile, optimised for fast residential and retail fit-out.</p>
+      <div class="series-badges">
+        <span class="series-badge" id="sc-easy-b1">Self-Adhesive Option</span>
+        <span class="series-badge" id="sc-easy-b2">Fast Installation</span>
+        <span class="series-badge" id="sc-easy-b3">11 Finishes</span>
+      </div>
+    </div>
+    <div class="swatch-grid">
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740397426.jpg" alt="Arctic Storm"><div class="sw-name">Arctic Storm</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740397409.jpg" alt="Black"><div class="sw-name">Black</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740397391.jpg" alt="Burning Forest Copper"><div class="sw-name">Burning Forest Copper</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740397303.jpg" alt="Indian Autumn"><div class="sw-name">Indian Autumn</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/nal-easy-indian-autumn-rustic.jpg" alt="Indian Autumn Rustic"><div class="sw-name">Indian Autumn Rustic</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740397457.jpg" alt="Silver Gray"><div class="sw-name">Silver Gray</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740397276.jpg" alt="Silver Shine Gold"><div class="sw-name">Silver Shine Gold</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740397367.jpg" alt="D.Black"><div class="sw-name">D.Black</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740397254.jpg" alt="Zebra Black"><div class="sw-name">Zebra Black</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740397224.jpg" alt="Zebra White"><div class="sw-name">Zebra White</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740397345.jpg" alt="Galaxy Black"><div class="sw-name">Galaxy Black</div></div>
+    </div>
+  </div>
+</div>
+<div class="section-divider"></div>
+
+<!-- UV SERIES -->
+<div id="series-uv">
+  <div class="catalog-section">
+    <div class="series-header">
+      <div class="series-label" id="sc-uv-label">Series 04</div>
+      <h2 class="series-title" id="sc-uv-title">UV Series</h2>
+      <p class="series-desc" id="sc-uv-desc">UV-resistant surface coating for high-exposure outdoor and facade applications. Maintains colour stability and surface protection in direct sunlight and weather.</p>
+      <div class="series-badges">
+        <span class="series-badge" id="sc-uv-b1">UV-Resistant Coating</span>
+        <span class="series-badge" id="sc-uv-b2">Exterior Grade</span>
+        <span class="series-badge" id="sc-uv-b3">5 Finishes</span>
+      </div>
+    </div>
+    <div class="swatch-grid">
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/nal-uv-black.jpg" alt="Black"><div class="sw-name">Black</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/nal-uv-dblack.jpg" alt="D.Black"><div class="sw-name">D.Black</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/nal-uv-indian-autumn.jpg" alt="Indian Autumn"><div class="sw-name">Indian Autumn</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/nal-uv-indian-autumn-rustic.jpg" alt="Indian Autumn Rustic"><div class="sw-name">Indian Autumn Rustic</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/nal-uv-terra-red.jpg" alt="Terra Red"><div class="sw-name">Terra Red</div></div>
+    </div>
+  </div>
+</div>
+<div class="section-divider"></div>
+
+<!-- 3D WALL PANEL -->
+<div id="series-3d">
+  <div class="catalog-section">
+    <div class="series-header">
+      <div class="series-label" id="sc-3d-label">Series 05</div>
+      <h2 class="series-title" id="sc-3d-title">3D Stone Wall Panel</h2>
+      <p class="series-desc" id="sc-3d-desc">Dimensional relief panels with real stone surfaces — combining the depth of 3D texture with 100% natural stone grain. Ideal for feature walls, reception areas, and premium retail environments.</p>
+      <div class="series-badges">
+        <span class="series-badge" id="sc-3d-b1">3D Relief Texture</span>
+        <span class="series-badge" id="sc-3d-b2">Natural Stone</span>
+        <span class="series-badge" id="sc-3d-b3">Feature Walls</span>
+        <span class="series-badge" id="sc-3d-b4">5 Finishes</span>
+      </div>
+    </div>
+    <div class="swatch-grid">
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740400644.jpg" alt="Arctic Storm"><div class="sw-name">Arctic Storm</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740401024.jpg" alt="Black"><div class="sw-name">Black</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740401048.jpg" alt="Burning Forest Copper"><div class="sw-name">Burning Forest Copper</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740401069.jpg" alt="Indian Autumn Rustic"><div class="sw-name">Indian Autumn Rustic</div></div>
+      <div class="stone-swatch"><img loading="lazy" src="nalexible/upload/product/1740401087.jpg" alt="Terra Red"><div class="sw-name">Terra Red</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="section-divider"></div>
+<div class="cat-footer">
+  <p class="cat-footer-note" id="sc-note">Images sourced from <a href="https://www.nalexible.com" target="_blank">nalexible.com</a> — Taiwan exclusive distribution by Ashley Kitchen</p>
+  <a href="nalexible-stone.html" class="back-btn" id="sc-back-btn">← Back to Stone Products</a>
+</div>
+
+<script src="script.js"></script>
+<script>
+function scrollToSeries(id, btn) {
+  var el = document.getElementById('series-' + id);
+  if (!el) return;
+  var offset = 94 + 48; // lang bar + nav + sticky tabs
+  var top = el.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({ top: top, behavior: 'smooth' });
+  document.querySelectorAll('.cat-tab').forEach(function(t){ t.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+}
+
+// Hash-based deep linking
+window.addEventListener('DOMContentLoaded', function(){
+  var hash = window.location.hash.replace('#','');
+  if (hash) {
+    var btn = document.getElementById('sctab-' + hash);
+    if (btn) setTimeout(function(){ scrollToSeries(hash, btn); }, 100);
+  }
+});
+
+// Update active tab on scroll
+window.addEventListener('scroll', function(){
+  var ids = ['flexible','lumislate','easystone','uv','3d'];
+  var offset = 160;
+  for (var i = ids.length - 1; i >= 0; i--) {
+    var el = document.getElementById('series-' + ids[i]);
+    if (el && el.getBoundingClientRect().top <= offset) {
+      document.querySelectorAll('.cat-tab').forEach(function(t){ t.classList.remove('active'); });
+      var tab = document.getElementById('sctab-' + ids[i]);
+      if (tab) tab.classList.add('active');
+      break;
+    }
+  }
+});
+</script>
+</body>
+</html>
