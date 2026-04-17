@@ -168,6 +168,17 @@ nav ul li a.nav-cta::after{display:none}
   border-radius:18px;
   box-shadow:var(--soft-shadow);
   padding:16px;
+  position:relative;
+  overflow:hidden;
+}
+.selection-step::after{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--red),rgba(201,108,72,.18));
 }
 .selection-step strong{
   display:block;
@@ -189,7 +200,7 @@ nav ul li a.nav-cta::after{display:none}
   padding:22px;
   border:1px solid rgba(26,23,20,.08);
   border-radius:22px;
-  background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(255,255,255,.78));
+  background:linear-gradient(180deg,rgba(255,255,255,.97),rgba(255,255,255,.82));
   box-shadow:var(--soft-shadow);
 }
 .series-pattern-head{
@@ -283,7 +294,7 @@ nav ul li a.nav-cta::after{display:none}
   display:inline-flex;
   align-items:center;
   gap:6px;
-  border:1px solid rgba(26,23,20,.16);
+  border:1px solid rgba(26,23,20,.2);
   border-radius:999px;
   background:#fff;
   color:rgba(26,23,20,.72);
@@ -294,7 +305,7 @@ nav ul li a.nav-cta::after{display:none}
   text-transform:uppercase;
   cursor:pointer;
 }
-.series-pattern-toggle:hover{border-color:rgba(26,23,20,.28);color:#1f1a16}
+.series-pattern-toggle:hover{border-color:rgba(201,108,72,.46);color:#1f1a16}
 
 /* ── FIBERBOARD PRODUCT CARDS ── */
 .fb-card-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:36px}

@@ -427,23 +427,27 @@ nav ul li a.nav-active{color:var(--red)}
 .routing-desc{margin-top:10px;max-width:760px;font-size:13px;line-height:1.72;color:rgba(26,23,20,.62)}
 .routing-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .routing-card{background:#fff;border:1px solid rgba(26,23,20,.08);border-radius:20px;box-shadow:var(--soft-shadow);padding:16px;text-decoration:none;color:inherit;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
-.routing-card:hover{transform:translateY(-2px);box-shadow:var(--lift-shadow);border-color:rgba(26,23,20,.2)}
+.routing-card:hover{transform:translateY(-3px);box-shadow:var(--lift-shadow);border-color:rgba(201,108,72,.32)}
 .routing-card-kicker{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(26,23,20,.44);font-family:'DM Sans',sans-serif;margin-bottom:6px}
-.routing-card-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;line-height:1.02;color:var(--stone)}
+.routing-card-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;line-height:1.02;color:var(--stone)}
 .routing-card-sub{margin-top:6px;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(26,23,20,.52);font-family:'DM Sans',sans-serif}
 .routing-card-thumb{margin:12px 0 10px;border-radius:14px;overflow:hidden;aspect-ratio:16/10;background:rgba(26,23,20,.04)}
-.routing-card-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.routing-card-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease}
+.routing-card:hover .routing-card-thumb img{transform:scale(1.05)}
 .routing-card-cta{display:inline-flex;align-items:center;gap:6px;margin-top:2px;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--red);font-family:'DM Sans',sans-serif}
+.routing-card:hover .routing-card-cta{text-decoration:underline;text-underline-offset:3px}
 .routing-steps{margin-top:22px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .routing-step{background:linear-gradient(180deg, rgba(255,255,255,.94), rgba(255,255,255,.8));border:1px solid rgba(26,23,20,.08);border-radius:18px;box-shadow:var(--soft-shadow);padding:16px}
 .routing-step-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--red);font-family:'DM Sans',sans-serif;margin-bottom:8px}
 .routing-step p{font-size:12px;line-height:1.72;color:rgba(26,23,20,.62)}
 .routing-actions{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
-.routing-main-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;background:#111827;color:#fff;text-decoration:none;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;font-family:'DM Sans',sans-serif}
+.routing-main-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;background:#111827;color:#fff;text-decoration:none;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;font-family:'DM Sans',sans-serif;box-shadow:0 12px 24px rgba(17,24,39,.16)}
+.routing-main-btn:hover{background:#000}
 .routing-sub-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;border:1px solid rgba(26,23,20,.14);color:var(--stone);text-decoration:none;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;font-family:'DM Sans',sans-serif}
+.routing-sub-btn:hover{border-color:rgba(26,23,20,.26);background:rgba(26,23,20,.03)}
 
 /* Keep catalog.html short: stone routing only */
-.catalog-overview,.catalog-nav,#prod-stone .series-subnav,#series-flexible,#series-lumislate,#series-easystone,#series-uv,#series-3d,#prod-fiberboard,#prod-plye,#prod-stone ~ .section-divider{display:none}
+.catalog-overview,.catalog-nav,#prod-stone,#prod-fiberboard,#prod-plye,#prod-stone ~ .section-divider{display:none}
 
 @media(max-width:980px){
   .page-header,
