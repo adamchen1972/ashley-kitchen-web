@@ -129,6 +129,9 @@ nav ul li a.nav-cta::after{display:none}
 .family-map-thumb{margin:14px 0 14px;border-radius:16px;overflow:hidden;aspect-ratio:16/10;background:rgba(26,23,20,.04)}
 .family-map-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s ease}
 .family-map-card:hover .family-map-thumb img{transform:scale(1.06)}
+.family-map-thumb.lumi-multi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;background:#b8aa95}
+.family-map-thumb.lumi-multi img{transform:none}
+.family-map-card:hover .family-map-thumb.lumi-multi img{transform:scale(1.04)}
 .family-map-desc{font-size:12px;line-height:1.72;color:rgba(26,23,20,.62);font-weight:300;margin-bottom:14px}
 .family-map-meta{display:flex;flex-wrap:wrap;gap:8px}
 .family-map-pill{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(26,23,20,.52);border:1px solid rgba(26,23,20,.12);padding:4px 10px;border-radius:999px;font-family:'DM Sans',sans-serif;background:rgba(26,23,20,.02)}
@@ -1054,7 +1057,12 @@ nav ul li a.nav-cta::after{display:none}
         <div class="family-map-kicker">Family 02</div>
         <div class="family-map-title">LumiSlate</div>
         <div class="family-map-subtitle">22 patterns × 4 light states</div>
-        <div class="family-map-thumb"><img loading="lazy" src="images/stone/family-cards/family-lumislate.jpg" alt="LumiSlate: off, cool, natural, warm lighting states"></div>
+        <div class="family-map-thumb lumi-multi" role="img" aria-label="LumiSlate four color directions">
+          <img loading="lazy" src="assets/nalexible/stone/lumislate-study/7001_California_Gold/off_swatch.jpg" alt="">
+          <img loading="lazy" src="assets/nalexible/stone/lumislate-study/7006_Indian_Autumn/off_swatch.jpg" alt="">
+          <img loading="lazy" src="assets/nalexible/stone/lumislate-study/7011_Ocean_Green/off_swatch.jpg" alt="">
+          <img loading="lazy" src="assets/nalexible/stone/lumislate-study/7022_Terra_Red/off_swatch.jpg" alt="">
+        </div>
         <p class="family-map-desc">The translucent hero family. One pattern can shift through lights off, cool, natural, and warm lighting conditions.</p>
         <div class="family-map-meta"><span class="family-map-pill">1220×610 mm</span><span class="family-map-pill">1220×2440 mm</span><span class="family-map-pill">88 variations</span></div>
         <a class="family-map-link" href="#series-lumislate" onclick="event.stopPropagation()">More →</a>
