@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>40'HC Upper-Bound Budget Estimate</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 14mm;
+    }
+
+    :root {
+      --ink: #1d2430;
+      --muted: #5b6678;
+      --line: #d7dee8;
+      --panel: #f5f7fa;
+      --accent: #214e7a;
+      --accent-soft: #e9f0f6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "PingFang TC", "Noto Sans CJK TC", "Microsoft JhengHei", sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.45;
+    }
+
+    .page {
+      width: 100%;
+      min-height: calc(297mm - 28mm);
+      padding: 2mm 1mm;
+      page-break-after: always;
+      position: relative;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .title-wrap h1 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.15;
+      letter-spacing: 0.2px;
+    }
+
+    .title-wrap p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .page-tag {
+      text-align: right;
+      font-size: 11px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+    }
+
+    .result {
+      background: linear-gradient(135deg, var(--accent-soft), #f8fbfd);
+      border: 1px solid #cbd8e5;
+    }
+
+    .eyebrow {
+      margin: 0 0 6px;
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .headline {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.05;
+      font-weight: 800;
+    }
+
+    .subheadline {
+      margin: 6px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      color: var(--accent);
+    }
+
+    h3 {
+      margin: 0 0 6px;
+      font-size: 12px;
+      color: var(--ink);
+    }
+
+    p {
+      margin: 0 0 8px;
+      font-size: 11px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 16px;
+      font-size: 11px;
+    }
+
+    li {
+      margin: 0 0 4px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .formula {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      margin-top: 8px;
+    }
+
+    .formula pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: "SF Mono", "Menlo", monospace;
+      font-size: 11px;
+      line-height: 1.55;
+      color: #182230;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10.5px;
+      margin-top: 8px;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--line);
+      padding: 6px 7px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: #edf3f8;
+      color: #1a3959;
+      font-weight: 700;
+    }
+
+    .note {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--line);
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .footer {
+      position: absolute;
+      left: 1mm;
+      right: 1mm;
+      bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 9.5px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 6px;
+    }
+
+    .compact p:last-child,
+    .compact ul:last-child {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <div class="topbar">
+      <div class="title-wrap">
+        <h1>40 呎貨櫃極限出貨總價預估</h1>
+        <p>Page 1 of 2 | 天然纖維板 | Budgeting estimate for supplier confirmation</p>
+      </div>
+      <div class="page-tag">
+        <div>Date: 2026-04-17</div>
+        <div>Route context: Qingdao FOB to Taiwan</div>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="panel result compact">
+        <p class="eyebrow">Budget Ceiling</p>
+        <p class="headline">JPY 2,992,000</p>
+        <p class="subheadline">Estimated 40'HC FOB total upper bound</p>
+        <p class="subheadline">Approx. USD 18,815 using 1 USD = JPY 159.02</p>
+      </div>
+      <div class="panel compact">
+        <h2>結論摘要</h2>
+        <p>以附件中的天然纖維板報價表與 40 呎高櫃裝箱標準交叉估算，概念上限由 <strong>品號 13011</strong> 產生。</p>
+        <p>它的單片價格不是最高，但在裝櫃數量優勢下，<strong>整櫃總價高於其他型號</strong>，因此可作為預算上限。</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="panel compact">
+        <h2>依據資料</h2>
+        <ul>
+          <li><strong>天然繊維板.pdf</strong>: 產品品號、規格尺寸、日圓報價。</li>
+          <li><strong>包装.装箱Packaging. Packing.pdf</strong>: 40'HC 裝箱標準、每櫃片數。</li>
+          <li><strong>User instruction</strong>: 我方成本及定價打五折，以 FOB 概算。</li>
+          <li><strong>USD/JPY conversion</strong>: exchange-rates.org, updated 2026-04-16 08:25 UTC, 1 USD = JPY 159.02.</li>
+        </ul>
+      </div>
+      <div class="panel compact">
+        <h2>選定品項</h2>
+        <ul>
+          <li><strong>Code</strong>: 13011</li>
+          <li><strong>Description</strong>: NFB t17.5 × 1 + MDF t3 × 2</li>
+          <li><strong>Board sheet size</strong>: 1200 × 2400 × 23.5 mm</li>
+          <li><strong>Quoted price</strong>: JPY 17,000 / piece</li>
+          <li><strong>FOB unit cost after 50% rule</strong>: JPY 8,500 / piece</li>
+          <li><strong>Matched packing row</strong>: H = 23, 2440 × 1220, structure 2+1, quantity 352 pcs / 40'HC</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="panel compact">
+        <h2>計算公式</h2>
+        <div class="formula">
+          <pre>FOB unit cost (JPY) = Quoted price × 50%
+FOB total (JPY) = FOB unit cost × 40'HC quantity
+USD equivalent = FOB total (JPY) ÷ USDJPY rate</pre>
+        </div>
+
+        <div class="formula">
+          <pre>FOB unit cost = 17,000 × 50% = 8,500 JPY
+FOB total = 8,500 × 352 = 2,992,000 JPY
+USD equivalent = 2,992,000 ÷ 159.02 = 18,815 USD (rounded)</pre>
+        </div>
+      </div>
+      <div class="panel compact">
+        <h2>為什麼它是最高總價</h2>
+        <p>比較方式不是只看單價，而是比較每個型號的：</p>
+        <div class="formula">
+          <pre>40'HC total value = 40'HC quantity × quoted price × 50%</pre>
+        </div>
+        <p>較厚的板材雖然單價更高，但可裝片數下降很多；13011 因裝櫃數量高達 352 片，最後整櫃總價反而高於其他厚板型號，故可作為概念上限。</p>
+      </div>
+    </div>
+
+    <div class="panel compact">
+      <h2>重點假設與提醒</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>本次概算處理</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>打五折</td>
+            <td>將附件中的日圓表價直接乘 50%，視為我方 FOB 概算成本。</td>
+          </tr>
+          <tr>
+            <td>尺寸差異</td>
+            <td>報價單尺寸為 1200 × 2400；裝箱單為 2440 × 1220。此處採最近的出口裝箱標準列作概算。</td>
+          </tr>
+          <tr>
+            <td>厚度差異</td>
+            <td>13011 厚度為 23.5 mm；裝箱單最近對應列為 H = 23，因此使用 352 片作預估。</td>
+          </tr>
+          <tr>
+            <td>FOB 定義</td>
+            <td>此金額僅為 FOB 貨值概算，不含海運、保險、台灣端關務與到港費用。</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">Budget note: This page is intended for internal budget validation and supplier cross-check, not as a final booking packing confirmation.</p>
+    </div>
+
+    <div class="footer">
+      <div>Sources: 天然繊維板.pdf | 包装.装箱Packaging. Packing.pdf</div>
+      <div>1 / 2</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="topbar">
+      <div class="title-wrap">
+        <h1>40 呎貨櫃極限出貨總價預估</h1>
+        <p>Page 2 of 2 | 岩板產品 | Budgeting estimate for supplier confirmation</p>
+      </div>
+      <div class="page-tag">
+        <div>Date: 2026-04-17</div>
+        <div>Route context: India FOB to Kaohsiung</div>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="panel result compact">
+        <p class="eyebrow">Budget Ceiling</p>
+        <p class="headline">USD 335,900</p>
+        <p class="subheadline">Estimated 40'HC FOB total upper bound</p>
+        <p class="subheadline">Mixed-size extreme loading scenario</p>
+      </div>
+      <div class="panel compact">
+        <h2>結論摘要</h2>
+        <p>依附件一的 <strong>印度工廠 FOB 單價 / ㎡</strong>，再套用你提供的 40 呎櫃極限裝載條件，最高總價來自 <strong>混裝極限</strong>，不是單一大板裝載。</p>
+        <p>原因是混裝極限的總面積更高，且兩個尺寸都能套到該尺寸區間內的最高適用單價。</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="panel compact">
+        <h2>依據資料</h2>
+        <ul>
+          <li><strong>nalexible.报价单（附件一）.pdf</strong>: 印度工廠 FOB 單價 / ㎡。</li>
+          <li><strong>User-provided loading rules</strong>: 40'HC 單裝、混裝、極限裝載面積。</li>
+          <li><strong>Scope used</strong>: 只採用裝櫃規則明確提供的兩個尺寸 610 × 1220 與 1220 × 2440。</li>
+        </ul>
+      </div>
+      <div class="panel compact">
+        <h2>最高適用單價</h2>
+        <ul>
+          <li><strong>610 × 1220 mm</strong>: USD 26 / ㎡</li>
+          <li><strong>1220 × 2440 mm</strong>: USD 29 / ㎡</li>
+          <li><strong>Series used</strong>: 大理石系列 / 防火款</li>
+        </ul>
+        <p>雖然附件還有 1220 × 3050 mm 的單價，但本次裝櫃規則未提供其可裝面積，因此不納入上限計算。</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="panel compact">
+        <h2>裝載條件與公式</h2>
+        <div class="formula">
+          <pre>Single-size standard:
+7,000 ㎡ × 29 USD/㎡ = 203,000 USD
+
+Single-size extreme:
+7,100 ㎡ × 29 USD/㎡ = 205,900 USD
+
+Mixed standard:
+(4,000 ㎡ × 26) + (6,000 ㎡ × 29)
+= 278,000 USD
+
+Mixed extreme:
+(5,000 ㎡ × 26) + (7,100 ㎡ × 29)
+= 335,900 USD</pre>
+        </div>
+      </div>
+      <div class="panel compact">
+        <h2>為什麼混裝極限最高</h2>
+        <p>比較邏輯如下：</p>
+        <div class="formula">
+          <pre>40'HC FOB total = Σ(size area × highest applicable FOB / ㎡)</pre>
+        </div>
+        <p>混裝極限的總面積為 <strong>12,100 ㎡</strong>，高於單一規格裝載；同時 610 × 1220 與 1220 × 2440 兩個尺寸都可套用到各自尺寸內的最高適用 FOB 單價，因此會把整櫃總價推到最高。</p>
+      </div>
+    </div>
+
+    <div class="panel compact">
+      <h2>情境比較</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Scenario</th>
+            <th>Loading rule</th>
+            <th>FOB total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1220 × 2440 single-size standard</td>
+            <td>7,000 ㎡ × USD 29 / ㎡</td>
+            <td>USD 203,000</td>
+          </tr>
+          <tr>
+            <td>1220 × 2440 single-size extreme</td>
+            <td>7,100 ㎡ × USD 29 / ㎡</td>
+            <td>USD 205,900</td>
+          </tr>
+          <tr>
+            <td>Mixed standard</td>
+            <td>(4,000 ㎡ × 26) + (6,000 ㎡ × 29)</td>
+            <td>USD 278,000</td>
+          </tr>
+          <tr>
+            <td><strong>Mixed extreme</strong></td>
+            <td><strong>(5,000 ㎡ × 26) + (7,100 ㎡ × 29)</strong></td>
+            <td><strong>USD 335,900</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">FOB note: This amount is the export-side FOB cargo value only. Ocean freight, marine insurance, Taiwan import duties, local handling, and inland transport are excluded.</p>
+    </div>
+
+    <div class="footer">
+      <div>Source: nalexible.报价单（附件一）.pdf + user-provided container loading rules</div>
+      <div>2 / 2</div>
+    </div>
+  </section>
+</body>
+</html>
