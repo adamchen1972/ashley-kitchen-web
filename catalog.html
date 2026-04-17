@@ -446,8 +446,8 @@ nav ul li a.nav-active{color:var(--red)}
 .routing-sub-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;border:1px solid rgba(26,23,20,.14);color:var(--stone);text-decoration:none;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;font-family:'DM Sans',sans-serif}
 .routing-sub-btn:hover{border-color:rgba(26,23,20,.26);background:rgba(26,23,20,.03)}
 
-/* Keep catalog.html short: stone routing only */
-.catalog-overview,.catalog-nav,#prod-stone,#prod-fiberboard,#prod-plye,#prod-stone ~ .section-divider{display:none}
+/* Keep catalog.html short: stone routing only (plus visible overview links) */
+.catalog-nav,#prod-stone,#prod-fiberboard,#prod-plye,#prod-stone ~ .section-divider{display:none}
 
 @media(max-width:980px){
   .page-header,
@@ -553,14 +553,14 @@ nav ul li a.nav-active{color:var(--red)}
   <p class="page-desc" id="cat-desc">Start here to understand Ashley Kitchen's eight stone series quickly, then enter the deep stone library to pick exact pattern codes and request samples.</p>
   <div class="prod-tags">
     <a href="#stone-routing" class="prod-tag prod-tag-stone" id="cat-tag-stone">Stone Family Map — 8 Series</a>
-    <a href="catalog-stone.html#series-lumislate" class="prod-tag prod-tag-fiber" id="cat-tag-fiber">Jump to LumiSlate</a>
-    <a href="catalog-stone.html" class="prod-tag prod-tag-plye" id="cat-tag-plye">Open Full Stone Library</a>
+    <a href="nalexible-fiberboard.html" class="prod-tag prod-tag-fiber" id="cat-tag-fiber">Open Fiberboard</a>
+    <a href="plye.html" class="prod-tag prod-tag-plye" id="cat-tag-plye">Open Flooring</a>
   </div>
 </div>
 
 <div class="catalog-overview">
   <div class="catalog-overview-grid">
-    <a href="#prod-stone" class="overview-card light">
+    <a href="catalog-stone.html" class="overview-card light">
       <div class="overview-kicker">Product Line 01</div>
       <div class="overview-title">Nalexible Stone</div>
       <div class="overview-desc">Ultra-thin natural stone surfaces across flexible veneer, backlit translucent stone, self-adhesive panels, UV series, and 3D wall panels.</div>
@@ -570,7 +570,7 @@ nav ul li a.nav-active{color:var(--red)}
         <span class="overview-pill">Natural Stone</span>
       </div>
     </a>
-    <a href="#prod-fiberboard" class="overview-card dark">
+    <a href="nalexible-fiberboard.html" class="overview-card dark">
       <div class="overview-kicker">Product Line 02</div>
       <div class="overview-title">Fiberboard</div>
       <div class="overview-desc">Hemp-fiber structural panels and quiet door systems engineered for strength, acoustic performance, low weight, and healthier interiors.</div>
@@ -580,7 +580,7 @@ nav ul li a.nav-active{color:var(--red)}
         <span class="overview-pill">Structural Core</span>
       </div>
     </a>
-    <a href="#prod-plye" class="overview-card light">
+    <a href="plye.html" class="overview-card light">
       <div class="overview-kicker">Product Line 03</div>
       <div class="overview-title">plyē Flooring</div>
       <div class="overview-desc">Ashley Kitchen's engineered flooring line with patent click-lock construction, FSC-sourced birch plywood core stability, acoustic comfort, and a curated oak palette.</div>
