@@ -1122,6 +1122,46 @@ const T = {
   'stab-uv':        {en:'UV Series',      zh:'UV 系列'},
   'stab-3d':        {en:'3D Wall Panel',  zh:'3D 牆板'},
 
+  // ── catalog-stone.html — LumiSlate v5 Pattern Study Module ──
+  // Static labels bound by ID (setLang picks these up on language switch)
+  'lumi-pattern-label': {en:'LumiSlate · Backlit flexible stone', zh:'LumiSlate · 背光透光石材'},
+  'lumi-pattern-title': {en:'22 patterns. 4 lighting conditions. One view.', zh:'22 種花色 · 4 種光源 · 同時比較'},
+  'lumi-pattern-cta':   {en:'Click any of the 22 patterns below to preview it in all four lighting conditions.', zh:'點擊下方 22 種花色，即可同時預覽四種光源情境下的效果。'},
+  'lumi-selected-label':{en:'Showing', zh:'目前花色'},
+  'lumi-selected-hint': {en:'in four lighting conditions ↓', zh:'四種光源情境 ↓'},
+  'lumi-state-off':     {en:'Off',     zh:'關燈'},
+  'lumi-state-cool':    {en:'Cool',    zh:'冷光'},
+  'lumi-state-natural': {en:'Natural', zh:'自然光'},
+  'lumi-state-warm':    {en:'Warm',    zh:'暖光'},
+  'lumi-temp-off':      {en:'Unlit',   zh:'未亮燈'},
+  'lumi-temp-cool':     {en:'6500 K',  zh:'6500 K'},
+  'lumi-temp-natural':  {en:'4000 K',  zh:'4000 K'},
+  'lumi-temp-warm':     {en:'2700 K',  zh:'2700 K'},
+  // Dot-path keys read by the inline t() helper in catalog-stone.html
+  // (also mirrors data-i18n attributes in the LumiSlate v5 markup)
+  'catalogStone.lumi.eyebrow':        {en:'LumiSlate · Backlit flexible stone', zh:'LumiSlate · 背光透光石材'},
+  'catalogStone.lumi.heading':        {en:'22 patterns. 4 lighting conditions. One view.', zh:'22 種花色 · 4 種光源 · 同時比較'},
+  'catalogStone.lumi.cta':            {en:'Click any of the 22 patterns below to preview it in all four lighting conditions.', zh:'點擊下方 22 種花色，即可同時預覽四種光源情境下的效果。'},
+  'catalogStone.lumi.selected.label': {en:'Showing', zh:'目前花色'},
+  'catalogStone.lumi.selected.hint':  {en:'in four lighting conditions \u2193', zh:'四種光源情境 \u2193'},
+  'catalogStone.lumi.tile.view':      {en:'View \u25B8', zh:'觀看 \u25B8'},
+  'catalogStone.lumi.states.off':     {en:'Off',     zh:'關燈'},
+  'catalogStone.lumi.states.cool':    {en:'Cool',    zh:'冷光'},
+  'catalogStone.lumi.states.natural': {en:'Natural', zh:'自然光'},
+  'catalogStone.lumi.states.warm':    {en:'Warm',    zh:'暖光'},
+  'catalogStone.lumi.temp.unlit':     {en:'Unlit',   zh:'未亮燈'},
+  'catalogStone.lumi.temp.6500k':     {en:'6500 K',  zh:'6500 K'},
+  'catalogStone.lumi.temp.4000k':     {en:'4000 K',  zh:'4000 K'},
+  'catalogStone.lumi.temp.2700k':     {en:'2700 K',  zh:'2700 K'},
+  'catalogStone.seriesGrid.title':    {en:'Pattern Library', zh:'花色庫'},
+  'catalogStone.seriesGrid.note':     {en:'SKU-first pattern cards are shown here. Representative applications stay below for context.', zh:'此處先以 SKU 花色卡進行篩選，代表性應用案例保留在下方提供情境參考。'},
+  'catalogStone.seriesGrid.pending':  {en:'Image Pending', zh:'影像待補'},
+  'catalogStone.seriesGrid.showAll':  {en:'Show all patterns →', zh:'展開全部花色 →'},
+  'catalogStone.seriesGrid.collapse': {en:'Collapse', zh:'收合'},
+  'catalogStone.diy.badge1':          {en:'12 SKU-coded patterns', zh:'12 組 SKU 編碼花色'},
+  'catalogStone.diy.specValue':       {en:'Temporary SKU coding', zh:'暫用 SKU 編碼'},
+  'catalogStone.diy.specCopy':        {en:'DIY is currently shown as catalog codes (DIY-01 to DIY-12) so it can live in the same shortlist workflow as other series while source naming is normalized.', zh:'DIY 目前以目錄代碼（DIY-01 到 DIY-12）呈現，讓它在來源命名尚未統一前，也能先納入與其他系列一致的 shortlist 流程。'},
+
   // ── catalog.html — Fiberboard Product Banner ──
   'fiber-pb-label': {en:'Product Line 02 — Nalexible Fiberboard', zh:'產品系列 02 — Nalexible 纖維板'},
   'fiber-pb-title': {en:'Natural Fiber Board<br><em>&amp; Quiet Door Series</em>', zh:'天然纖維板<br><em>與靜音門系列</em>'},
@@ -1359,11 +1399,19 @@ function setLang(lang) {
     document.body.style.fontFamily = "'DM Sans', sans-serif";
   }
 
-  // Update every element that has a translation
+  // Update every element that has a translation (key = element ID)
   Object.keys(T).forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
     const val = T[id][lang];
+    if (val !== undefined) el.innerHTML = val;
+  });
+
+  // Also update any element using a data-i18n attribute (key = dot-path or flat key)
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (!key || !T[key]) return;
+    const val = T[key][lang];
     if (val !== undefined) el.innerHTML = val;
   });
 
