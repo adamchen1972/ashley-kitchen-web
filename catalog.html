@@ -434,6 +434,9 @@ nav ul li a.nav-active{color:var(--red)}
 .routing-card-thumb{margin:12px 0 10px;border-radius:14px;overflow:hidden;aspect-ratio:16/10;background:rgba(26,23,20,.04)}
 .routing-card-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease}
 .routing-card:hover .routing-card-thumb img{transform:scale(1.05)}
+.routing-card-thumb.lumi-states{aspect-ratio:1/1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;background:#b8aa95}
+.routing-card-thumb.lumi-states img{transition:none}
+.routing-card:hover .routing-card-thumb.lumi-states img{transform:none}
 .routing-card-cta{display:inline-flex;align-items:center;gap:6px;margin-top:2px;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:var(--red);font-family:'DM Sans',sans-serif}
 .routing-card:hover .routing-card-cta{text-decoration:underline;text-underline-offset:3px}
 .routing-steps{margin-top:22px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
@@ -612,7 +615,12 @@ nav ul li a.nav-active{color:var(--red)}
       <div class="routing-card-kicker">Family 02</div>
       <div class="routing-card-title">LumiSlate</div>
       <div class="routing-card-sub">22 Patterns × 4 Light States</div>
-      <div class="routing-card-thumb"><img loading="lazy" src="images/stone/family-cards/family-lumislate.jpg" alt="LumiSlate series"></div>
+      <div class="routing-card-thumb lumi-states" role="img" aria-label="LumiSlate one pattern in off, cool, natural, warm states">
+        <img loading="lazy" src="assets/nalexible/stone/lumislate-study/7006_Indian_Autumn/off_swatch.jpg" alt="">
+        <img loading="lazy" src="assets/nalexible/stone/lumislate-study/7006_Indian_Autumn/cold_swatch.jpg" alt="">
+        <img loading="lazy" src="assets/nalexible/stone/lumislate-study/7006_Indian_Autumn/natural_swatch.jpg" alt="">
+        <img loading="lazy" src="assets/nalexible/stone/lumislate-study/7006_Indian_Autumn/warm_swatch.jpg" alt="">
+      </div>
       <span class="routing-card-cta" id="cat-route-cta-2">Browse Patterns →</span>
     </a>
     <a class="routing-card" href="catalog-stone.html#series-cement">
