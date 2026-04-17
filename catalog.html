@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Full Product Catalog — Nalexible Stone · Fiberboard · plyē | Ashley Kitchen</title>
-<meta name="description" content="Browse all Nalexible products — Flexible Stone (5 series, 40+ finishes), Natural Fiber Board, Quiet Door Series, and plyē ORIGIN engineered flooring. Taiwan exclusive distributor.">
+<title>Full Product Catalog — Stone · Fiberboard · Flooring | Ashley Kitchen</title>
+<meta name="description" content="Browse all Ashley Kitchen products — Flexible Stone (5 series, 40+ finishes), Natural Fiber Board, Quiet Door Series, and Flooring Series engineered flooring. Taiwan exclusive distributor.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Noto+Serif+TC:wght@300;400&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
@@ -62,7 +62,7 @@ nav ul li a.nav-active{color:var(--red)}
 .prod-tag-plye{background:rgba(217,197,161,.08);color:rgba(217,197,161,.6);border:1px solid rgba(217,197,161,.18)}
 .prod-tag-plye:hover{background:rgba(217,197,161,.14)}
 
-/* ── STICKY PRODUCT TABS (top-level: Stone / Fiber / plyē) ── */
+/* ── STICKY PRODUCT TABS (top-level: Stone / Fiber / Flooring) ── */
 .catalog-nav{position:sticky;top:94px;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(26,23,20,.08);padding:0 72px}
 .catalog-nav-inner{max-width:1200px;margin:0 auto;display:flex;gap:0;flex-wrap:wrap}
 .cat-tab{padding:15px 20px 13px;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(26,23,20,.45);background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .2s,border-color .2s,opacity .2s;font-family:'DM Sans',sans-serif;white-space:nowrap}
@@ -145,7 +145,7 @@ nav ul li a.nav-active{color:var(--red)}
 .spec-win td{color:rgba(255,255,255,.88)!important}
 .spec-win td:first-child::before{content:'✓ ';color:var(--red);font-weight:700}
 
-/* ── plyē SWATCHES ── */
+/* ── Flooring SWATCHES ── */
 .plye-swatch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:3px}
 .plye-swatch{position:relative;overflow:hidden;cursor:default;aspect-ratio:3/2;transition:transform .22s ease,box-shadow .22s ease}
 .plye-swatch img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.01);transition:transform .55s ease}
@@ -532,9 +532,9 @@ nav ul li a.nav-active{color:var(--red)}
       <a href="#" id="cat-products-nav" class="nav-dropdown-trigger">Products ▾</a>
       <div class="nav-dropdown-menu">
         <div class="nav-dropdown-menu-inner">
-          <a href="plye.html" id="cat-nav-plye">plyē Flooring</a>
-          <a href="nalexible-stone.html" id="cat-nav-stone">Nalexible Stone</a>
-          <a href="nalexible-fiberboard.html" id="cat-nav-fiber">Nalexible Fiberboard</a>
+          <a href="plye.html" id="cat-nav-plye">Flooring</a>
+          <a href="nalexible-stone.html" id="cat-nav-stone">Stone</a>
+          <a href="nalexible-fiberboard.html" id="cat-nav-fiber">Fiberboard</a>
         </div>
       </div>
     </li>
@@ -553,11 +553,11 @@ nav ul li a.nav-active{color:var(--red)}
     <span id="cat-bc-label">Product Catalog</span>
   </div>
   <h1 class="page-title" id="cat-title">Product Catalog<br><em>Stone, Fiberboard, and Flooring</em></h1>
-  <p class="page-desc" id="cat-desc">Browse Ashley Kitchen's three product systems in one place: the 8-series stone library, Nalexible fiberboard door/panel solutions, and plyē engineered flooring.</p>
+  <p class="page-desc" id="cat-desc">Start here for the cross-system view: stone family map, fiberboard solutions, and flooring. Then open the deep stone page when you need pattern-level comparison.</p>
   <div class="prod-tags">
-    <a href="#stone-routing" class="prod-tag prod-tag-stone" id="cat-tag-stone">Stone Family Map — 8 Series</a>
+    <a href="#stone-routing" class="prod-tag prod-tag-stone" id="cat-tag-stone">Open Stone Family Map — 8 Series</a>
     <a href="nalexible-fiberboard.html" class="prod-tag prod-tag-fiber" id="cat-tag-fiber">Open Fiberboard</a>
-    <a href="plye.html" class="prod-tag prod-tag-plye" id="cat-tag-plye">Open Flooring</a>
+    <a href="#prod-plye" class="prod-tag prod-tag-plye" id="cat-tag-plye" onclick="jumpTo('prod-plye', document.getElementById('cattab-plye')); return false;">Open Flooring</a>
   </div>
 </div>
 
@@ -565,7 +565,7 @@ nav ul li a.nav-active{color:var(--red)}
   <div class="catalog-overview-grid">
     <a href="catalog-stone.html" class="overview-card light">
       <div class="overview-kicker">Product Line 01</div>
-      <div class="overview-title">Nalexible Stone</div>
+      <div class="overview-title">Stone</div>
       <div class="overview-desc">Ultra-thin natural stone surfaces across flexible veneer, backlit translucent stone, self-adhesive panels, UV series, and 3D wall panels.</div>
       <div class="overview-meta">
         <span class="overview-pill">5 Series</span>
@@ -583,12 +583,12 @@ nav ul li a.nav-active{color:var(--red)}
         <span class="overview-pill">Structural Core</span>
       </div>
     </a>
-    <a href="plye.html" class="overview-card light">
+    <a href="#prod-plye" class="overview-card light" onclick="jumpTo('prod-plye', document.getElementById('cattab-plye')); return false;">
       <div class="overview-kicker">Product Line 03</div>
-      <div class="overview-title">plyē Flooring</div>
+      <div class="overview-title">Flooring</div>
       <div class="overview-desc">Ashley Kitchen's engineered flooring line with patent click-lock construction, FSC-sourced birch plywood core stability, acoustic comfort, and a curated oak palette.</div>
       <div class="overview-meta">
-        <span class="overview-pill">10 Shades</span>
+        <span class="overview-pill">12 Shades</span>
         <span class="overview-pill">EU E1</span>
         <span class="overview-pill">Patent Lock</span>
       </div>
@@ -600,7 +600,7 @@ nav ul li a.nav-active{color:var(--red)}
   <div class="routing-head">
     <div class="routing-eyebrow" id="cat-route-eyebrow">Stone Family Map</div>
     <h2 class="routing-title" id="cat-route-title">Eight series. One decision flow.</h2>
-    <p class="routing-desc" id="cat-route-desc">Choose a family first on this page. Then open the deep stone catalog to compare pattern codes and finalize sample requests with Ashley Kitchen.</p>
+    <p class="routing-desc" id="cat-route-desc">Use this page to pick the right family first. Then move to the deep stone library to compare SKU codes, shortlist patterns, and request samples with Ashley Kitchen.</p>
   </div>
 
   <div class="routing-grid">
@@ -674,17 +674,17 @@ nav ul li a.nav-active{color:var(--red)}
     </div>
     <div class="routing-step">
       <div class="routing-step-label" id="cat-step-2-label">Step 2</div>
-      <p id="cat-step-2">Open the deep stone page and shortlist pattern codes.</p>
+      <p id="cat-step-2">Open the deep stone library and shortlist exact SKU codes.</p>
     </div>
     <div class="routing-step">
       <div class="routing-step-label" id="cat-step-3-label">Step 3</div>
-      <p id="cat-step-3">Send selected codes to Ashley Kitchen for samples and project matching.</p>
+      <p id="cat-step-3">Send shortlisted codes to Ashley Kitchen for sample planning and project matching.</p>
     </div>
   </div>
 
   <div class="routing-actions">
-    <a class="routing-main-btn" href="catalog-stone.html" id="cat-route-main-btn">Open Stone Library →</a>
-    <a class="routing-sub-btn" href="contact.html" id="cat-route-sub-btn">Request Samples</a>
+    <a class="routing-main-btn" href="catalog-stone.html" id="cat-route-main-btn">Open Deep Stone Library →</a>
+    <a class="routing-sub-btn" href="contact.html" id="cat-route-sub-btn">Request Stone Samples</a>
   </div>
 </div>
 
@@ -695,7 +695,7 @@ nav ul li a.nav-active{color:var(--red)}
     <div class="cat-tab-divider"></div>
     <button class="cat-tab" onclick="jumpTo('prod-fiberboard',this)" id="cattab-fiber">Fiberboard</button>
     <div class="cat-tab-divider"></div>
-    <button class="cat-tab" onclick="jumpTo('prod-plye',this)" id="cattab-plye">plyē</button>
+    <button class="cat-tab" onclick="jumpTo('prod-plye',this)" id="cattab-plye">Flooring</button>
   </div>
 </div>
 
@@ -707,7 +707,7 @@ nav ul li a.nav-active{color:var(--red)}
   <div class="product-banner">
     <div class="pb-line">
       <div class="pb-line-bar"></div>
-      <div class="pb-label" id="stone-pb-label">Product Line 01 — Nalexible Stone</div>
+      <div class="pb-label" id="stone-pb-label">Product Line 01 — Stone</div>
     </div>
     <div class="pb-title" id="stone-pb-title">Flexible Stone<br><em>Veneer &amp; Panels</em></div>
     <p class="pb-desc" id="stone-pb-desc">100% natural stone in five clearer directions: premium marble finishes, calmer cement tones, hospitality-facing sandstone, LumiSlate translucent stone, and DIY-ready quick-install wall systems.</p>
@@ -877,7 +877,7 @@ nav ul li a.nav-active{color:var(--red)}
   <div class="product-banner">
     <div class="pb-line">
       <div class="pb-line-bar"></div>
-      <div class="pb-label" id="fiber-pb-label">Product Line 02 — Nalexible Fiberboard</div>
+      <div class="pb-label" id="fiber-pb-label">Product Line 02 — Fiberboard</div>
     </div>
     <div class="pb-title" id="fiber-pb-title">Natural Fiber Board<br><em>&amp; Quiet Door Series</em></div>
     <p class="pb-desc" id="fiber-pb-desc">Hemp fibers + bio-based resins. Steel-grade strength at 60% less weight — zero formaldehyde, mold-proof, and fully recyclable. Engineered for doors, partitions, furniture, and structural panels.</p>
@@ -954,7 +954,7 @@ nav ul li a.nav-active{color:var(--red)}
       <div class="series-header">
         <div class="series-label" id="fb-door-label">Category 02</div>
         <h2 class="series-title" id="fb-door-title">Quiet Door Series</h2>
-        <p class="series-desc" id="fb-door-desc">Interior doors built on Nalexible Fiber Board substrate — available in Acoustic, Magnetic, and standard variants. The continuous hemp fibre topology absorbs sound across all frequency ranges.</p>
+        <p class="series-desc" id="fb-door-desc">Interior doors built on Ashley Kitchen Fiber Board substrate — available in Acoustic, Magnetic, and standard variants. The continuous hemp fibre topology absorbs sound across all frequency ranges.</p>
         <div class="series-badges">
           <span class="series-badge" id="fb-door-b1">Full-Frequency Absorption</span>
           <span class="series-badge" id="fb-door-b2">Acoustic / Magnetic Variants</span>
@@ -967,7 +967,7 @@ nav ul li a.nav-active{color:var(--red)}
           <div class="fb-card-label">
             <div class="fb-type" id="fb-door-c1-type">Interior Doors</div>
             <div class="fb-name" id="fb-door-c1-name">Molded Panel &amp; Quiet Doors</div>
-            <div class="fb-desc" id="fb-door-c1-desc">Thermoformed surface panels over a Nalexible Fiber Board core. Acoustic, magnetic and standard door variants available.</div>
+            <div class="fb-desc" id="fb-door-c1-desc">Thermoformed surface panels over a Ashley Kitchen Fiber Board core. Acoustic, magnetic and standard door variants available.</div>
           </div>
         </div>
         <div class="fb-card">
@@ -989,13 +989,13 @@ nav ul li a.nav-active{color:var(--red)}
       <div class="series-header">
         <div class="series-label" id="fb-spec-label">Technical Data</div>
         <h2 class="series-title" id="fb-spec-title">Specifications</h2>
-        <p class="series-desc" id="fb-spec-desc">Key performance data for Nalexible Natural Fiber Board versus traditional materials.</p>
+        <p class="series-desc" id="fb-spec-desc">Key performance data for Ashley Kitchen Natural Fiber Board versus traditional materials.</p>
       </div>
       <table class="spec-table">
         <thead>
           <tr>
             <th id="fb-sp-col1">Property</th>
-            <th id="fb-sp-col2">Nalexible Fiber Board</th>
+            <th id="fb-sp-col2">Ashley Kitchen Fiber Board</th>
             <th id="fb-sp-col3">Standard MDF</th>
             <th id="fb-sp-col4">Plywood</th>
           </tr>
@@ -1039,23 +1039,23 @@ nav ul li a.nav-active{color:var(--red)}
           </tr>
         </tbody>
       </table>
-      <p class="section-note" id="fb-spec-note">Data sourced from Nalexible manufacturer specifications. Contact Ashley Kitchen for certified test reports.</p>
+      <p class="section-note" id="fb-spec-note">Data sourced from Ashley Kitchen manufacturer specifications. Contact Ashley Kitchen for certified test reports.</p>
     </div>
   </div>
 </div><!-- end #prod-fiberboard -->
 
 
 <!-- ══════════════════════════════════════════════════════════
-     plyē — Product Line
+     Flooring — Product Line
 ══════════════════════════════════════════════════════════ -->
 <div class="section-divider"></div>
 <div id="prod-plye" class="segment-light">
   <div class="product-banner">
     <div class="pb-line">
       <div class="pb-line-bar"></div>
-      <div class="pb-label" id="plye-pb-label">Product Line 03 — plyē Flooring</div>
+      <div class="pb-label" id="plye-pb-label">Product Line 03 — Flooring</div>
     </div>
-    <div class="pb-title" id="plye-pb-title"><em>plyē</em> ORIGIN Series<br>Engineered Flooring</div>
+    <div class="pb-title" id="plye-pb-title"><em>Flooring</em> ORIGIN Series<br>Engineered Flooring</div>
     <p class="pb-desc" id="plye-pb-desc">9mm engineered flooring with patent four-direction click-lock system (M677196). 12 oak shades, EU E1 certified, 19dB sound reduction. Factory-direct distribution from Taiwan.</p>
     <div class="pb-badges">
       <span class="pb-badge" id="plye-pb-b1">12 Color Shades</span>
@@ -1065,7 +1065,7 @@ nav ul li a.nav-active{color:var(--red)}
     </div>
   </div>
 
-  <!-- plyē Sub-Nav -->
+  <!-- Flooring Sub-Nav -->
   <div class="series-subnav">
     <div class="series-subnav-inner">
       <button class="series-tab active" onclick="scrollToPlye('plye-origin',this)" id="plyetab-origin">ORIGIN Series — All 12 Shades</button>
@@ -1184,7 +1184,7 @@ function scrollToFb(id, btn) {
   if (btn) btn.classList.add('active');
 }
 
-/* ── plyē sub-nav ── */
+/* ── Flooring sub-nav ── */
 function scrollToPlye(id, btn) {
   var el = document.getElementById(id);
   if (!el) return;

@@ -75,7 +75,7 @@ nav ul li a.nav-cta::after{display:none}
 .prod-tag-plye{background:rgba(217,197,161,.08);color:rgba(217,197,161,.6);border:1px solid rgba(217,197,161,.18)}
 .prod-tag-plye:hover{background:rgba(217,197,161,.14)}
 
-/* ── STICKY PRODUCT TABS (top-level: Stone / Fiber / plyē) ── */
+/* ── STICKY PRODUCT TABS (top-level: Stone / Fiber / Flooring) ── */
 .catalog-nav{position:sticky;top:94px;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(26,23,20,.08);padding:0 72px}
 .catalog-nav-inner{max-width:1200px;margin:0 auto;display:flex;gap:0;flex-wrap:wrap}
 .cat-tab{padding:15px 20px 13px;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(26,23,20,.45);background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .2s,border-color .2s,opacity .2s;font-family:'DM Sans',sans-serif;white-space:nowrap}
@@ -350,7 +350,7 @@ nav ul li a.nav-cta::after{display:none}
 .spec-win td{color:rgba(255,255,255,.88)!important}
 .spec-win td:first-child::before{content:'✓ ';color:var(--red);font-weight:700}
 
-/* ── plyē SWATCHES ── */
+/* ── Flooring SWATCHES ── */
 .plye-swatch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:3px}
 .plye-swatch{position:relative;overflow:hidden;cursor:default;aspect-ratio:3/2;transition:transform .22s ease,box-shadow .22s ease}
 .plye-swatch img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.01);transition:transform .55s ease}
@@ -1020,25 +1020,25 @@ nav ul li a.nav-cta::after{display:none}
     </li>
     <li><a href="catalog.html" class="nav-active" id="cat-catalog-nav">Catalog</a></li>
     <li><a href="applications.html" id="cat-app-nav">Applications</a></li>
-    <li><a href="projects.html" id="cat-proj-nav">Case Studies</a></li>
+    <li><a href="projects.html" id="cat-proj-nav">Projects</a></li>
     <li><a href="about.html" id="cat-about-nav">About</a></li>
-    <li><a href="contact.html" class="nav-cta" id="cat-cta-nav">Request Samples</a></li>
+    <li><a href="contact.html" class="nav-cta" id="cat-cta-nav">Request a Sample</a></li>
   </ul>
 </nav>
 
 <!-- PAGE HEADER -->
 <div class="page-header">
   <div class="breadcrumb">
-    <a href="index.html" id="cat-bc-home">Home</a> /
-    <a href="catalog.html" id="cat-bc-parent">Catalog</a> /
-    <span id="cat-bc-label">Stone Catalog</span>
+    <a href="index.html" id="cat-stone-bc-home">Home</a> /
+    <a href="catalog.html" id="cat-stone-bc-parent">Catalog</a> /
+    <span id="cat-stone-bc-label">Stone Catalog</span>
   </div>
-  <h1 class="page-title" id="cat-title">Ashley Kitchen Stone Systems<br><em>Full family library</em></h1>
-  <p class="page-desc" id="cat-desc">This is the full stone catalog layer: eight families, shared size logic, LumiSlate lighting behaviour, and the family-level structure that later expands into pattern detail, technical references, and sample direction.</p>
+  <h1 class="page-title" id="cat-stone-title">Ashley Kitchen Stone Systems<br><em>Deep family &amp; pattern library</em></h1>
+  <p class="page-desc" id="cat-stone-desc">You are now in the deep stone layer: compare families, review SKU pattern grids, then send shortlisted codes for sample and technical follow-up.</p>
   <div class="prod-tags">
-    <a href="catalog.html" class="prod-tag prod-tag-stone" id="cat-tag-parent">Back to Catalog Landing</a>
+    <a href="catalog.html#stone-routing" class="prod-tag prod-tag-stone" id="cat-tag-parent">Back to Stone Family Map</a>
     <a href="#series-lumislate" class="prod-tag prod-tag-fiber" id="cat-tag-lumi">Jump to LumiSlate</a>
-    <a href="#series-sandstone" class="prod-tag prod-tag-plye" id="cat-tag-exterior">Exterior Families</a>
+    <a href="contact.html" class="prod-tag prod-tag-plye" id="cat-tag-exterior">Request Stone Samples</a>
   </div>
 </div>
 
@@ -1732,9 +1732,9 @@ function getPatternGridColumns() {
 
 const SERIES_PATTERN_LIBRARY = {
   cement: [
-    { sku: '4001', img: 'assets/nalexible/stone/family-swatches/cement-series-representative.png' },
-    { sku: '4002', img: 'assets/nalexible/stone/family-swatches/cement-series-direction-dark.jpg' },
-    { sku: '4003', img: 'assets/nalexible/stone/family-swatches/cement-series-direction-neutral.png' }
+    { sku: '4001', img: 'nalexible/upload/product/1740452209.jpg' },
+    { sku: '4002', img: 'nalexible/upload/product/1740397345.jpg' },
+    { sku: '4003', img: 'nalexible/upload/product/1740397367.jpg' }
   ],
   marble: [
     { sku: '1011' }, { sku: '1012' }, { sku: '1013' }, { sku: '1014' }, { sku: '1015' }, { sku: '1016' }, { sku: '1017' }, { sku: '1018' },

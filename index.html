@@ -56,8 +56,8 @@
     "availableLanguage": ["English", "Chinese"]
   },
   "brand": [
-    {"@type": "Brand", "name": "plyē"},
-    {"@type": "Brand", "name": "Nalexible"}
+    {"@type": "Brand", "name": "Flooring"},
+    {"@type": "Brand", "name": "Ashley Kitchen"}
   ],
   "areaServed": ["TW", "US", "EU", "AU", "NZ"]
 }
@@ -98,6 +98,14 @@ body{
 .lang-btn.active{color:var(--stone)}
 .lang-btn.active::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--red)}
 .lang-sep{color:rgba(26,23,20,.22);font-size:10px;user-select:none}
+.ab-switch{display:flex;align-items:center;gap:4px;margin-left:8px}
+.ab-switch-btn{
+  min-width:26px;height:22px;padding:0 8px;border-radius:999px;border:1px solid rgba(17,24,39,.14);
+  background:rgba(255,255,255,.72);color:rgba(17,24,39,.72);font-size:10px;letter-spacing:1.2px;
+  text-transform:uppercase;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all .2s;
+}
+.ab-switch-btn:hover{border-color:rgba(17,24,39,.28);color:#111827}
+.ab-switch-btn.active{background:#111827;color:#fff;border-color:#111827}
 
 /* NAV — transparent over hero, white after scroll */
 nav{position:fixed;top:34px;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:66px;background:rgba(248,248,250,.82);backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);border-bottom:1px solid rgba(15,23,42,.06);transition:background .4s ease,box-shadow .4s ease,border-color .4s ease}
@@ -331,7 +339,7 @@ section#applications .s-title{color:var(--stone)!important}
 .gi-code{font-size:9px;letter-spacing:2px;color:var(--sand);text-transform:uppercase;margin-bottom:3px}
 .gi-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:300;color:white}
 
-/* NALEXIBLE */
+/* STONE SHOWCASE */
 .nal-showcase{background:#F0EDE8;padding:96px 72px}
 .nal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:52px}
 .nal-card{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:3/4}
@@ -940,6 +948,31 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 }
 .home-section-title em{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--red)}
 .home-section-copy{font-size:15px;line-height:1.82;color:rgba(74,74,74,.68);max-width:560px}
+.ab-b-only{display:none!important}
+body.ab-new .ab-b-only{display:block!important}
+body.ab-new .ab-b-only.inline{display:inline!important}
+body.ab-new .ab-b-only.flex{display:flex!important}
+body.ab-new .ab-b-only.grid{display:grid!important}
+body.ab-new .ab-a-only{display:none!important}
+.ab-variant-badge{
+  position:fixed;left:14px;bottom:14px;z-index:500;
+  background:rgba(17,24,39,.88);color:#fff;border:1px solid rgba(255,255,255,.18);
+  border-radius:999px;padding:6px 10px;font-size:10px;letter-spacing:1.1px;text-transform:uppercase;
+  font-family:'DM Sans',sans-serif
+}
+.home-decision-flow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.home-decision-step{
+  font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:rgba(17,24,39,.75);
+  border:1px solid rgba(17,24,39,.14);border-radius:999px;padding:7px 11px;
+  background:rgba(255,255,255,.8);font-family:'DM Sans',sans-serif
+}
+.home-proof-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.home-proof-card{
+  border:1px solid rgba(17,24,39,.08);border-radius:18px;background:rgba(255,255,255,.76);
+  padding:16px;box-shadow:var(--shadow-soft)
+}
+.home-proof-label{font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:rgba(74,74,74,.56);margin-bottom:8px}
+.home-proof-copy{font-size:14px;line-height:1.65;color:rgba(17,24,39,.78)}
 
 .support-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
 .support-card{
@@ -993,11 +1026,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 @media(max-width:1100px){
   .home-hero-grid,.support-grid,.project-grid-3,.next-grid{grid-template-columns:1fr 1fr}
   .home-section-head{flex-direction:column;align-items:flex-start}
+  .home-proof-strip{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
   .home-shell,.home-section{padding-left:16px;padding-right:16px}
   .home-hero{padding:14px;border-radius:26px}
-  .support-grid,.project-grid-3,.next-grid{grid-template-columns:1fr}
+  .support-grid,.project-grid-3,.next-grid,.home-proof-strip{grid-template-columns:1fr}
   .home-hero-stage{min-height:700px}
   .home-hero-copy{left:18px;right:18px;bottom:82px;max-width:none}
   .home-hero-title{font-size:clamp(40px,13vw,60px);max-width:none}
@@ -1014,6 +1048,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 </head>
 <body data-page="home">
 <a href="#main-content" class="skip-link">Skip to content</a>
+<div class="ab-variant-badge" id="ab-variant-badge">Homepage A (old)</div>
 
 <!-- ═══ VERSION B — A/B TEST — WORLD-CLASS REDESIGN ═══ -->
 <header role="banner">
@@ -1022,6 +1057,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
   <button class="lang-btn active" id="btn-en" onclick="setLang('en')">English</button>
   <span class="lang-sep">&nbsp;|&nbsp;</span>
   <button class="lang-btn" id="btn-zh" onclick="setLang('zh')">繁體中文</button>
+  <span class="lang-sep">&nbsp;|&nbsp;</span>
+  <div class="ab-switch" aria-label="Homepage variant switch">
+    <button class="ab-switch-btn" id="ab-btn-old" type="button" aria-pressed="false">A</button>
+    <button class="ab-switch-btn" id="ab-btn-new" type="button" aria-pressed="false">B</button>
+  </div>
 </div>
 
 <!-- NAV -->
@@ -1035,9 +1075,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
       <a href="#products" id="nl-products" class="nav-dropdown-trigger">Products ▾</a>
       <div class="nav-dropdown-menu">
         <div class="nav-dropdown-menu-inner">
-          <a href="plye.html" id="nl-plye-d"><span style="text-transform:none">plyē</span> Flooring</a>
-          <a href="nalexible-stone.html" id="nl-stone-d">Nalexible Stone</a>
-          <a href="nalexible-fiberboard.html" id="nl-fiber-d">Nalexible Fiberboard</a>
+          <a href="plye.html" id="nl-plye-d">Flooring</a>
+          <a href="nalexible-stone.html" id="nl-stone-d">Stone</a>
+          <a href="nalexible-fiberboard.html" id="nl-fiber-d">Fiberboard</a>
         </div>
       </div>
     </li>
@@ -1056,7 +1096,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 <!-- Mobile nav overlay -->
 <div class="nav-overlay" aria-label="Mobile navigation" id="nav-overlay">
   <a href="catalog.html" onclick="closeNavOverlay()" id="nov-catalog">Catalog</a>
-  <a href="plye.html" onclick="closeNavOverlay()" id="nov-plye"><span style="text-transform:none">plyē</span></a>
+  <a href="plye.html" onclick="closeNavOverlay()" id="nov-plye">Flooring</a>
   <a href="nalexible-stone.html" onclick="closeNavOverlay()" id="nov-stone">Stone</a>
   <a href="nalexible-fiberboard.html" onclick="closeNavOverlay()" id="nov-fiber">Fiberboard</a>
   <a href="applications.html" onclick="closeNavOverlay()" id="nov-applications">Applications</a>
@@ -1084,11 +1124,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
       </div>
       <div class="home-hero-copy">
         <div class="home-kicker">Ashley Kitchen</div>
-        <h1 class="home-hero-title">Innovative<br>materials for<br><em>beautifully</em><br><em>considered</em><br>architecture</h1>
-        <p class="home-hero-sub">Innovation, taste, and beauty.</p>
+        <h1 class="home-hero-title ab-a-only">Innovative<br>materials for<br><em>beautifully</em><br><em>considered</em><br>architecture</h1>
+        <h1 class="home-hero-title ab-b-only" data-i18n="home.ab.hero.title">Three systems.<br>One clear path<br>to your next<br><em>material</em><br><em>decision.</em></h1>
+        <p class="home-hero-sub ab-a-only">Innovation, taste, and beauty.</p>
+        <p class="home-hero-sub ab-b-only" data-i18n="home.ab.hero.sub">Start with the right family, compare pattern options, and move quickly into sample-ready choices.</p>
         <div class="home-hero-actions">
-          <a href="catalog.html" class="btn-red">Explore Catalog</a>
-          <a href="contact.html" class="btn-red-outline">Request a Sample</a>
+          <a href="catalog.html" class="btn-red" data-ab-track="hero-catalog">Explore Catalog</a>
+          <a href="contact.html" class="btn-red-outline" data-ab-track="hero-sample">Request a Sample</a>
+        </div>
+        <div class="home-decision-flow ab-b-only flex">
+          <span class="home-decision-step" data-i18n="home.ab.hero.step1">Choose family</span>
+          <span class="home-decision-step" data-i18n="home.ab.hero.step2">Compare patterns</span>
+          <span class="home-decision-step" data-i18n="home.ab.hero.step3">Request samples</span>
         </div>
       </div>
       <div class="home-slide-caption">
@@ -1108,7 +1155,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
   </div>
 </section>
 
-<section class="home-section">
+<section class="home-section" id="audiences">
   <div class="home-section-inner">
     <div class="support-grid">
       <article class="support-card">
@@ -1148,25 +1195,25 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
       <a href="plye.html" class="figma-prod-card">
         <img loading="lazy" src="images/plye/plye-lifestyle-open-plan-bright-oak.jpg" alt="Ashley Kitchen flooring system with plye installed in a bright residential interior">
         <div class="figma-prod-info">
-          <div class="figma-prod-brand" style="font-family:'Poppins',sans-serif;font-size:28px;font-weight:700;letter-spacing:-0.5px">plyē</div>
+          <div class="figma-prod-brand" style="font-family:'Poppins',sans-serif;font-size:28px;font-weight:700;letter-spacing:-0.5px">Flooring</div>
           <div class="figma-prod-type">DIY-Ready Flooring</div>
           <p class="figma-prod-desc">A quieter, cleaner flooring system built around click-lock installation, export-ready documentation, and easier DIY conversations.</p>
-          <span class="figma-prod-link">Explore plyē →</span>
+          <span class="figma-prod-link">Explore Flooring →</span>
         </div>
       </a>
       <a href="nalexible-stone.html" class="figma-prod-card">
-        <img loading="lazy" src="assets/nalexible/stone/images/3d-wall-panel-lounge.jpg" alt="Nalexible 3D wall panel used as a sculptural lounge feature wall">
+        <img loading="lazy" src="assets/nalexible/stone/images/3d-wall-panel-lounge.jpg" alt="Ashley Kitchen 3D wall panel used as a sculptural lounge feature wall">
         <div class="figma-prod-info">
-          <div class="figma-prod-brand">Nalexible</div>
+          <div class="figma-prod-brand">Stone</div>
           <div class="figma-prod-type">Stone Systems</div>
           <p class="figma-prod-desc">Real stone re-engineered into thinner, lighter, more flexible surfaces for facades, interiors, and backlit architectural moments.</p>
           <span class="figma-prod-link">Explore Stone →</span>
         </div>
       </a>
       <a href="nalexible-fiberboard.html" class="figma-prod-card">
-        <img loading="lazy" src="images/fiberboard/fb-door-elegant.jpg" alt="Nalexible fiberboard door system in a quiet residential interior">
+        <img loading="lazy" src="images/fiberboard/fb-door-elegant.jpg" alt="Ashley Kitchen fiberboard door system in a quiet residential interior">
         <div class="figma-prod-info">
-          <div class="figma-prod-brand">Nalexible</div>
+          <div class="figma-prod-brand">Fiberboard</div>
           <div class="figma-prod-type">Fiberboard Systems</div>
           <p class="figma-prod-desc">Natural fiberboard developed into door, partition, and quiet-room systems for calmer interiors and lighter structural logic.</p>
           <span class="figma-prod-link">Explore Fiberboard →</span>
@@ -1217,9 +1264,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
     </div>
     <div class="project-grid-3">
       <a href="projects.html" class="project-card-clean">
-        <img loading="lazy" src="images/stone/nal-case-hotel-reception.jpg" alt="Hospitality reception project with Nalexible stone surfaces">
+        <img loading="lazy" src="images/stone/nal-case-hotel-reception.jpg" alt="Hospitality reception project with Ashley Kitchen stone surfaces">
         <div class="project-card-meta">
-          <div class="proj-cat">Commercial · Nalexible Stone</div>
+          <div class="proj-cat">Commercial · Stone</div>
           <div class="proj-name">Feature Reception Lobby</div>
           <div class="proj-loc">Taipei · Taiwan</div>
         </div>
@@ -1227,13 +1274,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
       <a href="projects.html" class="project-card-clean">
         <img loading="lazy" src="images/plye/plye-lifestyle-minimalist-living-new-taipei.jpg" alt="Minimalist living room project with plye flooring">
         <div class="project-card-meta">
-          <div class="proj-cat">Residential · plyē Flooring</div>
+          <div class="proj-cat">Residential · Flooring</div>
           <div class="proj-name">Minimalist Living Room</div>
           <div class="proj-loc">New Taipei · Taiwan</div>
         </div>
       </a>
       <a href="projects.html" class="project-card-clean">
-        <img loading="lazy" src="images/fiberboard/fb-commercial-partitions.jpg" alt="Commercial partition project using Nalexible fiberboard systems">
+        <img loading="lazy" src="images/fiberboard/fb-commercial-partitions.jpg" alt="Commercial partition project using Ashley Kitchen fiberboard systems">
         <div class="project-card-meta">
           <div class="proj-cat">Workplace · Fiberboard Systems</div>
           <div class="proj-name">Quiet Partition Office</div>
@@ -1242,7 +1289,30 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
       </a>
     </div>
     <div style="text-align:center;margin-top:36px">
-      <a href="projects.html" class="proj-all-btn-center">View All Projects</a>
+      <a href="projects.html" class="proj-all-btn-center" data-ab-track="projects-view-all">View All Projects</a>
+    </div>
+  </div>
+</section>
+
+<section class="home-section ab-b-only" id="home-proof">
+  <div class="home-section-inner">
+    <div class="home-proof-strip">
+      <article class="home-proof-card">
+        <div class="home-proof-label" data-i18n="home.ab.proof.1.label">Catalog Clarity</div>
+        <p class="home-proof-copy" data-i18n="home.ab.proof.1.copy">Overview first, then deep pattern libraries, so users can shortlist faster without getting lost.</p>
+      </article>
+      <article class="home-proof-card">
+        <div class="home-proof-label" data-i18n="home.ab.proof.2.label">Sample Support</div>
+        <p class="home-proof-copy" data-i18n="home.ab.proof.2.copy">Move from inspiration to physical sample checks with structured support from Ashley Kitchen.</p>
+      </article>
+      <article class="home-proof-card">
+        <div class="home-proof-label" data-i18n="home.ab.proof.3.label">Install Guidance</div>
+        <p class="home-proof-copy" data-i18n="home.ab.proof.3.copy">DIY and project teams both get practical next-step guidance before final specification.</p>
+      </article>
+      <article class="home-proof-card">
+        <div class="home-proof-label" data-i18n="home.ab.proof.4.label">Bilingual Workflow</div>
+        <p class="home-proof-copy" data-i18n="home.ab.proof.4.copy">English and Chinese content stay aligned so decisions remain clear across teams and stakeholders.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -1270,16 +1340,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
         <a href="plye.html#diy-installation">View install guidance →</a>
       </article>
       <article class="next-card">
+        <div class="next-card-label">Catalog Deep Dive</div>
+        <h3>Compare stone patterns by family.</h3>
+        <p>Use the dedicated stone catalog flow to shortlist patterns faster across Ordinary, LumiSlate, Cement, Marble, Sandstone, Metal, Copper/Rust, and DIY Adhesive series.</p>
+        <a href="catalog-stone.html">Open stone library →</a>
+      </article>
+      <article class="next-card">
         <div class="next-card-label">Compliance</div>
         <h3>Move into export-facing conversations.</h3>
         <p>Use compliance and documentation support to make early distributor, export, and specification conversations easier to explain.</p>
         <a href="about.html#support-modes">See support logic →</a>
-      </article>
-      <article class="next-card">
-        <div class="next-card-label">Projects</div>
-        <h3>Move from interest to specification.</h3>
-        <p>Use applications and projects when curiosity needs to turn into fit, confidence, and a more concrete specification direction.</p>
-        <a href="applications.html">Explore applications →</a>
       </article>
     </div>
   </div>
@@ -1297,7 +1367,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
       </div>
       <p class="f-tagline" id="f-tagline">Curated material systems for clearer product choices.<br>Built for DIY buyers, specifiers, and export-facing conversations.</p>
       <div class="f-about" id="f-about-block">
-        <p id="f-about-text">Ashley Kitchen curates <strong>plyē</strong> flooring systems and <strong>Nalexible</strong> stone and fiberboard families for readers who need selection logic, samples, installation guidance, and clearer next steps. Headquartered in Neihu, Taipei.</p>
+        <p id="f-about-text">Ashley Kitchen curates flooring, stone, and fiberboard systems for clearer product selection, sample planning, and practical specification support. Headquartered in Neihu, Taipei.</p>
         <div class="f-stats">
           <div><span class="f-stat-n">30+</span><span class="f-stat-l" id="f-stat1">Years</span></div>
           <div><span class="f-stat-n">3</span><span class="f-stat-l" id="f-stat2">Families</span></div>
@@ -1309,9 +1379,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
       <h4 id="fc1-h">Products</h4>
       <ul>
         <li><a href="catalog.html" id="idx-fc-l1">Catalog Overview</a></li>
-        <li><a href="plye.html" id="idx-fc-l2">plyē Flooring</a></li>
-        <li><a href="nalexible-stone.html" id="idx-fc-l3">Nalexible Stone</a></li>
-        <li><a href="nalexible-fiberboard.html" id="idx-fc-l4">Nalexible Fiberboard</a></li>
+        <li><a href="plye.html" id="idx-fc-l2">Flooring</a></li>
+        <li><a href="nalexible-stone.html" id="idx-fc-l3">Stone</a></li>
+        <li><a href="nalexible-fiberboard.html" id="idx-fc-l4">Fiberboard</a></li>
         <li><a href="applications.html" id="idx-fc-l5">Application Guide</a></li>
       </ul>
     </div>
@@ -1353,8 +1423,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
   <div class="footer-bottom">
     <div class="f-copy">© 2026 Ashley Kitchen · No. 32, Alley 18, Lane 478, Ruiguang Rd, Neihu, Taipei · <a href="mailto:sales@ashleykitchen.com.tw">sales@ashleykitchen.com.tw</a></div>
     <div class="f-brands">
-      <span class="f-pill">plyē</span>
-      <span class="f-pill">NALEXIBLE</span>
+      <span class="f-pill">ASHLEY KITCHEN</span>
+      <span class="f-pill">MATERIAL SYSTEMS</span>
       <span class="f-pill" id="idx-mit-footer">Made in Taiwan 🇹🇼</span>
     </div>
   </div>
@@ -1404,6 +1474,86 @@ function handleInquiry(e) {
     });
   return false;
 }
+</script>
+
+<script>
+(function(){
+  var KEY = 'ak_home_ab_v1';
+  var params = new URLSearchParams(window.location.search);
+  var forced = (params.get('ab') || '').toLowerCase();
+  var variant = null;
+
+  if (forced === 'new' || forced === 'b') variant = 'new';
+  if (forced === 'old' || forced === 'a') variant = 'old';
+  if (!variant) variant = localStorage.getItem(KEY);
+  if (!variant) variant = 'old';
+
+  localStorage.setItem(KEY, variant);
+  document.body.classList.add(variant === 'new' ? 'ab-new' : 'ab-old');
+  document.body.setAttribute('data-ab-home', variant);
+
+  var badge = document.getElementById('ab-variant-badge');
+  if (badge) badge.textContent = variant === 'new' ? 'Homepage B (new)' : 'Homepage A (old)';
+  var btnOld = document.getElementById('ab-btn-old');
+  var btnNew = document.getElementById('ab-btn-new');
+  function setAbButtonState(v) {
+    if (!btnOld || !btnNew) return;
+    var oldActive = v === 'old';
+    btnOld.classList.toggle('active', oldActive);
+    btnNew.classList.toggle('active', !oldActive);
+    btnOld.setAttribute('aria-pressed', oldActive ? 'true' : 'false');
+    btnNew.setAttribute('aria-pressed', !oldActive ? 'true' : 'false');
+  }
+  function switchVariant(v) {
+    var p = new URLSearchParams(window.location.search);
+    p.set('ab', v);
+    localStorage.setItem(KEY, v);
+    window.location.search = p.toString();
+  }
+  setAbButtonState(variant);
+  if (btnOld) btnOld.addEventListener('click', function(){ switchVariant('old'); });
+  if (btnNew) btnNew.addEventListener('click', function(){ switchVariant('new'); });
+
+  if (variant === 'new') {
+    var main = document.getElementById('main-content');
+    var apps = document.getElementById('applications');
+    var products = document.getElementById('products');
+    var audiences = document.getElementById('audiences');
+    var projects = document.getElementById('projects');
+    var proof = document.getElementById('home-proof');
+    if (main && apps && products && audiences) {
+      main.insertBefore(apps, audiences);
+      main.insertBefore(products, audiences);
+      if (proof && proof.parentNode === main) {
+        main.insertBefore(audiences, proof.nextSibling);
+      } else if (projects && projects.parentNode === main) {
+        main.insertBefore(audiences, projects.nextSibling);
+      }
+    }
+  }
+
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a');
+    if (!a) return;
+    if (!a.matches('[data-ab-track], .sticky-cta-btn, .home-hero-actions a')) return;
+
+    var id = a.getAttribute('data-ab-track') || a.id || (a.textContent || '').trim().slice(0, 40);
+    var href = a.getAttribute('href') || '';
+
+    var totalKey = 'ak_home_ab_clicks_' + variant;
+    var total = Number(localStorage.getItem(totalKey) || 0) + 1;
+    localStorage.setItem(totalKey, String(total));
+
+    if (window.dataLayer && Array.isArray(window.dataLayer)) {
+      window.dataLayer.push({
+        event: 'ab_home_click',
+        variant: variant,
+        link_id: id,
+        href: href
+      });
+    }
+  }, { passive: true });
+})();
 </script>
 
 <div class="sticky-cta" id="sticky-cta">
