@@ -156,6 +156,34 @@ nav ul li a.nav-cta::after{display:none}
 .family-direction-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1.02;color:var(--stone);margin-bottom:6px}
 .family-direction-copy{font-size:12px;line-height:1.7;color:rgba(26,23,20,.62);font-weight:300}
 .family-note{margin-top:18px;font-size:11px;line-height:1.7;color:rgba(26,23,20,.42);font-weight:300}
+.selection-guide{
+  margin-top:20px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+.selection-step{
+  background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,255,255,.8));
+  border:1px solid rgba(26,23,20,.08);
+  border-radius:18px;
+  box-shadow:var(--soft-shadow);
+  padding:16px;
+}
+.selection-step strong{
+  display:block;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--red);
+  font-family:'DM Sans',sans-serif;
+  margin-bottom:8px;
+}
+.selection-step p{
+  font-size:12px;
+  line-height:1.72;
+  color:rgba(26,23,20,.62);
+  font-weight:300;
+}
 .series-pattern-wrap{
   margin-top:24px;
   padding:22px;
@@ -903,7 +931,7 @@ nav ul li a.nav-cta::after{display:none}
   .cat-footer,
   .section-divider{margin-left:24px;margin-right:24px;padding-left:0;padding-right:0}
   .catalog-overview-grid,.lumi-comparison{grid-template-columns:1fr}
-  .family-map-grid,.family-spec-grid,.family-media-grid,.family-direction-grid{grid-template-columns:1fr}
+  .family-map-grid,.family-spec-grid,.family-media-grid,.family-direction-grid,.selection-guide{grid-template-columns:1fr}
   .page-header{padding:36px 28px 34px}
   .catalog-nav{padding:0 24px}
   .product-banner,.catalog-section{padding-top:48px}
@@ -1014,9 +1042,23 @@ nav ul li a.nav-cta::after{display:none}
     <p class="pb-desc" id="stone-pb-desc">Ashley Kitchen now reads the stone range through eight clearer families: ordinary ultra-thin stone, LumiSlate translucent stone, cement, marble, sandstone, metal, rust-led finishes, and DIY adhesive formats. This catalog layer is the shared front door before deeper pattern libraries and technical follow-up.</p>
     <div class="pb-badges">
       <span class="pb-badge" id="stone-pb-b1">8 Families</span>
-      <span class="pb-badge" id="stone-pb-b2">101 Patterns</span>
+      <span class="pb-badge" id="stone-pb-b2">103 Patterns</span>
       <span class="pb-badge" id="stone-pb-b3">100% Natural Stone</span>
       <span class="pb-badge" id="stone-pb-b4">LumiSlate Taiwan Exclusive</span>
+    </div>
+    <div class="selection-guide">
+      <article class="selection-step">
+        <strong id="stone-select-step1-label">Step 1</strong>
+        <p id="stone-select-step1">Pick a family first based on project mood and application role.</p>
+      </article>
+      <article class="selection-step">
+        <strong id="stone-select-step2-label">Step 2</strong>
+        <p id="stone-select-step2">Use each series pattern grid to shortlist exact pattern codes.</p>
+      </article>
+      <article class="selection-step">
+        <strong id="stone-select-step3-label">Step 3</strong>
+        <p id="stone-select-step3">Send selected codes to Ashley Kitchen for sample and technical follow-up.</p>
+      </article>
     </div>
   </div>
 
@@ -1071,7 +1113,7 @@ nav ul li a.nav-cta::after{display:none}
       <article class="family-map-card" onclick="scrollToSeries('marble', document.getElementById('stab-marble'))">
         <div class="family-map-kicker">Family 04</div>
         <div class="family-map-title">Marble Series</div>
-        <div class="family-map-subtitle">19 patterns</div>
+        <div class="family-map-subtitle">20 patterns</div>
         <div class="family-map-thumb"><img loading="lazy" src="images/stone/family-cards/family-marble.jpg" alt="Marble Series representative pattern"></div>
         <p class="family-map-desc">The premium interior branch, positioned through stronger veining, formal atmosphere, and more visually finished spaces.</p>
         <div class="family-map-meta"><span class="family-map-pill">1220×610 mm</span><span class="family-map-pill">1220×2440 mm</span></div>
@@ -1080,7 +1122,7 @@ nav ul li a.nav-cta::after{display:none}
       <article class="family-map-card" onclick="scrollToSeries('sandstone', document.getElementById('stab-sandstone'))">
         <div class="family-map-kicker">Family 05</div>
         <div class="family-map-title">Sandstone Series</div>
-        <div class="family-map-subtitle">7 patterns</div>
+        <div class="family-map-subtitle">8 patterns</div>
         <div class="family-map-thumb"><img loading="lazy" src="images/stone/family-cards/family-sandstone.jpg" alt="Sandstone Series representative pattern"></div>
         <p class="family-map-desc">The exterior-aware branch for façades, entries, hospitality statements, and weather-exposed architectural surfaces.</p>
         <div class="family-map-meta"><span class="family-map-pill">1220×610 mm</span><span class="family-map-pill">1220×2440 mm</span><span class="family-map-pill">Exterior</span></div>
@@ -1147,21 +1189,21 @@ nav ul li a.nav-cta::after{display:none}
   <div class="catalog-section">
     <div class="series-header">
       <div class="series-label">Library Status</div>
-      <h2 class="series-title">Some families are already full libraries. Others are now readable v1 sets.</h2>
-      <p class="series-desc">This page is intentionally layered. Ordinary and LumiSlate are already being treated as real pattern libraries. The other six families are now structured as representative, decision-ready sets while we finish the deeper swatch mapping.</p>
+      <h2 class="series-title">All eight families are now browsable as pattern libraries.</h2>
+      <p class="series-desc">Use this page to move from family direction into pattern-code shortlist. Ordinary and LumiSlate provide richer behavior, while the other six families stay SKU-first for faster decision flow.</p>
     </div>
     <div class="family-status-grid">
       <article class="family-status-card">
-        <strong>Full library live</strong>
-        <p>Ordinary Series already carries the broadest pattern grid. LumiSlate already has the working 22-pattern structure and 4-state lighting logic.</p>
+        <strong>Full browsing flow live</strong>
+        <p>Every family now has a pattern grid so users can shortlist by code first, then validate fit through specs and real applications.</p>
       </article>
       <article class="family-status-card">
-        <strong>Readable v1 sets</strong>
-        <p>Cement, Marble, Sandstone, Metal, Copper / Rust, and DIY are now organized as honest family-level sets: role, format, representative material reads, and strongest application directions.</p>
+        <strong>SKU-first clarity</strong>
+        <p>Cement, Marble, Sandstone, Metal, Copper / Rust, and DIY now expose complete code sets in a consistent selection structure.</p>
       </article>
       <article class="family-status-card">
         <strong>What comes next</strong>
-        <p>The next layer is exact swatch mapping, pattern-level detail, and tighter download support. That work will follow the shared data model instead of hand-picked one-off assets.</p>
+        <p>Next upgrades can replace placeholder visuals with per-SKU photography and tighter technical links without changing this selection architecture.</p>
       </article>
     </div>
   </div>
@@ -1371,9 +1413,9 @@ nav ul li a.nav-cta::after{display:none}
         <h2 class="series-title" id="sc-uv-title">Marble Series</h2>
         <p class="series-desc" id="sc-uv-desc">The more formal, premium interior direction. Marble patterns should be presented through built spaces and strong visual atmosphere first, then narrowed to exact color selection in the family library layer.</p>
         <div class="series-badges">
-          <span class="series-badge" id="sc-uv-b1">1011–1027 / 1029 / 1030</span>
+          <span class="series-badge" id="sc-uv-b1">1011–1030</span>
           <span class="series-badge" id="sc-uv-b2">1220×610 / 1220×2440</span>
-          <span class="series-badge" id="sc-uv-b3">19 Patterns</span>
+          <span class="series-badge" id="sc-uv-b3">20 Patterns</span>
         </div>
       </div>
       <div class="series-pattern-wrap">
@@ -1402,9 +1444,9 @@ nav ul li a.nav-cta::after{display:none}
         <h2 class="series-title" id="sc-3d-title">Sandstone Series</h2>
         <p class="series-desc" id="sc-3d-desc">The exterior-aware branch of the stone platform. Sandstone should be explained as a family that can bridge façade, entry, hospitality, and select outdoor architectural use cases.</p>
         <div class="series-badges">
-          <span class="series-badge" id="sc-3d-b1">2011–2014 / 2016–2018</span>
+          <span class="series-badge" id="sc-3d-b1">2011–2018</span>
           <span class="series-badge" id="sc-3d-b2">1220×610 / 1220×2440</span>
-          <span class="series-badge" id="sc-3d-b3">7 Patterns</span>
+          <span class="series-badge" id="sc-3d-b3">8 Patterns</span>
           <span class="series-badge" id="sc-3d-b4">Exterior-aware</span>
         </div>
       </div>
@@ -1558,7 +1600,7 @@ nav ul li a.nav-cta::after{display:none}
 <!-- FOOTER -->
 <div class="section-divider"></div>
 <div class="cat-footer">
-  <p class="cat-footer-note" id="cat-footer-note">Use the stone catalog to compare families first, then move into pattern review, selected technical references, and project-specific sample support with Ashley Kitchen.</p>
+  <p class="cat-footer-note" id="cat-stone-footer-note">Use the stone catalog to compare families first, then move into pattern review, selected technical references, and project-specific sample support with Ashley Kitchen.</p>
   <div class="cat-footer-actions">
     <a href="contact.html" class="cta-btn" id="cat-request-btn">Request Samples</a>
     <a href="catalog.html" class="back-btn" id="cat-back-btn">Back to Catalog Landing →</a>
@@ -1678,10 +1720,10 @@ const SERIES_PATTERN_LIBRARY = {
   marble: [
     { sku: '1011' }, { sku: '1012' }, { sku: '1013' }, { sku: '1014' }, { sku: '1015' }, { sku: '1016' }, { sku: '1017' }, { sku: '1018' },
     { sku: '1019' }, { sku: '1020' }, { sku: '1021' }, { sku: '1022' }, { sku: '1023' }, { sku: '1024' }, { sku: '1025' }, { sku: '1026' },
-    { sku: '1027' }, { sku: '1029' }, { sku: '1030' }
+    { sku: '1027' }, { sku: '1028' }, { sku: '1029' }, { sku: '1030' }
   ],
   sandstone: [
-    { sku: '2011' }, { sku: '2012' }, { sku: '2013' }, { sku: '2014' }, { sku: '2016' }, { sku: '2017' }, { sku: '2018' }
+    { sku: '2011' }, { sku: '2012' }, { sku: '2013' }, { sku: '2014' }, { sku: '2015' }, { sku: '2016' }, { sku: '2017' }, { sku: '2018' }
   ],
   metal: [
     { sku: '4101' }, { sku: '4102' }, { sku: '4103' }, { sku: '4104' }, { sku: '4105' },

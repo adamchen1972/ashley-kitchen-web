@@ -1094,12 +1094,31 @@ const T = {
 
   // ── catalog.html — Page Header ──
   'cat-bc-home':   {en:'Home',               zh:'首頁'},
-  'cat-bc-label':  {en:'Full Catalog',        zh:'完整型錄'},
-  'cat-title':     {en:'Nalexible Products<br><em>Full Catalog</em>', zh:'Nalexible 產品<br><em>完整型錄</em>'},
-  'cat-desc':      {en:'All Nalexible product lines in one place — 40+ stone finishes across 5 series, Natural Fiber Board panels and Quiet Door variants, and plyē ORIGIN engineered flooring in 12 shades.', zh:'所有 Nalexible 產品系列一覽——5 個系列共 40+ 款石材表面、天然纖維板與靜音門系列，以及 plyē ORIGIN 系列 12 款工程木地板。'},
-  'cat-tag-stone': {en:'Nalexible Stone — 5 Series', zh:'Nalexible 石材 — 5 個系列'},
-  'cat-tag-fiber': {en:'Nalexible Fiberboard',       zh:'Nalexible 纖維板'},
-  'cat-tag-plye':  {en:'plyē ORIGIN Series',         zh:'plyē ORIGIN 系列'},
+  'cat-bc-label':  {en:'Stone Catalog',        zh:'石材型錄'},
+  'cat-title':     {en:'Stone Catalog<br><em>8 series, one clear start</em>', zh:'石材型錄<br><em>8 大系列，一步看懂</em>'},
+  'cat-desc':      {en:'Start here to understand Ashley Kitchen\'s eight stone series quickly, then enter the deep stone library to pick exact pattern codes and request samples.', zh:'先在這頁快速理解 Ashley Kitchen 的 8 大石材系列，再進入深度石材庫挑選精確花色代碼並申請樣品。'},
+  'cat-tag-stone': {en:'Stone Family Map — 8 Series', zh:'石材家族地圖 — 8 大系列'},
+  'cat-tag-fiber': {en:'Jump to LumiSlate',       zh:'前往 LumiSlate'},
+  'cat-tag-plye':  {en:'Open Full Stone Library', zh:'開啟完整石材庫'},
+  'cat-route-eyebrow': {en:'Stone Family Map', zh:'石材家族地圖'},
+  'cat-route-title':   {en:'Eight series. One decision flow.', zh:'8 大系列，一條決策流程。'},
+  'cat-route-desc':    {en:'Choose a family first on this page. Then open the deep stone catalog to compare pattern codes and finalize sample requests with Ashley Kitchen.', zh:'先在這頁選定家族方向，再進入深度石材型錄比較花色代碼，並與 Ashley Kitchen 完成樣品申請。'},
+  'cat-route-cta-1':   {en:'Browse Patterns →', zh:'查看花色 →'},
+  'cat-route-cta-2':   {en:'Browse Patterns →', zh:'查看花色 →'},
+  'cat-route-cta-3':   {en:'Browse Patterns →', zh:'查看花色 →'},
+  'cat-route-cta-4':   {en:'Browse Patterns →', zh:'查看花色 →'},
+  'cat-route-cta-5':   {en:'Browse Patterns →', zh:'查看花色 →'},
+  'cat-route-cta-6':   {en:'Browse Patterns →', zh:'查看花色 →'},
+  'cat-route-cta-7':   {en:'Browse Patterns →', zh:'查看花色 →'},
+  'cat-route-cta-8':   {en:'Browse Patterns →', zh:'查看花色 →'},
+  'cat-step-1-label':  {en:'Step 1', zh:'步驟 1'},
+  'cat-step-2-label':  {en:'Step 2', zh:'步驟 2'},
+  'cat-step-3-label':  {en:'Step 3', zh:'步驟 3'},
+  'cat-step-1':        {en:'Choose a family by project mood and material role.', zh:'先依專案氛圍與材料角色選定家族。'},
+  'cat-step-2':        {en:'Open the deep stone page and shortlist pattern codes.', zh:'進入深度石材頁，篩選並建立花色代碼清單。'},
+  'cat-step-3':        {en:'Send selected codes to Ashley Kitchen for samples and project matching.', zh:'將選定代碼交給 Ashley Kitchen 進行樣品與專案配對。'},
+  'cat-route-main-btn':{en:'Open Stone Library →', zh:'開啟石材庫 →'},
+  'cat-route-sub-btn': {en:'Request Samples', zh:'申請樣品'},
 
   // ── catalog.html — Top Tabs ──
   'cattab-stone': {en:'Stone',      zh:'石材'},
@@ -1107,13 +1126,13 @@ const T = {
   'cattab-plye':  {en:'plyē',       zh:'plyē'},
 
   // ── catalog.html — Stone Product Banner ──
-  'stone-pb-label': {en:'Product Line 01 — Nalexible Stone', zh:'產品系列 01 — Nalexible 石材'},
-  'stone-pb-title': {en:'Flexible Stone<br><em>Veneer &amp; Panels</em>', zh:'柔性石材<br><em>貼面與板材</em>'},
-  'stone-pb-desc':  {en:'100% natural stone, ultra-thin. 5 series covering flexible veneers, backlit translucent stone, self-adhesive panels, UV-resistant exterior grades, and 3D relief wall panels.', zh:'100% 天然石材，超薄製程。5 個系列涵蓋柔性貼面、背光透光石、自黏板材、抗紫外線戶外級及 3D 立體牆板。'},
-  'stone-pb-b1':    {en:'40+ Finishes',       zh:'40+ 款表面'},
-  'stone-pb-b2':    {en:'5 Series',            zh:'5 個系列'},
+  'stone-pb-label': {en:'Product Line 01 — Stone Systems', zh:'產品系列 01 — 石材系統'},
+  'stone-pb-title': {en:'Stone Systems<br><em>by family &amp; use case</em>', zh:'石材系統<br><em>依家族與應用導向</em>'},
+  'stone-pb-desc':  {en:'Ashley Kitchen now reads the stone range through eight clearer families: ordinary ultra-thin stone, LumiSlate translucent stone, cement, marble, sandstone, metal, rust-led finishes, and DIY adhesive formats.', zh:'Ashley Kitchen 以 8 大家族清楚重整石材範圍：一般超薄石材、LumiSlate 透光石材、水泥系、大理石系、砂岩系、金屬系、銅鏽系與 DIY 自黏系列。'},
+  'stone-pb-b1':    {en:'8 Families',       zh:'8 大家族'},
+  'stone-pb-b2':    {en:'103 Patterns',     zh:'103 組花色'},
   'stone-pb-b3':    {en:'100% Natural Stone',  zh:'100% 天然石材'},
-  'stone-pb-b4':    {en:'Taiwan Exclusive',    zh:'台灣獨家代理'},
+  'stone-pb-b4':    {en:'LumiSlate Taiwan Exclusive',    zh:'LumiSlate 台灣獨家代理'},
 
   // ── catalog.html — Stone Sub-Nav ──
   'stab-flexible':  {en:'Flexible Stone', zh:'柔性石材'},
@@ -1161,6 +1180,13 @@ const T = {
   'catalogStone.diy.badge1':          {en:'12 SKU-coded patterns', zh:'12 組 SKU 編碼花色'},
   'catalogStone.diy.specValue':       {en:'Temporary SKU coding', zh:'暫用 SKU 編碼'},
   'catalogStone.diy.specCopy':        {en:'DIY is currently shown as catalog codes (DIY-01 to DIY-12) so it can live in the same shortlist workflow as other series while source naming is normalized.', zh:'DIY 目前以目錄代碼（DIY-01 到 DIY-12）呈現，讓它在來源命名尚未統一前，也能先納入與其他系列一致的 shortlist 流程。'},
+  'cat-stone-footer-note':            {en:'Use the stone catalog to compare families first, then move into pattern review, selected technical references, and project-specific sample support with Ashley Kitchen.', zh:'先在石材型錄比較家族方向，再進入花色細選、技術資料與專案樣品支援。'},
+  'stone-select-step1-label':         {en:'Step 1', zh:'步驟 1'},
+  'stone-select-step2-label':         {en:'Step 2', zh:'步驟 2'},
+  'stone-select-step3-label':         {en:'Step 3', zh:'步驟 3'},
+  'stone-select-step1':               {en:'Pick a family first based on project mood and application role.', zh:'先依專案氛圍與應用角色選定家族。'},
+  'stone-select-step2':               {en:'Use each series pattern grid to shortlist exact pattern codes.', zh:'使用各系列花色庫先篩選出精確代碼。'},
+  'stone-select-step3':               {en:'Send selected codes to Ashley Kitchen for sample and technical follow-up.', zh:'將選定代碼交給 Ashley Kitchen 進行樣品與技術跟進。'},
 
   // ── catalog.html — Fiberboard Product Banner ──
   'fiber-pb-label': {en:'Product Line 02 — Nalexible Fiberboard', zh:'產品系列 02 — Nalexible 纖維板'},
@@ -1279,8 +1305,9 @@ const T = {
   'plye-note':  {en:'Swatch images represent actual plank colours. Screen rendering may vary. Contact Ashley Kitchen for physical sample boards.', zh:'色板圖像代表實際地板色調。螢幕顯示可能有所差異。如需實體樣板，請聯絡 Ashley Kitchen。'},
 
   // ── catalog.html — Footer ──
-  'cat-footer-note': {en:'Product images sourced from <a href="https://www.nalexible.com" target="_blank">nalexible.com</a> — Taiwan exclusive distribution by Ashley Kitchen', zh:'產品圖像來源：<a href="https://www.nalexible.com" target="_blank">nalexible.com</a> — 台灣獨家代理：Ashley Kitchen'},
-  'cat-back-btn':    {en:'← Back to Home', zh:'← 返回首頁'},
+  'cat-footer-note':   {en:'Use this page to choose a family first, then continue in the stone library for pattern-level selection and sample requests.', zh:'先在此頁選定家族，再前往石材庫完成花色層級選擇與樣品申請。'},
+  'cat-open-stone-btn':{en:'Open Stone Library →', zh:'開啟石材庫 →'},
+  'cat-back-btn':      {en:'Back to Catalog Landing →', zh:'返回型錄首頁 →'},
   'cat-home-nav':    {en:'Home',            zh:'首頁'},
   'cat-app-nav':     {en:'Applications',   zh:'應用場景'},
   'cat-cta-nav':     {en:'Request a Sample', zh:'申請樣品'},
