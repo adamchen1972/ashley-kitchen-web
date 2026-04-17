@@ -1094,9 +1094,9 @@ const T = {
 
   // ── catalog.html — Page Header ──
   'cat-bc-home':   {en:'Home',               zh:'首頁'},
-  'cat-bc-label':  {en:'Stone Catalog',        zh:'石材型錄'},
-  'cat-title':     {en:'Stone Catalog<br><em>8 series, one clear start</em>', zh:'石材型錄<br><em>8 大系列，一步看懂</em>'},
-  'cat-desc':      {en:'Start here to understand Ashley Kitchen\'s eight stone series quickly, then enter the deep stone library to pick exact pattern codes and request samples.', zh:'先在這頁快速理解 Ashley Kitchen 的 8 大石材系列，再進入深度石材庫挑選精確花色代碼並申請樣品。'},
+  'cat-bc-label':  {en:'Product Catalog',        zh:'產品型錄'},
+  'cat-title':     {en:'Product Catalog<br><em>Stone, Fiberboard, and Flooring</em>', zh:'產品型錄<br><em>石材、纖維板與地板</em>'},
+  'cat-desc':      {en:'Browse Ashley Kitchen\'s three product systems in one place: the 8-series stone library, Nalexible fiberboard door/panel solutions, and plyē engineered flooring.', zh:'在同一頁掌握 Ashley Kitchen 三大產品系統：8 大石材系列、Nalexible 纖維板門板方案與 plyē 工程木地板。'},
   'cat-tag-stone': {en:'Stone Family Map — 8 Series', zh:'石材家族地圖 — 8 大系列'},
   'cat-tag-fiber': {en:'Open Fiberboard',       zh:'開啟纖維板頁'},
   'cat-tag-plye':  {en:'Open Flooring', zh:'開啟地板頁'},
@@ -1305,7 +1305,7 @@ const T = {
   'plye-note':  {en:'Swatch images represent actual plank colours. Screen rendering may vary. Contact Ashley Kitchen for physical sample boards.', zh:'色板圖像代表實際地板色調。螢幕顯示可能有所差異。如需實體樣板，請聯絡 Ashley Kitchen。'},
 
   // ── catalog.html — Footer ──
-  'cat-footer-note':   {en:'Use this page to choose a family first, then continue in the stone library for pattern-level selection and sample requests.', zh:'先在此頁選定家族，再前往石材庫完成花色層級選擇與樣品申請。'},
+  'cat-footer-note':   {en:'Use this page to compare Stone, Fiberboard, and Flooring first, then continue into the relevant product library for specs and sample requests.', zh:'先在此頁比較石材、纖維板與地板，再前往對應產品庫查看規格與申請樣品。'},
   'cat-open-stone-btn':{en:'Open Stone Library →', zh:'開啟石材庫 →'},
   'cat-back-btn':      {en:'Back to Catalog Landing →', zh:'返回型錄首頁 →'},
   'cat-home-nav':    {en:'Home',            zh:'首頁'},
