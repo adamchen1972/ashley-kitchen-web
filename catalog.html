@@ -55,6 +55,8 @@ nav ul li a.nav-active{color:var(--red)}
 .page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,60px);font-weight:300;color:var(--stone);line-height:1.1}
 .page-title em{font-style:italic;color:var(--sand)}
 .page-desc{font-size:14px;font-weight:300;color:rgba(26,23,20,.58);margin-top:16px;line-height:1.75;max-width:600px}
+.trust-strip{max-width:1200px;margin:0 auto 28px;padding:0 72px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.trust-pill{background:rgba(255,255,255,.86);border:1px solid rgba(26,23,20,.08);border-radius:999px;padding:9px 12px;text-align:center;font-size:10px;letter-spacing:1px;color:rgba(26,23,20,.66);font-family:'DM Sans',sans-serif;box-shadow:var(--soft-shadow)}
 
 /* Product line mini tags in header */
 .prod-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
@@ -483,7 +485,7 @@ nav ul li a.nav-active{color:var(--red)}
   nav ul{gap:10px;overflow-x:auto;max-width:calc(100vw - 110px);padding-bottom:2px}
   nav ul::-webkit-scrollbar{display:none}
   nav ul li a{font-size:9px;letter-spacing:1.2px}
-  .nav-cta{padding:9px 14px}
+  .nav-cta{padding:8px 12px}
   .page-header{margin-top:110px;border-radius:24px}
   .page-title{font-size:clamp(34px,10vw,50px)}
   .prod-tags{gap:10px}
@@ -491,6 +493,7 @@ nav ul li a.nav-active{color:var(--red)}
   .catalog-nav-inner,.series-subnav-inner{flex-wrap:nowrap}
   .swatch-grid,.fb-swatch-grid,.plye-swatch-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cat-footer{padding-top:36px;padding-bottom:44px}
+  .trust-strip{padding:0 24px;grid-template-columns:1fr}
 }
 
 @media(max-width:560px){
@@ -511,8 +514,10 @@ nav ul li a.nav-active{color:var(--red)}
   .pb-title{font-size:clamp(28px,9vw,38px)}
   .series-title{font-size:clamp(24px,7vw,30px)}
   .page-title{max-width:none}
-  nav{height:56px}
+  nav{height:56px;padding:0 12px}
   nav ul{max-width:calc(100vw - 88px)}
+  .nav-cta{padding:7px 10px}
+  .trust-strip{padding:0 20px}
 }
 </style>
 </head>
@@ -564,6 +569,12 @@ nav ul li a.nav-active{color:var(--red)}
     <a href="nalexible-fiberboard.html" class="prod-tag prod-tag-fiber" id="cat-tag-fiber">Open Fiberboard</a>
     <a href="#prod-plye" class="prod-tag prod-tag-plye" id="cat-tag-plye" onclick="jumpTo('prod-plye', document.getElementById('cattab-plye')); return false;">Open Flooring</a>
   </div>
+</div>
+
+<div class="trust-strip" aria-label="Service notes">
+  <div class="trust-pill" id="trust-strip-reply" data-i18n="trust.reply">Responds as soon as possible</div>
+  <div class="trust-pill" id="trust-strip-sample" data-i18n="trust.sample">Sample support available</div>
+  <div class="trust-pill" id="trust-strip-hours" data-i18n="trust.hours">Taipei support hours · Mon–Fri 09:00–18:00 (UTC+8)</div>
 </div>
 
 <div class="catalog-overview">

@@ -1140,6 +1140,9 @@ const T = {
   'home.ab.proof.3.copy': {en:'DIY and project teams both get practical next-step guidance before final specification.', zh:'不論 DIY 或專案團隊，都能在最終規格前取得實用下一步指引。'},
   'home.ab.proof.4.label': {en:'Bilingual Workflow', zh:'雙語流程'},
   'home.ab.proof.4.copy': {en:'English and Chinese content stay aligned so decisions remain clear across teams and stakeholders.', zh:'中英文內容保持一致，讓跨團隊與利害關係人決策更清楚。'},
+  'trust.reply': {en:'Responds as soon as possible', zh:'會盡快回覆'},
+  'trust.sample': {en:'Sample support available', zh:'可提供樣品協助'},
+  'trust.hours': {en:'Taipei support hours · Mon–Fri 09:00–18:00 (UTC+8)', zh:'台北服務時間 · 週一至週五 09:00–18:00（UTC+8）'},
 
   // ── catalog.html — Top Tabs ──
   'cattab-stone': {en:'Stone',      zh:'石材'},
