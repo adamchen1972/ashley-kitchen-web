@@ -1549,13 +1549,20 @@ function handleInquiry(e) {
   if (btnNew) btnNew.addEventListener('click', function(){ switchVariant('new'); });
 
   // Keep variant context attached to core conversion links for cleaner attribution.
-  document.querySelectorAll('a[data-ab-track], .home-hero-actions a, .home-decision-flow a, .sticky-cta-btn').forEach(function(a){
-    var href = a.getAttribute('href') || '';
-    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('http')) return;
-    var u = new URL(href, window.location.origin);
-    u.searchParams.set('ab', variant === 'new' ? 'b' : 'a');
-    a.setAttribute('href', u.pathname + u.search + u.hash);
-  });
+  // Important: skip href rewriting for local file preview to avoid breaking relative links.
+  if (window.location.protocol !== 'file:') {
+    document.querySelectorAll('a[data-ab-track], .home-hero-actions a, .home-decision-flow a, .sticky-cta-btn').forEach(function(a){
+      var href = a.getAttribute('href') || '';
+      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('http')) return;
+      try {
+        var u = new URL(href, window.location.href);
+        u.searchParams.set('ab', variant === 'new' ? 'b' : 'a');
+        // Keep relative links relative (safer across local preview and nested hosting paths).
+        var pathOnly = href.split('#')[0].split('?')[0];
+        a.setAttribute('href', pathOnly + u.search + u.hash);
+      } catch (_) {}
+    });
+  }
 
   if (variant === 'new') {
     var main = document.getElementById('main-content');
