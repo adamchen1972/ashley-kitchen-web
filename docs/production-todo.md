@@ -26,3 +26,10 @@
   - `plye-c.html`
   - `projects.html`
   - `script.js`
+
+- `8aa53da` — Step 3 performance pass: async decoding and hero image priority.
+  - `index.html`
+  - `catalog.html`
+  - `catalog-stone.html`
+  - `contact.html`
+  - `docs/step3-performance-qa-2026-04-18.md`
