@@ -36,3 +36,12 @@
 
 - `231a0f5` — Homepage B flow polish: trust-strip positioning + softer response copy.
   - `index.html`
+
+- `6936b04` — Step 5 QA pass: A/B checks, conversion CTA polish, and log update.
+  - `index.html`
+  - `docs/production-todo.md`
+  - `docs/step5-ab-qa-pass-2026-04-18.md`
+
+- `d3e3058` — Homepage A/B messaging pass: sharper B value proposition + neutral badge labels.
+  - `index.html`
+  - `script.js`
