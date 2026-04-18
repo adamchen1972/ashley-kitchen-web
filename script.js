@@ -1253,6 +1253,9 @@ const T = {
   'ctc-support-opt-compliance':       {en:'Compliance package', zh:'合規文件包'},
   'ctc-support-opt-project':          {en:'Project support', zh:'專案支援'},
   'ctc-support-opt-general':          {en:'General enquiry', zh:'一般詢問'},
+  'ctc-required-note':                {en:'Fields marked in this form are required unless noted as optional.', zh:'此表單欄位除特別標示 optional 外，皆為必填。'},
+  'ctc-support-help':                 {en:'Choose one primary support type so we can route your request faster.', zh:'請先選擇一個主要支援類型，讓我們更快分流處理。'},
+  'ctc-message-help':                 {en:'Include timeline, preferred product family, and sample destination for faster response.', zh:'建議填入時程、偏好產品家族與樣品寄送地點，以加速回覆。'},
 
   // ── catalog.html — Fiberboard Product Banner ──
   'fiber-pb-label': {en:'Product Line 02 — Fiberboard', zh:'產品系列 02 — 纖維板'},

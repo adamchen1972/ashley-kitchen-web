@@ -161,6 +161,9 @@ html[lang="zh-TW"] .page-hero .ph-sub{line-height:1.95}
 .phone-note{font-size:10px;color:rgba(74,74,74,.45);margin-top:5px;display:block;letter-spacing:0;text-transform:none;font-weight:400;font-family:'DM Sans',sans-serif}
 .phone-error{display:none;font-size:11px;color:var(--red);margin-top:5px;font-weight:500;font-family:'DM Sans',sans-serif}
 .phone-error.show{display:block}
+.field-help{font-size:11px;color:rgba(74,74,74,.62);line-height:1.55;letter-spacing:0;text-transform:none;font-family:'DM Sans',sans-serif}
+.field-meta{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-top:6px}
+.char-count{font-size:11px;color:rgba(74,74,74,.56);font-family:'DM Sans',sans-serif;white-space:nowrap}
 
 .form-submit{background:#111827;color:white;border:none;padding:16px 48px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;transition:background .2s,transform .2s;width:100%;border-radius:999px;box-shadow:0 12px 28px rgba(17,24,39,.14)}
 .form-submit:hover{background:#000;transform:translateY(-1px)}
@@ -386,6 +389,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
     <div class="contact-form-wrap">
       <span class="section-label">Send a Message</span>
       <div class="cform">
+        <p class="field-help" id="ctc-required-note" style="margin-bottom:16px">Fields marked in this form are required unless noted as optional.</p>
         <form action="#" method="post" id="contact-form">
           <div class="form-row">
             <div class="form-group">
@@ -565,13 +569,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
               <option value="project_support" id="ctc-support-opt-project">Project support</option>
               <option value="general" id="ctc-support-opt-general">General enquiry</option>
             </select>
+            <span class="field-help" id="ctc-support-help">Choose one primary support type so we can route your request faster.</span>
           </div>
           <input type="hidden" id="cf-intent" name="intent" value="">
           <input type="hidden" id="cf-source" name="source_page" value="">
           <input type="hidden" id="cf-page-url" name="page_url" value="">
           <div class="form-group">
             <label for="cf-message">Message</label>
-            <textarea id="cf-message" name="message" rows="5" placeholder="Tell us about your project, quantities, or anything else we should know…" required></textarea>
+            <textarea id="cf-message" name="message" rows="5" maxlength="1200" placeholder="Tell us about your project, quantities, or anything else we should know…" required></textarea>
+            <div class="field-meta">
+              <span class="field-help" id="ctc-message-help">Include timeline, preferred product family, and sample destination for faster response.</span>
+              <span class="char-count" id="ctc-message-count">0 / 1200</span>
+            </div>
           </div>
           <div class="form-save-row">
             <label class="form-save-label">
@@ -923,6 +932,16 @@ function prefillContactFromQuery(){
 
 prefillContactFromQuery();
 
+function updateMessageCount() {
+  var ta = document.getElementById('cf-message');
+  var counter = document.getElementById('ctc-message-count');
+  if (!ta || !counter) return;
+  var max = Number(ta.getAttribute('maxlength') || 1200);
+  var len = (ta.value || '').length;
+  counter.textContent = len + ' / ' + max;
+}
+updateMessageCount();
+
 // Phone country code auto-fill country field
 function handleCCChange(selectEl) {
   var val = selectEl.value;
@@ -962,10 +981,53 @@ function validatePhones() {
   }
 }
 
+function fieldHintFor(el, isZh){
+  if (!el) return isZh ? '請完成必填欄位。' : 'Please complete the required field.';
+  var id = el.id || '';
+  var map = {
+    'cf-name': isZh ? '請填寫姓名。' : 'Please enter your full name.',
+    'cf-email': isZh ? '請填寫有效電子郵件。' : 'Please enter a valid email address.',
+    'cf-country': isZh ? '請填寫國家。' : 'Please enter your country.',
+    'cf-product': isZh ? '請選擇產品類別。' : 'Please choose a product interest.',
+    'cf-project': isZh ? '請選擇專案類型。' : 'Please choose a project type.',
+    'cf-support': isZh ? '請選擇支援類型。' : 'Please choose a support type.',
+    'cf-message': isZh ? '請填寫訊息內容。' : 'Please tell us a bit about your request.'
+  };
+  return map[id] || (isZh ? '請完成必填欄位。' : 'Please complete the required field.');
+}
+
+function wireFieldValidationUX(form){
+  if (!form) return;
+  form.querySelectorAll('input, select, textarea').forEach(function(el){
+    el.addEventListener('input', function(){
+      this.removeAttribute('aria-invalid');
+      if (this.validity.valid) this.setCustomValidity('');
+      if (this.id === 'cf-message') updateMessageCount();
+    });
+    el.addEventListener('change', function(){
+      this.removeAttribute('aria-invalid');
+      if (this.validity.valid) this.setCustomValidity('');
+      if (this.id === 'cf-message') updateMessageCount();
+    });
+    el.addEventListener('invalid', function(){
+      var isZh = langIsZh();
+      this.setAttribute('aria-invalid', 'true');
+      if (this.validity.valueMissing) this.setCustomValidity(fieldHintFor(this, isZh));
+      if (this.id === 'cf-email' && this.validity.typeMismatch) {
+        this.setCustomValidity(isZh ? '請填寫有效電子郵件。' : 'Please enter a valid email address.');
+      }
+    });
+    el.addEventListener('blur', function(){
+      this.setCustomValidity('');
+    });
+  });
+}
+
 // Intercept form submit
 (function(){
   var form = document.getElementById('contact-form');
   if (!form) return;
+  wireFieldValidationUX(form);
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     var isZh = langIsZh();
@@ -976,7 +1038,12 @@ function validatePhones() {
       return;
     }
     if (!form.reportValidity()) {
-      setFormFeedback('warn', isZh ? '請完成必填欄位後再送出。' : 'Please complete all required fields before sending.');
+      var firstInvalid = form.querySelector(':invalid');
+      if (firstInvalid) {
+        firstInvalid.setAttribute('aria-invalid', 'true');
+        firstInvalid.focus();
+      }
+      setFormFeedback('warn', fieldHintFor(firstInvalid, isZh));
       return;
     }
 

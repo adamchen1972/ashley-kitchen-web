@@ -139,3 +139,12 @@
     - Replaces generic `contact.html` CTA links with intent-aware deep links for sample/spec/technical/project support.
     - Adds `from=` source tags across nav, hero, sticky, section, and footer CTAs for clearer funnel attribution.
     - Keeps messaging unchanged while improving prefilled contact context and conversion handoff quality.
+
+- Contact form UX friction pass is implemented and queued for commit.
+  - Files:
+    - `contact.html`
+    - `script.js`
+  - Highlights:
+    - Adds required-field guidance plus support/message helper copy for clearer first-time completion.
+    - Adds live message character counter (`0 / 1200`) to set response expectations.
+    - Improves submit validation by focusing the first invalid field and showing specific, localized inline feedback.
