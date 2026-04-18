@@ -54,6 +54,10 @@
   - `index.html`
   - `script.js`
 
+- `de838e8` — Homepage hero polish: full Hybrid headline visibility + clickable decision-flow chips + richer kicker.
+  - `index.html`
+  - `script.js`
+
 - `f73c5f6` — Add 5-minute internal A/B evaluation playbook for homepage hero decision.
   - `docs/homepage-ab-5min-eval-2026-04-18.md`
 
