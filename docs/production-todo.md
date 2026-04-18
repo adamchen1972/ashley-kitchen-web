@@ -102,3 +102,13 @@
     - Adds a new `#technical-evidence` section anchor and a safe-generic technical evidence card set on the stone product page.
     - Adds catalog-stone specification guardrail copy with direct links to evidence and report mapping request.
     - Adds contact-form technical intent routing via `support_type` for sample/report/installation/compliance/project workflows.
+
+- Step 6 round-2 conversion micro-pass is implemented and queued for commit.
+  - Files:
+    - `index.html`
+    - `script.js`
+  - Highlights:
+    - Improves homepage hero readability and keeps full Hybrid messaging visible across desktop/mobile.
+    - Tightens hero CTA hierarchy with sample-first + catalog + technical-evidence helper path.
+    - Refactors next-step cards into a clearer conversion funnel (sample → stone library → technical evidence → intent-routed contact).
+    - Upgrades sticky CTA into dual-action routing (sample pack + technical support).

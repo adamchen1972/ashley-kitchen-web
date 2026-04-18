@@ -786,15 +786,19 @@ footer{background:linear-gradient(180deg,#141416 0%,#0d0d0f 100%);padding:72px 7
 .sticky-cta.visible{transform:translateY(0);}
 .sticky-cta-copy{font-size:13px;color:rgba(255,255,255,.55);letter-spacing:.5px;}
 .sticky-cta-copy strong{color:#fff;}
+.sticky-cta-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
 .sticky-cta-btn{
   background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.14);cursor:pointer;
   padding:12px 24px;font-size:12px;letter-spacing:1.5px;font-weight:600;
   text-transform:uppercase;border-radius:999px;text-decoration:none;
   white-space:nowrap;transition:background .2s,border-color .2s,transform .2s;
 }
+.sticky-cta-btn.secondary{background:transparent;border-color:rgba(255,255,255,.22);color:rgba(255,255,255,.9)}
+.sticky-cta-btn.secondary:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.32)}
 .sticky-cta-btn:hover{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.25);transform:translateY(-1px);}
 @media(max-width:768px){
-  .sticky-cta{padding:12px 14px 12px 16px;gap:12px;bottom:12px;left:12px;right:12px;}
+  .sticky-cta{padding:12px 14px 12px 16px;gap:12px;bottom:12px;left:12px;right:12px;align-items:flex-start}
+  .sticky-cta-actions{width:100%;justify-content:flex-start}
   .sticky-cta-copy{font-size:11px;}
   .sticky-cta-btn{padding:10px 20px;font-size:11px;}
 }
@@ -898,7 +902,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 }
 .home-hero-copy{
   position:absolute;left:34px;right:auto;bottom:42px;z-index:2;
-  max-width:620px;padding:22px 24px 20px;margin:0;
+  max-width:700px;padding:22px 24px 20px;margin:0;
   background:rgba(250,247,242,.76);border:1px solid rgba(255,255,255,.58);
   box-shadow:0 14px 34px rgba(15,23,42,.08);border-radius:22px;
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
@@ -906,16 +910,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 .home-kicker{display:flex;align-items:center;gap:12px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(74,74,74,.58);margin-bottom:16px}
 .home-kicker::before{content:'';width:24px;height:1px;background:rgba(74,74,74,.26)}
 .home-hero-title{
-  font-family:'Poppins',sans-serif;font-size:clamp(30px,3.8vw,56px);line-height:.98;
-  letter-spacing:-.035em;color:#111827;margin:0 0 14px;max-width:14ch;font-weight:700;
+  font-family:'Poppins',sans-serif;font-size:clamp(30px,3.2vw,48px);line-height:1.02;
+  letter-spacing:-.03em;color:#111827;margin:0 0 14px;max-width:17ch;font-weight:700;
 }
 .home-hero-title em{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--red)}
-.home-hero-sub{font-size:14px;line-height:1.72;color:rgba(55,65,81,.78);max-width:24ch;margin:0 0 18px;font-weight:400;letter-spacing:.01em}
+.home-hero-sub{font-size:14px;line-height:1.72;color:rgba(55,65,81,.78);max-width:42ch;margin:0 0 16px;font-weight:400;letter-spacing:.01em}
 .home-hero-actions{display:flex;gap:12px;flex-wrap:wrap}
 .home-hero-actions .btn-red{background:#111827;border-color:#111827}
 .home-hero-actions .btn-red:hover{background:#000;border-color:#000}
 .home-hero-actions .btn-red-outline{color:#111827;border-color:rgba(17,24,39,.16);background:rgba(255,255,255,.76)}
 .home-hero-actions .btn-red-outline:hover{background:rgba(255,255,255,.96);color:#111827}
+.home-hero-helper{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:rgba(17,24,39,.72);text-decoration:none;font-weight:600}
+.home-hero-helper:hover{color:#111827}
 .home-hero-assurance{
   margin-top:10px;font-size:12px;line-height:1.6;color:rgba(55,65,81,.72);
   max-width:40ch;font-family:'DM Sans',sans-serif
@@ -1047,7 +1053,7 @@ html[lang="zh-TW"] .home-hero-sub{line-height:1.8;max-width:30ch}
   .support-grid,.project-grid-3,.next-grid,.home-proof-strip{grid-template-columns:1fr}
   .home-hero-stage{min-height:700px}
   .home-hero-copy{left:18px;right:18px;bottom:82px;max-width:none}
-  .home-hero-title{font-size:clamp(32px,9.8vw,48px);max-width:none;line-height:1}
+  .home-hero-title{font-size:clamp(30px,8.8vw,42px);max-width:none;line-height:1.04}
   .home-slide-nav{right:18px;top:18px}
   .home-slide-caption{left:18px;right:18px;bottom:18px;min-width:0}
   .home-section-head{margin-bottom:24px;padding:0}
@@ -1056,8 +1062,8 @@ html[lang="zh-TW"] .home-hero-sub{line-height:1.8;max-width:30ch}
 @media(max-width:560px){
   .home-hero-stage{min-height:620px}
   .home-hero-copy{bottom:92px}
-  .home-hero-sub{max-width:28ch}
-  html[lang="zh-TW"] .home-hero-title{font-size:clamp(26px,8.2vw,38px);line-height:1.1}
+  .home-hero-sub{max-width:32ch}
+  html[lang="zh-TW"] .home-hero-title{font-size:clamp(25px,7.8vw,36px);line-height:1.12}
   html[lang="zh-TW"] .home-hero-sub{font-size:13px}
 }
 </style>
@@ -1145,9 +1151,10 @@ html[lang="zh-TW"] .home-hero-sub{line-height:1.8;max-width:30ch}
         <p class="home-hero-sub ab-a-only" data-i18n="home.a.hero.sub">Design-led surfaces for architects and project teams who want a premium material direction without losing days to spec cycles.</p>
         <p class="home-hero-sub ab-b-only" data-i18n="home.ab.hero.sub">Design-led surfaces for architects and project teams who want a premium material direction without losing days to spec cycles.</p>
         <div class="home-hero-actions">
-          <a href="contact.html?intent=sample&amp;product=multiple&amp;from=homepage-hero-primary" class="btn-red" data-ab-track="hero-sample-primary">Request a Sample</a>
-          <a href="catalog.html" class="btn-red-outline" data-ab-track="hero-catalog-secondary">Explore Catalog</a>
+          <a href="contact.html?intent=sample&amp;product=multiple&amp;from=homepage-hero-primary" class="btn-red" data-ab-track="hero-sample-primary" data-i18n="home.hero.cta.primary">Request a Sample</a>
+          <a href="catalog.html" class="btn-red-outline" data-ab-track="hero-catalog-secondary" data-i18n="home.hero.cta.secondary">Explore Catalog</a>
         </div>
+        <a href="nalexible-stone.html#technical-evidence" class="home-hero-helper" data-ab-track="hero-tech-evidence" data-i18n="home.hero.cta.helper">Need technical evidence first →</a>
         <div class="home-decision-flow ab-b-only flex">
           <a class="home-decision-step" href="#products" data-i18n="home.ab.hero.step1" data-ab-track="hero-flow-choose-family">Choose family</a>
           <a class="home-decision-step" href="catalog-stone.html" data-i18n="home.ab.hero.step2" data-ab-track="hero-flow-compare-patterns">Compare patterns</a>
@@ -1343,35 +1350,35 @@ html[lang="zh-TW"] .home-hero-sub{line-height:1.8;max-width:30ch}
   <div class="home-section-inner">
     <div class="home-section-head">
       <div>
-        <div class="s-label">Next Steps</div>
-        <h2 class="home-section-title">What readers usually need <em>after the first click.</em></h2>
+        <div class="s-label" id="home-next-label">Next Steps</div>
+        <h2 class="home-section-title" data-i18n="home.next.title">What readers usually need <em>after the first click.</em></h2>
       </div>
-      <p class="home-section-copy">After the first impression comes the practical layer: samples, installation, compliance support, and the right next conversation.</p>
+      <p class="home-section-copy" id="home-next-copy">After the first impression comes the practical layer: samples, installation, compliance support, and the right next conversation.</p>
     </div>
     <div class="next-grid">
       <article class="next-card">
-        <div class="next-card-label">Samples</div>
-        <h3>Compare the material in hand.</h3>
-        <p>Start with a sample request when the decision depends on texture, tone, finish depth, and project lighting.</p>
-        <a href="contact.html?intent=sample&amp;product=multiple&amp;from=homepage-next-step-sample" data-ab-track="next-sample">Request a Sample →</a>
+        <div class="next-card-label" id="home-next-sample-label">Samples</div>
+        <h3 id="home-next-sample-title">Compare the material in hand.</h3>
+        <p id="home-next-sample-copy">Start with a sample request when the decision depends on texture, tone, finish depth, and project lighting.</p>
+        <a href="contact.html?intent=sample&amp;product=multiple&amp;from=homepage-next-step-sample" data-ab-track="next-sample" id="home-next-sample-cta">Request a Sample →</a>
       </article>
       <article class="next-card">
-        <div class="next-card-label">Installation</div>
-        <h3>See how it goes together.</h3>
-        <p>DIY buyers and project teams both need installation logic that feels clear, realistic, and easy to move forward with.</p>
-        <a href="plye.html#diy-installation" data-ab-track="next-install">View install guidance →</a>
+        <div class="next-card-label" id="home-next-stone-label">Catalog deep dive</div>
+        <h3 id="home-next-stone-title">Compare stone patterns by family.</h3>
+        <p id="home-next-stone-copy">Use the stone catalog to shortlist exact patterns faster across all eight series before sample submission.</p>
+        <a href="catalog-stone.html" data-ab-track="next-stone-library" id="home-next-stone-cta">Open stone library →</a>
       </article>
       <article class="next-card">
-        <div class="next-card-label">Catalog Deep Dive</div>
-        <h3>Compare stone patterns by family.</h3>
-        <p>Use the dedicated stone catalog flow to shortlist patterns faster across Ordinary, LumiSlate, Cement, Marble, Sandstone, Metal, Copper/Rust, and DIY Adhesive series.</p>
-        <a href="catalog-stone.html" data-ab-track="next-stone-library">Open stone library →</a>
+        <div class="next-card-label" id="home-next-tech-label">Technical evidence</div>
+        <h3 id="home-next-tech-title">Review reports before final claim wording.</h3>
+        <p id="home-next-tech-copy">Check performance documents and scope notes to align specification language with project conditions.</p>
+        <a href="nalexible-stone.html#technical-evidence" data-ab-track="next-tech-evidence" id="home-next-tech-cta">Open technical evidence →</a>
       </article>
       <article class="next-card">
-        <div class="next-card-label">Compliance</div>
-        <h3>Move into export-facing conversations.</h3>
-        <p>Use compliance and documentation support to make early distributor, export, and specification conversations easier to explain.</p>
-        <a href="about.html#support-modes" data-ab-track="next-compliance">See support logic →</a>
+        <div class="next-card-label" id="home-next-support-label">Project support</div>
+        <h3 id="home-next-support-title">Bring the right intent into contact.</h3>
+        <p id="home-next-support-copy">Use one form to route sample, technical, installation, compliance, or project support requests without back-and-forth.</p>
+        <a href="contact.html?intent=technical-report&amp;product=stone&amp;from=homepage-next-step-support" data-ab-track="next-support" id="home-next-support-cta">Start a technical request →</a>
       </article>
     </div>
   </div>
@@ -1605,13 +1612,16 @@ function handleInquiry(e) {
 
 <div class="sticky-cta" id="sticky-cta">
   <div class="sticky-cta-copy" id="sticky-cta-copy"><strong>Ashley Kitchen</strong> helps you shortlist faster with sample review and practical project support.</div>
-  <a href="contact.html?intent=sample&amp;product=multiple&amp;from=homepage-sticky" class="sticky-cta-btn" id="sticky-cta-btn">Request a Sample →</a>
+  <div class="sticky-cta-actions">
+    <a href="contact.html?intent=sample&amp;product=multiple&amp;from=homepage-sticky-primary" class="sticky-cta-btn" id="sticky-cta-btn">Request a Sample →</a>
+    <a href="contact.html?intent=technical-report&amp;product=stone&amp;from=homepage-sticky-technical" class="sticky-cta-btn secondary" id="sticky-cta-btn-secondary" data-ab-track="sticky-technical">Technical support</a>
+  </div>
 </div>
 <script>
 (function(){
   var bar=document.getElementById('sticky-cta');
   if(!bar)return;
-  window.addEventListener('scroll',function(){bar.classList[window.scrollY>600?'add':'remove']('visible');},{passive:true});
+  window.addEventListener('scroll',function(){bar.classList[window.scrollY>520?'add':'remove']('visible');},{passive:true});
 })();
 </script>
 <script>
