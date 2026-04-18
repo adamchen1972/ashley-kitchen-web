@@ -270,6 +270,8 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   object-fit:cover;
   display:block;
   border-radius:10px;
+  transform:var(--pattern-zoom,none);
+  transform-origin:center;
 }
 .series-pattern-visual.is-fallback::before{
   content:'';
@@ -1816,6 +1818,12 @@ const SERIES_PATTERN_LIBRARY = {
   ]
 };
 
+const SERIES_PATTERN_IMAGE_TWEAK = {
+  '4001': { position: '66% 52%', zoom: 'scale(1.18)' },
+  '2011': { position: '64% 52%', zoom: 'scale(1.18)' },
+  '4112': { position: '56% 52%', zoom: 'scale(1.22)' }
+};
+
 function makePatternFallback(visual) {
   visual.classList.add('is-fallback');
   visual.innerHTML = '<span class="series-pattern-pending">' + t('catalogStone.seriesGrid.pending', 'Image Pending') + '</span>';
@@ -1833,6 +1841,11 @@ function createSeriesPatternTile(item) {
     img.loading = 'lazy';
     img.src = item.img;
     img.alt = 'Pattern ' + item.sku;
+    var tweak = SERIES_PATTERN_IMAGE_TWEAK[item.sku];
+    if (tweak) {
+      img.style.objectPosition = tweak.position;
+      img.style.setProperty('--pattern-zoom', tweak.zoom);
+    }
     img.onerror = function() { makePatternFallback(visual); };
     visual.appendChild(img);
   } else {
