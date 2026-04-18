@@ -56,3 +56,15 @@
 
 - `f73c5f6` — Add 5-minute internal A/B evaluation playbook for homepage hero decision.
   - `docs/homepage-ab-5min-eval-2026-04-18.md`
+
+## Pending (Coordination)
+
+- `2026-04-18 17:00 (Asia/Taipei)` — Claude.ai brochure v8 print-fix pass.
+  - Target output:
+    - `docs/brochure/ashley-kitchen-stone-systems-overview-final-facade-v8-p9-balance-p14-canonical.pdf`
+  - Scope:
+    - Page 9: rebalance the 3-layer diagram vertical position inside the technical card.
+    - Page 14: remove incorrect 7013/7014 base images and place canonical slab images from PPT p16/p17 (not overlay).
+  - Source refs:
+    - `docs/brochure/sources/lumislate-source-zh.pptx`
+    - `docs/brochure/sources/nalexible-product-materials-zh.pptx`
