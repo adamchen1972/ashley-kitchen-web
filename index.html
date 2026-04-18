@@ -898,7 +898,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 }
 .home-hero-copy{
   position:absolute;left:34px;right:auto;bottom:42px;z-index:2;
-  max-width:500px;padding:22px 24px 20px;margin:0;
+  max-width:620px;padding:22px 24px 20px;margin:0;
   background:rgba(250,247,242,.76);border:1px solid rgba(255,255,255,.58);
   box-shadow:0 14px 34px rgba(15,23,42,.08);border-radius:22px;
   backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
@@ -906,8 +906,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 .home-kicker{display:flex;align-items:center;gap:12px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(74,74,74,.58);margin-bottom:16px}
 .home-kicker::before{content:'';width:24px;height:1px;background:rgba(74,74,74,.26)}
 .home-hero-title{
-  font-family:'Poppins',sans-serif;font-size:clamp(40px,5.4vw,76px);line-height:.93;
-  letter-spacing:-.055em;color:#111827;margin:0 0 14px;max-width:none;font-weight:700;
+  font-family:'Poppins',sans-serif;font-size:clamp(30px,3.8vw,56px);line-height:.98;
+  letter-spacing:-.035em;color:#111827;margin:0 0 14px;max-width:14ch;font-weight:700;
 }
 .home-hero-title em{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--red)}
 .home-hero-sub{font-size:14px;line-height:1.72;color:rgba(55,65,81,.78);max-width:24ch;margin:0 0 18px;font-weight:400;letter-spacing:.01em}
@@ -970,6 +970,8 @@ body.ab-new .ab-a-only{display:none!important}
   border:1px solid rgba(17,24,39,.14);border-radius:999px;padding:7px 11px;
   background:rgba(255,255,255,.8);font-family:'DM Sans',sans-serif
 }
+.home-decision-flow a.home-decision-step{text-decoration:none;transition:all .2s ease}
+.home-decision-flow a.home-decision-step:hover{background:#111827;color:#fff;border-color:#111827}
 .home-proof-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .home-proof-card{
   border:1px solid rgba(17,24,39,.08);border-radius:18px;background:rgba(255,255,255,.76);
@@ -1039,7 +1041,7 @@ body.ab-new .ab-a-only{display:none!important}
   .support-grid,.project-grid-3,.next-grid,.home-proof-strip{grid-template-columns:1fr}
   .home-hero-stage{min-height:700px}
   .home-hero-copy{left:18px;right:18px;bottom:82px;max-width:none}
-  .home-hero-title{font-size:clamp(40px,13vw,60px);max-width:none}
+  .home-hero-title{font-size:clamp(32px,9.8vw,48px);max-width:none;line-height:1}
   .home-slide-nav{right:18px;top:18px}
   .home-slide-caption{left:18px;right:18px;bottom:18px;min-width:0}
   .home-section-head{margin-bottom:24px;padding:0}
@@ -1047,6 +1049,7 @@ body.ab-new .ab-a-only{display:none!important}
 }
 @media(max-width:560px){
   .home-hero-stage{min-height:620px}
+  .home-hero-copy{bottom:92px}
   .home-hero-sub{max-width:28ch}
 }
 </style>
@@ -1128,7 +1131,7 @@ body.ab-new .ab-a-only{display:none!important}
         </div>
       </div>
       <div class="home-hero-copy">
-        <div class="home-kicker">Ashley Kitchen</div>
+        <div class="home-kicker" data-i18n="home.hero.kicker">Premium surfaces · Stone · Flooring · Fiberboard</div>
         <h1 class="home-hero-title ab-a-only" data-i18n="home.a.hero.title">Three material families — one considered path from first look to sample.</h1>
         <h1 class="home-hero-title ab-b-only" data-i18n="home.ab.hero.title">Three material families — one considered path from first look to sample.</h1>
         <p class="home-hero-sub ab-a-only" data-i18n="home.a.hero.sub">Design-led surfaces for architects and project teams who want a premium material direction without losing days to spec cycles.</p>
@@ -1138,9 +1141,9 @@ body.ab-new .ab-a-only{display:none!important}
           <a href="catalog.html" class="btn-red-outline" data-ab-track="hero-catalog-secondary">Explore Catalog</a>
         </div>
         <div class="home-decision-flow ab-b-only flex">
-          <span class="home-decision-step" data-i18n="home.ab.hero.step1">Choose family</span>
-          <span class="home-decision-step" data-i18n="home.ab.hero.step2">Compare patterns</span>
-          <span class="home-decision-step" data-i18n="home.ab.hero.step3">Request samples</span>
+          <a class="home-decision-step" href="#products" data-i18n="home.ab.hero.step1">Choose family</a>
+          <a class="home-decision-step" href="catalog-stone.html" data-i18n="home.ab.hero.step2">Compare patterns</a>
+          <a class="home-decision-step" href="contact.html?intent=sample&amp;product=multiple&amp;from=homepage-decision-flow" data-i18n="home.ab.hero.step3">Request samples</a>
         </div>
       </div>
       <div class="home-slide-caption">
