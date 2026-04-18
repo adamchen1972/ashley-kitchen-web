@@ -1159,7 +1159,7 @@ body.ab-new .ab-a-only{display:none!important}
     </div>
   </div>
 </section>
-<div class="trust-strip" aria-label="Service notes">
+<div class="trust-strip" id="home-trust-strip" aria-label="Service notes">
   <div class="trust-pill" id="trust-strip-reply" data-i18n="trust.reply">Responds as soon as possible</div>
   <div class="trust-pill" id="trust-strip-sample" data-i18n="trust.sample">Sample support available</div>
   <div class="trust-pill" id="trust-strip-hours" data-i18n="trust.hours">Taipei support hours · Mon–Fri 09:00–18:00 (UTC+8)</div>
@@ -1472,7 +1472,7 @@ function handleInquiry(e) {
   fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} })
     .then(function(r){
       if (r.ok) {
-        form.innerHTML = '<div style="padding:60px 0;text-align:center;"><div style="font-size:40px;margin-bottom:16px;color:#E53935;">✓</div><p style="font-family:Poppins,sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;line-height:1.8;">'+(currentLang==='zh'?'詢問已成功送出。<br>我們將在24小時內回覆您。':'Inquiry sent successfully.<br>We'll be in touch shortly.')+'</p></div>';
+        form.innerHTML = '<div style="padding:60px 0;text-align:center;"><div style="font-size:40px;margin-bottom:16px;color:#E53935;">✓</div><p style="font-family:Poppins,sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;line-height:1.8;">'+(currentLang==='zh'?'詢問已成功送出。<br>我們會盡快與您聯繫。':'Inquiry sent successfully.<br>We\'ll be in touch shortly.')+'</p></div>';
       } else {
         if (btn) { btn.innerHTML = origTxt; btn.disabled = false; }
         alert(currentLang==='zh'?'發送失敗，請直接來信：adam@ashleykitchen.co':'Something went wrong. Please email: adam@ashleykitchen.co');
@@ -1531,9 +1531,17 @@ function handleInquiry(e) {
     var audiences = document.getElementById('audiences');
     var projects = document.getElementById('projects');
     var proof = document.getElementById('home-proof');
+    var trust = document.getElementById('home-trust-strip');
     if (main && apps && products && audiences) {
       main.insertBefore(apps, audiences);
       main.insertBefore(products, audiences);
+      if (projects && trust && trust.parentNode === main) {
+        if (proof && proof.parentNode === main) {
+          main.insertBefore(trust, proof);
+        } else {
+          main.insertBefore(trust, projects.nextSibling);
+        }
+      }
       if (proof && proof.parentNode === main) {
         main.insertBefore(audiences, proof.nextSibling);
       } else if (projects && projects.parentNode === main) {
