@@ -237,7 +237,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
 }
 .series-pattern-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  grid-template-columns:repeat(5,minmax(0,1fr));
   gap:12px;
 }
 .series-pattern-tile{
@@ -300,24 +300,12 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   text-transform:uppercase;
   color:#1f1a16;
 }
-.series-pattern-tile.is-hidden{display:none}
-.series-pattern-toggle{
-  margin-top:14px;
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  border:1px solid rgba(26,23,20,.2);
-  border-radius:999px;
-  background:#fff;
-  color:rgba(26,23,20,.72);
-  padding:7px 14px;
-  font-family:'DM Sans',sans-serif;
-  font-size:10px;
-  letter-spacing:1.6px;
-  text-transform:uppercase;
-  cursor:pointer;
+@media (max-width:1024px){
+  .series-pattern-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
-.series-pattern-toggle:hover{border-color:rgba(201,108,72,.46);color:#1f1a16}
+@media (max-width:640px){
+  .series-pattern-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 
 /* ── FIBERBOARD PRODUCT CARDS ── */
 .fb-card-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:36px}
@@ -1152,7 +1140,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
       <article class="family-map-card" role="link" tabindex="0" aria-label="Open Marble Series section" onclick="scrollToSeries('marble', document.getElementById('stab-marble'))" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();scrollToSeries('marble', document.getElementById('stab-marble'));}">
         <div class="family-map-kicker">Family 04</div>
         <div class="family-map-title">Marble Series</div>
-        <div class="family-map-subtitle">20 patterns</div>
+        <div class="family-map-subtitle">19 patterns</div>
         <div class="family-map-thumb"><img loading="lazy" decoding="async" src="images/stone/family-cards/family-marble.jpg" alt="Marble Series representative pattern"></div>
         <p class="family-map-desc">The premium interior branch, positioned through stronger veining, formal atmosphere, and more visually finished spaces.</p>
         <div class="family-map-meta"><span class="family-map-pill">1220×610 mm</span><span class="family-map-pill">1220×2440 mm</span></div>
@@ -1161,7 +1149,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
       <article class="family-map-card" role="link" tabindex="0" aria-label="Open Sandstone Series section" onclick="scrollToSeries('sandstone', document.getElementById('stab-sandstone'))" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();scrollToSeries('sandstone', document.getElementById('stab-sandstone'));}">
         <div class="family-map-kicker">Family 05</div>
         <div class="family-map-title">Sandstone Series</div>
-        <div class="family-map-subtitle">8 patterns</div>
+        <div class="family-map-subtitle">7 patterns</div>
         <div class="family-map-thumb"><img loading="lazy" decoding="async" src="images/stone/family-cards/family-sandstone.jpg" alt="Sandstone Series representative pattern"></div>
         <p class="family-map-desc">The exterior-aware branch for façades, entries, hospitality statements, and weather-exposed architectural surfaces.</p>
         <div class="family-map-meta"><span class="family-map-pill">1220×610 mm</span><span class="family-map-pill">1220×2440 mm</span><span class="family-map-pill">Exterior</span></div>
@@ -1454,7 +1442,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
         <div class="series-badges">
           <span class="series-badge" id="sc-uv-b1">1011–1030</span>
           <span class="series-badge" id="sc-uv-b2">1220×610 / 1220×2440</span>
-          <span class="series-badge" id="sc-uv-b3">20 Patterns</span>
+          <span class="series-badge" id="sc-uv-b3">19 Patterns</span>
         </div>
       </div>
       <div class="series-pattern-wrap">
@@ -1463,7 +1451,6 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
         </div>
         <p class="series-pattern-note" data-i18n="catalogStone.seriesGrid.note">SKU-first pattern cards are shown here. Representative applications stay below for context.</p>
         <div class="series-pattern-grid" id="pattern-grid-marble" data-series="marble"></div>
-        <button type="button" class="series-pattern-toggle" id="pattern-toggle-marble" aria-expanded="false" aria-controls="pattern-grid-marble"></button>
       </div>
       <div class="family-media-grid">
         <article class="family-media-card"><img loading="lazy" decoding="async" src="images/stone/family-cards/family-marble.jpg" alt="Marble series representative pattern"><div class="family-media-caption"><strong>Representative pattern</strong><p>Lead with the veining first. This rose-toned marble read helps explain the family as a more formal, more interior-facing branch before users narrow to exact pattern cards.</p></div></article>
@@ -1485,7 +1472,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
         <div class="series-badges">
           <span class="series-badge" id="sc-3d-b1">2011–2018</span>
           <span class="series-badge" id="sc-3d-b2">1220×610 / 1220×2440</span>
-          <span class="series-badge" id="sc-3d-b3">8 Patterns</span>
+          <span class="series-badge" id="sc-3d-b3">7 Patterns</span>
           <span class="series-badge" id="sc-3d-b4">Exterior-aware</span>
         </div>
       </div>
@@ -1525,7 +1512,6 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
         </div>
         <p class="series-pattern-note" data-i18n="catalogStone.seriesGrid.note">SKU-first pattern cards are shown here. Representative applications stay below for context.</p>
         <div class="series-pattern-grid" id="pattern-grid-metal" data-series="metal"></div>
-        <button type="button" class="series-pattern-toggle" id="pattern-toggle-metal" aria-expanded="false" aria-controls="pattern-grid-metal"></button>
       </div>
       <div class="family-spec-grid">
         <article class="family-spec-card"><div class="family-spec-label">Format</div><div class="family-spec-value">Single size</div><div class="family-spec-copy">Unlike most other families, the metal direction is intentionally constrained to one smaller format.</div></article>
@@ -1591,7 +1577,6 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
         </div>
         <p class="series-pattern-note" data-i18n="catalogStone.seriesGrid.note">SKU-first pattern cards are shown here. Representative applications stay below for context.</p>
         <div class="series-pattern-grid" id="pattern-grid-diy" data-series="diy"></div>
-        <button type="button" class="series-pattern-toggle" id="pattern-toggle-diy" aria-expanded="false" aria-controls="pattern-grid-diy"></button>
       </div>
       <div class="family-spec-grid">
         <article class="family-spec-card"><div class="family-spec-label">Format</div><div class="family-spec-value">150×600</div><div class="family-spec-copy">This family breaks from the standard large-format stone platform and should be clearly presented as a separate format option.</div></article>
@@ -1763,28 +1748,71 @@ function getPatternGridColumns() {
 
 const SERIES_PATTERN_LIBRARY = {
   cement: [
-    { sku: '4001', img: 'nalexible/upload/product/1740452209.jpg' },
-    { sku: '4002', img: 'nalexible/upload/product/1740397345.jpg' },
-    { sku: '4003', img: 'nalexible/upload/product/1740397367.jpg' }
+    { sku: '4001', img: 'assets/nalexible/stone/cement-patterns/4001.jpeg' },
+    { sku: '4002', img: 'assets/nalexible/stone/cement-patterns/4002.jpeg' },
+    { sku: '4003', img: 'assets/nalexible/stone/cement-patterns/4003.jpeg' }
   ],
   marble: [
-    { sku: '1011' }, { sku: '1012' }, { sku: '1013' }, { sku: '1014' }, { sku: '1015' }, { sku: '1016' }, { sku: '1017' }, { sku: '1018' },
-    { sku: '1019' }, { sku: '1020' }, { sku: '1021' }, { sku: '1022' }, { sku: '1023' }, { sku: '1024' }, { sku: '1025' }, { sku: '1026' },
-    { sku: '1027' }, { sku: '1028' }, { sku: '1029' }, { sku: '1030' }
+    { sku: '1011', img: 'assets/nalexible/stone/marble-patterns/1011.jpeg' },
+    { sku: '1012', img: 'assets/nalexible/stone/marble-patterns/1012.jpeg' },
+    { sku: '1013', img: 'assets/nalexible/stone/marble-patterns/1013.jpeg' },
+    { sku: '1014', img: 'assets/nalexible/stone/marble-patterns/1014.jpeg' },
+    { sku: '1015', img: 'assets/nalexible/stone/marble-patterns/1015.jpeg' },
+    { sku: '1016', img: 'assets/nalexible/stone/marble-patterns/1016.png' },
+    { sku: '1017', img: 'assets/nalexible/stone/marble-patterns/1017.png' },
+    { sku: '1018', img: 'assets/nalexible/stone/marble-patterns/1018.png' },
+    { sku: '1019', img: 'assets/nalexible/stone/marble-patterns/1019.jpeg' },
+    { sku: '1020', img: 'assets/nalexible/stone/marble-patterns/1020.jpeg' },
+    { sku: '1021', img: 'assets/nalexible/stone/marble-patterns/1021.jpeg' },
+    { sku: '1022', img: 'assets/nalexible/stone/marble-patterns/1022.jpeg' },
+    { sku: '1023', img: 'assets/nalexible/stone/marble-patterns/1023.jpeg' },
+    { sku: '1024', img: 'assets/nalexible/stone/marble-patterns/1024.jpeg' },
+    { sku: '1025', img: 'assets/nalexible/stone/marble-patterns/1025.jpeg' },
+    { sku: '1026', img: 'assets/nalexible/stone/marble-patterns/1026.jpeg' },
+    { sku: '1027', img: 'assets/nalexible/stone/marble-patterns/1027.jpeg' },
+    { sku: '1029', img: 'assets/nalexible/stone/marble-patterns/1029.jpeg' },
+    { sku: '1030', img: 'assets/nalexible/stone/marble-patterns/1030.jpeg' }
   ],
   sandstone: [
-    { sku: '2011' }, { sku: '2012' }, { sku: '2013' }, { sku: '2014' }, { sku: '2015' }, { sku: '2016' }, { sku: '2017' }, { sku: '2018' }
+    { sku: '2011', img: 'assets/nalexible/stone/sandstone-patterns/2011.jpeg' },
+    { sku: '2012', img: 'assets/nalexible/stone/sandstone-patterns/2012.jpeg' },
+    { sku: '2013', img: 'assets/nalexible/stone/sandstone-patterns/2013.jpeg' },
+    { sku: '2014', img: 'assets/nalexible/stone/sandstone-patterns/2014.jpeg' },
+    { sku: '2016', img: 'assets/nalexible/stone/sandstone-patterns/2016.jpeg' },
+    { sku: '2017', img: 'assets/nalexible/stone/sandstone-patterns/2017.jpeg' },
+    { sku: '2018', img: 'assets/nalexible/stone/sandstone-patterns/2018.jpeg' }
   ],
   metal: [
-    { sku: '4101' }, { sku: '4102' }, { sku: '4103' }, { sku: '4104' }, { sku: '4105' },
-    { sku: '4106' }, { sku: '4107' }, { sku: '4108' }, { sku: '4109' }, { sku: '4110' }
+    { sku: '4101', img: 'assets/nalexible/stone/metal-patterns/4101.jpeg' },
+    { sku: '4102', img: 'assets/nalexible/stone/metal-patterns/4102.jpeg' },
+    { sku: '4103', img: 'assets/nalexible/stone/metal-patterns/4103.jpeg' },
+    { sku: '4104', img: 'assets/nalexible/stone/metal-patterns/4104.jpeg' },
+    { sku: '4105', img: 'assets/nalexible/stone/metal-patterns/4105.jpeg' },
+    { sku: '4106', img: 'assets/nalexible/stone/metal-patterns/4106.jpeg' },
+    { sku: '4107', img: 'assets/nalexible/stone/metal-patterns/4107.jpeg' },
+    { sku: '4108', img: 'assets/nalexible/stone/metal-patterns/4108.jpeg' },
+    { sku: '4109', img: 'assets/nalexible/stone/metal-patterns/4109.jpeg' },
+    { sku: '4110', img: 'assets/nalexible/stone/metal-patterns/4110.jpeg' }
   ],
   rust: [
-    { sku: '4111' }, { sku: '4112' }, { sku: '4113' }, { sku: '4114' }
+    { sku: '4111', img: 'assets/nalexible/stone/rust-patterns/4111.png' },
+    { sku: '4112', img: 'assets/nalexible/stone/rust-patterns/4112.jpeg' },
+    { sku: '4113', img: 'assets/nalexible/stone/rust-patterns/4113.jpeg' },
+    { sku: '4114', img: 'assets/nalexible/stone/rust-patterns/4114.jpeg' }
   ],
   diy: [
-    { sku: 'DIY-01' }, { sku: 'DIY-02' }, { sku: 'DIY-03' }, { sku: 'DIY-04' }, { sku: 'DIY-05' }, { sku: 'DIY-06' },
-    { sku: 'DIY-07' }, { sku: 'DIY-08' }, { sku: 'DIY-09' }, { sku: 'DIY-10' }, { sku: 'DIY-11' }, { sku: 'DIY-12' }
+    { sku: 'DIY-01', img: 'assets/nalexible/stone/diy-patterns/DIY-01.jpg' },
+    { sku: 'DIY-02', img: 'assets/nalexible/stone/diy-patterns/DIY-02.jpg' },
+    { sku: 'DIY-03', img: 'assets/nalexible/stone/diy-patterns/DIY-03.jpg' },
+    { sku: 'DIY-04', img: 'assets/nalexible/stone/diy-patterns/DIY-04.jpg' },
+    { sku: 'DIY-05', img: 'assets/nalexible/stone/diy-patterns/DIY-05.jpg' },
+    { sku: 'DIY-06', img: 'assets/nalexible/stone/diy-patterns/DIY-06.jpg' },
+    { sku: 'DIY-07', img: 'assets/nalexible/stone/diy-patterns/DIY-07.jpg' },
+    { sku: 'DIY-08', img: 'assets/nalexible/stone/diy-patterns/DIY-08.jpg' },
+    { sku: 'DIY-09', img: 'assets/nalexible/stone/diy-patterns/DIY-09.jpg' },
+    { sku: 'DIY-10', img: 'assets/nalexible/stone/diy-patterns/DIY-10.jpg' },
+    { sku: 'DIY-11', img: 'assets/nalexible/stone/diy-patterns/DIY-11.jpg' },
+    { sku: 'DIY-12', img: 'assets/nalexible/stone/diy-patterns/DIY-12.jpg' }
   ]
 };
 
@@ -1820,46 +1848,16 @@ function createSeriesPatternTile(item) {
   return tile;
 }
 
-function applySeriesToggleState(seriesKey, expanded) {
-  var grid = document.getElementById('pattern-grid-' + seriesKey);
-  var toggle = document.getElementById('pattern-toggle-' + seriesKey);
-  if (!grid || !toggle) return;
-
-  var hiddenTiles = grid.querySelectorAll('.series-pattern-tile.is-hidden');
-  hiddenTiles.forEach(function(tile){ tile.style.display = expanded ? '' : 'none'; });
-
-  toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-  toggle.textContent = expanded
-    ? t('catalogStone.seriesGrid.collapse', 'Collapse')
-    : t('catalogStone.seriesGrid.showAll', 'Show all patterns →');
-}
-
 function renderSeriesPatternGrid(seriesKey) {
   var items = SERIES_PATTERN_LIBRARY[seriesKey] || [];
   var grid = document.getElementById('pattern-grid-' + seriesKey);
   if (!grid) return;
-  var toggle = document.getElementById('pattern-toggle-' + seriesKey);
-  var wasExpanded = toggle ? toggle.getAttribute('aria-expanded') === 'true' : false;
 
   grid.innerHTML = '';
-  items.forEach(function(item, index){
+  items.forEach(function(item){
     var tile = createSeriesPatternTile(item);
-    if (index >= 8 && toggle) tile.classList.add('is-hidden');
     grid.appendChild(tile);
   });
-
-  if (!toggle) return;
-  if (items.length <= 8) {
-    toggle.style.display = 'none';
-    return;
-  }
-
-  toggle.style.display = '';
-  toggle.onclick = function() {
-    var next = toggle.getAttribute('aria-expanded') !== 'true';
-    applySeriesToggleState(seriesKey, next);
-  };
-  applySeriesToggleState(seriesKey, wasExpanded);
 }
 
 function renderAllSeriesPatternGrids() {
