@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
+Disallow: /ab-report.html
+Disallow: /stone-catalog.html
+Disallow: /plye-b.html
+Disallow: /plye-c.html
+Disallow: /_lumislate-mockup.html
+Disallow: /_card_test.html
+Disallow: /_duplicates.html
+Disallow: /_poster_candidates.html
+Disallow: /_fb_master_browser.html
 
 Sitemap: https://www.ashleykitchen.com.tw/sitemap.xml

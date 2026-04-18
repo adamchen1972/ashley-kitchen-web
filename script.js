@@ -22,7 +22,7 @@ const T = {
   'cat-catalog-nav': {en:'Catalog',               zh:'產品目錄'},
   'cat-app-nav':   {en:'Applications',             zh:'應用場景'},
   'cat-proj-nav':  {en:'Projects',                 zh:'專案'},
-  'cat-cta-nav':   {en:'Request a Sample',         zh:'申請樣品'},
+  'cat-cta-nav':   {en:'Contact',                  zh:'聯絡我們'},
   'nov-products':  {en:'Products',     zh:'產品'},
   'nov-app':       {en:'Applications', zh:'應用場景'},
   'nov-proj':      {en:'Projects',     zh:'專案'},
@@ -1224,7 +1224,7 @@ const T = {
   'catalogStone.lumi.temp.4000k':     {en:'4000 K',  zh:'4000 K'},
   'catalogStone.lumi.temp.2700k':     {en:'2700 K',  zh:'2700 K'},
   'catalogStone.seriesGrid.title':    {en:'Pattern Library', zh:'花色庫'},
-  'catalogStone.seriesGrid.note':     {en:'SKU-first pattern cards are shown here. Representative applications stay below for context.', zh:'此處先以 SKU 花色卡進行篩選，代表性應用案例保留在下方提供情境參考。'},
+  'catalogStone.seriesGrid.note':     {en:'Review SKU pattern cards here, then use the application references below to confirm project fit.', zh:'先在此檢視 SKU 花色卡，再以下方應用案例確認是否符合專案需求。'},
   'catalogStone.seriesGrid.pending':  {en:'Swatch Pending', zh:'花色圖待補'},
   'catalogStone.seriesGrid.showAll':  {en:'Show all patterns →', zh:'展開全部花色 →'},
   'catalogStone.seriesGrid.collapse': {en:'Collapse', zh:'收合'},
@@ -1379,7 +1379,7 @@ const T = {
   'cat-back-btn':      {en:'Back to Catalog Landing →', zh:'返回型錄首頁 →'},
   'cat-home-nav':    {en:'Home',            zh:'首頁'},
   'cat-app-nav':     {en:'Applications',   zh:'應用場景'},
-  'cat-cta-nav':     {en:'Request a Sample', zh:'申請樣品'},
+  'cat-cta-nav':     {en:'Contact', zh:'聯絡我們'},
 
   // ── nalexible-stone.html DOWNLOADS ──
   'stone-dl-label':  {en:'Downloads', zh:'下載資料'},

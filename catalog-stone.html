@@ -303,10 +303,10 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   color:#1f1a16;
 }
 @media (max-width:1024px){
-  .series-pattern-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .series-pattern-grid--system{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 @media (max-width:640px){
-  .series-pattern-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .series-pattern-grid--system{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
 /* ── FIBERBOARD PRODUCT CARDS ── */
@@ -996,7 +996,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
 </style>
 </head>
 <body>
-<a href="#cat-stone-title" class="skip-link">Skip to content</a>
+<a href="#main-content" class="skip-link">Skip to content</a>
 
 <!-- LANG BAR -->
 <div class="lang-bar">
@@ -1013,7 +1013,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   </a>
   <ul id="nav-links">
     <li class="nav-dropdown">
-          <a href="#" id="cat-products-nav" class="nav-dropdown-trigger">Products ▾</a>
+          <a href="catalog.html" id="cat-products-nav" class="nav-dropdown-trigger">Products ▾</a>
       <div class="nav-dropdown-menu">
         <div class="nav-dropdown-menu-inner">
           <a href="plye.html" id="cat-nav-plye">Flooring</a>
@@ -1026,9 +1026,11 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
     <li><a href="applications.html" id="cat-app-nav">Applications</a></li>
     <li><a href="projects.html" id="cat-proj-nav">Projects</a></li>
     <li><a href="about.html" id="cat-about-nav">About</a></li>
-    <li><a href="contact.html?intent=sample&amp;product=stone&amp;from=catalog-stone-nav" class="nav-cta" id="cat-cta-nav">Request a Sample</a></li>
+    <li><a href="contact.html?intent=project_support&amp;product=stone&amp;from=catalog-stone-nav" class="nav-cta" id="cat-cta-nav">Contact</a></li>
   </ul>
 </nav>
+
+<main id="main-content">
 
 <!-- PAGE HEADER -->
 <div class="page-header">
@@ -1390,46 +1392,20 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
         <div class="series-pattern-head">
           <div class="series-pattern-title" data-i18n="catalogStone.seriesGrid.title">Pattern Library</div>
         </div>
-        <p class="series-pattern-note" data-i18n="catalogStone.seriesGrid.note">SKU-first pattern cards are shown here. Representative applications stay below for context.</p>
-        <div class="series-pattern-grid" id="pattern-grid-cement" data-series="cement"></div>
+        <p class="series-pattern-note" data-i18n="catalogStone.seriesGrid.note">Review SKU pattern cards here, then use the application references below to confirm project fit.</p>
+        <div class="series-pattern-grid series-pattern-grid--system" id="pattern-grid-cement" data-series="cement"></div>
       </div>
       <div class="family-spec-grid">
         <article class="family-spec-card"><div class="family-spec-label">Reading logic</div><div class="family-spec-value">3 quiet pattern directions</div><div class="family-spec-copy">This family is easier to choose when it is framed as three mood-led patterns, not as a large swatch wall. That keeps the library readable while exact card-level mapping is completed.</div></article>
         <article class="family-spec-card"><div class="family-spec-label">Typical use</div><div class="family-spec-value">Residential + hospitality calm</div><div class="family-spec-copy">Useful for restrained feature walls, boutique hospitality interiors, and projects that want warmth without a strong natural-stone signature.</div></article>
         <article class="family-spec-card"><div class="family-spec-label">Spec logic</div><div class="family-spec-value">Dual-size main platform</div><div class="family-spec-copy">The cement family stays on the same architectural-size platform as the main stone lines, making early comparison easier.</div></article>
       </div>
-      <div class="family-direction-grid">
-        <article class="family-direction-card">
-          <img loading="lazy" decoding="async" src="assets/nalexible/stone/family-swatches/cement-series-representative.png" alt="Cement pattern direction Rose Pink">
-          <div class="family-direction-body">
-            <span class="family-direction-kicker">Pattern direction 01</span>
-            <div class="family-direction-title">Rose Pink</div>
-            <p class="family-direction-copy">The warmest cement direction. Read this as the quieter residential and boutique-hospitality face of the family, where the surface should feel soft rather than graphic.</p>
-          </div>
-        </article>
-        <article class="family-direction-card">
-          <img loading="lazy" decoding="async" src="assets/nalexible/stone/family-swatches/cement-series-direction-dark.jpg" alt="Cement pattern direction dark hospitality grey">
-          <div class="family-direction-body">
-            <span class="family-direction-kicker">Pattern direction 02</span>
-            <div class="family-direction-title">Dark hospitality grey</div>
-            <p class="family-direction-copy">A moodier cement expression that works better in lobbies, receptions, and darker hospitality interiors where the family needs more depth without becoming a marble story.</p>
-          </div>
-        </article>
-        <article class="family-direction-card">
-          <img loading="lazy" decoding="async" src="assets/nalexible/stone/family-swatches/cement-series-direction-neutral.png" alt="Cement pattern direction soft commercial neutral">
-          <div class="family-direction-body">
-            <span class="family-direction-kicker">Pattern direction 03</span>
-            <div class="family-direction-title">Soft commercial neutral</div>
-            <p class="family-direction-copy">The most everyday direction. Use this when the project needs a cleaner cafe, bakery, retail, or mixed-use wall language that feels contemporary but not cold.</p>
-          </div>
-        </article>
-      </div>
       <div class="family-media-grid">
-        <article class="family-media-card"><img loading="lazy" decoding="async" src="assets/nalexible/stone/family-swatches/cement-series-direction-neutral.png" alt="Cement commercial interior fit"><div class="family-media-caption"><strong>Application proof</strong><p>The family becomes clearer when shown in calmer interiors first. Use project images to narrow the direction before users ask for exact pattern cards.</p></div></article>
-        <article class="family-media-card"><img loading="lazy" decoding="async" src="assets/nalexible/stone/family-swatches/cement-series-direction-dark.jpg" alt="Cement hospitality reception wall"><div class="family-media-caption"><strong>Hospitality fit</strong><p>This darker reception direction helps explain why cement should not be treated as only a pale residential finish. It can still hold mood and atmosphere.</p></div></article>
-        <article class="family-media-card"><img loading="lazy" decoding="async" src="assets/nalexible/stone/family-swatches/cement-series-representative.png" alt="Cement residential bedroom feature wall"><div class="family-media-caption"><strong>Residential fit</strong><p>Even with a watermarked reference, this family already reads credibly in quieter residential feature walls. We can replace it later with a cleaner export without changing the section logic.</p></div></article>
+        <article class="family-media-card"><img loading="lazy" decoding="async" src="images/stone/nal-case-office-stone-wall.jpg" alt="Cement commercial interior wall"><div class="family-media-caption"><strong>Application proof</strong><p>Use a calm office or retail wall to help readers understand this family as practical, readable, and specification-ready before deeper SKU comparison.</p></div></article>
+        <article class="family-media-card"><img loading="lazy" decoding="async" src="images/stone/nal-app-commercial-lobby.jpg" alt="Cement hospitality reception wall"><div class="family-media-caption"><strong>Hospitality fit</strong><p>The darker direction belongs in lobby and reception moments where cement needs depth and mood without switching into marble-style veining.</p></div></article>
+        <article class="family-media-card"><img loading="lazy" decoding="async" src="images/stone/nal-case-living-room-stone-wall.jpg" alt="Cement residential living wall"><div class="family-media-caption"><strong>Residential fit</strong><p>Residential proof should feel warm and livable. This example keeps the surface quiet while still reading as a finished architectural wall system.</p></div></article>
       </div>
-      <p class="family-note">The cement family now reads in two steps: first through three quieter pattern directions, then through application references that show where those calmer tones fit best in real interiors.</p>
+      <p class="family-note">Read the cement family in two clear layers: first shortlist by SKU in the pattern library, then confirm fit with real application references.</p>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -1451,8 +1427,8 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
         <div class="series-pattern-head">
           <div class="series-pattern-title" data-i18n="catalogStone.seriesGrid.title">Pattern Library</div>
         </div>
-        <p class="series-pattern-note" data-i18n="catalogStone.seriesGrid.note">SKU-first pattern cards are shown here. Representative applications stay below for context.</p>
-        <div class="series-pattern-grid" id="pattern-grid-marble" data-series="marble"></div>
+        <p class="series-pattern-note" data-i18n="catalogStone.seriesGrid.note">Review SKU pattern cards here, then use the application references below to confirm project fit.</p>
+        <div class="series-pattern-grid series-pattern-grid--system" id="pattern-grid-marble" data-series="marble"></div>
       </div>
       <div class="family-media-grid">
         <article class="family-media-card"><img loading="lazy" decoding="async" src="images/stone/family-cards/family-marble.jpg" alt="Marble series representative pattern"><div class="family-media-caption"><strong>Representative pattern</strong><p>Lead with the veining first. This rose-toned marble read helps explain the family as a more formal, more interior-facing branch before users narrow to exact pattern cards.</p></div></article>
@@ -1482,8 +1458,8 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
         <div class="series-pattern-head">
           <div class="series-pattern-title" data-i18n="catalogStone.seriesGrid.title">Pattern Library</div>
         </div>
-        <p class="series-pattern-note" data-i18n="catalogStone.seriesGrid.note">SKU-first pattern cards are shown here. Representative applications stay below for context.</p>
-        <div class="series-pattern-grid" id="pattern-grid-sandstone" data-series="sandstone"></div>
+        <p class="series-pattern-note" data-i18n="catalogStone.seriesGrid.note">Review SKU pattern cards here, then use the application references below to confirm project fit.</p>
+        <div class="series-pattern-grid series-pattern-grid--system" id="pattern-grid-sandstone" data-series="sandstone"></div>
       </div>
       <div class="family-media-grid">
         <article class="family-media-card"><img loading="lazy" decoding="async" src="images/stone/family-cards/family-sandstone.jpg" alt="Sandstone series representative pattern"><div class="family-media-caption"><strong>Representative pattern</strong><p>Rainbow sandstone is the clearest shorthand for this branch: layered mineral movement, warmer strata, and a family that feels exterior-aware from the first glance.</p></div></article>
@@ -1512,8 +1488,8 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
         <div class="series-pattern-head">
           <div class="series-pattern-title" data-i18n="catalogStone.seriesGrid.title">Pattern Library</div>
         </div>
-        <p class="series-pattern-note" data-i18n="catalogStone.seriesGrid.note">SKU-first pattern cards are shown here. Representative applications stay below for context.</p>
-        <div class="series-pattern-grid" id="pattern-grid-metal" data-series="metal"></div>
+        <p class="series-pattern-note" data-i18n="catalogStone.seriesGrid.note">Review SKU pattern cards here, then use the application references below to confirm project fit.</p>
+        <div class="series-pattern-grid series-pattern-grid--system" id="pattern-grid-metal" data-series="metal"></div>
       </div>
       <div class="family-spec-grid">
         <article class="family-spec-card"><div class="family-spec-label">Format</div><div class="family-spec-value">Single size</div><div class="family-spec-copy">Unlike most other families, the metal direction is intentionally constrained to one smaller format.</div></article>
@@ -1547,8 +1523,8 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
         <div class="series-pattern-head">
           <div class="series-pattern-title" data-i18n="catalogStone.seriesGrid.title">Pattern Library</div>
         </div>
-        <p class="series-pattern-note" data-i18n="catalogStone.seriesGrid.note">SKU-first pattern cards are shown here. Representative applications stay below for context.</p>
-        <div class="series-pattern-grid" id="pattern-grid-rust" data-series="rust"></div>
+        <p class="series-pattern-note" data-i18n="catalogStone.seriesGrid.note">Review SKU pattern cards here, then use the application references below to confirm project fit.</p>
+        <div class="series-pattern-grid series-pattern-grid--system" id="pattern-grid-rust" data-series="rust"></div>
       </div>
       <div class="family-media-grid">
         <article class="family-media-card"><img loading="lazy" decoding="async" src="images/stone/family-cards/family-copper-rust.jpg" alt="Copper and rust series representative pattern"><div class="family-media-caption"><strong>Representative pattern</strong><p>Start with the oxidized copper read itself. That makes the family feel intentional before it moves into hospitality bars, branded kitchens, and warmer commercial moments.</p></div></article>
@@ -1577,8 +1553,8 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
         <div class="series-pattern-head">
           <div class="series-pattern-title" data-i18n="catalogStone.seriesGrid.title">Pattern Library</div>
         </div>
-        <p class="series-pattern-note" data-i18n="catalogStone.seriesGrid.note">SKU-first pattern cards are shown here. Representative applications stay below for context.</p>
-        <div class="series-pattern-grid" id="pattern-grid-diy" data-series="diy"></div>
+        <p class="series-pattern-note" data-i18n="catalogStone.seriesGrid.note">Review SKU pattern cards here, then use the application references below to confirm project fit.</p>
+        <div class="series-pattern-grid series-pattern-grid--system" id="pattern-grid-diy" data-series="diy"></div>
       </div>
       <div class="family-spec-grid">
         <article class="family-spec-card"><div class="family-spec-label">Format</div><div class="family-spec-value">150×600</div><div class="family-spec-copy">This family breaks from the standard large-format stone platform and should be clearly presented as a separate format option.</div></article>
@@ -1643,6 +1619,8 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   </div>
 </div>
 </div>
+
+</main>
 
 <script src="script.js"></script>
 <script>
@@ -1750,7 +1728,7 @@ function getPatternGridColumns() {
 
 const SERIES_PATTERN_LIBRARY = {
   cement: [
-    { sku: '4001', img: 'assets/nalexible/stone/cement-patterns/4001.jpeg' },
+    { sku: '4001', img: 'assets/nalexible/stone/cement-patterns/4001.clean.jpg' },
     { sku: '4002', img: 'assets/nalexible/stone/cement-patterns/4002.jpeg' },
     { sku: '4003', img: 'assets/nalexible/stone/cement-patterns/4003.jpeg' }
   ],
@@ -1776,7 +1754,7 @@ const SERIES_PATTERN_LIBRARY = {
     { sku: '1030', img: 'assets/nalexible/stone/marble-patterns/1030.jpeg' }
   ],
   sandstone: [
-    { sku: '2011', img: 'assets/nalexible/stone/sandstone-patterns/2011.jpeg' },
+    { sku: '2011', img: 'assets/nalexible/stone/sandstone-patterns/2011.clean.jpg' },
     { sku: '2012', img: 'assets/nalexible/stone/sandstone-patterns/2012.jpeg' },
     { sku: '2013', img: 'assets/nalexible/stone/sandstone-patterns/2013.jpeg' },
     { sku: '2014', img: 'assets/nalexible/stone/sandstone-patterns/2014.jpeg' },
@@ -1818,10 +1796,7 @@ const SERIES_PATTERN_LIBRARY = {
   ]
 };
 
-const SERIES_PATTERN_IMAGE_TWEAK = {
-  '4001': { position: '66% 52%', zoom: 'scale(1.18)' },
-  '2011': { position: '64% 52%', zoom: 'scale(1.18)' }
-};
+const SERIES_PATTERN_IMAGE_TWEAK = {};
 
 function makePatternFallback(visual) {
   visual.classList.add('is-fallback');

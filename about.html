@@ -345,9 +345,9 @@ footer{background:#14110f;color:rgba(255,255,255,.7);padding:54px 0 30px;margin-
 <a href="#main-content" class="skip-link">Skip to content</a>
 
 <div class="lang-bar">
-  <button class="lang-btn active" type="button">English</button>
+  <button class="lang-btn active" type="button" id="btn-en" aria-pressed="true" onclick="setLang('en')">English</button>
   <span class="lang-sep">|</span>
-  <button class="lang-btn" type="button">繁體中文</button>
+  <button class="lang-btn" type="button" id="btn-zh" aria-pressed="false" onclick="setLang('zh')">繁體中文</button>
 </div>
 
 <nav id="site-nav" aria-label="Main navigation">
@@ -637,6 +637,27 @@ if (navBurger && navOverlay) {
 document.querySelectorAll(".nav-overlay a").forEach((link) => {
   link.addEventListener("click", () => navOverlay.classList.remove("open"));
 });
+
+function setLang(lang) {
+  var enBtn = document.getElementById("btn-en");
+  var zhBtn = document.getElementById("btn-zh");
+  var isZh = lang === "zh";
+  document.documentElement.lang = isZh ? "zh-TW" : "en";
+  if (enBtn) {
+    enBtn.classList.toggle("active", !isZh);
+    enBtn.setAttribute("aria-pressed", isZh ? "false" : "true");
+  }
+  if (zhBtn) {
+    zhBtn.classList.toggle("active", isZh);
+    zhBtn.setAttribute("aria-pressed", isZh ? "true" : "false");
+  }
+  try { localStorage.setItem("ak_lang_pref", isZh ? "zh" : "en"); } catch (e) {}
+}
+
+try {
+  var initialLang = localStorage.getItem("ak_lang_pref");
+  if (initialLang === "zh" || initialLang === "en") setLang(initialLang);
+} catch (e) {}
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {

@@ -1083,7 +1083,6 @@ html[lang="zh-TW"] .home-hero-sub{line-height:1.8;max-width:30ch}
 </head>
 <body data-page="home">
 <a href="#main-content" class="skip-link">Skip to content</a>
-<a class="ab-variant-badge" id="ab-variant-badge" href="ab-report.html" title="Open CTA report dashboard">Homepage A</a>
 
 <!-- ═══ VERSION B — A/B TEST — WORLD-CLASS REDESIGN ═══ -->
 <header role="banner">
@@ -1159,8 +1158,7 @@ html[lang="zh-TW"] .home-hero-sub{line-height:1.8;max-width:30ch}
       </div>
       <div class="home-hero-copy">
         <div class="home-kicker" data-i18n="home.hero.kicker">Premium surfaces · Stone · Flooring · Fiberboard</div>
-        <h1 class="home-hero-title ab-a-only" data-i18n="home.a.hero.title">Three material families — one considered path from first look to sample.</h1>
-        <h1 class="home-hero-title ab-b-only" data-i18n="home.ab.hero.title">Three material families — one considered path from first look to sample.</h1>
+        <h1 class="home-hero-title" data-i18n="home.ab.hero.title">Three material families — one considered path from first look to sample.</h1>
         <p class="home-hero-sub ab-a-only" data-i18n="home.a.hero.sub">Design-led surfaces for architects and project teams who want a premium material direction without losing days to spec cycles.</p>
         <p class="home-hero-sub ab-b-only" data-i18n="home.ab.hero.sub">Design-led surfaces for architects and project teams who want a premium material direction without losing days to spec cycles.</p>
         <div class="home-hero-actions">
@@ -1536,8 +1534,6 @@ function handleInquiry(e) {
   var viewsKey = 'ak_home_ab_views_' + variant;
   localStorage.setItem(viewsKey, String(Number(localStorage.getItem(viewsKey) || 0) + 1));
 
-  var badge = document.getElementById('ab-variant-badge');
-  if (badge) badge.textContent = variant === 'new' ? 'Homepage B' : 'Homepage A';
   var btnOld = document.getElementById('ab-btn-old');
   var btnNew = document.getElementById('ab-btn-new');
   function setAbButtonState(v) {

@@ -197,3 +197,21 @@
     - Adds extra top/bottom breathing room around homepage hero helper link and CTA cluster.
     - Applies final mobile-first spacing compression on contact page to reduce scroll depth.
     - Verifies homepage/contact internal link paths with a local existence check (no missing local href targets).
+
+- Commit Batch 1 (blockers + medium cleanup) is implemented and queued for commit.
+  - Files:
+    - `index.html`
+    - `about.html`
+    - `plye.html`
+    - `catalog.html`
+    - `catalog-stone.html`
+    - `contact.html`
+    - `applications.html`
+    - `projects.html`
+    - `script.js`
+    - `sitemap.xml`
+    - `robots.txt`
+  - Highlights:
+    - Removes public homepage debug report exposure, keeps A/B toggle internal behavior intact.
+    - Fixes dead language buttons on about/flooring pages and eliminates dead `#` nav links on production pages.
+    - Adds missing canonical tags, adds `<main>` landmarks on catalog pages, fixes duplicate `id="residential"`, updates contact Twitter SLA wording, and replaces placeholder merchant links with valid support paths.
