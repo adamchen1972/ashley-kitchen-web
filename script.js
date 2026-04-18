@@ -1437,8 +1437,16 @@ let currentLang = (function(){
 function setLang(lang) {
   currentLang = lang;
   try { localStorage.setItem('ashleyLang', lang); } catch(e) {}
-  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-  document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+  var enBtn = document.getElementById('btn-en') || document.getElementById('lb-en');
+  var zhBtn = document.getElementById('btn-zh') || document.getElementById('lb-zh');
+  if (enBtn) {
+    enBtn.classList.toggle('active', lang === 'en');
+    enBtn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+  }
+  if (zhBtn) {
+    zhBtn.classList.toggle('active', lang === 'zh');
+    zhBtn.setAttribute('aria-pressed', lang === 'zh' ? 'true' : 'false');
+  }
   document.documentElement.lang = lang === 'zh' ? 'zh-TW' : 'en';
 
   // Apply font swap for Chinese

@@ -13,3 +13,16 @@
   - `plye.html`
   - `nalexible-stone.html`
   - `docs/step3-qa-pass-2026-04-18.md`
+
+- `eeb253b` — Normalize sample CTA copy across EN pages.
+  - `about.html`
+  - `applications.html`
+  - `contact.html`
+  - `index.html`
+  - `nalexible-fiberboard.html`
+  - `nalexible-stone.html`
+  - `plye.html`
+  - `plye-b.html`
+  - `plye-c.html`
+  - `projects.html`
+  - `script.js`

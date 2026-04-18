@@ -258,9 +258,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 <header role="banner">
 <!-- LANG BAR -->
 <div class="lang-bar">
-  <button class="lang-btn active" id="btn-en" onclick="setLang('en')">English</button>
+  <button class="lang-btn active" type="button" aria-pressed="true" id="btn-en" onclick="setLang('en')">English</button>
   <span class="lang-sep">&nbsp;|&nbsp;</span>
-  <button class="lang-btn" id="btn-zh" onclick="setLang('zh')">繁體中文</button>
+  <button class="lang-btn" type="button" aria-pressed="false" id="btn-zh" onclick="setLang('zh')">繁體中文</button>
 </div>
 
 <!-- NAV -->

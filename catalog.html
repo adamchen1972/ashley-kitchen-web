@@ -13,6 +13,10 @@
 :root{--red:#E53935;--stone:#4A4A4A;--warm:#6B6B6B;--sand:#D9C5A1;--dark:#1A1714;--bg:#F5F5F5;--panel:#FFFFFF;--line:rgba(26,23,20,.08);--soft-shadow:0 16px 40px rgba(15,23,42,.06);--lift-shadow:0 26px 60px rgba(15,23,42,.1);}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:'Poppins','Noto Sans TC','DM Sans',-apple-system,sans-serif;background:linear-gradient(180deg,#fafafa 0%,#f4f4f5 100%);color:var(--stone);overflow-x:hidden}
+.skip-link{position:absolute;top:-40px;left:0;background:var(--red);color:#fff;padding:8px 16px;z-index:10000;font-size:14px;font-weight:600;text-decoration:none;border-radius:0 0 4px 0}
+.skip-link:focus{top:0}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:3px}
 
 /* ── LANG BAR ── */
 .lang-bar{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(255,255,255,.86);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:0 52px;height:34px;display:flex;justify-content:flex-end;align-items:center;gap:0;border-bottom:1px solid rgba(26,23,20,.08)}
@@ -513,12 +517,13 @@ nav ul li a.nav-active{color:var(--red)}
 </style>
 </head>
 <body>
+<a href="#cat-title" class="skip-link">Skip to content</a>
 
 <!-- LANG BAR -->
 <div class="lang-bar">
-  <button class="lang-btn active" onclick="setLang('en')" id="lb-en">English</button>
+  <button class="lang-btn active" type="button" aria-pressed="true" onclick="setLang('en')" id="lb-en">English</button>
   <div class="lang-sep"></div>
-  <button class="lang-btn" onclick="setLang('zh')" id="lb-zh">繁體中文</button>
+  <button class="lang-btn" type="button" aria-pressed="false" onclick="setLang('zh')" id="lb-zh">繁體中文</button>
 </div>
 
 <!-- NAV -->
