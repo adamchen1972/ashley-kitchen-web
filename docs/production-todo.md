@@ -165,3 +165,13 @@
     - Rebalances hero copy panel width, title rhythm, and CTA spacing for cleaner first-screen scan.
     - Improves CTA button sizing and line rhythm on desktop while preserving existing conversion order.
     - Refines mobile first-screen hierarchy with stacked CTA buttons and tighter copy sizing.
+
+- Final homepage + contact visual QA pass is implemented and queued for commit.
+  - Files:
+    - `index.html`
+    - `contact.html`
+    - `docs/homepage-contact-visual-qa-final-2026-04-18.md`
+  - Highlights:
+    - Adds extra top/bottom breathing room around homepage hero helper link and CTA cluster.
+    - Applies final mobile-first spacing compression on contact page to reduce scroll depth.
+    - Verifies homepage/contact internal link paths with a local existence check (no missing local href targets).
