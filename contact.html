@@ -568,7 +568,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
           </div>
           <button type="submit" class="form-submit" id="cf-submit">Send Message →</button>
         </form>
-        <p class="form-note">We'll be in touch soon. If your email app does not open, send details to <a href="mailto:sales@ashleykitchen.com.tw">sales@ashleykitchen.com.tw</a>.</p>
+        <p class="form-note">We'll be in touch soon. If your email app does not open, send details to <a href="mailto:adam@ashleykitchen.co">adam@ashleykitchen.co</a>.</p>
         <div class="form-feedback" id="form-feedback" role="status" aria-live="polite"></div>
       </div>
     </div>
@@ -590,14 +590,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
       <div class="cinfo-item">
         <div class="cinfo-icon">✉️</div>
         <div class="cinfo-text">
-          <a href="mailto:sales@ashleykitchen.com.tw">sales@ashleykitchen.com.tw</a>
+          <a href="mailto:adam@ashleykitchen.co">adam@ashleykitchen.co</a>
         </div>
       </div>
 
       <div class="cinfo-item">
         <div class="cinfo-icon">📞</div>
         <div class="cinfo-text">
-          <a href="tel:+886">+886 — available on request</a>
+          <a href="tel:+886289717801">+886 2 8971-7801</a>
         </div>
       </div>
 
@@ -733,7 +733,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
     </a>
   </div>
   <div class="footer-bottom">
-    <div class="f-copy">© 2026 Ashley Kitchen · No. 32, Alley 18, Lane 478, Ruiguang Rd, Neihu, Taipei · <a href="mailto:sales@ashleykitchen.com.tw">sales@ashleykitchen.com.tw</a></div>
+    <div class="f-copy">© 2026 Ashley Kitchen · No. 32, Alley 18, Lane 478, Ruiguang Rd, Neihu, Taipei · <a href="mailto:adam@ashleykitchen.co">adam@ashleykitchen.co</a></div>
     <div class="f-brands">
       <span class="f-pill">ASHLEY KITCHEN</span>
       <span class="f-pill">MATERIAL SYSTEMS</span>
@@ -981,7 +981,7 @@ function validatePhones() {
       (document.getElementById('cf-message').value || '')
     ];
     var subject = '[Ashley Kitchen] ' + (intent ? (intent.charAt(0).toUpperCase() + intent.slice(1)) : 'Contact') + ' - ' + (document.getElementById('cf-name').value || 'New enquiry');
-    var mailto = 'mailto:sales@ashleykitchen.com.tw'
+    var mailto = 'mailto:adam@ashleykitchen.co'
       + '?subject=' + encodeURIComponent(subject)
       + '&body=' + encodeURIComponent(bodyLines.join('\n'));
 
@@ -992,7 +992,7 @@ function validatePhones() {
     setFormFeedback('ok', isZh ? '即將開啟您的郵件程式。請確認後送出信件。' : 'Your email app should open now. Please review and send the draft.');
     window.location.href = mailto;
     window.setTimeout(function(){
-      setFormFeedback('warn', isZh ? '若郵件程式未自動開啟，請直接寄信至 sales@ashleykitchen.com.tw。' : 'If your email app did not open, please send your details to sales@ashleykitchen.com.tw.');
+      setFormFeedback('warn', isZh ? '若郵件程式未自動開啟，請直接寄信至 adam@ashleykitchen.co。' : 'If your email app did not open, please send your details to adam@ashleykitchen.co.');
     }, 2200);
     window.setTimeout(function(){
       if (!submitBtn) return;

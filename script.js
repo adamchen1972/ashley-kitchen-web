@@ -1418,7 +1418,7 @@ const T = {
   'fb-stat4-num': {en:'Taiwan', zh:'台灣'},
 
   // ── index.html downloads CAD note ──
-  'idx-cad-note': {en:'To access CAD files or certified documents, contact us at <a href="#contact" style="color:rgba(229,57,53,.6);text-decoration:none;">sales@ashleykitchen.com.tw</a>', zh:'如需 CAD 圖檔或認證文件，請聯絡 <a href="#contact" style="color:rgba(229,57,53,.6);text-decoration:none;">sales@ashleykitchen.com.tw</a>'},
+  'idx-cad-note': {en:'To access CAD files or certified documents, contact us at <a href="#contact" style="color:rgba(229,57,53,.6);text-decoration:none;">adam@ashleykitchen.co</a>', zh:'如需 CAD 圖檔或認證文件，請聯絡 <a href="#contact" style="color:rgba(229,57,53,.6);text-decoration:none;">adam@ashleykitchen.co</a>'},
 
   // ── plye.html image caption (3rd feat image) ──
   'plye-fcap3': {en:'plyē ORIGIN — 5-layer engineered construction · Patent Click-Lock System', zh:'plyē ORIGIN — 5層工程結構 · 專利卡扣系統'},

@@ -1421,7 +1421,7 @@ body.ab-new .ab-a-only{display:none!important}
     </a>
   </div>
   <div class="footer-bottom">
-    <div class="f-copy">© 2026 Ashley Kitchen · No. 32, Alley 18, Lane 478, Ruiguang Rd, Neihu, Taipei · <a href="mailto:sales@ashleykitchen.com.tw">sales@ashleykitchen.com.tw</a></div>
+    <div class="f-copy">© 2026 Ashley Kitchen · No. 32, Alley 18, Lane 478, Ruiguang Rd, Neihu, Taipei · <a href="mailto:adam@ashleykitchen.co">adam@ashleykitchen.co</a></div>
     <div class="f-brands">
       <span class="f-pill">ASHLEY KITCHEN</span>
       <span class="f-pill">MATERIAL SYSTEMS</span>
@@ -1465,12 +1465,12 @@ function handleInquiry(e) {
         form.innerHTML = '<div style="padding:60px 0;text-align:center;"><div style="font-size:40px;margin-bottom:16px;color:#E53935;">✓</div><p style="font-family:Poppins,sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;line-height:1.8;">'+(currentLang==='zh'?'詢問已成功送出。<br>我們將在24小時內回覆您。':'Inquiry sent successfully.<br>We'll be in touch shortly.')+'</p></div>';
       } else {
         if (btn) { btn.innerHTML = origTxt; btn.disabled = false; }
-        alert(currentLang==='zh'?'發送失敗，請直接來信：sales@ashleykitchen.com.tw':'Something went wrong. Please email: sales@ashleykitchen.com.tw');
+        alert(currentLang==='zh'?'發送失敗，請直接來信：adam@ashleykitchen.co':'Something went wrong. Please email: adam@ashleykitchen.co');
       }
     })
     .catch(function(){
       if (btn) { btn.innerHTML = origTxt; btn.disabled = false; }
-      alert(currentLang==='zh'?'網路錯誤，請直接來信：sales@ashleykitchen.com.tw':'Network error. Please email: sales@ashleykitchen.com.tw');
+      alert(currentLang==='zh'?'網路錯誤，請直接來信：adam@ashleykitchen.co':'Network error. Please email: adam@ashleykitchen.co');
     });
   return false;
 }
