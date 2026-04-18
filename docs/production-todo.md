@@ -76,3 +76,18 @@
   - Source refs:
     - `docs/brochure/sources/lumislate-source-zh.pptx`
     - `docs/brochure/sources/nalexible-product-materials-zh.pptx`
+
+## Pending (Execution Queue)
+
+- Homepage CTA report + conversion copy + mobile readability pass (EN/ZH) is implemented and queued for commit.
+  - Files:
+    - `ab-report.html` (new)
+    - `index.html`
+    - `catalog.html`
+    - `catalog-stone.html`
+    - `contact.html`
+    - `script.js`
+  - Highlights:
+    - Adds readable localStorage-based A/B CTA report page (`ab-report.html`) with variant views/clicks/CTR, top CTA ranking, copy summary, and reset action.
+    - Refines Catalog → Stone → Contact conversion copy and keeps bilingual keys in `T`.
+    - Adds EN/ZH mobile first-screen readability tuning for homepage/catalog/catalog-stone/contact hero blocks.

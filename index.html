@@ -976,6 +976,8 @@ body.ab-new .ab-a-only{display:none!important}
 }
 .home-decision-flow a.home-decision-step{text-decoration:none;transition:all .2s ease}
 .home-decision-flow a.home-decision-step:hover{background:#111827;color:#fff;border-color:#111827}
+html[lang="zh-TW"] .home-hero-title{font-size:clamp(28px,3.3vw,50px);line-height:1.08;letter-spacing:-.02em;max-width:16ch}
+html[lang="zh-TW"] .home-hero-sub{line-height:1.8;max-width:30ch}
 .home-proof-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .home-proof-card{
   border:1px solid rgba(17,24,39,.08);border-radius:18px;background:rgba(255,255,255,.76);
@@ -1055,12 +1057,14 @@ body.ab-new .ab-a-only{display:none!important}
   .home-hero-stage{min-height:620px}
   .home-hero-copy{bottom:92px}
   .home-hero-sub{max-width:28ch}
+  html[lang="zh-TW"] .home-hero-title{font-size:clamp(26px,8.2vw,38px);line-height:1.1}
+  html[lang="zh-TW"] .home-hero-sub{font-size:13px}
 }
 </style>
 </head>
 <body data-page="home">
 <a href="#main-content" class="skip-link">Skip to content</a>
-<div class="ab-variant-badge" id="ab-variant-badge">Homepage A</div>
+<a class="ab-variant-badge" id="ab-variant-badge" href="ab-report.html" title="Open CTA report dashboard">Homepage A</a>
 
 <!-- ═══ VERSION B — A/B TEST — WORLD-CLASS REDESIGN ═══ -->
 <header role="banner">
@@ -1509,6 +1513,8 @@ function handleInquiry(e) {
   localStorage.setItem(KEY, variant);
   document.body.classList.add(variant === 'new' ? 'ab-new' : 'ab-old');
   document.body.setAttribute('data-ab-home', variant);
+  var viewsKey = 'ak_home_ab_views_' + variant;
+  localStorage.setItem(viewsKey, String(Number(localStorage.getItem(viewsKey) || 0) + 1));
 
   var badge = document.getElementById('ab-variant-badge');
   if (badge) badge.textContent = variant === 'new' ? 'Homepage B' : 'Homepage A';
@@ -1578,6 +1584,12 @@ function handleInquiry(e) {
     var totalKey = 'ak_home_ab_clicks_' + variant;
     var total = Number(localStorage.getItem(totalKey) || 0) + 1;
     localStorage.setItem(totalKey, String(total));
+    var byLinkKey = 'ak_home_ab_clicks_by_link_' + variant;
+    var byLink = {};
+    try { byLink = JSON.parse(localStorage.getItem(byLinkKey) || '{}') || {}; } catch (_) { byLink = {}; }
+    byLink[id] = Number(byLink[id] || 0) + 1;
+    localStorage.setItem(byLinkKey, JSON.stringify(byLink));
+    localStorage.setItem('ak_home_ab_last_click_at', new Date().toISOString());
 
     if (window.dataLayer && Array.isArray(window.dataLayer)) {
       window.dataLayer.push({

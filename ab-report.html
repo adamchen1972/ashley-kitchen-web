@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage CTA Report | Ashley Kitchen</title>
+  <style>
+    :root{--ink:#111827;--muted:#6b7280;--line:#e5e7eb;--bg:#f7f7f8;--card:#fff;--accent:#0f172a}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:"DM Sans","Poppins",system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+    .wrap{max-width:1120px;margin:0 auto;padding:28px 20px 56px}
+    .head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+    .title{font-size:30px;line-height:1.08;letter-spacing:-.02em;margin:0}
+    .sub{margin:6px 0 0;color:var(--muted);font-size:14px}
+    .btns{display:flex;gap:8px;flex-wrap:wrap}
+    .btn{border:1px solid #cfd4dc;background:#fff;border-radius:999px;padding:8px 12px;font-size:12px;cursor:pointer;color:var(--ink);text-decoration:none}
+    .btn.dark{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px}
+    .k{font-size:10px;letter-spacing:1.7px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    .n{font-size:28px;line-height:1;font-weight:700}
+    .small{font-size:12px;color:var(--muted);margin-top:4px}
+    .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:12px}
+    h2{font-size:14px;letter-spacing:1.2px;text-transform:uppercase;color:#374151;margin:2px 0 10px}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:9px 8px;border-bottom:1px solid var(--line);font-size:13px;text-align:left;vertical-align:top}
+    th{font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:#6b7280}
+    .muted{color:var(--muted)}
+    .empty{color:var(--muted);font-size:13px;padding:12px 4px}
+    code{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:640px){.grid{grid-template-columns:1fr}.title{font-size:25px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <h1 class="title">Homepage CTA Report</h1>
+        <p class="sub">Readable local dashboard for A/B variant views and CTA clicks.</p>
+      </div>
+      <div class="btns">
+        <a class="btn" href="index.html?ab=a">Open A</a>
+        <a class="btn" href="index.html?ab=b">Open B</a>
+        <button class="btn" id="copySummary">Copy Summary</button>
+        <button class="btn dark" id="resetData">Reset Tracking Data</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card"><div class="k">A Views</div><div class="n" id="aViews">0</div><div class="small">Homepage A loads</div></div>
+      <div class="card"><div class="k">B Views</div><div class="n" id="bViews">0</div><div class="small">Homepage B loads</div></div>
+      <div class="card"><div class="k">Last Click</div><div class="n" id="lastClick" style="font-size:15px;line-height:1.3;font-weight:600">-</div><div class="small">Most recent CTA event</div></div>
+    </div>
+
+    <div class="grid">
+      <div class="card"><div class="k">A Clicks</div><div class="n" id="aClicks">0</div><div class="small" id="aRate">CTR: 0%</div></div>
+      <div class="card"><div class="k">B Clicks</div><div class="n" id="bClicks">0</div><div class="small" id="bRate">CTR: 0%</div></div>
+      <div class="card"><div class="k">Winner (CTR)</div><div class="n" id="winner" style="font-size:22px">-</div><div class="small">Views-to-click ratio comparison</div></div>
+    </div>
+
+    <div class="panel">
+      <h2>Top CTA Clicks by Variant</h2>
+      <div id="byVariantTables"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Combined CTA Ranking</h2>
+      <div id="combinedTable"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Tracking Keys</h2>
+      <p class="muted">This report reads from localStorage keys with prefix <code>ak_home_ab_</code>.</p>
+    </div>
+  </div>
+
+  <script>
+    function n(v){ return Number(v || 0); }
+    function pct(clicks, views){ return views > 0 ? ((clicks / views) * 100).toFixed(1) + '%' : '0%'; }
+    function loadMap(key){
+      try { return JSON.parse(localStorage.getItem(key) || '{}') || {}; }
+      catch (_) { return {}; }
+    }
+    function rowsFromMap(map){
+      return Object.entries(map).sort((a,b)=>Number(b[1])-Number(a[1]));
+    }
+    function toTable(rows){
+      if (!rows.length) return '<div class="empty">No data yet.</div>';
+      return '<table><thead><tr><th>CTA ID</th><th>Clicks</th></tr></thead><tbody>' +
+        rows.map(r => '<tr><td><code>' + r[0] + '</code></td><td>' + r[1] + '</td></tr>').join('') +
+        '</tbody></table>';
+    }
+
+    const aViews = n(localStorage.getItem('ak_home_ab_views_old'));
+    const bViews = n(localStorage.getItem('ak_home_ab_views_new'));
+    const aClicks = n(localStorage.getItem('ak_home_ab_clicks_old'));
+    const bClicks = n(localStorage.getItem('ak_home_ab_clicks_new'));
+    const aMap = loadMap('ak_home_ab_clicks_by_link_old');
+    const bMap = loadMap('ak_home_ab_clicks_by_link_new');
+    const lastClick = localStorage.getItem('ak_home_ab_last_click_at') || '-';
+
+    document.getElementById('aViews').textContent = aViews;
+    document.getElementById('bViews').textContent = bViews;
+    document.getElementById('aClicks').textContent = aClicks;
+    document.getElementById('bClicks').textContent = bClicks;
+    document.getElementById('aRate').textContent = 'CTR: ' + pct(aClicks, aViews);
+    document.getElementById('bRate').textContent = 'CTR: ' + pct(bClicks, bViews);
+    document.getElementById('lastClick').textContent = lastClick;
+
+    const aCtr = aViews ? aClicks / aViews : 0;
+    const bCtr = bViews ? bClicks / bViews : 0;
+    document.getElementById('winner').textContent = aCtr === bCtr ? 'Tie' : (bCtr > aCtr ? 'B leads' : 'A leads');
+
+    const byVariant = document.getElementById('byVariantTables');
+    byVariant.innerHTML =
+      '<div class="grid" style="margin:0">' +
+      '<div class="card" style="margin:0"><div class="k">Variant A</div>' + toTable(rowsFromMap(aMap)) + '</div>' +
+      '<div class="card" style="margin:0"><div class="k">Variant B</div>' + toTable(rowsFromMap(bMap)) + '</div>' +
+      '</div>';
+
+    const all = {};
+    Object.entries(aMap).forEach(([k,v]) => all[k] = n(all[k]) + n(v));
+    Object.entries(bMap).forEach(([k,v]) => all[k] = n(all[k]) + n(v));
+    document.getElementById('combinedTable').innerHTML = toTable(rowsFromMap(all));
+
+    document.getElementById('copySummary').addEventListener('click', async function(){
+      const lines = [
+        'AB CTA Summary',
+        'A: views=' + aViews + ', clicks=' + aClicks + ', ctr=' + pct(aClicks, aViews),
+        'B: views=' + bViews + ', clicks=' + bClicks + ', ctr=' + pct(bClicks, bViews),
+        'Winner: ' + document.getElementById('winner').textContent,
+        'Last click: ' + lastClick
+      ].join('\\n');
+      try {
+        await navigator.clipboard.writeText(lines);
+        this.textContent = 'Copied';
+        setTimeout(() => this.textContent = 'Copy Summary', 1200);
+      } catch (_) {}
+    });
+
+    document.getElementById('resetData').addEventListener('click', function(){
+      if (!confirm('Reset all homepage AB tracking data from this browser?')) return;
+      Object.keys(localStorage).forEach(k => { if (k.startsWith('ak_home_ab_')) localStorage.removeItem(k); });
+      location.reload();
+    });
+  </script>
+</body>
+</html>
