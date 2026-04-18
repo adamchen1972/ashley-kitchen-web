@@ -50,5 +50,9 @@
   - `index.html`
   - `script.js`
 
+- `4d27ce0` — Apply Hybrid homepage hero messaging across A/B variants (EN/ZH aligned).
+  - `index.html`
+  - `script.js`
+
 - `f73c5f6` — Add 5-minute internal A/B evaluation playbook for homepage hero decision.
   - `docs/homepage-ab-5min-eval-2026-04-18.md`
