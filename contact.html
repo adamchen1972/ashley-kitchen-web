@@ -872,8 +872,13 @@ function prefillContactFromQuery(){
 
   var msg = document.getElementById('cf-message');
   if (msg && !msg.value.trim()) {
+    var selectedProduct = '';
+    var productSel = document.getElementById('cf-product');
+    if (productSel && productSel.selectedIndex >= 0) {
+      selectedProduct = productSel.options[productSel.selectedIndex].text || '';
+    }
     var line = '';
-    if (intent === 'sample') line = 'I would like to request physical samples.';
+    if (intent === 'sample') line = 'I would like to request physical samples' + (selectedProduct ? (' for ' + selectedProduct) : '') + '.';
     else if (intent === 'spec') line = 'I would like technical specifications and compliance documents.';
     else if (intent === 'project') line = 'I would like project support and product recommendations.';
     if (line) {
@@ -987,9 +992,12 @@ function validatePhones() {
     setFormFeedback('ok', isZh ? '即將開啟您的郵件程式。請確認後送出信件。' : 'Your email app should open now. Please review and send the draft.');
     window.location.href = mailto;
     window.setTimeout(function(){
+      setFormFeedback('warn', isZh ? '若郵件程式未自動開啟，請直接寄信至 sales@ashleykitchen.com.tw。' : 'If your email app did not open, please send your details to sales@ashleykitchen.com.tw.');
+    }, 2200);
+    window.setTimeout(function(){
       if (!submitBtn) return;
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Send Message →';
+      submitBtn.textContent = isZh ? '送出訊息 →' : 'Send Message →';
     }, 1800);
   });
 })();
