@@ -162,7 +162,14 @@ footer{background:linear-gradient(180deg,#141416 0%,#0d0d0f 100%);padding:72px 7
 
 .form-submit{background:#111827;color:white;border:none;padding:16px 48px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;cursor:pointer;font-family:'Poppins',sans-serif;transition:background .2s,transform .2s;width:100%;border-radius:999px;box-shadow:0 12px 28px rgba(17,24,39,.14)}
 .form-submit:hover{background:#000;transform:translateY(-1px)}
+.form-submit[disabled]{opacity:.72;cursor:not-allowed;transform:none}
 .form-note{font-size:12px;color:rgba(74,74,74,.5);margin-top:12px;text-align:center}
+.form-note a{color:rgba(26,23,20,.75);text-underline-offset:3px}
+.form-feedback{display:none;margin-top:12px;padding:11px 14px;border-radius:12px;font-size:12px;line-height:1.6;font-family:'DM Sans',sans-serif}
+.form-feedback.show{display:block}
+.form-feedback.ok{background:rgba(34,197,94,.1);color:#166534;border:1px solid rgba(34,197,94,.24)}
+.form-feedback.warn{background:rgba(245,158,11,.11);color:#92400e;border:1px solid rgba(245,158,11,.28)}
+.form-feedback.err{background:rgba(229,57,53,.11);color:#b71c1c;border:1px solid rgba(229,57,53,.28)}
 
 /* INFO COLUMN */
 .contact-info .section-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--red);font-family:'DM Sans',sans-serif;margin-bottom:28px;display:block}
@@ -377,20 +384,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
     <div class="contact-form-wrap">
       <span class="section-label">Send a Message</span>
       <div class="cform">
-        <form action="mailto:sales@ashleykitchen.com.tw" method="post" enctype="text/plain" id="contact-form">
+        <form action="#" method="post" id="contact-form">
           <div class="form-row">
             <div class="form-group">
               <label for="cf-name">Full Name</label>
-              <input type="text" id="cf-name" name="name" placeholder="Your full name" required>
+              <input type="text" id="cf-name" name="name" placeholder="Your full name" autocomplete="name" required>
             </div>
             <div class="form-group">
               <label for="cf-company">Company / Firm</label>
-              <input type="text" id="cf-company" name="company" placeholder="Your company or firm">
+              <input type="text" id="cf-company" name="company" placeholder="Your company or firm" autocomplete="organization">
             </div>
           </div>
           <div class="form-group">
             <label for="cf-email">Email Address</label>
-            <input type="email" id="cf-email" name="email" placeholder="you@company.com" required>
+            <input type="email" id="cf-email" name="email" placeholder="you@company.com" autocomplete="email" required>
           </div>
           <div class="form-row">
             <div class="form-group">
@@ -443,7 +450,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
                   <option value="+64|New Zealand">+64 NZ</option>
                   <option value="+other|">Other</option>
                 </select>
-                <input type="tel" id="cf-phone-office" name="phone_office" class="phone-number-input" placeholder="Office number" oninput="validatePhones()">
+                <input type="tel" id="cf-phone-office" name="phone_office" class="phone-number-input" placeholder="Office number" inputmode="tel" autocomplete="tel" oninput="validatePhones()">
               </div>
             </div>
             <div class="form-group">
@@ -496,7 +503,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
                   <option value="+64|New Zealand">+64 NZ</option>
                   <option value="+other|">Other</option>
                 </select>
-                <input type="tel" id="cf-phone-mobile" name="phone_mobile" class="phone-number-input" placeholder="Mobile number" oninput="validatePhones()">
+                <input type="tel" id="cf-phone-mobile" name="phone_mobile" class="phone-number-input" placeholder="Mobile number" inputmode="tel" autocomplete="tel-national" oninput="validatePhones()">
               </div>
               <span class="phone-note">At least one phone number (office or mobile) is required.</span>
               <span class="phone-error" id="phone-error">Please enter at least one phone number.</span>
@@ -505,13 +512,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
           <div class="form-row">
             <div class="form-group">
               <label for="cf-country">Country</label>
-              <input type="text" id="cf-country" name="country" placeholder="Your country" required>
+              <input type="text" id="cf-country" name="country" placeholder="Your country" autocomplete="country-name" required>
             </div>
           </div>
           <div class="form-row-3">
             <div class="form-group">
               <label for="cf-whatsapp"><span class="messenger-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="color:#25D366"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.375A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.952 7.952 0 0 1-4.073-1.117l-.292-.174-3.028.838.838-2.951-.191-.303A7.96 7.96 0 0 1 4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8zm4.406-5.884c-.242-.121-1.432-.707-1.654-.787-.222-.08-.384-.121-.545.121-.162.242-.626.787-.768.949-.141.162-.282.182-.524.06-.242-.121-1.021-.376-1.944-1.199-.718-.641-1.203-1.432-1.344-1.674-.141-.242-.015-.373.106-.494.109-.108.242-.282.363-.424.121-.141.162-.242.242-.404.08-.162.04-.303-.02-.424-.06-.121-.545-1.314-.748-1.8-.197-.472-.397-.407-.545-.415l-.465-.008c-.162 0-.424.06-.646.303-.222.242-.848.829-.848 2.022s.868 2.346.989 2.508c.121.162 1.71 2.61 4.144 3.659.579.25 1.031.399 1.383.511.581.185 1.111.159 1.529.097.466-.07 1.432-.586 1.634-1.152.202-.566.202-1.051.141-1.152-.06-.101-.222-.162-.465-.283z"/></svg> WhatsApp</span> <span style="font-size:10px;font-weight:400;letter-spacing:0;text-transform:none;opacity:.5">(optional)</span></label>
-              <input type="tel" id="cf-whatsapp" name="whatsapp" placeholder="+1 234 567 8900">
+              <input type="tel" id="cf-whatsapp" name="whatsapp" placeholder="+1 234 567 8900" inputmode="tel">
             </div>
             <div class="form-group">
               <label for="cf-wechat"><span class="messenger-icon"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="color:#07C160"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.295.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c-.276-.93-.418-1.91-.418-2.91 0-3.763 3.126-6.823 7.02-6.823.24 0 .478.012.714.036C14.68 4.086 11.963 2.188 8.691 2.188zm-2.22 3.734c.59 0 1.069.478 1.069 1.068 0 .59-.479 1.07-1.069 1.07-.59 0-1.069-.48-1.069-1.07 0-.59.479-1.068 1.069-1.068zm4.44 0c.59 0 1.07.478 1.07 1.068 0 .59-.48 1.07-1.07 1.07-.59 0-1.068-.48-1.068-1.07 0-.59.478-1.068 1.068-1.068zm3.513 4.107c-3.418 0-6.19 2.463-6.19 5.5 0 3.036 2.772 5.5 6.19 5.5.847 0 1.655-.165 2.395-.46a.68.68 0 0 1 .56.077l1.49.87a.257.257 0 0 0 .13.043.23.23 0 0 0 .23-.23c0-.057-.023-.11-.037-.165l-.306-1.157a.462.462 0 0 1 .167-.52c1.428-1.06 2.37-2.667 2.37-4.458 0-3.037-2.773-5.5-6.199-5.5zm-2.22 2.934c.46 0 .833.373.833.834a.834.834 0 0 1-1.667 0c0-.46.373-.834.834-.834zm4.44 0c.46 0 .834.373.834.834a.834.834 0 0 1-1.667 0c0-.46.373-.834.833-.834z"/></svg> WeChat</span> <span style="font-size:10px;font-weight:400;letter-spacing:0;text-transform:none;opacity:.5">(optional)</span></label>
@@ -525,7 +532,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
           <div class="form-row">
             <div class="form-group">
               <label for="cf-product">Product Interest</label>
-              <select id="cf-product" name="product">
+              <select id="cf-product" name="product" required>
                 <option value="" disabled selected>Select a product…</option>
                 <option value="plye">Flooring Engineered Flooring</option>
                 <option value="nalexible-stone">Stone Systems</option>
@@ -536,7 +543,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
             </div>
             <div class="form-group">
               <label for="cf-project">Project Type</label>
-              <select id="cf-project" name="project_type">
+              <select id="cf-project" name="project_type" required>
                 <option value="" disabled selected>Select a type…</option>
                 <option value="residential">Residential</option>
                 <option value="commercial">Commercial</option>
@@ -545,6 +552,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
               </select>
             </div>
           </div>
+          <input type="hidden" id="cf-intent" name="intent" value="">
+          <input type="hidden" id="cf-source" name="source_page" value="">
+          <input type="hidden" id="cf-page-url" name="page_url" value="">
           <div class="form-group">
             <label for="cf-message">Message</label>
             <textarea id="cf-message" name="message" rows="5" placeholder="Tell us about your project, quantities, or anything else we should know…" required></textarea>
@@ -556,9 +566,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
             </label>
             <span id="save-status"></span>
           </div>
-          <button type="submit" class="form-submit">Send Message →</button>
+          <button type="submit" class="form-submit" id="cf-submit">Send Message →</button>
         </form>
-        <p class="form-note">We'll be in touch soon. Free samples available.</p>
+        <p class="form-note">We'll be in touch soon. If your email app does not open, send details to <a href="mailto:sales@ashleykitchen.com.tw">sales@ashleykitchen.com.tw</a>.</p>
+        <div class="form-feedback" id="form-feedback" role="status" aria-live="polite"></div>
       </div>
     </div>
 
@@ -793,6 +804,87 @@ function akClearDetails() {
   } catch(e) {}
 })();
 
+function setFormFeedback(type, text){
+  var box = document.getElementById('form-feedback');
+  if (!box) return;
+  box.className = 'form-feedback show ' + type;
+  box.textContent = text;
+}
+
+function langIsZh(){
+  return document.documentElement.lang === 'zh-TW' || document.documentElement.lang === 'zh';
+}
+
+function normalizePhone(ccVal, raw){
+  var code = '';
+  if (ccVal && ccVal.indexOf('|') !== -1) code = ccVal.split('|')[0];
+  else if (ccVal && ccVal !== '+other|') code = ccVal;
+  var v = (raw || '').trim();
+  if (!v) return '';
+  if (!code || code === '+other') return v;
+  return code + ' ' + v;
+}
+
+function setSelectValue(selectId, value){
+  var sel = document.getElementById(selectId);
+  if (!sel || !value) return;
+  for (var i = 0; i < sel.options.length; i++) {
+    if (sel.options[i].value === value) {
+      sel.selectedIndex = i;
+      break;
+    }
+  }
+}
+
+function prefillContactFromQuery(){
+  var params = new URLSearchParams(window.location.search);
+  var intent = (params.get('intent') || '').toLowerCase();
+  var product = (params.get('product') || '').toLowerCase();
+  var project = (params.get('project') || '').toLowerCase();
+  var source = params.get('from') || params.get('source') || '';
+  var codes = params.get('codes') || params.get('sku') || '';
+
+  var productMap = {
+    'stone':'nalexible-stone',
+    'nalexible-stone':'nalexible-stone',
+    'flooring':'plye',
+    'plye':'plye',
+    'fiberboard':'nalexible-fiberboard',
+    'nalexible-fiberboard':'nalexible-fiberboard',
+    'multiple':'multiple',
+    'general':'general'
+  };
+  var projectMap = {
+    'residential':'residential',
+    'commercial':'commercial',
+    'hospitality':'hospitality',
+    'other':'other'
+  };
+  setSelectValue('cf-product', productMap[product]);
+  setSelectValue('cf-project', projectMap[project]);
+
+  var intentField = document.getElementById('cf-intent');
+  if (intentField) intentField.value = intent || '';
+  var sourceField = document.getElementById('cf-source');
+  if (sourceField) sourceField.value = source || (document.referrer || '');
+  var pageField = document.getElementById('cf-page-url');
+  if (pageField) pageField.value = window.location.href;
+
+  var msg = document.getElementById('cf-message');
+  if (msg && !msg.value.trim()) {
+    var line = '';
+    if (intent === 'sample') line = 'I would like to request physical samples.';
+    else if (intent === 'spec') line = 'I would like technical specifications and compliance documents.';
+    else if (intent === 'project') line = 'I would like project support and product recommendations.';
+    if (line) {
+      if (codes) line += ' Candidate codes: ' + codes + '.';
+      msg.value = line;
+    }
+  }
+}
+
+prefillContactFromQuery();
+
 // Phone country code auto-fill country field
 function handleCCChange(selectEl) {
   var val = selectEl.value;
@@ -837,17 +929,68 @@ function validatePhones() {
   var form = document.getElementById('contact-form');
   if (!form) return;
   form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var isZh = langIsZh();
+    var submitBtn = document.getElementById('cf-submit');
     if (!validatePhones()) {
-      e.preventDefault();
       document.getElementById('cf-phone-office').focus();
+      setFormFeedback('err', isZh ? '請至少填寫一個電話號碼（市話或手機）。' : 'Please enter at least one phone number (office or mobile).');
       return;
     }
+    if (!form.reportValidity()) {
+      setFormFeedback('warn', isZh ? '請完成必填欄位後再送出。' : 'Please complete all required fields before sending.');
+      return;
+    }
+
     var cb = document.getElementById('cf-save');
     if (cb && cb.checked) {
       akSaveDetails();
     } else {
       localStorage.removeItem(AK_STORAGE_KEY);
     }
+
+    var productSel = document.getElementById('cf-product');
+    var projectSel = document.getElementById('cf-project');
+    var productText = productSel && productSel.selectedIndex >= 0 ? productSel.options[productSel.selectedIndex].text : '';
+    var projectText = projectSel && projectSel.selectedIndex >= 0 ? projectSel.options[projectSel.selectedIndex].text : '';
+    var officePhone = normalizePhone(document.getElementById('cf-cc-office').value, document.getElementById('cf-phone-office').value);
+    var mobilePhone = normalizePhone(document.getElementById('cf-cc-mobile').value, document.getElementById('cf-phone-mobile').value);
+    var intent = (document.getElementById('cf-intent').value || '').trim();
+    var source = (document.getElementById('cf-source').value || '').trim();
+    var bodyLines = [
+      'Name: ' + (document.getElementById('cf-name').value || ''),
+      'Company: ' + (document.getElementById('cf-company').value || ''),
+      'Email: ' + (document.getElementById('cf-email').value || ''),
+      'Phone (Office): ' + officePhone,
+      'Phone (Mobile): ' + mobilePhone,
+      'Country: ' + (document.getElementById('cf-country').value || ''),
+      'WhatsApp: ' + (document.getElementById('cf-whatsapp').value || ''),
+      'WeChat: ' + (document.getElementById('cf-wechat').value || ''),
+      'LINE: ' + (document.getElementById('cf-line').value || ''),
+      'Product Interest: ' + productText,
+      'Project Type: ' + projectText,
+      'Intent: ' + intent,
+      'Source: ' + source,
+      '',
+      'Message:',
+      (document.getElementById('cf-message').value || '')
+    ];
+    var subject = '[Ashley Kitchen] ' + (intent ? (intent.charAt(0).toUpperCase() + intent.slice(1)) : 'Contact') + ' - ' + (document.getElementById('cf-name').value || 'New enquiry');
+    var mailto = 'mailto:sales@ashleykitchen.com.tw'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(bodyLines.join('\n'));
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = isZh ? '正在開啟郵件…' : 'Opening email app…';
+    }
+    setFormFeedback('ok', isZh ? '即將開啟您的郵件程式。請確認後送出信件。' : 'Your email app should open now. Please review and send the draft.');
+    window.location.href = mailto;
+    window.setTimeout(function(){
+      if (!submitBtn) return;
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message →';
+    }, 1800);
   });
 })();
 </script>
