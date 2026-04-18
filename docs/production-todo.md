@@ -157,3 +157,11 @@
     - Adds extra vertical breathing room around the hero helper link (`Need technical evidence first →`).
     - Applies mobile-first spacing polish on contact page (tighter section spacing and cleaner form stack).
     - Reduces mobile scroll depth by turning contact overview into horizontal swipe cards and hiding redundant process block on small screens.
+
+- Homepage hero visual hierarchy pass is implemented and queued for commit.
+  - Files:
+    - `index.html`
+  - Highlights:
+    - Rebalances hero copy panel width, title rhythm, and CTA spacing for cleaner first-screen scan.
+    - Improves CTA button sizing and line rhythm on desktop while preserving existing conversion order.
+    - Refines mobile first-screen hierarchy with stacked CTA buttons and tighter copy sizing.
