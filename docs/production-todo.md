@@ -33,3 +33,6 @@
   - `catalog-stone.html`
   - `contact.html`
   - `docs/step3-performance-qa-2026-04-18.md`
+
+- `231a0f5` — Homepage B flow polish: trust-strip positioning + softer response copy.
+  - `index.html`
