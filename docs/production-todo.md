@@ -65,6 +65,28 @@
 - `f73c5f6` — Add 5-minute internal A/B evaluation playbook for homepage hero decision.
   - `docs/homepage-ab-5min-eval-2026-04-18.md`
 
+- `6943827` — Fix catalog-stone Series 3–8 pattern mappings and grid layout.
+  - `catalog-stone.html`
+  - `assets/nalexible/stone/cement-patterns/*`
+  - `assets/nalexible/stone/marble-patterns/*`
+  - `assets/nalexible/stone/sandstone-patterns/*`
+  - `assets/nalexible/stone/metal-patterns/*`
+  - `assets/nalexible/stone/rust-patterns/*`
+  - `assets/nalexible/stone/diy-patterns/*`
+  - `docs/catalog-stone-series3-8-mapping-audit-v2.md`
+
+- `ef21d9b` — Polish framing for problematic sample-shot pattern tiles.
+  - `catalog-stone.html`
+  - Highlights:
+    - Adds per-SKU image framing tweaks for `4001`, `2011`, `4112` to reduce side-floor/edge noise in tile view.
+    - Keeps original source images intact while improving card readability.
+
+- Brochure logic review pass completed (content-level, no layout rewrite).
+  - `docs/brochure-logic-review-v1-2026-04-18.md`
+  - Highlights:
+    - Recommends a constrained v9 micro-revision (claim guardrail, final approval note, technical evidence pointer).
+    - Identifies duplicate narrative lines to reduce without changing page architecture.
+
 ## Pending (Coordination)
 
 - `2026-04-18 17:00 (Asia/Taipei)` — Claude.ai brochure v8 print-fix pass.
