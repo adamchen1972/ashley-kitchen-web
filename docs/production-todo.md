@@ -125,3 +125,17 @@
     - Converts mobile nav overlays from always-mounted transparent fullscreen layers to `display:none` by default.
     - Keeps overlays visible only when `.open` is active, reducing cross-browser risk of invisible click interception.
     - Preserves existing burger behavior and close interactions.
+
+- Conversion routing polish pass is implemented and queued for commit.
+  - Files:
+    - `index.html`
+    - `applications.html`
+    - `projects.html`
+    - `about.html`
+    - `plye.html`
+    - `nalexible-stone.html`
+    - `nalexible-fiberboard.html`
+  - Highlights:
+    - Replaces generic `contact.html` CTA links with intent-aware deep links for sample/spec/technical/project support.
+    - Adds `from=` source tags across nav, hero, sticky, section, and footer CTAs for clearer funnel attribution.
+    - Keeps messaging unchanged while improving prefilled contact context and conversion handoff quality.
