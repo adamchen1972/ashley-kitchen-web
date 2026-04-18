@@ -148,3 +148,12 @@
     - Adds required-field guidance plus support/message helper copy for clearer first-time completion.
     - Adds live message character counter (`0 / 1200`) to set response expectations.
     - Improves submit validation by focusing the first invalid field and showing specific, localized inline feedback.
+
+- Homepage hero spacing + contact mobile micro-layout polish is implemented and queued for commit.
+  - Files:
+    - `index.html`
+    - `contact.html`
+  - Highlights:
+    - Adds extra vertical breathing room around the hero helper link (`Need technical evidence first →`).
+    - Applies mobile-first spacing polish on contact page (tighter section spacing and cleaner form stack).
+    - Reduces mobile scroll depth by turning contact overview into horizontal swipe cards and hiding redundant process block on small screens.
