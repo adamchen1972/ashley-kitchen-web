@@ -49,3 +49,6 @@
 - `d2770bb` — Homepage hero copy pass: clear A (brand) vs B (decision path) with bilingual A copy.
   - `index.html`
   - `script.js`
+
+- `TBD` — Add 5-minute internal A/B evaluation playbook for homepage hero decision.
+  - `docs/homepage-ab-5min-eval-2026-04-18.md`
