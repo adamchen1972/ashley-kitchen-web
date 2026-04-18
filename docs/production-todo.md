@@ -241,3 +241,13 @@
     - conversion-path verification (`Homepage -> Catalog -> Stone -> Contact`)
     - cross-device/cross-language spot-check notes
     - release recommendation (`GO` / `Conditional GO` / `NO-GO`)
+
+- Batch 3 (homepage A/B test sunset) is implemented and queued for commit.
+  - Files:
+    - `index.html`
+  - Highlights:
+    - Removes top-right A/B switcher from production homepage.
+    - Removes A/B variant class toggling/query handling and locks homepage to single live version.
+    - Keeps conversion tracking in single-version mode.
+
+- Gemini comprehensive review and QA testing is deferred until internal QA wrap-up is complete.

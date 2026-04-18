@@ -98,14 +98,6 @@ body{
 .lang-btn.active{color:var(--stone)}
 .lang-btn.active::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--red)}
 .lang-sep{color:rgba(26,23,20,.22);font-size:10px;user-select:none}
-.ab-switch{display:flex;align-items:center;gap:4px;margin-left:8px}
-.ab-switch-btn{
-  min-width:26px;height:22px;padding:0 8px;border-radius:999px;border:1px solid rgba(17,24,39,.14);
-  background:rgba(255,255,255,.72);color:rgba(17,24,39,.72);font-size:10px;letter-spacing:1.2px;
-  text-transform:uppercase;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all .2s;
-}
-.ab-switch-btn:hover{border-color:rgba(17,24,39,.28);color:#111827}
-.ab-switch-btn.active{background:#111827;color:#fff;border-color:#111827}
 
 /* NAV — transparent over hero, white after scroll */
 nav{position:fixed;top:34px;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:66px;background:rgba(248,248,250,.82);backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);border-bottom:1px solid rgba(15,23,42,.06);transition:background .4s ease,box-shadow .4s ease,border-color .4s ease}
@@ -966,18 +958,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 }
 .home-section-title em{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;color:var(--red)}
 .home-section-copy{font-size:15px;line-height:1.82;color:rgba(74,74,74,.68);max-width:560px}
-.ab-b-only{display:none!important}
-body.ab-new .ab-b-only{display:block!important}
-body.ab-new .ab-b-only.inline{display:inline!important}
-body.ab-new .ab-b-only.flex{display:flex!important}
-body.ab-new .ab-b-only.grid{display:grid!important}
-body.ab-new .ab-a-only{display:none!important}
-.ab-variant-badge{
-  position:fixed;left:14px;bottom:14px;z-index:500;
-  background:rgba(17,24,39,.88);color:#fff;border:1px solid rgba(255,255,255,.18);
-  border-radius:999px;padding:6px 10px;font-size:10px;letter-spacing:1.1px;text-transform:uppercase;
-  font-family:'DM Sans',sans-serif
-}
 .home-decision-flow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .home-decision-step{
   font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:rgba(17,24,39,.75);
@@ -1084,18 +1064,13 @@ html[lang="zh-TW"] .home-hero-sub{line-height:1.8;max-width:30ch}
 <body data-page="home">
 <a href="#main-content" class="skip-link">Skip to content</a>
 
-<!-- ═══ VERSION B — A/B TEST — WORLD-CLASS REDESIGN ═══ -->
+<!-- ═══ HOMEPAGE — PRODUCTION VERSION ═══ -->
 <header role="banner">
 <!-- LANG BAR -->
 <div class="lang-bar">
   <button class="lang-btn active" type="button" aria-pressed="true" id="btn-en" onclick="setLang('en')">English</button>
   <span class="lang-sep">&nbsp;|&nbsp;</span>
   <button class="lang-btn" type="button" aria-pressed="false" id="btn-zh" onclick="setLang('zh')">繁體中文</button>
-  <span class="lang-sep">&nbsp;|&nbsp;</span>
-  <div class="ab-switch" aria-label="Homepage variant switch">
-    <button class="ab-switch-btn" id="ab-btn-old" type="button" aria-pressed="false">A</button>
-    <button class="ab-switch-btn" id="ab-btn-new" type="button" aria-pressed="false">B</button>
-  </div>
 </div>
 
 <!-- NAV -->
@@ -1159,14 +1134,13 @@ html[lang="zh-TW"] .home-hero-sub{line-height:1.8;max-width:30ch}
       <div class="home-hero-copy">
         <div class="home-kicker" data-i18n="home.hero.kicker">Premium surfaces · Stone · Flooring · Fiberboard</div>
         <h1 class="home-hero-title" data-i18n="home.ab.hero.title">Three material families — one considered path from first look to sample.</h1>
-        <p class="home-hero-sub ab-a-only" data-i18n="home.a.hero.sub">Design-led surfaces for architects and project teams who want a premium material direction without losing days to spec cycles.</p>
-        <p class="home-hero-sub ab-b-only" data-i18n="home.ab.hero.sub">Design-led surfaces for architects and project teams who want a premium material direction without losing days to spec cycles.</p>
+        <p class="home-hero-sub" data-i18n="home.ab.hero.sub">Design-led surfaces for architects and project teams who want a premium material direction without losing days to spec cycles.</p>
         <div class="home-hero-actions">
           <a href="contact.html?intent=sample&amp;product=multiple&amp;from=homepage-hero-primary" class="btn-red" data-ab-track="hero-sample-primary" data-i18n="home.hero.cta.primary">Request a Sample</a>
           <a href="catalog.html" class="btn-red-outline" data-ab-track="hero-catalog-secondary" data-i18n="home.hero.cta.secondary">Explore Catalog</a>
         </div>
         <a href="nalexible-stone.html#technical-evidence" class="home-hero-helper" data-ab-track="hero-tech-evidence" data-i18n="home.hero.cta.helper">Need technical evidence first →</a>
-        <div class="home-decision-flow ab-b-only flex">
+        <div class="home-decision-flow">
           <a class="home-decision-step" href="#products" data-i18n="home.ab.hero.step1" data-ab-track="hero-flow-choose-family">Choose family</a>
           <a class="home-decision-step" href="catalog-stone.html" data-i18n="home.ab.hero.step2" data-ab-track="hero-flow-compare-patterns">Compare patterns</a>
           <a class="home-decision-step" href="contact.html?intent=sample&amp;product=multiple&amp;from=homepage-decision-flow" data-i18n="home.ab.hero.step3" data-ab-track="hero-flow-request-samples">Request a Sample</a>
@@ -1334,7 +1308,7 @@ html[lang="zh-TW"] .home-hero-sub{line-height:1.8;max-width:30ch}
   </div>
 </section>
 
-<section class="home-section ab-b-only" id="home-proof">
+<section class="home-section" id="home-proof">
   <div class="home-section-inner">
     <div class="home-proof-strip">
       <article class="home-proof-card">
@@ -1518,70 +1492,8 @@ function handleInquiry(e) {
 
 <script>
 (function(){
-  var KEY = 'ak_home_ab_v1';
-  var params = new URLSearchParams(window.location.search);
-  var forced = (params.get('ab') || '').toLowerCase();
-  var variant = null;
-
-  if (forced === 'new' || forced === 'b') variant = 'new';
-  if (forced === 'old' || forced === 'a') variant = 'old';
-  if (!variant) variant = localStorage.getItem(KEY);
-  if (!variant) variant = 'old';
-
-  localStorage.setItem(KEY, variant);
-  document.body.classList.add(variant === 'new' ? 'ab-new' : 'ab-old');
-  document.body.setAttribute('data-ab-home', variant);
-  var viewsKey = 'ak_home_ab_views_' + variant;
-  localStorage.setItem(viewsKey, String(Number(localStorage.getItem(viewsKey) || 0) + 1));
-
-  var btnOld = document.getElementById('ab-btn-old');
-  var btnNew = document.getElementById('ab-btn-new');
-  function setAbButtonState(v) {
-    if (!btnOld || !btnNew) return;
-    var oldActive = v === 'old';
-    btnOld.classList.toggle('active', oldActive);
-    btnNew.classList.toggle('active', !oldActive);
-    btnOld.setAttribute('aria-pressed', oldActive ? 'true' : 'false');
-    btnNew.setAttribute('aria-pressed', !oldActive ? 'true' : 'false');
-  }
-  function switchVariant(v) {
-    var p = new URLSearchParams(window.location.search);
-    p.set('ab', v === 'new' ? 'b' : 'a');
-    localStorage.setItem(KEY, v);
-    window.location.search = p.toString();
-  }
-  setAbButtonState(variant);
-  if (btnOld) btnOld.addEventListener('click', function(){ switchVariant('old'); });
-  if (btnNew) btnNew.addEventListener('click', function(){ switchVariant('new'); });
-
-  // Keep href untouched to avoid any routing side effects in local preview and static hosting.
-  // Variant attribution is handled by click tracking + localStorage keys below.
-
-  if (variant === 'new') {
-    var main = document.getElementById('main-content');
-    var apps = document.getElementById('applications');
-    var products = document.getElementById('products');
-    var audiences = document.getElementById('audiences');
-    var projects = document.getElementById('projects');
-    var proof = document.getElementById('home-proof');
-    var trust = document.getElementById('home-trust-strip');
-    if (main && apps && products && audiences) {
-      main.insertBefore(apps, audiences);
-      main.insertBefore(products, audiences);
-      if (projects && trust && trust.parentNode === main) {
-        if (proof && proof.parentNode === main) {
-          main.insertBefore(trust, proof);
-        } else {
-          main.insertBefore(trust, projects.nextSibling);
-        }
-      }
-      if (proof && proof.parentNode === main) {
-        main.insertBefore(audiences, proof.nextSibling);
-      } else if (projects && projects.parentNode === main) {
-        main.insertBefore(audiences, projects.nextSibling);
-      }
-    }
-  }
+  var variant = 'live';
+  document.body.setAttribute('data-home-version', 'live');
 
   document.addEventListener('click', function(e) {
     var a = e.target.closest('a');
@@ -1591,20 +1503,20 @@ function handleInquiry(e) {
     var id = a.getAttribute('data-ab-track') || a.id || (a.textContent || '').trim().slice(0, 40);
     var href = a.getAttribute('href') || '';
 
-    var totalKey = 'ak_home_ab_clicks_' + variant;
+    var totalKey = 'ak_home_clicks_' + variant;
     var total = Number(localStorage.getItem(totalKey) || 0) + 1;
     localStorage.setItem(totalKey, String(total));
-    var byLinkKey = 'ak_home_ab_clicks_by_link_' + variant;
+    var byLinkKey = 'ak_home_clicks_by_link_' + variant;
     var byLink = {};
     try { byLink = JSON.parse(localStorage.getItem(byLinkKey) || '{}') || {}; } catch (_) { byLink = {}; }
     byLink[id] = Number(byLink[id] || 0) + 1;
     localStorage.setItem(byLinkKey, JSON.stringify(byLink));
-    localStorage.setItem('ak_home_ab_last_click_at', new Date().toISOString());
+    localStorage.setItem('ak_home_last_click_at', new Date().toISOString());
 
     if (window.dataLayer && Array.isArray(window.dataLayer)) {
       window.dataLayer.push({
-        event: 'ab_home_click',
-        variant: variant,
+        event: 'home_click',
+        version: variant,
         link_id: id,
         href: href
       });
