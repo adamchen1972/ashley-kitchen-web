@@ -1217,6 +1217,19 @@ const T = {
   'stone-select-step1':               {en:'Pick a family first based on project mood and application role.', zh:'先依專案氛圍與應用角色選定家族。'},
   'stone-select-step2':               {en:'Use each series pattern grid to shortlist exact pattern codes.', zh:'使用各系列花色庫先篩選出精確代碼。'},
   'stone-select-step3':               {en:'Send selected codes to Ashley Kitchen for sample and technical follow-up.', zh:'將選定代碼交給 Ashley Kitchen 進行樣品與技術跟進。'},
+  'stone-guardrail-label':            {en:'Specification guardrail', zh:'規格判斷提醒'},
+  'stone-guardrail-copy':             {en:'Report applicability depends on test method, substrate, and project conditions. Before final claim wording, review technical evidence and confirm market scope.', zh:'報告適用性取決於測試方法、基材與專案條件。正式使用性能主張前，請先核對技術證據與市場適用範圍。'},
+  'stone-guardrail-link-1':           {en:'Open technical evidence', zh:'查看技術證據'},
+  'stone-guardrail-link-2':           {en:'Request report mapping', zh:'索取報告對照'},
+
+  'ctc-support-label':                {en:'Support Needed', zh:'需要支援項目'},
+  'ctc-support-opt-default':          {en:'Select support type…', zh:'請選擇支援類型…'},
+  'ctc-support-opt-sample':           {en:'Sample request', zh:'樣品申請'},
+  'ctc-support-opt-tech':             {en:'Technical report request', zh:'技術報告申請'},
+  'ctc-support-opt-install':          {en:'Installation review', zh:'施工審閱支援'},
+  'ctc-support-opt-compliance':       {en:'Compliance package', zh:'合規文件包'},
+  'ctc-support-opt-project':          {en:'Project support', zh:'專案支援'},
+  'ctc-support-opt-general':          {en:'General enquiry', zh:'一般詢問'},
 
   // ── catalog.html — Fiberboard Product Banner ──
   'fiber-pb-label': {en:'Product Line 02 — Fiberboard', zh:'產品系列 02 — 纖維板'},

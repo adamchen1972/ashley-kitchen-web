@@ -554,6 +554,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
               </select>
             </div>
           </div>
+          <div class="form-group">
+            <label for="cf-support" id="ctc-support-label">Support Needed</label>
+            <select id="cf-support" name="support_type" required>
+              <option value="" disabled selected id="ctc-support-opt-default">Select support type…</option>
+              <option value="sample" id="ctc-support-opt-sample">Sample request</option>
+              <option value="technical_report" id="ctc-support-opt-tech">Technical report request</option>
+              <option value="installation_review" id="ctc-support-opt-install">Installation review</option>
+              <option value="compliance_package" id="ctc-support-opt-compliance">Compliance package</option>
+              <option value="project_support" id="ctc-support-opt-project">Project support</option>
+              <option value="general" id="ctc-support-opt-general">General enquiry</option>
+            </select>
+          </div>
           <input type="hidden" id="cf-intent" name="intent" value="">
           <input type="hidden" id="cf-source" name="source_page" value="">
           <input type="hidden" id="cf-page-url" name="page_url" value="">
@@ -865,6 +877,23 @@ function prefillContactFromQuery(){
   setSelectValue('cf-product', productMap[product]);
   setSelectValue('cf-project', projectMap[project]);
 
+  var supportMap = {
+    'sample':'sample',
+    'spec':'technical_report',
+    'technical':'technical_report',
+    'technical-report':'technical_report',
+    'technical_report':'technical_report',
+    'installation':'installation_review',
+    'installation-review':'installation_review',
+    'installation_review':'installation_review',
+    'compliance':'compliance_package',
+    'compliance-package':'compliance_package',
+    'compliance_package':'compliance_package',
+    'project':'project_support',
+    'project_support':'project_support'
+  };
+  setSelectValue('cf-support', supportMap[intent] || '');
+
   var intentField = document.getElementById('cf-intent');
   if (intentField) intentField.value = intent || '';
   var sourceField = document.getElementById('cf-source');
@@ -881,8 +910,10 @@ function prefillContactFromQuery(){
     }
     var line = '';
     if (intent === 'sample') line = 'I would like to request physical samples' + (selectedProduct ? (' for ' + selectedProduct) : '') + '.';
-    else if (intent === 'spec') line = 'I would like technical specifications and compliance documents.';
-    else if (intent === 'project') line = 'I would like project support and product recommendations.';
+    else if (intent === 'spec' || intent === 'technical' || intent === 'technical-report' || intent === 'technical_report') line = 'I would like technical reports and specification guidance for this project.';
+    else if (intent === 'installation' || intent === 'installation-review' || intent === 'installation_review') line = 'I would like installation review support before final selection.';
+    else if (intent === 'compliance' || intent === 'compliance-package' || intent === 'compliance_package') line = 'I would like a compliance and certification package for project review.';
+    else if (intent === 'project' || intent === 'project_support') line = 'I would like project support and product recommendations.';
     if (line) {
       if (codes) line += ' Candidate codes: ' + codes + '.';
       msg.value = line;
@@ -958,8 +989,10 @@ function validatePhones() {
 
     var productSel = document.getElementById('cf-product');
     var projectSel = document.getElementById('cf-project');
+    var supportSel = document.getElementById('cf-support');
     var productText = productSel && productSel.selectedIndex >= 0 ? productSel.options[productSel.selectedIndex].text : '';
     var projectText = projectSel && projectSel.selectedIndex >= 0 ? projectSel.options[projectSel.selectedIndex].text : '';
+    var supportText = supportSel && supportSel.selectedIndex >= 0 ? supportSel.options[supportSel.selectedIndex].text : '';
     var officePhone = normalizePhone(document.getElementById('cf-cc-office').value, document.getElementById('cf-phone-office').value);
     var mobilePhone = normalizePhone(document.getElementById('cf-cc-mobile').value, document.getElementById('cf-phone-mobile').value);
     var intent = (document.getElementById('cf-intent').value || '').trim();
@@ -976,6 +1009,7 @@ function validatePhones() {
       'LINE: ' + (document.getElementById('cf-line').value || ''),
       'Product Interest: ' + productText,
       'Project Type: ' + projectText,
+      'Support Needed: ' + supportText,
       'Intent: ' + intent,
       'Source: ' + source,
       '',

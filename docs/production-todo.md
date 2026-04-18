@@ -91,3 +91,14 @@
     - Adds readable localStorage-based A/B CTA report page (`ab-report.html`) with variant views/clicks/CTR, top CTA ranking, copy summary, and reset action.
     - Refines Catalog → Stone → Contact conversion copy and keeps bilingual keys in `T`.
     - Adds EN/ZH mobile first-screen readability tuning for homepage/catalog/catalog-stone/contact hero blocks.
+
+- Step A/B rollout (technical evidence + guardrail + contact intents) is implemented and queued for commit.
+  - Files:
+    - `nalexible-stone.html`
+    - `catalog-stone.html`
+    - `contact.html`
+    - `script.js`
+  - Highlights:
+    - Adds a new `#technical-evidence` section anchor and a safe-generic technical evidence card set on the stone product page.
+    - Adds catalog-stone specification guardrail copy with direct links to evidence and report mapping request.
+    - Adds contact-form technical intent routing via `support_type` for sample/report/installation/compliance/project workflows.

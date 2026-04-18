@@ -959,7 +959,7 @@ footer{background:#14110f;color:rgba(255,255,255,.7);padding:54px 0 30px;margin-
     </div>
   </section>
 
-  <section class="section support-band">
+  <section class="section support-band" id="technical-evidence">
     <div class="shell">
       <div class="label reveal" data-i18n="resourcesLabel">Technical Support</div>
       <h2 class="title reveal" data-i18n="resourcesTitle">Keep the downloads useful,<br><em>not overwhelming.</em></h2>
@@ -968,13 +968,37 @@ footer{background:#14110f;color:rgba(255,255,255,.7);padding:54px 0 30px;margin-
         <article class="resource-card reveal">
           <strong data-i18n="res1Type">Performance Reports</strong>
           <h3 data-i18n="res1Title">Key proof bundle</h3>
-          <p data-i18n="res1Body">Fire, moisture, weathering, thermal, and chemical reports that support the core claims shown higher on the page.</p>
+          <p data-i18n="res1Body">Fire, moisture, weathering, thermal, and chemical reports support the technical layer. Use project conditions before final specification.</p>
           <div class="resource-actions">
-            <a class="resource-link" href="assets/nalexible/stone/docs/performance/fire-test-report.pdf" data-i18n="resOpen">Open PDF</a>
-            <a class="resource-link" href="assets/nalexible/stone/docs/performance/water-absorption-test.pdf" data-i18n="resOpen">Open PDF</a>
+            <a class="resource-link" href="assets/nalexible/stone/docs/performance/fire-test-report.pdf" data-i18n="res1Link1">Fire test</a>
+            <a class="resource-link" href="assets/nalexible/stone/docs/performance/water-absorption-test.pdf" data-i18n="res1Link2">Water absorption</a>
+            <a class="resource-link" href="assets/nalexible/stone/docs/performance/weathering-color-difference-test.pdf" data-i18n="res1Link3">Weathering / color</a>
+            <a class="resource-link" href="assets/nalexible/stone/docs/performance/freeze-thaw-test.pdf" data-i18n="res1Link4">Freeze-thaw</a>
+            <a class="resource-link" href="assets/nalexible/stone/docs/performance/thermal-shock-test.pdf" data-i18n="res1Link5">Thermal shock</a>
+            <a class="resource-link" href="assets/nalexible/stone/docs/performance/heat-resistance-test.pdf" data-i18n="res1Link6">Heat resistance</a>
+            <a class="resource-link" href="assets/nalexible/stone/docs/performance/chemical-resistance-test.pdf" data-i18n="res1Link7">Chemical resistance</a>
+            <a class="resource-link" href="assets/nalexible/stone/docs/performance/outdoor-exposure-test.pdf" data-i18n="res1Link8">Outdoor exposure</a>
+          </div>
+        </article>
+        <article class="resource-card reveal">
+          <strong data-i18n="res2Type">Certificates &amp; IP</strong>
+          <h3 data-i18n="res2Title">Project credential pack</h3>
+          <p data-i18n="res2Body">Patent and certificate documents support technology identity. Performance claims should still rely on test reports.</p>
+          <div class="resource-actions">
+            <a class="resource-link" href="contact.html?intent=compliance&amp;product=stone&amp;from=stone-tech-cert-pack" data-i18n="res2Link1">Request credential pack</a>
+            <a class="resource-link" href="contact.html?intent=spec&amp;product=stone&amp;from=stone-tech-spec-review" data-i18n="res2Link2">Request spec review</a>
+          </div>
+        </article>
+        <article class="resource-card reveal">
+          <strong data-i18n="res3Type">Scope Note</strong>
+          <h3 data-i18n="res3Title">Use reports with project conditions</h3>
+          <p data-i18n="res3Body">Report applicability depends on test method, substrate, build-up, and market scope. Confirm these before final claim wording.</p>
+          <div class="resource-actions">
+            <a class="resource-link" href="contact.html?intent=technical-report&amp;product=stone&amp;from=stone-tech-scope-note" data-i18n="res3Link1">Ask for report mapping</a>
           </div>
         </article>
       </div>
+      <p class="desc reveal" style="margin-top:18px;max-width:66ch" data-i18n="resourcesFootnote">Use report-backed guidance first. Numeric values and grade-level statements should be published only after page-level citation and condition review.</p>
     </div>
   </section>
 
@@ -1187,13 +1211,28 @@ const i18n = {
     app4Body: "Used selectively, sandstone and exterior stone systems give facades and entry walls the presence of stone without the heaviness of slab logic.",
     resourcesLabel: "Technical Support",
     resourcesTitle: "Keep the downloads useful,<br><em>not overwhelming.</em>",
-    resourcesDesc: "The reports are valuable, but they should support the product story rather than replace it. A compact technical layer is enough for the first launch version.",
+    resourcesDesc: "The reports are valuable, but they should support the product story rather than replace it. Keep this layer concise and project-usable.",
     res1Type: "Performance Reports",
     res1Title: "Key proof bundle",
-    res1Body: "Fire, moisture, weathering, thermal, and chemical performance reports that support the core claims shown higher on the page.",
-    res2Type: "Technical Reports",
-    res2Title: "Bundled test references",
-    res2Body: "Heavier report sets for architects, contractors, and sales support conversations that need a deeper technical follow-through.",
+    res1Body: "Fire, moisture, weathering, thermal, and chemical reports support the technical layer. Use project conditions before final specification.",
+    res1Link1: "Fire test",
+    res1Link2: "Water absorption",
+    res1Link3: "Weathering / color",
+    res1Link4: "Freeze-thaw",
+    res1Link5: "Thermal shock",
+    res1Link6: "Heat resistance",
+    res1Link7: "Chemical resistance",
+    res1Link8: "Outdoor exposure",
+    res2Type: "Certificates & IP",
+    res2Title: "Project credential pack",
+    res2Body: "Patent and certificate documents support technology identity. Performance claims should still rely on test reports.",
+    res2Link1: "Request credential pack",
+    res2Link2: "Request spec review",
+    res3Type: "Scope Note",
+    res3Title: "Use reports with project conditions",
+    res3Body: "Report applicability depends on test method, substrate, build-up, and market scope. Confirm these before final claim wording.",
+    res3Link1: "Ask for report mapping",
+    resourcesFootnote: "Use report-backed guidance first. Numeric values and grade-level statements should be published only after page-level citation and condition review.",
     resOpen: "Open PDF",
     ctaLabel: "Next Step",
     ctaTitle: "Ready to specify Nalexible Stone<br><em>for a Taiwan project?</em>",
@@ -1357,13 +1396,28 @@ const i18n = {
     app4Body: "使用得宜時，砂岩與外牆系統能讓入口牆與外立面保有石材氣勢，卻不落回厚重 slab stone 的做法。",
     resourcesLabel: "技術支援",
     resourcesTitle: "下載資料要有幫助，<br><em>但不要太重。</em>",
-    resourcesDesc: "報告很有價值，但它們應該支撐產品故事，而不是取代產品故事。第一版用精簡技術層就夠了。",
+    resourcesDesc: "報告很有價值，但它們應該支撐產品故事，而不是取代產品故事。這一層要精簡且可直接用於專案判斷。",
     res1Type: "性能報告",
     res1Title: "核心證據包",
-    res1Body: "包含防火、耐濕、耐候、熱性能與耐藥性等報告，對應頁面前段出現的主要賣點。",
-    res2Type: "技術報告",
-    res2Title: "整包測試參考",
-    res2Body: "更適合建築師、施工端與業務提案需要深入技術支援的情境。",
+    res1Body: "防火、耐濕、耐候、熱性能與耐藥性等報告可支撐技術層判斷；最終規格仍需搭配專案條件。",
+    res1Link1: "防火測試",
+    res1Link2: "吸水測試",
+    res1Link3: "耐候/色差",
+    res1Link4: "凍融測試",
+    res1Link5: "熱衝擊",
+    res1Link6: "耐熱測試",
+    res1Link7: "耐化學測試",
+    res1Link8: "戶外曝曬",
+    res2Type: "證書與智財",
+    res2Title: "專案憑證包",
+    res2Body: "專利與證書可支持技術身份；性能主張仍應以測試報告為主。",
+    res2Link1: "索取憑證包",
+    res2Link2: "索取規格審閱",
+    res3Type: "適用範圍說明",
+    res3Title: "請搭配專案條件解讀",
+    res3Body: "報告適用性取決於測試方法、基材、構造做法與市場範圍。最終主張請先完成條件核對。",
+    res3Link1: "詢問報告對照",
+    resourcesFootnote: "建議先用報告支持的一般性文案。數值與等級主張應在完成頁碼與條件核對後再上線。",
     resOpen: "開啟 PDF",
     ctaLabel: "下一步",
     ctaTitle: "準備把 Nalexible Stone<br><em>帶進台灣專案了嗎？</em>",
