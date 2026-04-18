@@ -58,6 +58,10 @@
   - `index.html`
   - `script.js`
 
+- `f6cf601` — Step 6 conversion micro-pass: hero assurance copy, flow tracking, and AB param propagation on CTA links.
+  - `index.html`
+  - `script.js`
+
 - `f73c5f6` — Add 5-minute internal A/B evaluation playbook for homepage hero decision.
   - `docs/homepage-ab-5min-eval-2026-04-18.md`
 
