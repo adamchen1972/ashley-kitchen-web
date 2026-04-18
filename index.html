@@ -1053,7 +1053,7 @@ body.ab-new .ab-a-only{display:none!important}
 </head>
 <body data-page="home">
 <a href="#main-content" class="skip-link">Skip to content</a>
-<div class="ab-variant-badge" id="ab-variant-badge">Homepage A (old)</div>
+<div class="ab-variant-badge" id="ab-variant-badge">Homepage A</div>
 
 <!-- ═══ VERSION B — A/B TEST — WORLD-CLASS REDESIGN ═══ -->
 <header role="banner">
@@ -1130,9 +1130,9 @@ body.ab-new .ab-a-only{display:none!important}
       <div class="home-hero-copy">
         <div class="home-kicker">Ashley Kitchen</div>
         <h1 class="home-hero-title ab-a-only">Innovative<br>materials for<br><em>beautifully</em><br><em>considered</em><br>architecture</h1>
-        <h1 class="home-hero-title ab-b-only" data-i18n="home.ab.hero.title">Three systems.<br>One clear path<br>to your next<br><em>material</em><br><em>decision.</em></h1>
+        <h1 class="home-hero-title ab-b-only" data-i18n="home.ab.hero.title">Three material families.<br>One clear path from first look to sample.</h1>
         <p class="home-hero-sub ab-a-only">Innovation, taste, and beauty.</p>
-        <p class="home-hero-sub ab-b-only" data-i18n="home.ab.hero.sub">Start with the right family, compare pattern options, and move quickly into sample-ready choices.</p>
+        <p class="home-hero-sub ab-b-only" data-i18n="home.ab.hero.sub">Built for architects and project teams moving from first look to specification without getting lost in SKUs.</p>
         <div class="home-hero-actions">
           <a href="contact.html?intent=sample&amp;product=multiple&amp;from=homepage-hero-primary" class="btn-red" data-ab-track="hero-sample-primary">Request a Sample</a>
           <a href="catalog.html" class="btn-red-outline" data-ab-track="hero-catalog-secondary">Explore Catalog</a>
@@ -1503,7 +1503,7 @@ function handleInquiry(e) {
   document.body.setAttribute('data-ab-home', variant);
 
   var badge = document.getElementById('ab-variant-badge');
-  if (badge) badge.textContent = variant === 'new' ? 'Homepage B (new)' : 'Homepage A (old)';
+  if (badge) badge.textContent = variant === 'new' ? 'Homepage B' : 'Homepage A';
   var btnOld = document.getElementById('ab-btn-old');
   var btnNew = document.getElementById('ab-btn-new');
   function setAbButtonState(v) {
