@@ -112,3 +112,16 @@
     - Tightens hero CTA hierarchy with sample-first + catalog + technical-evidence helper path.
     - Refactors next-step cards into a clearer conversion funnel (sample → stone library → technical evidence → intent-routed contact).
     - Upgrades sticky CTA into dual-action routing (sample pack + technical support).
+
+- Global clickability hardening pass is implemented and queued for commit.
+  - Files:
+    - `index.html`
+    - `applications.html`
+    - `projects.html`
+    - `contact.html`
+    - `plye-b.html`
+    - `plye-c.html`
+  - Highlights:
+    - Converts mobile nav overlays from always-mounted transparent fullscreen layers to `display:none` by default.
+    - Keeps overlays visible only when `.open` is active, reducing cross-browser risk of invisible click interception.
+    - Preserves existing burger behavior and close interactions.
