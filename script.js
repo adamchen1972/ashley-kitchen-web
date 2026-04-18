@@ -1128,6 +1128,7 @@ const T = {
   'cat-tag-lumi':        {en:'Jump to LumiSlate', zh:'跳至 LumiSlate'},
   'cat-tag-exterior':    {en:'Request Stone Samples', zh:'申請石材樣品'},
   'home.hero.kicker': {en:'Premium surfaces · Stone · Flooring · Fiberboard', zh:'高端表面系統 · 石材 · 地板 · 纖維板'},
+  'home.hero.assurance': {en:'No commitment required. Share your project direction and we help you shortlist the right material path.', zh:'無需承諾。告訴我們你的專案方向，我們會協助你快速篩選合適的材料路徑。'},
   'home.a.hero.title': {en:'Three material families — one considered path from first look to sample.', zh:'三大材料家族，一條講究的路徑：從第一眼走到樣品。'},
   'home.a.hero.sub': {en:'Design-led surfaces for architects and project teams who want a premium material direction without losing days to spec cycles.', zh:'以設計為先的表面材料，為建築師與專案團隊保留品味感，也縮短從方向到規格的時間。'},
   'home.ab.hero.title': {en:'Three material families — one considered path from first look to sample.', zh:'三大材料家族，一條講究的路徑：從第一眼走到樣品。'},

@@ -916,6 +916,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 .home-hero-actions .btn-red:hover{background:#000;border-color:#000}
 .home-hero-actions .btn-red-outline{color:#111827;border-color:rgba(17,24,39,.16);background:rgba(255,255,255,.76)}
 .home-hero-actions .btn-red-outline:hover{background:rgba(255,255,255,.96);color:#111827}
+.home-hero-assurance{
+  margin-top:10px;font-size:12px;line-height:1.6;color:rgba(55,65,81,.72);
+  max-width:40ch;font-family:'DM Sans',sans-serif
+}
 .home-slide-caption{
   position:absolute;right:34px;bottom:40px;z-index:2;
   padding:13px 15px 12px;border-radius:18px;background:rgba(250,247,242,.84);
@@ -1141,10 +1145,11 @@ body.ab-new .ab-a-only{display:none!important}
           <a href="catalog.html" class="btn-red-outline" data-ab-track="hero-catalog-secondary">Explore Catalog</a>
         </div>
         <div class="home-decision-flow ab-b-only flex">
-          <a class="home-decision-step" href="#products" data-i18n="home.ab.hero.step1">Choose family</a>
-          <a class="home-decision-step" href="catalog-stone.html" data-i18n="home.ab.hero.step2">Compare patterns</a>
-          <a class="home-decision-step" href="contact.html?intent=sample&amp;product=multiple&amp;from=homepage-decision-flow" data-i18n="home.ab.hero.step3">Request samples</a>
+          <a class="home-decision-step" href="#products" data-i18n="home.ab.hero.step1" data-ab-track="hero-flow-choose-family">Choose family</a>
+          <a class="home-decision-step" href="catalog-stone.html" data-i18n="home.ab.hero.step2" data-ab-track="hero-flow-compare-patterns">Compare patterns</a>
+          <a class="home-decision-step" href="contact.html?intent=sample&amp;product=multiple&amp;from=homepage-decision-flow" data-i18n="home.ab.hero.step3" data-ab-track="hero-flow-request-samples">Request samples</a>
         </div>
+        <p class="home-hero-assurance" data-i18n="home.hero.assurance">No commitment required. Share your project direction and we help you shortlist the right material path.</p>
       </div>
       <div class="home-slide-caption">
         <div class="home-slide-label" id="home-slide-label">Stone-led spaces</div>
@@ -1527,6 +1532,15 @@ function handleInquiry(e) {
   if (btnOld) btnOld.addEventListener('click', function(){ switchVariant('old'); });
   if (btnNew) btnNew.addEventListener('click', function(){ switchVariant('new'); });
 
+  // Keep variant context attached to core conversion links for cleaner attribution.
+  document.querySelectorAll('a[data-ab-track], .home-hero-actions a, .home-decision-flow a, .sticky-cta-btn').forEach(function(a){
+    var href = a.getAttribute('href') || '';
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('http')) return;
+    var u = new URL(href, window.location.origin);
+    u.searchParams.set('ab', variant === 'new' ? 'b' : 'a');
+    a.setAttribute('href', u.pathname + u.search + u.hash);
+  });
+
   if (variant === 'new') {
     var main = document.getElementById('main-content');
     var apps = document.getElementById('applications');
@@ -1556,7 +1570,7 @@ function handleInquiry(e) {
   document.addEventListener('click', function(e) {
     var a = e.target.closest('a');
     if (!a) return;
-    if (!a.matches('[data-ab-track], .sticky-cta-btn, .home-hero-actions a')) return;
+    if (!a.matches('[data-ab-track], .sticky-cta-btn, .home-hero-actions a, .home-decision-flow a')) return;
 
     var id = a.getAttribute('data-ab-track') || a.id || (a.textContent || '').trim().slice(0, 40);
     var href = a.getAttribute('href') || '';
