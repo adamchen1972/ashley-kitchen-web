@@ -45,3 +45,7 @@
 - `d3e3058` — Homepage A/B messaging pass: sharper B value proposition + neutral badge labels.
   - `index.html`
   - `script.js`
+
+- `d2770bb` — Homepage hero copy pass: clear A (brand) vs B (decision path) with bilingual A copy.
+  - `index.html`
+  - `script.js`
