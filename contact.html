@@ -320,7 +320,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
     <li class="nav-dropdown">
       <a href="catalog.html" id="nl-products" class="nav-dropdown-trigger">Products ▾</a>
       <div class="nav-dropdown-menu"><div class="nav-dropdown-menu-inner">
-        <a href="plye.html">Flooring</a>
+        <a href="flooring.html">Flooring</a>
         <a href="nalexible-stone.html">Stone</a>
         <a href="nalexible-fiberboard.html">Fiberboard</a>
       </div></div>
@@ -340,7 +340,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 <main id="main-content">
 <div class="nav-overlay" aria-label="Mobile navigation" id="nav-overlay">
   <a href="catalog.html">Catalog</a>
-  <a href="plye.html">Flooring</a>
+  <a href="flooring.html">Flooring</a>
   <a href="nalexible-stone.html">Stone</a>
   <a href="nalexible-fiberboard.html">Fiberboard</a>
   <a href="applications.html">Applications</a>
@@ -425,7 +425,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
       <span class="section-label">Send a Message</span>
       <div class="cform">
         <p class="field-help" id="ctc-required-note" style="margin-bottom:16px">Fields marked in this form are required unless noted as optional.</p>
-        <form action="mailto:adam@ashleykitchen.co" method="post" id="contact-form">
+        <form action="https://formsubmit.co/ajax/adam@ashleykitchen.co" method="post" id="contact-form">
           <div class="form-row">
             <div class="form-group">
               <label for="cf-name">Full Name</label>
@@ -609,6 +609,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
           <input type="hidden" id="cf-intent" name="intent" value="">
           <input type="hidden" id="cf-source" name="source_page" value="">
           <input type="hidden" id="cf-page-url" name="page_url" value="">
+          <input type="hidden" name="_subject" value="Ashley Kitchen Website Enquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
           <div class="form-group">
             <label for="cf-message">Message</label>
             <textarea id="cf-message" name="message" rows="5" maxlength="1200" placeholder="Tell us about your project, quantities, or anything else we should know…" required></textarea>
@@ -626,7 +629,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
           </div>
           <button type="submit" class="form-submit" id="cf-submit">Send Message →</button>
         </form>
-        <p class="form-note">We'll be in touch soon. If your email app does not open, send details to <a href="mailto:adam@ashleykitchen.co">adam@ashleykitchen.co</a>.</p>
+        <p class="form-note">Submit directly here and we will respond as soon as possible. If delivery fails, email us at <a href="mailto:adam@ashleykitchen.co">adam@ashleykitchen.co</a>.</p>
         <div class="form-feedback" id="form-feedback" role="status" aria-live="polite"></div>
       </div>
     </div>
@@ -750,8 +753,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
     <div class="footer-col">
       <h4 id="fc1-h">Products</h4>
       <ul>
-        <li><a href="plye.html">Flooring Series</a></li>
-        <li><a href="plye.html#gallery">Flooring Colors</a></li>
+        <li><a href="flooring.html">Flooring Series</a></li>
+        <li><a href="flooring.html#gallery">Flooring Colors</a></li>
         <li><a href="nalexible-stone.html">Stone Systems</a></li>
         <li><a href="nalexible-stone.html">LumiSlate</a></li>
         <li><a href="nalexible-fiberboard.html">Fiberboard</a></li>
@@ -1119,24 +1122,45 @@ function wireFieldValidationUX(form){
       (document.getElementById('cf-message').value || '')
     ];
     var subject = '[Ashley Kitchen] ' + (intent ? (intent.charAt(0).toUpperCase() + intent.slice(1)) : 'Contact') + ' - ' + (document.getElementById('cf-name').value || 'New enquiry');
-    var mailto = 'mailto:adam@ashleykitchen.co'
+    var fallbackMailto = 'mailto:adam@ashleykitchen.co'
       + '?subject=' + encodeURIComponent(subject)
       + '&body=' + encodeURIComponent(bodyLines.join('\n'));
 
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.textContent = isZh ? '正在開啟郵件…' : 'Opening email app…';
+      submitBtn.textContent = isZh ? '送出中…' : 'Sending…';
     }
-    setFormFeedback('ok', isZh ? '即將開啟您的郵件程式。請確認後送出信件。' : 'Your email app should open now. Please review and send the draft.');
-    window.location.href = mailto;
-    window.setTimeout(function(){
-      setFormFeedback('warn', isZh ? '若郵件程式未自動開啟，請直接寄信至 adam@ashleykitchen.co。' : 'If your email app did not open, please send your details to adam@ashleykitchen.co.');
-    }, 2200);
-    window.setTimeout(function(){
+    setFormFeedback('warn', isZh ? '正在送出表單，請稍候…' : 'Submitting your form, please wait...');
+
+    var endpoint = form.getAttribute('action') || 'https://formsubmit.co/ajax/adam@ashleykitchen.co';
+    var payload = new FormData(form);
+    payload.set('_subject', subject);
+    payload.set('email_body_for_fallback', bodyLines.join('\n'));
+
+    fetch(endpoint, {
+      method: 'POST',
+      body: payload,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res){
+      if (!res.ok) throw new Error('submit-failed');
+      return res.json().catch(function(){ return {}; });
+    }).then(function(){
+      setFormFeedback('ok', isZh ? '送出成功，我們將盡快回覆您。' : 'Submitted successfully. We will respond as soon as possible.');
+      form.reset();
+      updateMessageCount();
+      var phoneErr = document.getElementById('phone-error');
+      if (phoneErr) phoneErr.style.display = 'none';
+    }).catch(function(){
+      setFormFeedback('warn', isZh ? '線上送出失敗，正在改用郵件備援…' : 'Online submission failed. Falling back to email draft...');
+      window.location.href = fallbackMailto;
+      window.setTimeout(function(){
+        setFormFeedback('warn', isZh ? '若郵件程式未開啟，請直接寄信至 adam@ashleykitchen.co。' : 'If your email app did not open, please send details to adam@ashleykitchen.co.');
+      }, 1800);
+    }).finally(function(){
       if (!submitBtn) return;
       submitBtn.disabled = false;
       submitBtn.textContent = isZh ? '送出訊息 →' : 'Send Message →';
-    }, 1800);
+    });
   });
 })();
 </script>

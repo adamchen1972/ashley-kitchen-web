@@ -215,3 +215,29 @@
     - Removes public homepage debug report exposure, keeps A/B toggle internal behavior intact.
     - Fixes dead language buttons on about/flooring pages and eliminates dead `#` nav links on production pages.
     - Adds missing canonical tags, adds `<main>` landmarks on catalog pages, fixes duplicate `id="residential"`, updates contact Twitter SLA wording, and replaces placeholder merchant links with valid support paths.
+
+- Batch 2 (contact endpoint + no-downtime flooring rename) is implemented and queued for commit.
+  - Files:
+    - `contact.html`
+    - `flooring.html` (new primary flooring route)
+    - `plye.html` (compatibility redirect)
+    - `index.html`
+    - `catalog.html`
+    - `catalog-stone.html`
+    - `applications.html`
+    - `projects.html`
+    - `about.html`
+    - `nalexible-stone.html`
+    - `nalexible-fiberboard.html`
+    - `sitemap.xml`
+  - Highlights:
+    - Replaces mail-client-only submission flow with direct endpoint submission (`formsubmit` AJAX) and keeps mailto fallback.
+    - Keeps backward compatibility by preserving `plye.html` as redirect to `flooring.html`.
+    - Migrates production links and sitemap from `plye.html` to `flooring.html`.
+
+- Pending (after current internal QA sign-off): Gemini independent QA pass.
+  - Deliverables requested:
+    - independent findings list (blocker/high/medium)
+    - conversion-path verification (`Homepage -> Catalog -> Stone -> Contact`)
+    - cross-device/cross-language spot-check notes
+    - release recommendation (`GO` / `Conditional GO` / `NO-GO`)
