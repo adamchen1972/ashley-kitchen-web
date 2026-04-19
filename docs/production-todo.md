@@ -1,5 +1,38 @@
 # Production Todo / Commit Log
 
+## 2026-04-19 Batch Reconciliation (Gemini follow-through)
+
+- Batch 1: Completed and committed.
+  - Commit: `826f83d`
+  - Scope: launch blockers + medium cleanup.
+
+- Batch 2: Completed and committed.
+  - Commit: `679f3d3`
+  - Scope: contact endpoint flow + `flooring.html` route migration.
+
+- Batch 3: Completed and committed.
+  - Commit: `4945320`
+  - Scope: homepage A/B sunset (single live variant only).
+
+- Batch 4: Completed and committed.
+  - Commit: `ae1be8b`
+  - Scope: brand-safe copy + contact funnel slimming + mobile tap-target polish.
+
+- Batch 5: Completed and committed.
+  - Commit: `e5ad822`
+  - Scope: approved pattern swaps + freeze documentation.
+
+- Batch 5 patch (library correctness lock):
+  - Status: Completed locally (to be included in next commit).
+  - Scope:
+    - `7014` locked to approved `B` source in image library.
+    - `4112` locked to approved `A` source in image library.
+    - `docs/catalog-stone-pattern-freeze-v1.md` updated to final accepted decisions.
+
+- Result:
+  - All planned batches are functionally closed.
+  - Remaining work is optional post-batch optimization / independent external QA reruns only.
+
 ## 2026-04-18
 
 - `0f05425` — Homepage IA and catalog-to-stone routing polish.
