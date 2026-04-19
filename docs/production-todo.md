@@ -251,3 +251,23 @@
     - Keeps conversion tracking in single-version mode.
 
 - Gemini comprehensive review and QA testing is deferred until internal QA wrap-up is complete.
+
+- Batch 4 (brand-safe copy + contact funnel slimming + mobile tap-target polish) is committed.
+  - Commit:
+    - `ae1be8bdde3d838575380576579435b86efde6b0`
+  - Files:
+    - `index.html`
+    - `catalog.html`
+    - `catalog-stone.html`
+    - `contact.html`
+    - `projects.html`
+    - `applications.html`
+    - `about.html`
+    - `flooring.html`
+    - `docs/en-site-qa-closing-report-v3.md`
+  - Highlights:
+    - Converts exposed flooring naming from `ORIGIN/ORG` to Ashley Kitchen-safe wording and `AK-F-*` visible codes.
+    - Reduces contact required fields to `Name + Email + Product Interest` and moves other fields into a collapsible optional panel.
+    - Removes hard phone requirement and keeps AJAX endpoint submit flow with fallback behavior.
+    - Applies 44px touch-target minimum to key CTA/lang/nav controls in the active EN funnel pages.
+    - Runs link-integrity checks for `index -> catalog -> catalog-stone -> contact` and reports no broken local links in scoped pages.
