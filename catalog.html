@@ -21,7 +21,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 
 /* ── LANG BAR ── */
 .lang-bar{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(255,255,255,.86);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:0 52px;height:34px;display:flex;justify-content:flex-end;align-items:center;gap:0;border-bottom:1px solid rgba(26,23,20,.08)}
-.lang-btn{font-size:11px;letter-spacing:.04em;text-transform:none;color:rgba(26,23,20,.72);background:none;border:none;cursor:pointer;padding:6px 14px;transition:color .2s;font-family:'DM Sans',sans-serif;position:relative}
+.lang-btn{font-size:11px;letter-spacing:.04em;text-transform:none;color:rgba(26,23,20,.72);background:none;border:none;cursor:pointer;padding:6px 14px;transition:color .2s;font-family:'DM Sans',sans-serif;position:relative;min-height:44px;display:inline-flex;align-items:center}
 .lang-btn.active{color:var(--stone)}
 .lang-btn.active::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--red)}
 .lang-sep{width:1px;height:14px;background:rgba(26,23,20,.12)}
@@ -457,6 +457,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
 .routing-main-btn:hover{background:#000}
 .routing-sub-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;border:1px solid rgba(26,23,20,.14);color:var(--stone);text-decoration:none;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;font-family:'DM Sans',sans-serif}
 .routing-sub-btn:hover{border-color:rgba(26,23,20,.26);background:rgba(26,23,20,.03)}
+.nav-cta,.nav-ov-cta,.routing-main-btn,.routing-sub-btn,.back-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
 
 /* Keep catalog.html focused: hide legacy stone long section, keep fiberboard + flooring visible */
 .catalog-nav,#prod-stone{display:none}
@@ -1077,7 +1078,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
       <div class="pb-line-bar"></div>
       <div class="pb-label" id="plye-pb-label">Product Line 03 — Flooring</div>
     </div>
-    <div class="pb-title" id="plye-pb-title"><em>Flooring</em> ORIGIN Series<br>Engineered Flooring</div>
+    <div class="pb-title" id="plye-pb-title"><em>Flooring</em> Signature Series<br>Engineered Flooring</div>
     <p class="pb-desc" id="plye-pb-desc">9mm engineered flooring with patent four-direction click-lock system (M677196). 12 oak shades, EU E1 certified, 19dB sound reduction. Factory-direct distribution from Taiwan.</p>
     <div class="pb-badges">
       <span class="pb-badge" id="plye-pb-b1">12 Color Shades</span>
@@ -1090,7 +1091,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   <!-- Flooring Sub-Nav -->
   <div class="series-subnav">
     <div class="series-subnav-inner">
-      <button class="series-tab active" onclick="scrollToPlye('plye-origin',this)" id="plyetab-origin">ORIGIN Series — All 12 Shades</button>
+      <button class="series-tab active" onclick="scrollToPlye('plye-origin',this)" id="plyetab-origin">Signature Series — All 12 Shades</button>
     </div>
   </div>
 
@@ -1098,7 +1099,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   <div id="plye-origin">
     <div class="catalog-section">
       <div class="series-header">
-        <div class="series-label" id="plye-origin-label">ORIGIN Series</div>
+        <div class="series-label" id="plye-origin-label">Signature Series</div>
         <h2 class="series-title" id="plye-origin-title">All 12 Oak Shades</h2>
         <p class="series-desc" id="plye-origin-desc">From warm honey and sunrise gold to deep black and quiet gray, these 12 shades span the full natural oak spectrum with warm and cool-tone gradations.</p>
         <div class="series-badges">
@@ -1111,51 +1112,51 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
       <div class="plye-swatch-grid">
         <div class="plye-swatch">
           <img loading="lazy" decoding="async" src="images/plye/plye-swatch-org8811-dawn-white.jpg" alt="Dawn White oak flooring">
-          <div class="plye-ov"><div class="plye-code">ORG-8811</div><div class="plye-name" id="plye-s1">Dawn White</div></div>
+          <div class="plye-ov"><div class="plye-code">AK-F-8811</div><div class="plye-name" id="plye-s1">Dawn White</div></div>
         </div>
         <div class="plye-swatch">
           <img loading="lazy" decoding="async" src="images/plye/plye-swatch-org8812-misty-sand.jpg" alt="Misty Sand oak flooring">
-          <div class="plye-ov"><div class="plye-code">ORG-8812</div><div class="plye-name" id="plye-s2">Misty Sand</div></div>
+          <div class="plye-ov"><div class="plye-code">AK-F-8812</div><div class="plye-name" id="plye-s2">Misty Sand</div></div>
         </div>
         <div class="plye-swatch">
           <img loading="lazy" decoding="async" src="images/plye/plye-swatch-org8813-sunrise-gold.jpg" alt="Sunrise Gold oak flooring">
-          <div class="plye-ov"><div class="plye-code">ORG-8813</div><div class="plye-name" id="plye-s3">Sunrise Gold</div></div>
+          <div class="plye-ov"><div class="plye-code">AK-F-8813</div><div class="plye-name" id="plye-s3">Sunrise Gold</div></div>
         </div>
         <div class="plye-swatch">
           <img loading="lazy" decoding="async" src="images/plye/plye-swatch-org8821-misty-oak.jpg" alt="Misty Oak flooring">
-          <div class="plye-ov"><div class="plye-code">ORG-8821</div><div class="plye-name" id="plye-s4">Misty Oak</div></div>
+          <div class="plye-ov"><div class="plye-code">AK-F-8821</div><div class="plye-name" id="plye-s4">Misty Oak</div></div>
         </div>
         <div class="plye-swatch">
           <img loading="lazy" decoding="async" src="images/plye/plye-swatch-org8822-warm-honey.jpg" alt="Warm Honey oak flooring">
-          <div class="plye-ov"><div class="plye-code">ORG-8822</div><div class="plye-name" id="plye-s5">Warm Honey</div></div>
+          <div class="plye-ov"><div class="plye-code">AK-F-8822</div><div class="plye-name" id="plye-s5">Warm Honey</div></div>
         </div>
         <div class="plye-swatch">
           <img loading="lazy" decoding="async" src="images/plye/plye-swatch-org8823-soft-sand.jpg" alt="Soft Sand oak flooring">
-          <div class="plye-ov"><div class="plye-code">ORG-8823</div><div class="plye-name" id="plye-s6">Soft Sand</div></div>
+          <div class="plye-ov"><div class="plye-code">AK-F-8823</div><div class="plye-name" id="plye-s6">Soft Sand</div></div>
         </div>
         <div class="plye-swatch">
           <img loading="lazy" decoding="async" src="images/plye/plye-swatch-org8825-soft-gray.jpg" alt="Soft Gray oak flooring">
-          <div class="plye-ov"><div class="plye-code">ORG-8825</div><div class="plye-name" id="plye-s7">Soft Gray</div></div>
+          <div class="plye-ov"><div class="plye-code">AK-F-8825</div><div class="plye-name" id="plye-s7">Soft Gray</div></div>
         </div>
         <div class="plye-swatch">
           <img loading="lazy" decoding="async" src="images/plye/plye-swatch-org8831-warm-brown.jpg" alt="Warm Brown oak flooring">
-          <div class="plye-ov"><div class="plye-code">ORG-8831</div><div class="plye-name" id="plye-s8">Warm Brown</div></div>
+          <div class="plye-ov"><div class="plye-code">AK-F-8831</div><div class="plye-name" id="plye-s8">Warm Brown</div></div>
         </div>
         <div class="plye-swatch">
           <img loading="lazy" decoding="async" src="images/plye/plye-swatch-rog8814-misty-taupe.jpg" alt="Misty Taupe oak flooring">
-          <div class="plye-ov"><div class="plye-code">ROG-8814</div><div class="plye-name" id="plye-s9">Misty Taupe</div></div>
+          <div class="plye-ov"><div class="plye-code">AK-F-8814</div><div class="plye-name" id="plye-s9">Misty Taupe</div></div>
         </div>
         <div class="plye-swatch">
           <img loading="lazy" decoding="async" src="images/plye/plye-swatch-rog8815-quiet-gray.jpg" alt="Quiet Gray oak flooring">
-          <div class="plye-ov"><div class="plye-code">ROG-8815</div><div class="plye-name" id="plye-s10">Quiet Gray</div></div>
+          <div class="plye-ov"><div class="plye-code">AK-F-8815</div><div class="plye-name" id="plye-s10">Quiet Gray</div></div>
         </div>
         <div class="plye-swatch">
           <img loading="lazy" decoding="async" src="images/plye/plye-swatch-rog8824-natural-oak.jpg" alt="Natural Oak flooring">
-          <div class="plye-ov"><div class="plye-code">ROG-8824</div><div class="plye-name" id="plye-s11">Natural Oak</div></div>
+          <div class="plye-ov"><div class="plye-code">AK-F-8824</div><div class="plye-name" id="plye-s11">Natural Oak</div></div>
         </div>
         <div class="plye-swatch">
           <img loading="lazy" decoding="async" src="images/plye/plye-swatch-rog8832-deep-black.jpg" alt="Deep Black oak flooring">
-          <div class="plye-ov"><div class="plye-code">ROG-8832</div><div class="plye-name" id="plye-s12">Deep Black</div></div>
+          <div class="plye-ov"><div class="plye-code">AK-F-8832</div><div class="plye-name" id="plye-s12">Deep Black</div></div>
         </div>
       </div>
       <p class="section-note" id="plye-note">Swatch images represent actual plank colours. Screen rendering may vary. Contact Ashley Kitchen for physical sample boards.</p>

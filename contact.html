@@ -19,7 +19,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Contact Ashley Kitchen — Samples &amp; Enquiries">
 <meta property="og:description" content="Request free samples of Ashley Kitchen flooring, stone, or fiberboard systems. Our team will be in touch shortly.">
-<meta property="og:image" content="https://www.ashleykitchen.com.tw/plye-lifestyle-loft-wood-ceiling.jpg">
+<meta property="og:image" content="https://www.ashleykitchen.com.tw/images/stone/nal-hero-stone-backlit.jpg">
 <meta property="og:url" content="https://www.ashleykitchen.com.tw/contact.html">
 <meta property="og:site_name" content="Ashley Kitchen">
 <meta property="og:locale" content="en_US">
@@ -27,7 +27,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contact Ashley Kitchen | Flooring, Stone &amp; Fiberboard">
 <meta name="twitter:description" content="Request samples, specs, or speak with our team. Ashley Kitchen responds as soon as possible.">
-<meta name="twitter:image" content="https://www.ashleykitchen.com.tw/plye-lifestyle-loft-wood-ceiling.jpg">
+<meta name="twitter:image" content="https://www.ashleykitchen.com.tw/images/stone/nal-hero-stone-backlit.jpg">
 <!-- Canonical -->
 <link rel="canonical" href="https://www.ashleykitchen.com.tw/contact.html">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Noto+Serif+TC:wght@300;400&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
@@ -46,7 +46,7 @@ body{font-family:'Poppins','Noto Sans TC','DM Sans','HarmonyOS Sans',-apple-syst
 
 /* LANG BAR */
 .lang-bar{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(255,255,255,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:0 52px;height:34px;display:flex;justify-content:flex-end;align-items:center;gap:0;border-bottom:1px solid rgba(26,23,20,.08)}
-.lang-btn{font-size:11px;letter-spacing:.04em;text-transform:none;color:rgba(26,23,20,.72);background:none;border:none;cursor:pointer;padding:6px 14px;transition:color .2s;font-family:'DM Sans',sans-serif;position:relative}
+.lang-btn{font-size:11px;letter-spacing:.04em;text-transform:none;color:rgba(26,23,20,.72);background:none;border:none;cursor:pointer;padding:6px 14px;transition:color .2s;font-family:'DM Sans',sans-serif;position:relative;min-height:44px;display:inline-flex;align-items:center}
 .lang-btn.active{color:var(--stone)}
 .lang-btn.active::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--red)}
 .lang-sep{color:rgba(26,23,20,.22);font-size:10px;user-select:none}
@@ -161,6 +161,11 @@ html[lang="zh-TW"] .page-hero .ph-sub{line-height:1.95}
 .phone-note{font-size:10px;color:rgba(74,74,74,.45);margin-top:5px;display:block;letter-spacing:0;text-transform:none;font-weight:400;font-family:'DM Sans',sans-serif}
 .phone-error{display:none;font-size:11px;color:var(--red);margin-top:5px;font-weight:500;font-family:'DM Sans',sans-serif}
 .phone-error.show{display:block}
+.optional-details{margin-top:12px;border:1px solid rgba(0,0,0,.08);border-radius:16px;background:rgba(255,255,255,.72)}
+.optional-details summary{cursor:pointer;list-style:none;padding:12px 14px;font-size:11px;letter-spacing:.02em;font-weight:600;color:rgba(26,23,20,.75);font-family:'DM Sans',sans-serif;min-height:44px;display:flex;align-items:center}
+.optional-details summary::-webkit-details-marker{display:none}
+.optional-details[open] summary{border-bottom:1px solid rgba(0,0,0,.06)}
+.optional-details-inner{padding:14px}
 .field-help{font-size:11px;color:rgba(74,74,74,.62);line-height:1.55;letter-spacing:0;text-transform:none;font-family:'DM Sans',sans-serif}
 .field-meta{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-top:6px}
 .char-count{font-size:11px;color:rgba(74,74,74,.56);font-family:'DM Sans',sans-serif;white-space:nowrap}
@@ -202,6 +207,7 @@ html[lang="zh-TW"] .page-hero .ph-sub{line-height:1.95}
 .csoc-link{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(74,74,74,.5);text-decoration:none;transition:color .2s}
 .csoc-link:hover{color:var(--stone)}
 .csoc-link svg{color:rgba(74,74,74,.4)}
+.nav-cta,.nav-ov-cta,.form-submit,.csoc-link{min-height:44px}
 
 /* HOURS NOTE */
 .hours-note{margin-top:20px;padding:18px 20px;border-left:2px solid rgba(229,57,53,.25);background:rgba(255,255,255,.86);border-radius:0 18px 18px 0;box-shadow:var(--soft-shadow)}
@@ -424,7 +430,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
     <div class="contact-form-wrap">
       <span class="section-label">Send a Message</span>
       <div class="cform">
-        <p class="field-help" id="ctc-required-note" style="margin-bottom:16px">Fields marked in this form are required unless noted as optional.</p>
+        <p class="field-help" id="ctc-required-note" style="margin-bottom:16px">Required fields: Full Name, Email Address, and Product Interest. Everything else is optional.</p>
         <form action="https://formsubmit.co/ajax/adam@ashleykitchen.co" method="post" id="contact-form">
           <div class="form-row">
             <div class="form-group">
@@ -440,6 +446,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
             <label for="cf-email">Email Address</label>
             <input type="email" id="cf-email" name="email" placeholder="you@company.com" autocomplete="email" required>
           </div>
+          <details class="optional-details">
+            <summary>Add project details (optional)</summary>
+            <div class="optional-details-inner">
           <div class="form-row">
             <div class="form-group">
               <label for="cf-phone-office">Phone — Office</label>
@@ -546,14 +555,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
                 </select>
                 <input type="tel" id="cf-phone-mobile" name="phone_mobile" class="phone-number-input" placeholder="Mobile number" inputmode="tel" autocomplete="tel-national" oninput="validatePhones()">
               </div>
-              <span class="phone-note">At least one phone number (office or mobile) is required.</span>
-              <span class="phone-error" id="phone-error">Please enter at least one phone number.</span>
+              <span class="phone-note">Phone details are optional. Add one if you prefer a callback.</span>
+              <span class="phone-error" id="phone-error">Please check phone number format.</span>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label for="cf-country">Country</label>
-              <input type="text" id="cf-country" name="country" placeholder="Your country" autocomplete="country-name" required>
+              <input type="text" id="cf-country" name="country" placeholder="Your country" autocomplete="country-name">
             </div>
           </div>
           <div class="form-row-3">
@@ -570,12 +579,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
               <input type="text" id="cf-line" name="line" placeholder="LINE ID">
             </div>
           </div>
+            </div>
+          </details>
           <div class="form-row">
             <div class="form-group">
               <label for="cf-product">Product Interest</label>
               <select id="cf-product" name="product" required>
                 <option value="" disabled selected>Select a product…</option>
-                <option value="plye">Flooring Engineered Flooring</option>
+                <option value="flooring">Flooring Engineered Flooring</option>
                 <option value="nalexible-stone">Stone Systems</option>
                 <option value="nalexible-fiberboard">Fiberboard</option>
                 <option value="multiple">Multiple Products</option>
@@ -584,7 +595,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
             </div>
             <div class="form-group">
               <label for="cf-project">Project Type</label>
-              <select id="cf-project" name="project_type" required>
+              <select id="cf-project" name="project_type">
                 <option value="" disabled selected>Select a type…</option>
                 <option value="residential">Residential</option>
                 <option value="commercial">Commercial</option>
@@ -595,7 +606,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
           </div>
           <div class="form-group">
             <label for="cf-support" id="ctc-support-label">Support Needed</label>
-            <select id="cf-support" name="support_type" required>
+            <select id="cf-support" name="support_type">
               <option value="" disabled selected id="ctc-support-opt-default">Select support type…</option>
               <option value="sample" id="ctc-support-opt-sample">Sample request</option>
               <option value="technical_report" id="ctc-support-opt-tech">Technical report request</option>
@@ -614,7 +625,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
           <input type="hidden" name="_captcha" value="false">
           <div class="form-group">
             <label for="cf-message">Message</label>
-            <textarea id="cf-message" name="message" rows="5" maxlength="1200" placeholder="Tell us about your project, quantities, or anything else we should know…" required></textarea>
+            <textarea id="cf-message" name="message" rows="5" maxlength="1200" placeholder="Tell us about your project, quantities, or anything else we should know…"></textarea>
             <div class="field-meta">
               <span class="field-help" id="ctc-message-help">Include timeline, preferred product family, and sample destination for faster response.</span>
               <span class="char-count" id="ctc-message-count">0 / 1200</span>
@@ -908,8 +919,8 @@ function prefillContactFromQuery(){
   var productMap = {
     'stone':'nalexible-stone',
     'nalexible-stone':'nalexible-stone',
-    'flooring':'plye',
-    'plye':'plye',
+    'flooring':'flooring',
+    'plye':'flooring',
     'fiberboard':'nalexible-fiberboard',
     'nalexible-fiberboard':'nalexible-fiberboard',
     'multiple':'multiple',
@@ -1007,16 +1018,9 @@ function handleCCChange(selectEl) {
 
 // Phone validation: at least one of office or mobile must be filled
 function validatePhones() {
-  var office = (document.getElementById('cf-phone-office').value || '').trim();
-  var mobile = (document.getElementById('cf-phone-mobile').value || '').trim();
   var errEl = document.getElementById('phone-error');
-  if (!office && !mobile) {
-    if (errEl) errEl.classList.add('show');
-    return false;
-  } else {
-    if (errEl) errEl.classList.remove('show');
-    return true;
-  }
+  if (errEl) errEl.classList.remove('show');
+  return true;
 }
 
 function fieldHintFor(el, isZh){
@@ -1025,11 +1029,7 @@ function fieldHintFor(el, isZh){
   var map = {
     'cf-name': isZh ? '請填寫姓名。' : 'Please enter your full name.',
     'cf-email': isZh ? '請填寫有效電子郵件。' : 'Please enter a valid email address.',
-    'cf-country': isZh ? '請填寫國家。' : 'Please enter your country.',
-    'cf-product': isZh ? '請選擇產品類別。' : 'Please choose a product interest.',
-    'cf-project': isZh ? '請選擇專案類型。' : 'Please choose a project type.',
-    'cf-support': isZh ? '請選擇支援類型。' : 'Please choose a support type.',
-    'cf-message': isZh ? '請填寫訊息內容。' : 'Please tell us a bit about your request.'
+    'cf-product': isZh ? '請選擇產品類別。' : 'Please choose a product interest.'
   };
   return map[id] || (isZh ? '請完成必填欄位。' : 'Please complete the required field.');
 }
@@ -1070,11 +1070,7 @@ function wireFieldValidationUX(form){
     e.preventDefault();
     var isZh = langIsZh();
     var submitBtn = document.getElementById('cf-submit');
-    if (!validatePhones()) {
-      document.getElementById('cf-phone-office').focus();
-      setFormFeedback('err', isZh ? '請至少填寫一個電話號碼（市話或手機）。' : 'Please enter at least one phone number (office or mobile).');
-      return;
-    }
+    validatePhones();
     if (!form.reportValidity()) {
       var firstInvalid = form.querySelector(':invalid');
       if (firstInvalid) {

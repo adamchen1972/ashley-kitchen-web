@@ -94,7 +94,7 @@ body{
 
 /* LANG BAR */
 .lang-bar{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(255,255,255,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:0 52px;height:34px;display:flex;justify-content:flex-end;align-items:center;gap:0;border-bottom:1px solid rgba(26,23,20,.08)}
-.lang-btn{font-size:11px;letter-spacing:.04em;text-transform:none;color:rgba(26,23,20,.72);background:none;border:none;cursor:pointer;padding:6px 14px;transition:color .2s;font-family:'DM Sans',sans-serif;position:relative}
+.lang-btn{font-size:11px;letter-spacing:.04em;text-transform:none;color:rgba(26,23,20,.72);background:none;border:none;cursor:pointer;padding:6px 14px;transition:color .2s;font-family:'DM Sans',sans-serif;position:relative;min-height:44px;display:inline-flex;align-items:center}
 .lang-btn.active{color:var(--stone)}
 .lang-btn.active::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--red)}
 .lang-sep{color:rgba(26,23,20,.22);font-size:10px;user-select:none}
@@ -918,6 +918,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 .home-hero-actions .btn-red,.home-hero-actions .btn-red-outline{min-height:42px;padding:12px 22px}
 .home-hero-helper{display:inline-flex;align-items:center;gap:8px;margin-top:14px;margin-bottom:18px;padding:8px 0;font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:rgba(17,24,39,.72);text-decoration:none;font-weight:600;line-height:1.55}
 .home-hero-helper:hover{color:#111827}
+.nav-cta,.nav-ov-cta{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
 .home-hero-assurance{
   margin-top:2px;font-size:12px;line-height:1.62;color:rgba(55,65,81,.72);
   max-width:40ch;font-family:'DM Sans',sans-serif
@@ -1207,7 +1208,7 @@ html[lang="zh-TW"] .home-hero-sub{line-height:1.8;max-width:30ch}
     </div>
     <div class="figma-prod-grid">
       <a href="flooring.html" class="figma-prod-card">
-        <img loading="lazy" decoding="async" src="images/plye/plye-lifestyle-open-plan-bright-oak.jpg" alt="Ashley Kitchen flooring system with plye installed in a bright residential interior">
+        <img loading="lazy" decoding="async" src="images/plye/plye-lifestyle-open-plan-bright-oak.jpg" alt="Ashley Kitchen flooring system installed in a bright residential interior">
         <div class="figma-prod-info">
           <div class="figma-prod-brand" style="font-family:'Poppins',sans-serif;font-size:28px;font-weight:700;letter-spacing:-0.5px">Flooring</div>
           <div class="figma-prod-type">DIY-Ready Flooring</div>
@@ -1286,7 +1287,7 @@ html[lang="zh-TW"] .home-hero-sub{line-height:1.8;max-width:30ch}
         </div>
       </a>
       <a href="projects.html" class="project-card-clean">
-        <img loading="lazy" decoding="async" src="images/plye/plye-lifestyle-minimalist-living-new-taipei.jpg" alt="Minimalist living room project with plye flooring">
+        <img loading="lazy" decoding="async" src="images/plye/plye-lifestyle-minimalist-living-new-taipei.jpg" alt="Minimalist living room project with Ashley Kitchen flooring">
         <div class="project-card-meta">
           <div class="proj-cat">Residential · Flooring</div>
           <div class="proj-name">Minimalist Living Room</div>

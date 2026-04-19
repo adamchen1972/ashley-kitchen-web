@@ -31,7 +31,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 
 /* ── LANG BAR ── */
 .lang-bar{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(255,255,255,.86);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:0 52px;height:34px;display:flex;justify-content:flex-end;align-items:center;gap:0;border-bottom:1px solid rgba(26,23,20,.08)}
-.lang-btn{font-size:11px;letter-spacing:.04em;text-transform:none;color:rgba(26,23,20,.72);background:none;border:none;cursor:pointer;padding:6px 14px;transition:color .2s;font-family:'DM Sans',sans-serif;position:relative}
+.lang-btn{font-size:11px;letter-spacing:.04em;text-transform:none;color:rgba(26,23,20,.72);background:none;border:none;cursor:pointer;padding:6px 14px;transition:color .2s;font-family:'DM Sans',sans-serif;position:relative;min-height:44px;display:inline-flex;align-items:center}
 .lang-btn.active{color:var(--stone)}
 .lang-btn.active::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:2px;background:var(--red)}
 .lang-sep{width:1px;height:14px;background:rgba(26,23,20,.12)}
@@ -419,6 +419,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
 .cat-footer-note{font-size:11px;color:rgba(26,23,20,.56);font-weight:300}
 .cat-footer-note a{color:rgba(26,23,20,.52);text-decoration:underline;text-underline-offset:3px}
 .back-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border:1px solid rgba(26,23,20,.12);color:var(--stone);font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;font-family:'DM Sans',sans-serif;border-radius:999px;transition:background .2s,border-color .2s}
+.nav-cta,.nav-ov-cta,.back-btn,.lumi-pattern-btn,.lumi-state-card{min-height:44px}
 .back-btn:hover{background:rgba(26,23,20,.04);border-color:rgba(26,23,20,.18)}
 .cat-footer-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .cat-footer .cta-btn{
