@@ -44,8 +44,9 @@ nav{position:fixed;top:34px;left:0;right:0;z-index:200;background:rgba(255,255,2
 .logo-wm{font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;color:var(--stone)}
 .logo-wm em{font-style:italic;color:var(--red)}
 nav ul{display:flex;gap:32px;align-items:center;list-style:none;padding:0;margin:0}
-nav ul li a{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);text-decoration:none;font-family:'DM Sans',sans-serif;transition:color .2s;white-space:nowrap;position:relative;padding-bottom:2px}
+nav ul li a,nav ul li button{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);text-decoration:none;font-family:'DM Sans',sans-serif;transition:color .2s;white-space:nowrap;position:relative;padding-bottom:2px}
 nav ul li a:hover{color:var(--stone)}
+nav ul li button:hover{color:var(--stone)}
 nav ul li a.nav-active{color:var(--stone)!important}
 nav ul li a.nav-active::after{content:'';position:absolute;left:0;right:0;bottom:-8px;height:2px;background:var(--red);border-radius:999px}
 .nav-cta{background:#111827;color:white!important;padding:10px 20px;border-radius:999px;box-shadow:0 10px 24px rgba(17,24,39,.16)}
@@ -53,10 +54,12 @@ nav ul li a.nav-active::after{content:'';position:absolute;left:0;right:0;bottom
 nav ul li a.nav-cta::after{display:none}
 .nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
 .nav-dropdown{position:relative}
-.nav-dropdown-trigger{cursor:pointer}
+.nav-dropdown-trigger{cursor:pointer;background:none;border:none;padding:0}
 .nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;background:transparent;opacity:0;visibility:hidden;transition:opacity .2s;z-index:300}
 .nav-dropdown-menu-inner{background:rgba(20,20,20,.97);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:12px 0;min-width:200px}
-.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible}
 .nav-dropdown-menu-inner a{display:block;padding:10px 20px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65)!important;text-decoration:none;font-family:'DM Sans',sans-serif;transition:color .15s,background .15s;white-space:nowrap}
 .nav-dropdown-menu-inner a:hover{color:white!important;background:rgba(255,255,255,.06)}
 
@@ -76,12 +79,12 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
 /* Product line mini tags in header */
 .prod-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
 .prod-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:1px;font-family:'DM Sans',sans-serif;text-decoration:none;transition:background .2s,color .2s}
-.prod-tag-stone{background:rgba(183,28,28,.18);color:rgba(217,197,161,.8);border:1px solid rgba(183,28,28,.35)}
-.prod-tag-stone:hover{background:rgba(183,28,28,.3)}
+.prod-tag-stone{background:rgba(183,28,28,.12);color:#7d2222;border:1px solid rgba(183,28,28,.32)}
+.prod-tag-stone:hover{background:rgba(183,28,28,.2)}
 .prod-tag-fiber{background:rgba(26,23,20,.04);color:rgba(26,23,20,.58);border:1px solid rgba(26,23,20,.1)}
 .prod-tag-fiber:hover{background:rgba(26,23,20,.08)}
-.prod-tag-plye{background:rgba(217,197,161,.08);color:rgba(217,197,161,.6);border:1px solid rgba(217,197,161,.18)}
-.prod-tag-plye:hover{background:rgba(217,197,161,.14)}
+.prod-tag-plye{background:rgba(217,197,161,.16);color:rgba(26,23,20,.72);border:1px solid rgba(26,23,20,.16)}
+.prod-tag-plye:hover{background:rgba(217,197,161,.24)}
 
 /* ── STICKY PRODUCT TABS (top-level: Stone / Fiber / Flooring) ── */
 .catalog-nav{position:sticky;top:94px;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(26,23,20,.08);padding:0 72px}
@@ -369,9 +372,14 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
 .cat-footer-note a{color:rgba(255,255,255,.25);text-decoration:underline;text-underline-offset:3px}
 .back-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border:1px solid rgba(217,197,161,.25);color:var(--sand);font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;font-family:'DM Sans',sans-serif;border-radius:1px;transition:background .2s}
 .back-btn:hover{background:rgba(217,197,161,.07)}
+.inline-link{color:inherit;text-decoration:underline;text-underline-offset:4px}
 
 /* ── PRODUCT LINE JUMP SECTION ── */
 #prod-stone,#prod-fiberboard,#prod-plye{scroll-margin-top:160px}
+#series-ordinary,#series-lumislate,#series-cement,#series-marble,#series-sandstone,#series-metal,#series-rust,#series-diy{scroll-margin-top:176px}
+@media(max-width:1200px){
+  #series-ordinary,#series-lumislate,#series-cement,#series-marble,#series-sandstone,#series-metal,#series-rust,#series-diy{scroll-margin-top:196px}
+}
 
 /* ── SEGMENT THEMES ── */
 .segment-light{background:#fff;color:var(--stone)}
@@ -431,9 +439,10 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
 
 /* ── ELEGANCE PASS ── */
 .page-header{
-  margin-top:118px;
-  margin-bottom:30px;
-  padding:56px 56px 52px;
+  margin-top:72px;
+  margin-bottom:22px;
+  padding:20px 28px 18px;
+  max-width:980px;
   background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.74));
   border:1px solid rgba(26,23,20,.08);
   border-radius:32px;
@@ -447,12 +456,12 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   width:56px;
   height:2px;
   background:linear-gradient(90deg,var(--red),rgba(229,57,53,.18));
-  margin-bottom:26px;
+  margin-bottom:14px;
 }
-.page-title{letter-spacing:-.03em;max-width:9ch}
-.page-desc{text-wrap:pretty}
+.page-title{letter-spacing:-.03em;max-width:17ch;line-height:1.06}
+.page-desc{text-wrap:pretty;max-width:700px}
 .prod-tags{gap:12px}
-.prod-tag{padding:9px 16px;border-radius:999px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.prod-tag{padding:10px 18px;border-radius:999px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:10.5px;font-weight:500;letter-spacing:1px;color:rgba(26,23,20,.86)}
 
 .product-banner{padding-top:72px}
 .catalog-section{padding-top:56px;padding-bottom:78px}
@@ -947,6 +956,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   .catalog-overview-grid,.lumi-comparison{grid-template-columns:1fr}
   .family-map-grid,.family-spec-grid,.family-media-grid,.family-direction-grid,.selection-guide{grid-template-columns:1fr}
   .page-header{padding:36px 28px 34px}
+  #series-ordinary,#series-lumislate,#series-cement,#series-marble,#series-sandstone,#series-metal,#series-rust,#series-diy{scroll-margin-top:188px}
   .catalog-nav{padding:0 24px}
   .product-banner,.catalog-section{padding-top:48px}
   .catalog-section{padding-bottom:60px}
@@ -960,12 +970,16 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   nav ul{gap:10px;overflow-x:auto;max-width:calc(100vw - 110px);padding-bottom:2px}
   nav ul::-webkit-scrollbar{display:none}
   nav ul li a{font-size:9px;letter-spacing:1.2px}
+  .nav-dropdown{position:static}
+  .nav-dropdown-menu{position:fixed;left:12px;right:12px;top:88px;transform:none;padding-top:8px;z-index:520}
+  .nav-dropdown-menu-inner{min-width:0;width:100%}
   .nav-cta{padding:8px 12px}
-  .page-header{margin-top:110px;border-radius:24px}
+  .page-header{margin-top:90px;border-radius:24px}
   .page-title{font-size:clamp(34px,10vw,50px)}
   .prod-tags{gap:10px}
   .catalog-nav{top:94px;overflow-x:auto}
   .catalog-nav-inner,.series-subnav-inner{flex-wrap:nowrap}
+  #series-ordinary,#series-lumislate,#series-cement,#series-marble,#series-sandstone,#series-metal,#series-rust,#series-diy{scroll-margin-top:204px}
   .swatch-grid,.fb-swatch-grid,.plye-swatch-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cat-footer{padding-top:36px;padding-bottom:44px}
   .trust-strip{padding:0 24px;grid-template-columns:1fr}
@@ -980,7 +994,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   .series-subnav,
   .cat-footer,
   .section-divider{margin-left:16px;margin-right:16px}
-  .page-header{padding:28px 20px}
+  .page-header{padding:22px 16px}
   .swatch-grid,.fb-swatch-grid,.plye-swatch-grid{grid-template-columns:1fr 1fr;gap:12px}
   .product-banner{padding-top:40px}
   .catalog-section{padding-top:40px;padding-bottom:52px}
@@ -991,7 +1005,9 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   html[lang="zh-TW"] .page-title{font-size:clamp(30px,8vw,38px)}
   nav{height:56px;padding:0 12px}
   nav ul{max-width:calc(100vw - 88px)}
+  .nav-dropdown-menu{top:82px}
   .nav-cta{padding:7px 10px}
+  #series-ordinary,#series-lumislate,#series-cement,#series-marble,#series-sandstone,#series-metal,#series-rust,#series-diy{scroll-margin-top:214px}
   .trust-strip{padding:0 20px}
 }
 </style>
@@ -1014,7 +1030,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   </a>
   <ul id="nav-links">
     <li class="nav-dropdown">
-          <a href="catalog.html" id="cat-products-nav" class="nav-dropdown-trigger">Products ▾</a>
+          <button type="button" id="cat-products-nav" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Products ▾</button>
       <div class="nav-dropdown-menu">
         <div class="nav-dropdown-menu-inner">
           <a href="flooring.html" id="cat-nav-plye">Flooring</a>
@@ -1040,7 +1056,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
     <a href="catalog.html" id="cat-stone-bc-parent">Catalog</a> /
     <span id="cat-stone-bc-label">Stone Catalog</span>
   </div>
-  <h1 class="page-title" id="cat-stone-title">Ashley Kitchen Stone Systems<br><em>Deep family &amp; pattern library</em></h1>
+  <h1 class="page-title" id="cat-stone-title">Ashley Kitchen Stone Systems<br><em>Deep family and pattern library</em></h1>
   <p class="page-desc" id="cat-stone-desc">You are now in the deep stone layer: compare families, shortlist exact SKU codes, then move directly into sample and technical follow-up.</p>
   <div class="prod-tags">
     <a href="catalog.html#stone-routing" class="prod-tag prod-tag-stone" id="cat-tag-parent">Back to Stone Family Map</a>
@@ -1063,7 +1079,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
     <p class="pb-desc" id="stone-pb-desc">Ashley Kitchen now reads the stone range through eight clearer families: ordinary ultra-thin stone, LumiSlate translucent stone, cement, marble, sandstone, metal, rust-led finishes, and DIY adhesive formats. This catalog layer is the shared front door before deeper pattern libraries and technical follow-up.</p>
     <div class="pb-badges">
       <span class="pb-badge" id="stone-pb-b1">8 Families</span>
-      <span class="pb-badge" id="stone-pb-b2">103 Patterns</span>
+      <span class="pb-badge" id="stone-pb-b2">101 Patterns</span>
       <span class="pb-badge" id="stone-pb-b3">100% Natural Stone</span>
       <span class="pb-badge" id="stone-pb-b4">LumiSlate Taiwan Exclusive</span>
     </div>
@@ -1576,35 +1592,35 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
 <div class="section-divider"></div>
 <div class="catalog-section">
   <div class="series-header">
-    <div class="series-label">Next Step</div>
-    <h2 class="series-title">Move from family direction into sample review.</h2>
-    <p class="series-desc">Use this page as the deep stone library. Once the family is clear, Ashley Kitchen can help compare patterns, review size options, narrow LumiSlate lighting behaviour, and prepare the next sample conversation without overwhelming the first decision.</p>
+    <div class="series-label" id="cat-stone-next-label" data-i18n="cat-stone-next-label">Next Step</div>
+    <h2 class="series-title" id="cat-stone-next-title" data-i18n="cat-stone-next-title">Move from family direction into sample review.</h2>
+    <p class="series-desc" id="cat-stone-next-desc" data-i18n="cat-stone-next-desc">Use this page as the deep stone library. Once the family is clear, Ashley Kitchen can help compare patterns, review size options, narrow LumiSlate lighting behaviour, and prepare the next sample conversation without overwhelming the first decision.</p>
   </div>
   <div class="family-spec-grid">
     <article class="family-spec-card">
-      <div class="family-spec-label">Pattern and finish guidance</div>
-      <div class="family-spec-copy">Move from family-level understanding into exact pattern review, lighting study, and shortlist comparison.</div>
+      <div class="family-spec-label" id="cat-stone-next-card-1-label" data-i18n="cat-stone-next-card-1-label">Pattern and finish guidance</div>
+      <div class="family-spec-copy" id="cat-stone-next-card-1-copy" data-i18n="cat-stone-next-card-1-copy">Move from family-level understanding into exact pattern review, lighting study, and shortlist comparison.</div>
     </article>
     <article class="family-spec-card">
-      <div class="family-spec-label">Technical follow-up</div>
-      <div class="family-spec-copy">Bring in size options, build-up references, and selected proof only after the material direction is already clear.</div>
+      <div class="family-spec-label" id="cat-stone-next-card-2-label" data-i18n="cat-stone-next-card-2-label">Technical follow-up</div>
+      <div class="family-spec-copy" id="cat-stone-next-card-2-copy" data-i18n="cat-stone-next-card-2-copy">Bring in size options, build-up references, and selected proof only after the material direction is already clear.</div>
     </article>
     <article class="family-spec-card">
-      <div class="family-spec-label">Project support</div>
-      <div class="family-spec-copy">Ashley Kitchen can help compare series fit, review project context, and prepare sample requests without flooding the first conversation with too much data.</div>
+      <div class="family-spec-label" id="cat-stone-next-card-3-label" data-i18n="cat-stone-next-card-3-label">Project support</div>
+      <div class="family-spec-copy" id="cat-stone-next-card-3-copy" data-i18n="cat-stone-next-card-3-copy">Ashley Kitchen can help compare series fit, review project context, and prepare sample requests without flooding the first conversation with too much data.</div>
     </article>
     <article class="family-spec-card">
-      <div class="family-spec-label" id="stone-guardrail-label">Specification guardrail</div>
-      <div class="family-spec-copy" id="stone-guardrail-copy">Report applicability depends on test method, substrate, and project conditions. Before final claim wording, review technical evidence and confirm market scope.</div>
+      <div class="family-spec-label" id="stone-guardrail-label" data-i18n="stone-guardrail-label">Specification guardrail</div>
+      <div class="family-spec-copy" id="stone-guardrail-copy" data-i18n="stone-guardrail-copy">Report applicability depends on test method, substrate, and project conditions. Before final claim wording, review technical evidence and confirm market scope.</div>
       <div class="family-spec-copy" style="margin-top:8px">
-        <a href="nalexible-stone.html#technical-evidence" id="stone-guardrail-link-1" style="color:inherit;text-decoration:underline;text-underline-offset:4px">Open technical evidence</a>
+        <a href="nalexible-stone.html#technical-evidence" id="stone-guardrail-link-1" class="inline-link" data-i18n="stone-guardrail-link-1">Open technical evidence</a>
         ·
-        <a href="contact.html?intent=technical-report&amp;product=stone&amp;from=catalog-stone-guardrail" id="stone-guardrail-link-2" style="color:inherit;text-decoration:underline;text-underline-offset:4px">Request report mapping</a>
+        <a href="contact.html?intent=technical-report&amp;product=stone&amp;from=catalog-stone-guardrail" id="stone-guardrail-link-2" class="inline-link" data-i18n="stone-guardrail-link-2">Request report mapping</a>
       </div>
     </article>
     <article class="family-spec-card">
-      <div class="family-spec-label">Back to broader catalog</div>
-      <div class="family-spec-copy"><a href="catalog.html" style="color:inherit;text-decoration:underline;text-underline-offset:4px">Return to the main catalog landing page</a> when you need to compare stone against fiberboard and flooring again.</div>
+      <div class="family-spec-label" id="cat-stone-next-card-5-label" data-i18n="cat-stone-next-card-5-label">Back to broader catalog</div>
+      <div class="family-spec-copy"><a href="catalog.html" class="inline-link" id="cat-stone-next-card-5-link" data-i18n="cat-stone-next-card-5-link">Return to the main catalog landing page</a><span id="cat-stone-next-card-5-tail" data-i18n="cat-stone-next-card-5-tail"> when you need to compare stone against fiberboard and flooring again.</span></div>
     </article>
   </div>
 </div>
@@ -1629,7 +1645,8 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
 function scrollToSeries(id, btn) {
   var el = document.getElementById('series-' + id);
   if (!el) return;
-  var offset = 94 + 41; // nav + stone subnav
+  window.__stoneCurrentSeries = id;
+  var offset = getSeriesJumpOffset();
   var top = el.getBoundingClientRect().top + window.scrollY - offset;
   window.scrollTo({ top: top, behavior: 'smooth' });
   if (window.history && window.history.replaceState) {
@@ -1637,6 +1654,52 @@ function scrollToSeries(id, btn) {
   }
   document.querySelectorAll('#prod-stone .series-tab').forEach(function(t){ t.classList.remove('active'); });
   if (btn) btn.classList.add('active');
+}
+
+function visibleStoneStickyHeight(sel) {
+  var el = document.querySelector(sel);
+  if (!el) return 0;
+  var st = window.getComputedStyle(el);
+  if (st.display === 'none' || st.visibility === 'hidden') return 0;
+  if (el.offsetParent === null && st.position !== 'fixed' && st.position !== 'sticky') return 0;
+  return el.offsetHeight || 0;
+}
+
+function getStoneStickyOffset(extra) {
+  var pad = typeof extra === 'number' ? extra : 0;
+  return visibleStoneStickyHeight('.lang-bar') + visibleStoneStickyHeight('nav') + visibleStoneStickyHeight('.catalog-nav') + pad;
+}
+
+function getSeriesJumpOffset() {
+  var isLandscape = window.matchMedia && window.matchMedia('(orientation: landscape)').matches;
+  if (isLandscape && window.innerWidth <= 1366) return getStoneStickyOffset(44);
+  if (window.innerWidth <= 760) return getStoneStickyOffset(28);
+  return getStoneStickyOffset(22);
+}
+
+function normalizeStoneSeriesHash(rawHash) {
+  if (!rawHash) return '';
+  var h = rawHash.replace(/^#/, '');
+  var ids = ['ordinary','lumislate','cement','marble','sandstone','metal','rust','diy'];
+  if (ids.indexOf(h) !== -1) return h;
+  if (h.indexOf('series-') === 0) {
+    var mapped = h.replace('series-', '');
+    if (ids.indexOf(mapped) !== -1) return mapped;
+  }
+  return '';
+}
+
+function alignStoneSeriesFromHash() {
+  var id = normalizeStoneSeriesHash(window.location.hash) || window.__stoneCurrentSeries || '';
+  if (!id) return;
+  var el = document.getElementById('series-' + id);
+  if (!el) return;
+  window.__stoneCurrentSeries = id;
+  var top = el.getBoundingClientRect().top + window.scrollY - getSeriesJumpOffset();
+  window.scrollTo({ top: top, behavior: 'auto' });
+  document.querySelectorAll('#prod-stone .series-tab').forEach(function(t){ t.classList.remove('active'); });
+  var tab = document.getElementById('stab-' + id);
+  if (tab) tab.classList.add('active');
 }
 
 /* ── Stone series sub-tab scroll spy ── */
@@ -1649,6 +1712,7 @@ window.addEventListener('scroll', function(){
       document.querySelectorAll('#prod-stone .series-tab').forEach(function(t){ t.classList.remove('active'); });
       var tab = document.getElementById('stab-' + stoneIds[i]);
       if (tab) tab.classList.add('active');
+      window.__stoneCurrentSeries = stoneIds[i];
       break;
     }
   }
@@ -1678,6 +1742,20 @@ window.addEventListener('DOMContentLoaded', function(){
     setTimeout(mapping[hash].fn, 150);
   }
 });
+
+var stoneReflowTimer = null;
+function queueStoneSeriesRealign() {
+  clearTimeout(stoneReflowTimer);
+  [120, 320, 620, 980].forEach(function(ms){
+    setTimeout(alignStoneSeriesFromHash, ms);
+  });
+  stoneReflowTimer = setTimeout(alignStoneSeriesFromHash, 1280);
+}
+window.addEventListener('orientationchange', queueStoneSeriesRealign);
+window.addEventListener('resize', queueStoneSeriesRealign);
+if (window.visualViewport) {
+  window.visualViewport.addEventListener('resize', queueStoneSeriesRealign);
+}
 
 const LUMI_PATTERNS = [
   { folder:'7001_California_Gold', skuSmall:'7001', skuLarge:'8001', en:'California Gold', zh:'加州金', noteEn:'Most popular export pattern', noteZh:'最受歡迎的出口色' },

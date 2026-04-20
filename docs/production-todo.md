@@ -1,5 +1,41 @@
 # Production Todo / Commit Log
 
+## 2026-04-20
+
+- `pending (current commit)` — Fix iPad stone-tab anchor occlusion after orientation change + QA closure.
+  - `catalog-stone.html`
+  - `docs/mobile-qa-pass-2026-04-20-catalog-stone-tabs.md`
+  - Highlights:
+    - Adds series-level `scroll-margin-top` for anchor safety under sticky header/nav bars.
+    - Refines tab jump offset logic for tablet landscape/portrait.
+    - Adds post-rotation realignment flow (`orientationchange` + `resize` + `visualViewport.resize`) to keep section titles fully visible.
+    - Real-device validation passed on iPhone, Android, and iPad (portrait/landscape/rotation).
+
+## 2026-04-19 Coordination Note
+
+- Brochure track is intentionally deferred.
+- Resume brochure discussion/revisions only after EN website round is fully completed and QA-closed.
+
+## 2026-04-19 Brochure Action List (deferred until web Round 2 completes)
+
+- Source: Claude.ai brochure comprehensive review feedback (latest).
+- Execution rule: hold brochure edits until current web Round 2 closes.
+
+- Priority A (must-fix before print release):
+  - Validate page-level logic continuity (problem -> system -> evidence -> sample CTA) with no duplicated claims.
+  - Tighten claim guardrails (no over-claim wording; keep test/evidence wording traceable).
+  - Re-check high-risk pages for visual/content mismatch and remove any placeholder/mockup-style composition.
+
+- Priority B (quality polish before print handoff):
+  - Improve caption precision and tone consistency on technical spreads.
+  - Rebalance dense pages for hierarchy/readability while preserving current structure.
+  - Final proof pass for EN/TC naming consistency and material code alignment.
+
+- Deliverables when brochure round starts:
+  - `docs/brochure-round2-action-plan-v1.md`
+  - `docs/brochure-round2-qa-checklist-v1.md`
+  - final print-ready file comparison note (changed pages only).
+
 ## 2026-04-19 Batch Reconciliation (Gemini follow-through)
 
 - Batch 1: Completed and committed.
