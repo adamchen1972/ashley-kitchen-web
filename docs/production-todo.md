@@ -1,5 +1,17 @@
 # Production Todo / Commit Log
 
+## 2026-04-21 (Deferred Follow-up Queue — remind Adam proactively)
+
+- Deferred item 2 (bulk untracked materials cleanup):
+  - Scope: sort and deduplicate untracked image/source files under `assets/nalexible/stone/**`, `images/fiberboard/refine/**`, and non-final working outputs in `docs/**`.
+  - Rule: do not mix with active webpage commits; run as a dedicated hygiene batch when current web QA cycle is fully stable.
+  - Reminder policy: proactively notify Adam before starting this cleanup batch.
+
+- Deferred item 3 (Claude.ai handoff after availability window):
+  - Earliest start: after `2026-04-24 09:00` (Asia/Taipei), when Claude.ai is available again.
+  - Scope: brochure consolidation/review package and cross-check with latest EN-site state.
+  - Reminder policy: proactively notify Adam at/after the window so he can trigger Claude.ai with the final prompt.
+
 ## 2026-04-21 (Status Reset)
 
 - Current focus (in progress): `catalog.html` Fiberboard flow refinement (use-case mapping clarity + visual consistency).

@@ -13,9 +13,54 @@ A static multi-page website (no framework, no build step). All pages share:
 
 Primary cross-page planning document:
 
-- [SITE_PAGE_PLAN.md](/Users/adam/Desktop/web_dev/SITE_PAGE_PLAN.md)
-- [SITE_RESTRUCTURE_STRATEGY.md](/Users/adam/Desktop/web_dev/SITE_RESTRUCTURE_STRATEGY.md)
-- [WEBSITE_GROWTH_PLAN.md](/Users/adam/Desktop/web_dev/WEBSITE_GROWTH_PLAN.md)
+- [SITE_PAGE_PLAN.md](/Users/adamchen/Desktop/web_dev/SITE_PAGE_PLAN.md)
+- [SITE_RESTRUCTURE_STRATEGY.md](/Users/adamchen/Desktop/web_dev/SITE_RESTRUCTURE_STRATEGY.md)
+- [WEBSITE_GROWTH_PLAN.md](/Users/adamchen/Desktop/web_dev/WEBSITE_GROWTH_PLAN.md)
+
+---
+
+## Important Documents
+
+### Ashley Kitchen Stone Systems Brochure (canonical — stored at `docs/brochure/`)
+
+The canonical stone brochure is a 15-page A4-portrait English PDF that accompanies the website. Current approved version:
+
+- **Current file (print-ready):** `docs/brochure/ashley-kitchen-stone-systems-overview-final-facade-v8-p9-balance-p14-canonical.pdf` (2026-04-18 print revision of v5; supersedes internal v6/v7)
+- **Previous files (kept for reference):**
+  - `docs/brochure/ashley-kitchen-stone-systems-overview-final-facade-v7-p9-3layer-p14-ppt-patterns.pdf` (v7 — internal review iteration, not print-ready; had residual Square annotations and tile pills overlaid on top of wrong base images)
+  - `docs/brochure/ashley-kitchen-stone-systems-overview-final-facade-v5-single-qr-light-cover.pdf` (v5 — pre-revision baseline)
+- **Pages:** 15 (cover, Why-Stone-Systems, Family Map, Flexible Stone, LumiSlate, light-behaviour grid, Exterior, Curved Surfaces, technical overview, back cover with single QR to `www.ashleykitchen.co`)
+- **Status:** v8 print-ready. All pages A4 (595×842 pt), zero annotations, all p14 tiles ≥ 520 DPI, new p9 EN diagram at 1376 DPI — this is the version all future brochure edits should derive from
+- **Review renders:** `docs/brochure/v8-review/p9-before-v7-after-v8.png`, `docs/brochure/v8-review/p14-before-v7-after-v8.png` (side-by-side comparisons); final-only renders in the same folder as `p9-v8-final.png` / `p14-v8-final.png`
+- **Source material (for future edits):**
+  - `docs/brochure/sources/lumislate-source-zh.pptx` — the original Chinese Nalexible LumiSlate PPT (used for page 9's 3-layer diagram)
+  - `docs/brochure/sources/nalexible-product-materials-zh.pptx` — the full Nalexible product-material PPT (used for the canonical per-SKU slab photography; p16 = Sanjayani White / 7013, p17 = Copper New / 7014)
+
+Keep the website page copy and visual direction consistent with this brochure (especially LumiSlate section, the family-direction language, and the 4-state light-behaviour grid on page 6). The A/B hero test on `index.html`, the `catalog-stone.html` series grid, and the LumiSlate card imagery were all built to mirror this brochure.
+
+**Provenance note.** On 2026-04-17 the repo went through a `temp-before-history-cleanup` rewrite, after which 13 iterations of the brochure (draft, draft-print-v2/v4/v5/v6, facade-preview, final-facade-v2/v3/v4/v5, final-enhanced-v1/v2/v3) existed only as dangling git objects. On 2026-04-18 the v5 single-qr-light-cover version was re-extracted from the dangling objects and restored to `docs/brochure/`. If you need a different iteration for comparison, they are still recoverable via `git fsck --lost-found --no-reflogs` until the next `git gc --prune=now`.
+
+**Modifications applied in v8 (2026-04-18, print-ready; supersedes internal v6/v7):**
+
+Build pipeline: `fitz.open(v5) → delete_annot(all) → page.replace_image(xref) → page.insert_image(...) → save(garbage=4, deflate=True, clean=True)`. This is true object replacement (not overlay), so 7013/7014 tile captions (PDF text layer) stay untouched and the new slab bitmaps inherit the original clipping/bbox metadata.
+
+- **Page 14 (swatch grid — xref-level replacement)** — BOTH highlighted tiles replaced in place at the PDF-object level (no overlay "pill" this time):
+  - `page.replace_image(xref=151, filename=tile_7013_new.jpg)` — 7013 Sanjayani White ← PPT slide 16 (霞白 / Sanjayani White, spec 5013 / 6013 / 6113). Source rotated 90° CW, center-cropped to 674×1409 portrait (aspect 1:2.086 matching neighbor tiles), UnsharpMask(r=1.2, 35%, thr=2) + Contrast×1.04 + gentle blend toward neighbor-row mean RGB(152,161,164)/std(23). Tile rect unchanged at `(251.25, 328.5, 344.25, 522.0)`, ~523 DPI.
+  - `page.replace_image(xref=153, filename=tile_7014_new.jpg)` — 7014 Copper New ← PPT slide 17 (朝红 / Copper New, spec 5014 / 6014 / 6114). Same pipeline; tile rect unchanged at `(351.0, 331.5, 444.0, 519.0)`, ~522 DPI.
+- **Page 9 (technical card — "How the system is built")** — three coordinated changes:
+  1. `delete_annot` on both pages: removes the red Square review markers (p9 at `(62.7, 673.0, 150.1, 758.1)`, p14 at `(345.4, 387.0, 450.0, 479.2)`).
+  2. `page.replace_image(xref=33, pixmap=cream 8×8)` + an opaque cream `draw_rect(51.5, 680.0, 155.0, 755.0)` in card fill `#FAF8F3 (0.9843, 0.9725, 0.9529)` — this neutralises both the old Chinese 3-layer photo pill (xref=33 at `(50.25, 682.5, 150.75, 749.25)`) and the small decorative placeholder pill drawn at `(90.75, 681.75, 110.25, 750.0)`. Rect stops at x=155 so the three orange bullet indicators (at x=157.5–161.25) stay fully visible.
+  3. `page.insert_image(rect=(60.8, 664.4, 155.0, 727.2), filename=lumislate_3layer_en_cream.png, keep_proportion=True)` — 3-layer diagram composite (1800×1200, ~1376 DPI). Labels translated from 天然石材 / 粘合剂 / 透明树脂 to **Natural Stone / Adhesive Layer / Transparent Resin**. Width stops at x=155 (before arrow column); vertical center y≈695.8 aligned with bullets mid (y=671–720). Strictly inside card (x=51.0–544.5, y=618.75–770.25), with 4.8 pt above subtitle (y=661.2) and 2.5 pt below last bullet (y=720.3), no overflow.
+
+**Print-ready verification (v8):**
+- 15 pages, all A4 595×842 pt
+- 0 annotations document-wide
+- All p14 swatch tiles ≥ 520 DPI (above 300 DPI print minimum)
+- New p9 EN diagram at 1376 DPI
+- Saved with `garbage=4, deflate=True, clean=True` (PDF 1.4, 31.1 MB)
+- Row 3 tile brightness confirmed consistent: 7011 Ocean Green (132) → 7012 Multi Pink (160) → 7013 Sanjayani White (172) → 7014 Copper New (179) → 7015 Silver Grey (144) — 7013/7014 fall within the light-tile range of the row
+
+If a future revision is needed, start from the v8 file, not v5 or v7. v5 and v7 are retained for diffing only.
 
 ## Collaboration Notes
 
