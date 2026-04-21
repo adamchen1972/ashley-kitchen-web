@@ -1101,6 +1101,22 @@ const T = {
   'cat-tag-stone': {en:'Open Stone Family Map — 8 Series', zh:'開啟石材家族地圖 — 8 大系列'},
   'cat-tag-fiber': {en:'Open Fiberboard',       zh:'開啟纖維板頁'},
   'cat-tag-plye':  {en:'Open Flooring', zh:'開啟地板頁'},
+  'qb-eyebrow':        {en:'Quick Browse', zh:'快速瀏覽'},
+  'qb-title':          {en:'Quick picks — jump straight in', zh:'精選入口 — 直接進入對應系列'},
+  'qb-helper':         {en:'Swipe to explore →', zh:'左右滑動瀏覽 →'},
+  'qb-proof':          {en:'Representative cross-family picks based on current project discussions (not a sales ranking).', zh:'跨系列代表性入口，依目前專案討論整理（非銷售排行）。'},
+  'qb-1-name':         {en:'Indian Autumn', zh:'印度秋'},
+  'qb-1-series':       {en:'Ordinary →', zh:'一般系列 →'},
+  'qb-2-name':         {en:'Copper New', zh:'銅色新款'},
+  'qb-2-series':       {en:'LumiSlate →', zh:'LumiSlate 透光系列 →'},
+  'qb-3-name':         {en:'Cement Grey', zh:'水泥灰'},
+  'qb-3-series':       {en:'Cement →', zh:'水泥系列 →'},
+  'qb-4-name':         {en:'Veined Marble', zh:'紋理大理石'},
+  'qb-4-series':       {en:'Marble →', zh:'大理石系列 →'},
+  'qb-5-name':         {en:'Warm Sandstone', zh:'暖調砂岩'},
+  'qb-5-series':       {en:'Sandstone →', zh:'砂岩系列 →'},
+  'qb-6-name':         {en:'Copper Rust', zh:'銅鏽'},
+  'qb-6-series':       {en:'Copper / Rust →', zh:'銅鏽系列 →'},
   'cat-route-eyebrow': {en:'Stone Family Map', zh:'石材家族地圖'},
   'cat-route-title':   {en:'Eight series. One decision flow.', zh:'8 大系列，一條決策流程。'},
   'cat-route-desc':    {en:'Choose a stone family first, then open the deep library to compare exact SKU codes and send a focused sample request.', zh:'先選擇石材家族，再進入深度資料庫比對精確 SKU 代碼，最後送出聚焦的樣品需求。'},
@@ -1123,7 +1139,7 @@ const T = {
   'cat-stone-bc-home':   {en:'Home', zh:'首頁'},
   'cat-stone-bc-parent': {en:'Catalog', zh:'型錄'},
   'cat-stone-bc-label':  {en:'Stone Catalog', zh:'石材型錄'},
-  'cat-stone-title':     {en:'Ashley Kitchen Stone Systems<br><em>Deep family &amp; pattern library</em>', zh:'Ashley Kitchen 石材系統<br><em>深度家族與花色庫</em>'},
+  'cat-stone-title':     {en:'Ashley Kitchen Stone Systems<br><em>Deep family and pattern library</em>', zh:'Ashley Kitchen 石材系統<br><em>深度家族與花色庫</em>'},
   'cat-stone-desc':      {en:'You are now in the deep stone layer: compare families, shortlist exact SKU codes, then move directly into sample and technical follow-up.', zh:'你現在位於深度石材層：先比較家族、篩選精確 SKU 代碼，再直接進入樣品與技術跟進。'},
   'cat-tag-parent':      {en:'Back to Stone Family Map', zh:'返回石材家族地圖'},
   'cat-tag-lumi':        {en:'Jump to LumiSlate', zh:'跳至 LumiSlate'},
@@ -1174,14 +1190,14 @@ const T = {
   // ── catalog.html — Top Tabs ──
   'cattab-stone': {en:'Stone',      zh:'石材'},
   'cattab-fiber': {en:'Fiberboard', zh:'纖維板'},
-  'cattab-plye':  {en:'plyē',       zh:'plyē'},
+  'cattab-plye':  {en:'Flooring',       zh:'地板'},
 
   // ── catalog.html — Stone Product Banner ──
   'stone-pb-label': {en:'Product Line 01 — Stone Systems', zh:'產品系列 01 — 石材系統'},
   'stone-pb-title': {en:'Stone Systems<br><em>by family &amp; use case</em>', zh:'石材系統<br><em>依家族與應用導向</em>'},
   'stone-pb-desc':  {en:'Ashley Kitchen now reads the stone range through eight clearer families: ordinary ultra-thin stone, LumiSlate translucent stone, cement, marble, sandstone, metal, rust-led finishes, and DIY adhesive formats.', zh:'Ashley Kitchen 以 8 大家族清楚重整石材範圍：一般超薄石材、LumiSlate 透光石材、水泥系、大理石系、砂岩系、金屬系、銅鏽系與 DIY 自黏系列。'},
   'stone-pb-b1':    {en:'8 Families',       zh:'8 大家族'},
-  'stone-pb-b2':    {en:'103 Patterns',     zh:'103 組花色'},
+  'stone-pb-b2':    {en:'101 Patterns',     zh:'101 組花色'},
   'stone-pb-b3':    {en:'100% Natural Stone',  zh:'100% 天然石材'},
   'stone-pb-b4':    {en:'LumiSlate Taiwan Exclusive',    zh:'LumiSlate 台灣獨家代理'},
 
@@ -1232,6 +1248,18 @@ const T = {
   'catalogStone.diy.specValue':       {en:'Temporary SKU coding', zh:'暫用 SKU 編碼'},
   'catalogStone.diy.specCopy':        {en:'DIY is currently shown as catalog codes (DIY-01 to DIY-12) so it can live in the same shortlist workflow as other series while source naming is normalized.', zh:'DIY 目前以目錄代碼（DIY-01 到 DIY-12）呈現，讓它在來源命名尚未統一前，也能先納入與其他系列一致的 shortlist 流程。'},
   'cat-stone-footer-note':            {en:'Finalize family and SKU choices here, then let Ashley Kitchen support sample review plus technical alignment for your project.', zh:'先在此完成家族與 SKU 選擇，再由 Ashley Kitchen 協助樣品審核與技術對齊。'},
+  'cat-stone-next-label':             {en:'Next Step', zh:'下一步'},
+  'cat-stone-next-title':             {en:'Move from family direction into sample review.', zh:'從家族方向，前進到樣品比對。'},
+  'cat-stone-next-desc':              {en:'Use this page as the deep stone library. Once the family is clear, Ashley Kitchen can help compare patterns, review size options, narrow LumiSlate lighting behaviour, and prepare the next sample conversation without overwhelming the first decision.', zh:'把這一頁作為石材深層資料庫使用。當家族方向確立後，Ashley Kitchen 可協助比對花色、檢視尺寸選項、收斂 LumiSlate 光源行為，並準備下一步樣品溝通，避免在第一步就資訊過載。'},
+  'cat-stone-next-card-1-label':      {en:'Pattern and finish guidance', zh:'花色與表面建議'},
+  'cat-stone-next-card-1-copy':       {en:'Move from family-level understanding into exact pattern review, lighting study, and shortlist comparison.', zh:'從家族層級理解，進入精確花色比對、光源研究與 shortlist 評估。'},
+  'cat-stone-next-card-2-label':      {en:'Technical follow-up', zh:'技術追蹤'},
+  'cat-stone-next-card-2-copy':       {en:'Bring in size options, build-up references, and selected proof only after the material direction is already clear.', zh:'在材料方向已清楚後，再導入尺寸選項、構造參考與對應證明資料。'},
+  'cat-stone-next-card-3-label':      {en:'Project support', zh:'專案支援'},
+  'cat-stone-next-card-3-copy':       {en:'Ashley Kitchen can help compare series fit, review project context, and prepare sample requests without flooding the first conversation with too much data.', zh:'Ashley Kitchen 可協助比較系列適配、檢視專案情境，並準備樣品需求，避免首輪溝通被過多資料淹沒。'},
+  'cat-stone-next-card-5-label':      {en:'Back to broader catalog', zh:'回到總覽型錄'},
+  'cat-stone-next-card-5-link':       {en:'Return to the main catalog landing page', zh:'返回主型錄首頁'},
+  'cat-stone-next-card-5-tail':       {en:' when you need to compare stone against fiberboard and flooring again.', zh:'，當你需要再次把石材與纖維板、地板做橫向比較時。'},
   'ctc-hero-sub':                     {en:'Request samples, technical specs, or project support in one place. Share your scope and timeline, and we will respond as soon as possible.', zh:'在同一頁完成樣品、技術規格與專案支援需求。提供你的專案範圍與時程，我們會盡快回覆。'},
   'cat-request-btn':                  {en:'Request a Sample', zh:'申請樣品'},
   'stone-select-step1-label':         {en:'Step 1', zh:'步驟 1'},
@@ -1265,6 +1293,57 @@ const T = {
   'fiber-pb-b2':    {en:'60% Lighter than Steel', zh:'比鋼材輕 60%'},
   'fiber-pb-b3':    {en:'Acoustic Performance',  zh:'隔音表現'},
   'fiber-pb-b4':    {en:'100% Recyclable',       zh:'100% 可回收'},
+  'fb-flow-s1-label': {en:'Step 1', zh:'步驟 1'},
+  'fb-flow-s1-title': {en:'Use Case', zh:'使用情境'},
+  'fb-flow-s1': {en:'Start with use case: quiet door, room divider, wall/partition panel, or furniture/joinery.', zh:'先看使用情境：靜音門、空間分隔、牆面/隔間板，或家具/木作。'},
+  'fb-flow-s1-link': {en:'Open use-case map →', zh:'開啟使用情境地圖 →'},
+  'fb-flow-s2-label': {en:'Step 2', zh:'步驟 2'},
+  'fb-flow-s2-title': {en:'Build-up', zh:'建構邏輯'},
+  'fb-flow-s2': {en:'Pick the build-up logic: panel core type (2+1 / 2+2 / 3+2) and thickness range (17.5 / 25 / 35mm).', zh:'再選建構邏輯：板材芯層類型（2+1 / 2+2 / 3+2）與厚度範圍（17.5 / 25 / 35mm）。'},
+  'fb-flow-s2-link': {en:'See panel builds →', zh:'查看板材構成 →'},
+  'fb-flow-s3-label': {en:'Step 3', zh:'步驟 3'},
+  'fb-flow-s3-title': {en:'Specs', zh:'規格確認'},
+  'fb-flow-s3': {en:'Confirm technical data and send one focused request with project context.', zh:'確認技術規格後，帶著專案背景一次送出聚焦需求。'},
+  'fb-flow-s3-link': {en:'Open specifications →', zh:'開啟規格表 →'},
+  'fb-dm-uc-label': {en:'Decision Block 1', zh:'決策區塊 1'},
+  'fb-dm-uc-title': {en:'Use Cases (All)', zh:'使用場景（完整）'},
+  'fb-dm-uc-copy': {en:'Show every primary application first so users can route by project objective, not by material jargon.', zh:'先完整呈現主要應用，讓使用者依專案目標而不是材料術語來分流。'},
+  'fb-dm-uc-1': {en:'Quiet Door Systems', zh:'靜音門系統'},
+  'fb-dm-uc-1-tag': {en:'Acoustic', zh:'隔音'},
+  'fb-dm-uc-2': {en:'Room Divider / Sliding Panels', zh:'空間分隔 / 滑動門片'},
+  'fb-dm-uc-2-tag': {en:'Divider', zh:'分隔'},
+  'fb-dm-uc-3': {en:'Wall &amp; Partition Panels', zh:'牆面與隔間板'},
+  'fb-dm-uc-3-tag': {en:'Panel', zh:'板材'},
+  'fb-dm-uc-4': {en:'Furniture / Joinery Substrate', zh:'家具 / 木作基材'},
+  'fb-dm-uc-4-tag': {en:'Interior', zh:'室內'},
+  'fb-uc-vis-1': {en:'Quiet Door', zh:'靜音門'},
+  'fb-uc-vis-2': {en:'Room Divider', zh:'空間分隔'},
+  'fb-uc-vis-3': {en:'Wall / Panel', zh:'牆面 / 板材'},
+  'fb-uc-vis-4': {en:'Furniture / Joinery', zh:'家具 / 木作'},
+  'fb-dm-core-label': {en:'Decision Block 2', zh:'決策區塊 2'},
+  'fb-dm-core-title': {en:'Core Combinations (All)', zh:'芯層組合（完整）'},
+  'fb-dm-core-copy': {en:'Expose all core structures directly from narrow to thick: 2+1, 2+2, and 3+2 (17.5mm / 25mm / 35mm).', zh:'依厚度由薄到厚呈現芯層結構：2+1、2+2、3+2（17.5mm / 25mm / 35mm）。'},
+  'fb-dm-core-1': {en:'2+1 Core', zh:'2+1 芯層'},
+  'fb-dm-core-1-tag': {en:'17.5mm', zh:'17.5mm'},
+  'fb-dm-core-2': {en:'2+2 Core', zh:'2+2 芯層'},
+  'fb-dm-core-2-tag': {en:'25mm', zh:'25mm'},
+  'fb-dm-core-3': {en:'3+2 Core', zh:'3+2 芯層'},
+  'fb-dm-core-3-tag': {en:'35mm', zh:'35mm'},
+  'fb-dm-face-label': {en:'Decision Block 3', zh:'決策區塊 3'},
+  'fb-core-vis-1-title': {en:'2+1 Core', zh:'2+1 芯層'},
+  'fb-core-vis-1-sub': {en:'Nominal 17.5mm', zh:'名義厚度 17.5mm'},
+  'fb-core-vis-2-title': {en:'2+2 Core', zh:'2+2 芯層'},
+  'fb-core-vis-2-sub': {en:'Nominal 25mm', zh:'名義厚度 25mm'},
+  'fb-core-vis-3-title': {en:'3+2 Core', zh:'3+2 芯層'},
+  'fb-core-vis-3-sub': {en:'Nominal 35mm', zh:'名義厚度 35mm'},
+  'fb-dm-face-title': {en:'Face Boards + Spec Path', zh:'面板選擇 + 規格路徑'},
+  'fb-dm-face-copy': {en:'Let users choose preferred outer boards (MDF / OSB) first, then confirm structure and thickness scope before RFQ.', zh:'先讓使用者選擇外層板（MDF / OSB），再確認結構與厚度範圍後進入詢價。'},
+  'fb-dm-face-1': {en:'MDF 3mm / 5mm / 9mm', zh:'MDF 3mm / 5mm / 9mm'},
+  'fb-dm-face-1-tag': {en:'Face Board', zh:'外層板'},
+  'fb-dm-face-2': {en:'OSB 3mm / 8mm', zh:'OSB 3mm / 8mm'},
+  'fb-dm-face-2-tag': {en:'Face Board', zh:'外層板'},
+  'fb-dm-face-3': {en:'Technical request with project context', zh:'附專案背景送出技術需求'},
+  'fb-dm-face-3-tag': {en:'Support', zh:'技術支援'},
 
   // ── catalog.html — Fiberboard Sub-Nav ──
   'fbtab-natural': {en:'Natural Fiber Board', zh:'天然纖維板'},
@@ -1337,22 +1416,30 @@ const T = {
   'fb-sp-r6b':     {en:'Naturally mold-proof',       zh:'天然防霉'},
   'fb-sp-r6c':     {en:'Treated (chemical)',         zh:'化學處理'},
   'fb-sp-r6d':     {en:'Treated (chemical)',         zh:'化學處理'},
+  'fb-sp-r7a':     {en:'Core Structure &amp; Nominal Thickness', zh:'芯層結構與名義厚度'},
+  'fb-sp-r7b':     {en:'3+2 = 35mm · 2+2 = 25mm · 2+1 = 17.5mm', zh:'3+2 = 35mm · 2+2 = 25mm · 2+1 = 17.5mm'},
+  'fb-sp-r7c':     {en:'Not applicable',             zh:'不適用'},
+  'fb-sp-r7d':     {en:'Not applicable',             zh:'不適用'},
+  'fb-sp-r8a':     {en:'Outside Board Options',      zh:'外層板選項'},
+  'fb-sp-r8b':     {en:'MDF 3/5/9mm · OSB 3/8mm',    zh:'MDF 3/5/9mm · OSB 3/8mm'},
+  'fb-sp-r8c':     {en:'Project-dependent',          zh:'依專案配置'},
+  'fb-sp-r8d':     {en:'Project-dependent',          zh:'依專案配置'},
   'fb-spec-note':  {en:'Data sourced from manufacturer specifications. Contact Ashley Kitchen for certified test reports.', zh:'數據來源：製造商規格書。如需認證測試報告，請聯絡 Ashley Kitchen。'},
 
-  // ── catalog.html — plyē Product Banner ──
-  'plye-pb-label': {en:'Product Line 03 — plyē Flooring', zh:'產品系列 03 — plyē 地板'},
-  'plye-pb-title': {en:'<em>plyē</em> ORIGIN Series<br>Engineered Flooring', zh:'<em>plyē</em> ORIGIN 系列<br>工程木地板'},
+  // ── catalog.html — Flooring Product Banner ──
+  'plye-pb-label': {en:'Product Line 03 — Flooring', zh:'產品系列 03 — 地板'},
+  'plye-pb-title': {en:'<em>Flooring</em> Signature Series<br>Engineered Flooring', zh:'<em>地板</em> 精選系列<br>工程地板'},
   'plye-pb-desc':  {en:'9mm eucalyptus engineered flooring with patent four-direction click-lock system (M677196). 12 oak shades, EU E1 certified, 19dB sound reduction. Factory-direct distribution from Taiwan.', zh:'9mm 桉木工程木地板，採專利四向卡扣系統（M677196）。12 款橡木色調，EU E1 認證，19dB 降噪。台灣工廠直供。'},
   'plye-pb-b1':    {en:'12 Colour Shades',    zh:'12 款色調'},
   'plye-pb-b2':    {en:'EU E1 Certified',     zh:'EU E1 認證'},
   'plye-pb-b3':    {en:'19dB Sound Reduction', zh:'19dB 降噪'},
   'plye-pb-b4':    {en:'Patent Click-Lock',   zh:'專利卡扣系統'},
 
-  // ── catalog.html — plyē Sub-Nav ──
-  'plyetab-origin': {en:'ORIGIN Series — All 12 Shades', zh:'ORIGIN 系列 — 全 12 款色調'},
+  // ── catalog.html — Flooring Sub-Nav ──
+  'plyetab-origin': {en:'Signature Series — All 12 Shades', zh:'精選系列 — 全 12 款色調'},
 
-  // ── catalog.html — plyē ORIGIN Swatches ──
-  'plye-origin-label': {en:'ORIGIN Series',      zh:'ORIGIN 系列'},
+  // ── catalog.html — Flooring Swatches ──
+  'plye-origin-label': {en:'Signature Series',      zh:'精選系列'},
   'plye-origin-title': {en:'All 12 Oak Shades',  zh:'全 12 款橡木色調'},
   'plye-origin-desc':  {en:'From warm honey and sunrise gold to deep black and quiet gray — 12 shades spanning the full natural oak spectrum, in two plank widths (standard and 23cm wide-plank).', zh:'從暖蜂蜜到日出金，從深黑到靜谧灰——12 款色調涵蓋天然橡木全色譜，提供標準與 23cm 寬板兩種規格。'},
   'plye-origin-b1':    {en:'9mm Total Thickness',   zh:'總厚度 9mm'},
@@ -1850,3 +1937,52 @@ window.addEventListener('scroll', function() {
 })();
 
 // Form handlers moved to inline scripts per page
+
+// ══════════════════════════════════════════
+// NAV DROPDOWN ACCESSIBILITY (Products)
+// ══════════════════════════════════════════
+(function(){
+  var dropdowns = document.querySelectorAll('.nav-dropdown');
+  if (!dropdowns.length) return;
+
+  dropdowns.forEach(function(drop){
+    var trigger = drop.querySelector('.nav-dropdown-trigger');
+    if (!trigger) return;
+
+    function setOpen(open) {
+      drop.classList.toggle('open', open);
+      trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    trigger.addEventListener('click', function(e){
+      e.preventDefault();
+      var willOpen = !drop.classList.contains('open');
+      dropdowns.forEach(function(other){
+        var t = other.querySelector('.nav-dropdown-trigger');
+        other.classList.remove('open');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+      setOpen(willOpen);
+    });
+
+    trigger.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') setOpen(false);
+    });
+
+    drop.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') {
+        setOpen(false);
+        trigger.focus();
+      }
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    if (e.target.closest('.nav-dropdown')) return;
+    dropdowns.forEach(function(drop){
+      var trigger = drop.querySelector('.nav-dropdown-trigger');
+      drop.classList.remove('open');
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();

@@ -16,8 +16,8 @@
 body{font-family:'Poppins','Noto Sans TC','DM Sans',-apple-system,sans-serif;background:linear-gradient(180deg,#fafafa 0%,#f4f4f5 100%);color:var(--stone);overflow-x:hidden}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--red);color:#fff;padding:8px 16px;z-index:10000;font-size:14px;font-weight:600;text-decoration:none;border-radius:0 0 4px 0}
 .skip-link:focus{top:0}
-:focus-visible{outline:2px solid var(--red);outline-offset:3px}
-a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+:focus-visible{outline:2px solid rgba(217,197,161,.72);outline-offset:2px}
+a:focus-visible,button:focus-visible{outline:2px solid rgba(217,197,161,.72);outline-offset:2px}
 
 /* ── LANG BAR ── */
 .lang-bar{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(255,255,255,.86);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:0 52px;height:34px;display:flex;justify-content:flex-end;align-items:center;gap:0;border-bottom:1px solid rgba(26,23,20,.08)}
@@ -34,9 +34,11 @@ nav{position:fixed;top:34px;left:0;right:0;z-index:200;background:rgba(255,255,2
 .logo-wm{font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;color:var(--stone)}
 .logo-wm em{font-style:italic;color:var(--red)}
 nav ul{display:flex;gap:32px;align-items:center;list-style:none;padding:0;margin:0}
-nav ul li a{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);text-decoration:none;font-family:'DM Sans',sans-serif;transition:color .2s;white-space:nowrap}
+nav ul li a,nav ul li button{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);text-decoration:none;font-family:'DM Sans',sans-serif;transition:color .2s;white-space:nowrap}
 nav ul li a:hover{color:var(--red)}
+nav ul li button:hover{color:var(--red)}
 nav ul li a.nav-active{color:var(--red)}
+.nav-dropdown-trigger{background:none;border:none;padding:0;cursor:pointer}
 .nav-cta{background:#111827;color:white!important;padding:10px 20px;border-radius:999px;box-shadow:0 10px 24px rgba(17,24,39,.16)}
 .nav-cta:hover{background:#000!important}
 .nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
@@ -44,7 +46,9 @@ nav ul li a.nav-active{color:var(--red)}
 .nav-dropdown-trigger{cursor:pointer}
 .nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:14px;background:transparent;opacity:0;visibility:hidden;transition:opacity .2s;z-index:300}
 .nav-dropdown-menu-inner{background:rgba(20,20,20,.97);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:12px 0;min-width:200px}
-.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible}
 .nav-dropdown-menu-inner a{display:block;padding:10px 20px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65)!important;text-decoration:none;font-family:'DM Sans',sans-serif;transition:color .15s,background .15s;white-space:nowrap}
 .nav-dropdown-menu-inner a:hover{color:white!important;background:rgba(255,255,255,.06)}
 
@@ -64,12 +68,12 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
 /* Product line mini tags in header */
 .prod-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
 .prod-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:1px;font-family:'DM Sans',sans-serif;text-decoration:none;transition:background .2s,color .2s}
-.prod-tag-stone{background:rgba(183,28,28,.18);color:rgba(217,197,161,.8);border:1px solid rgba(183,28,28,.35)}
-.prod-tag-stone:hover{background:rgba(183,28,28,.3)}
+.prod-tag-stone{background:rgba(183,28,28,.12);color:#7d2222;border:1px solid rgba(183,28,28,.32)}
+.prod-tag-stone:hover{background:rgba(183,28,28,.2)}
 .prod-tag-fiber{background:rgba(26,23,20,.04);color:rgba(26,23,20,.58);border:1px solid rgba(26,23,20,.1)}
 .prod-tag-fiber:hover{background:rgba(26,23,20,.08)}
-.prod-tag-plye{background:rgba(217,197,161,.08);color:rgba(217,197,161,.6);border:1px solid rgba(217,197,161,.18)}
-.prod-tag-plye:hover{background:rgba(217,197,161,.14)}
+.prod-tag-plye{background:rgba(217,197,161,.16);color:rgba(26,23,20,.72);border:1px solid rgba(26,23,20,.16)}
+.prod-tag-plye:hover{background:rgba(217,197,161,.24)}
 
 /* ── STICKY PRODUCT TABS (top-level: Stone / Fiber / Flooring) ── */
 .catalog-nav{position:sticky;top:94px;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(26,23,20,.08);padding:0 72px}
@@ -136,6 +140,210 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   transition:max-height .28s ease,opacity .22s ease,margin-top .22s ease
 }
 .fb-card:hover .fb-desc{margin-top:8px;max-height:5.4em;opacity:1}
+.fb-flow-grid{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+.fb-flow-card{
+  position:relative;
+  padding:16px 16px 14px;
+  border-radius:18px;
+  border:1px solid rgba(217,197,161,.18);
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  box-shadow:0 14px 30px rgba(0,0,0,.18);
+}
+.fb-flow-card::before{
+  content:'';
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:2px;
+  background:linear-gradient(90deg,rgba(217,197,161,.8),rgba(217,197,161,0));
+}
+.fb-flow-icon{
+  width:28px;
+  height:28px;
+  border-radius:8px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:10px;
+  border:1px solid rgba(217,197,161,.22);
+  background:rgba(217,197,161,.08);
+  color:rgba(217,197,161,.92);
+  font-size:12px;
+  letter-spacing:.08em;
+  font-family:'DM Sans',sans-serif;
+}
+.fb-flow-step{
+  display:block;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:rgba(217,197,161,.76);
+  font-family:'DM Sans',sans-serif;
+  margin-bottom:8px;
+}
+.fb-flow-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:26px;
+  font-weight:300;
+  line-height:1.02;
+  letter-spacing:-.02em;
+  color:#fff;
+  margin-bottom:8px;
+}
+.fb-flow-copy{
+  font-size:12px;
+  line-height:1.7;
+  color:rgba(255,255,255,.66);
+  font-weight:300;
+  min-height:3.4em;
+}
+.fb-flow-link{
+  margin-top:10px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:10px;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  color:var(--sand);
+  text-decoration:none;
+  font-family:'DM Sans',sans-serif;
+}
+.fb-flow-link:hover{text-decoration:underline;text-underline-offset:3px}
+.fb-decision-matrix{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+.fb-dm-card{
+  position:relative;
+  padding:16px;
+  border-radius:18px;
+  border:1px solid rgba(217,197,161,.18);
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  box-shadow:0 14px 30px rgba(0,0,0,.16);
+}
+.fb-dm-label{
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:rgba(217,197,161,.76);
+  font-family:'DM Sans',sans-serif;
+  margin-bottom:10px;
+}
+.fb-dm-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;
+  line-height:1.05;
+  font-weight:300;
+  color:#fff;
+  margin-bottom:8px;
+}
+.fb-dm-copy{
+  font-size:12px;
+  line-height:1.7;
+  color:rgba(255,255,255,.66);
+  font-weight:300;
+  margin-bottom:10px;
+}
+.fb-dm-list{display:grid;gap:8px}
+.fb-dm-chip{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  padding:8px 10px;
+  border-radius:12px;
+  border:1px solid rgba(217,197,161,.2);
+  background:rgba(217,197,161,.06);
+  color:rgba(255,255,255,.84);
+  text-decoration:none;
+  font-size:11px;
+  line-height:1.5;
+}
+.fb-dm-chip:hover{background:rgba(217,197,161,.12)}
+.fb-dm-chip small{
+  font-size:10px;
+  color:rgba(217,197,161,.78);
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  font-family:'DM Sans',sans-serif;
+  white-space:nowrap;
+}
+.fb-core-visual-grid{
+  margin-top:10px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+}
+.fb-core-visual{
+  border:1px solid rgba(217,197,161,.18);
+  border-radius:12px;
+  background:rgba(255,255,255,.04);
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
+}
+.fb-core-visual img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:contain;
+  background:#f4f4f4;
+  padding:8px;
+  display:block;
+}
+.fb-core-visual-meta{
+  padding:8px 10px 9px;
+  border-top:1px solid rgba(217,197,161,.14);
+}
+.fb-core-visual-title{
+  font-size:11px;
+  color:rgba(255,255,255,.84);
+  line-height:1.4;
+}
+.fb-core-visual-sub{
+  margin-top:2px;
+  font-size:9px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  color:rgba(217,197,161,.75);
+  font-family:'DM Sans',sans-serif;
+}
+.fb-uc-visual-grid{
+  margin-top:10px;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+}
+.fb-uc-visual{
+  border:1px solid rgba(217,197,161,.18);
+  border-radius:12px;
+  background:rgba(255,255,255,.04);
+  overflow:hidden;
+  text-decoration:none;
+}
+.fb-uc-visual img{
+  width:100%;
+  aspect-ratio:1;
+  object-fit:cover;
+  display:block;
+}
+.fb-uc-visual-name{
+  padding:7px 9px 8px;
+  border-top:1px solid rgba(217,197,161,.14);
+  font-size:9px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  color:rgba(217,197,161,.82);
+  font-family:'DM Sans',sans-serif;
+}
 
 /* ── FIBERBOARD PANEL SWATCHES ── */
 .fb-swatch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
@@ -176,7 +384,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
 .back-btn:hover{background:rgba(217,197,161,.07)}
 
 /* ── PRODUCT LINE JUMP SECTION ── */
-#prod-stone,#prod-fiberboard,#prod-plye{scroll-margin-top:160px}
+#prod-fiberboard,#prod-plye{scroll-margin-top:160px}
 
 /* ── SEGMENT THEMES ── */
 .segment-light{background:#fff;color:var(--stone)}
@@ -228,9 +436,10 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
 
 /* ── ELEGANCE PASS ── */
 .page-header{
-  margin-top:118px;
-  margin-bottom:30px;
-  padding:56px 56px 52px;
+  margin-top:82px;
+  margin-bottom:24px;
+  padding:22px 30px 20px;
+  max-width:1020px;
   background:linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,.74));
   border:1px solid rgba(26,23,20,.08);
   border-radius:32px;
@@ -244,12 +453,13 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   width:56px;
   height:2px;
   background:linear-gradient(90deg,var(--red),rgba(229,57,53,.18));
-  margin-bottom:26px;
+  margin-bottom:20px;
 }
-.page-title{letter-spacing:-.03em;max-width:9ch}
-.page-desc{text-wrap:pretty}
+.page-title{letter-spacing:-.03em;max-width:26ch}
+.page-title em{white-space:nowrap}
+.page-desc{text-wrap:pretty;max-width:760px}
 .prod-tags{gap:12px}
-.prod-tag{padding:9px 16px;border-radius:999px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.prod-tag{padding:10px 18px;border-radius:999px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:10.5px;font-weight:500;letter-spacing:1px;color:rgba(26,23,20,.86)}
 
 .product-banner{padding-top:72px}
 .catalog-section{padding-top:56px;padding-bottom:78px}
@@ -458,9 +668,32 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
 .routing-sub-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;border:1px solid rgba(26,23,20,.14);color:var(--stone);text-decoration:none;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;font-family:'DM Sans',sans-serif}
 .routing-sub-btn:hover{border-color:rgba(26,23,20,.26);background:rgba(26,23,20,.03)}
 .nav-cta,.nav-ov-cta,.routing-main-btn,.routing-sub-btn,.back-btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
-
-/* Keep catalog.html focused: hide legacy stone long section, keep fiberboard + flooring visible */
-.catalog-nav,#prod-stone{display:none}
+/* Quick Browse shortcut strip (placed above 8-family routing grid) */
+.quick-browse{margin-top:2px;margin-bottom:22px;padding:16px 16px 14px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,255,255,.82));border:1px solid rgba(26,23,20,.08);box-shadow:var(--soft-shadow)}
+.qb-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.qb-eyebrow{font-size:9px;letter-spacing:2.2px;text-transform:uppercase;font-family:'DM Sans',sans-serif;color:rgba(26,23,20,.46)}
+.qb-title{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.1vw,26px);color:var(--stone);font-weight:300;line-height:1.1;letter-spacing:-.01em;flex:1 1 auto}
+.qb-helper{display:none;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:rgba(26,23,20,.58);font-family:'DM Sans',sans-serif;background:transparent;border:1px solid rgba(26,23,20,.16);border-radius:999px;padding:8px 12px;cursor:pointer}
+.qb-proof{margin:0 0 10px;font-size:11px;line-height:1.6;color:rgba(26,23,20,.56)}
+.qb-track{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;touch-action:pan-x}
+.qb-card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid rgba(26,23,20,.08);border-radius:14px;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;scroll-snap-align:start}
+.qb-card:hover{transform:translateY(-2px);box-shadow:var(--lift-shadow);border-color:rgba(201,108,72,.32)}
+.qb-thumb{aspect-ratio:1/1;background:rgba(26,23,20,.04);overflow:hidden}
+.qb-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease}
+.qb-card:hover .qb-thumb img{transform:scale(1.05)}
+.qb-meta{padding:8px 10px 10px}
+.qb-sku{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:rgba(26,23,20,.44)}
+.qb-name{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:400;color:var(--stone);line-height:1.15;margin-top:2px}
+.qb-series{font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:var(--red);font-family:'DM Sans',sans-serif;margin-top:4px}
+@media(max-width:980px){
+  .qb-helper{display:block}
+  .qb-track{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:46%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-padding:0 8px;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+  .qb-track::-webkit-scrollbar{height:0}
+}
+@media(max-width:560px){
+  .qb-track{grid-auto-columns:64%}
+  .quick-browse{padding:14px 12px 12px}
+}
 
 @media(max-width:980px){
   .page-header,
@@ -480,6 +713,10 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   .product-banner,.catalog-section{padding-top:48px}
   .catalog-section{padding-bottom:60px}
   .fb-card-grid{grid-template-columns:1fr}
+  .fb-flow-grid{grid-template-columns:1fr}
+  .fb-decision-matrix{grid-template-columns:1fr}
+  .fb-uc-visual-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fb-core-visual-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
 @media(max-width:760px){
@@ -489,9 +726,13 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   nav ul{gap:10px;overflow-x:auto;max-width:calc(100vw - 110px);padding-bottom:2px}
   nav ul::-webkit-scrollbar{display:none}
   nav ul li a{font-size:9px;letter-spacing:1.2px}
+  .nav-dropdown{position:static}
+  .nav-dropdown-menu{position:fixed;left:12px;right:12px;top:88px;transform:none;padding-top:8px;z-index:520}
+  .nav-dropdown-menu-inner{min-width:0;width:100%}
   .nav-cta{padding:8px 12px}
-  .page-header{margin-top:110px;border-radius:24px}
+  .page-header{margin-top:98px;border-radius:24px}
   .page-title{font-size:clamp(34px,10vw,50px)}
+  .page-title em{white-space:normal}
   .prod-tags{gap:10px}
   .catalog-nav{top:94px;overflow-x:auto}
   .catalog-nav-inner,.series-subnav-inner{flex-wrap:nowrap}
@@ -513,6 +754,8 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   .page-header{padding:28px 20px}
   .routing-grid{grid-template-columns:1fr}
   .swatch-grid,.fb-swatch-grid,.plye-swatch-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .fb-uc-visual-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fb-core-visual-grid{grid-template-columns:1fr}
   .product-banner{padding-top:40px}
   .catalog-section{padding-top:40px;padding-bottom:52px}
   .pb-title{font-size:clamp(28px,9vw,38px)}
@@ -521,6 +764,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   html[lang="zh-TW"] .page-title{font-size:clamp(30px,8vw,38px)}
   nav{height:56px;padding:0 12px}
   nav ul{max-width:calc(100vw - 88px)}
+  .nav-dropdown-menu{top:82px}
   .nav-cta{padding:7px 10px}
   .trust-strip{padding:0 20px}
 }
@@ -544,7 +788,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   </a>
   <ul id="nav-links">
     <li class="nav-dropdown">
-      <a href="catalog.html" id="cat-products-nav" class="nav-dropdown-trigger">Products ▾</a>
+      <button type="button" id="cat-products-nav" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Products ▾</button>
       <div class="nav-dropdown-menu">
         <div class="nav-dropdown-menu-inner">
           <a href="flooring.html" id="cat-nav-plye">Flooring</a>
@@ -626,6 +870,65 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
     <p class="routing-desc" id="cat-route-desc">Choose a stone family first, then open the deep library to compare exact SKU codes and send a focused sample request.</p>
   </div>
 
+  <div class="quick-browse" aria-label="Quick browse pattern entry cards">
+    <div class="qb-head">
+      <div class="qb-eyebrow" id="qb-eyebrow">Quick Browse</div>
+      <h3 class="qb-title" id="qb-title">Quick picks — jump straight in</h3>
+      <button type="button" class="qb-helper" id="qb-helper" aria-label="Scroll quick browse cards">Swipe to explore →</button>
+    </div>
+    <p class="qb-proof" id="qb-proof">Representative cross-family picks based on current project discussions (not a sales ranking).</p>
+    <div class="qb-track" role="list">
+      <a class="qb-card" role="listitem" href="catalog-stone.html#series-ordinary">
+        <div class="qb-thumb"><img loading="lazy" decoding="async" src="assets/nalexible/stone/lumislate-study/7006_Indian_Autumn/off_swatch.jpg" alt="Pattern 7006 Indian Autumn"></div>
+        <div class="qb-meta">
+          <div class="qb-sku">7006</div>
+          <div class="qb-name" id="qb-1-name">Indian Autumn</div>
+          <div class="qb-series" id="qb-1-series">Ordinary →</div>
+        </div>
+      </a>
+      <a class="qb-card" role="listitem" href="catalog-stone.html#series-lumislate">
+        <div class="qb-thumb"><img loading="lazy" decoding="async" src="assets/nalexible/stone/lumislate-study/7014_Copper_New/off_swatch.jpg" alt="Pattern 7014 Copper New"></div>
+        <div class="qb-meta">
+          <div class="qb-sku">7014</div>
+          <div class="qb-name" id="qb-2-name">Copper New</div>
+          <div class="qb-series" id="qb-2-series">LumiSlate →</div>
+        </div>
+      </a>
+      <a class="qb-card" role="listitem" href="catalog-stone.html#series-cement">
+        <div class="qb-thumb"><img loading="lazy" decoding="async" src="assets/nalexible/stone/cement-patterns/4001.clean.jpg" alt="Pattern 4001 Cement"></div>
+        <div class="qb-meta">
+          <div class="qb-sku">4001</div>
+          <div class="qb-name" id="qb-3-name">Cement Grey</div>
+          <div class="qb-series" id="qb-3-series">Cement →</div>
+        </div>
+      </a>
+      <a class="qb-card" role="listitem" href="catalog-stone.html#series-marble">
+        <div class="qb-thumb"><img loading="lazy" decoding="async" src="assets/nalexible/stone/marble-patterns/1017.clean.jpg" alt="Pattern 1017 Marble"></div>
+        <div class="qb-meta">
+          <div class="qb-sku">1017</div>
+          <div class="qb-name" id="qb-4-name">Veined Marble</div>
+          <div class="qb-series" id="qb-4-series">Marble →</div>
+        </div>
+      </a>
+      <a class="qb-card" role="listitem" href="catalog-stone.html#series-sandstone">
+        <div class="qb-thumb"><img loading="lazy" decoding="async" src="assets/nalexible/stone/sandstone-patterns/2011.clean.jpg" alt="Pattern 2011 Sandstone"></div>
+        <div class="qb-meta">
+          <div class="qb-sku">2011</div>
+          <div class="qb-name" id="qb-5-name">Warm Sandstone</div>
+          <div class="qb-series" id="qb-5-series">Sandstone →</div>
+        </div>
+      </a>
+      <a class="qb-card" role="listitem" href="catalog-stone.html#series-rust">
+        <div class="qb-thumb"><img loading="lazy" decoding="async" src="assets/nalexible/stone/rust-patterns/4112.clean.jpg" alt="Pattern 4112 Copper Rust"></div>
+        <div class="qb-meta">
+          <div class="qb-sku">4112</div>
+          <div class="qb-name" id="qb-6-name">Copper Rust</div>
+          <div class="qb-series" id="qb-6-series">Copper / Rust →</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
   <div class="routing-grid">
     <a class="routing-card" href="catalog-stone.html#series-ordinary">
       <div class="routing-card-kicker">Family 01</div>
@@ -656,14 +959,14 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
     <a class="routing-card" href="catalog-stone.html#series-marble">
       <div class="routing-card-kicker">Family 04</div>
       <div class="routing-card-title">Marble</div>
-      <div class="routing-card-sub">20 Patterns</div>
+      <div class="routing-card-sub">19 Patterns</div>
       <div class="routing-card-thumb"><img loading="lazy" decoding="async" src="images/stone/family-cards/family-marble.jpg" alt="Marble series"></div>
       <span class="routing-card-cta" id="cat-route-cta-4">Browse Patterns →</span>
     </a>
     <a class="routing-card" href="catalog-stone.html#series-sandstone">
       <div class="routing-card-kicker">Family 05</div>
       <div class="routing-card-title">Sandstone</div>
-      <div class="routing-card-sub">8 Patterns</div>
+      <div class="routing-card-sub">7 Patterns</div>
       <div class="routing-card-thumb"><img loading="lazy" decoding="async" src="images/stone/family-cards/family-sandstone.jpg" alt="Sandstone series"></div>
       <span class="routing-card-cta" id="cat-route-cta-5">Browse Patterns →</span>
     </a>
@@ -711,185 +1014,7 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
   </div>
 </div>
 
-<!-- STICKY PRODUCT TABS -->
-<div class="catalog-nav">
-  <div class="catalog-nav-inner">
-    <button class="cat-tab active" onclick="jumpTo('prod-stone',this)" id="cattab-stone">Stone</button>
-    <div class="cat-tab-divider"></div>
-    <button class="cat-tab" onclick="jumpTo('prod-fiberboard',this)" id="cattab-fiber">Fiberboard</button>
-    <div class="cat-tab-divider"></div>
-    <button class="cat-tab" onclick="jumpTo('prod-plye',this)" id="cattab-plye">Flooring</button>
-  </div>
-</div>
-
-
-<!-- ══════════════════════════════════════════════════════════
-     STONE — Product Line
-══════════════════════════════════════════════════════════ -->
-<div id="prod-stone" class="segment-light">
-  <div class="product-banner">
-    <div class="pb-line">
-      <div class="pb-line-bar"></div>
-      <div class="pb-label" id="stone-pb-label">Product Line 01 — Stone</div>
-    </div>
-    <div class="pb-title" id="stone-pb-title">Flexible Stone<br><em>Veneer &amp; Panels</em></div>
-    <p class="pb-desc" id="stone-pb-desc">100% natural stone in five clearer directions: premium marble finishes, calmer cement tones, hospitality-facing sandstone, LumiSlate translucent stone, and DIY-ready quick-install wall systems.</p>
-    <div class="pb-badges">
-      <span class="pb-badge" id="stone-pb-b1">40+ Finishes</span>
-      <span class="pb-badge" id="stone-pb-b2">103 Patterns</span>
-      <span class="pb-badge" id="stone-pb-b3">100% Natural Stone</span>
-      <span class="pb-badge" id="stone-pb-b4">Taiwan Exclusive</span>
-    </div>
-  </div>
-
-  <!-- Stone Series Sub-Nav -->
-  <div class="series-subnav">
-    <div class="series-subnav-inner">
-      <button class="series-tab active" onclick="scrollToSeries('flexible',this)" id="stab-flexible">Flexible Stone</button>
-      <button class="series-tab" onclick="scrollToSeries('lumislate',this)" id="stab-lumislate">LumiSlate</button>
-      <button class="series-tab" onclick="scrollToSeries('easystone',this)" id="stab-easystone">EasyStone</button>
-      <button class="series-tab" onclick="scrollToSeries('uv',this)" id="stab-uv">UV Series</button>
-      <button class="series-tab" onclick="scrollToSeries('3d',this)" id="stab-3d">3D Wall Panel</button>
-    </div>
-  </div>
-
-  <!-- FLEXIBLE STONE -->
-  <div id="series-flexible">
-    <div class="catalog-section">
-      <div class="series-header">
-        <div class="series-label" id="sc-flex-label">Series 01</div>
-        <h2 class="series-title" id="sc-flex-title">Flexible Stone Veneer</h2>
-        <p class="series-desc" id="sc-flex-desc">The original ultra-thin stone family. Best for curved walls, lighter cladding, and broad finish-led directions including premium marble and quieter cement-like tones.</p>
-        <div class="series-badges">
-          <span class="series-badge" id="sc-flex-b1">1–3mm Thickness</span>
-          <span class="series-badge" id="sc-flex-b2">Flame Retardant</span>
-          <span class="series-badge" id="sc-flex-b3">Curved Surfaces</span>
-          <span class="series-badge" id="sc-flex-b4">14 Finishes</span>
-        </div>
-      </div>
-      <div class="swatch-grid">
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740467515.jpg" alt="Silver Gray"><div class="sw-name">Silver Gray</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740457121.jpg" alt="Arctic Storm"><div class="sw-name">Arctic Storm</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740457147.jpg" alt="Black"><div class="sw-name">Black</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740457230.jpg" alt="Burning Forest Copper"><div class="sw-name">Burning Forest Copper</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740457324.jpg" alt="D.Black"><div class="sw-name">D.Black</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740457475.jpg" alt="Fossil Granite"><div class="sw-name">Fossil Granite</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740457573.jpg" alt="Galaxy Black"><div class="sw-name">Galaxy Black</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740457752.jpg" alt="Indian Autumn"><div class="sw-name">Indian Autumn</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740457889.jpg" alt="Indian Autumn Rustic"><div class="sw-name">Indian Autumn Rustic</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740458148.jpg" alt="Silver Shine Gold"><div class="sw-name">Silver Shine Gold</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740458300.jpg" alt="Zebra Black"><div class="sw-name">Zebra Black</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740458448.jpg" alt="Terra Red"><div class="sw-name">Terra Red</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740458588.jpg" alt="Zebra White"><div class="sw-name">Zebra White</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740482800.jpg" alt="Sanjayani White"><div class="sw-name">Sanjayani White</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="section-divider"></div>
-
-  <!-- LUMISLATE -->
-  <div id="series-lumislate">
-    <div class="catalog-section">
-      <div class="series-header">
-        <div class="series-label" id="sc-lumi-label">Series 02</div>
-        <h2 class="series-title" id="sc-lumi-title">LumiSlate — Translucent Stone</h2>
-        <p class="series-desc" id="sc-lumi-desc">The luminous stone series. Translucent backing allows LED backlighting to pass through, making LumiSlate especially strong for hospitality bars, feature walls, counters, and glowing focal installations.</p>
-        <div class="series-badges">
-          <span class="series-badge" id="sc-lumi-b1">Backlit / LED Compatible</span>
-          <span class="series-badge" id="sc-lumi-b2">95% Light Transmittance</span>
-          <span class="series-badge" id="sc-lumi-b3">Warm &amp; Cold Light</span>
-          <span class="series-badge" id="sc-lumi-b4">5 Finishes</span>
-        </div>
-      </div>
-      <div class="swatch-grid">
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740458951.jpg" alt="Black"><div class="sw-name">Black</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740458994.jpg" alt="D.Black"><div class="sw-name">D.Black</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740458876.jpg" alt="Indian Autumn"><div class="sw-name">Indian Autumn</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740458827.jpg" alt="Terra Red"><div class="sw-name">Terra Red</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740459046.jpg" alt="Indian Autumn Rustic"><div class="sw-name">Indian Autumn Rustic</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="section-divider"></div>
-
-  <!-- EASYSTONE -->
-  <div id="series-easystone">
-    <div class="catalog-section">
-      <div class="series-header">
-        <div class="series-label" id="sc-easy-label">Series 03</div>
-        <h2 class="series-title" id="sc-easy-title">EasyStone</h2>
-        <p class="series-desc" id="sc-easy-desc">The quick-install series. Self-adhesive backing creates a more retail-ready, DIY-friendly stone path for feature walls, apartment refreshes, and faster commercial fit-out.</p>
-        <div class="series-badges">
-          <span class="series-badge" id="sc-easy-b1">Self-Adhesive Option</span>
-          <span class="series-badge" id="sc-easy-b2">Fast Installation</span>
-          <span class="series-badge" id="sc-easy-b3">11 Finishes</span>
-        </div>
-      </div>
-      <div class="swatch-grid">
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740397426.jpg" alt="Arctic Storm"><div class="sw-name">Arctic Storm</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740397409.jpg" alt="Black"><div class="sw-name">Black</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740397391.jpg" alt="Burning Forest Copper"><div class="sw-name">Burning Forest Copper</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740397303.jpg" alt="Indian Autumn"><div class="sw-name">Indian Autumn</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/nal-easy-indian-autumn-rustic.jpg" alt="Indian Autumn Rustic"><div class="sw-name">Indian Autumn Rustic</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740397457.jpg" alt="Silver Gray"><div class="sw-name">Silver Gray</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740397276.jpg" alt="Silver Shine Gold"><div class="sw-name">Silver Shine Gold</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740397367.jpg" alt="D.Black"><div class="sw-name">D.Black</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740397254.jpg" alt="Zebra Black"><div class="sw-name">Zebra Black</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740397224.jpg" alt="Zebra White"><div class="sw-name">Zebra White</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740397345.jpg" alt="Galaxy Black"><div class="sw-name">Galaxy Black</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="section-divider"></div>
-
-  <!-- UV SERIES -->
-  <div id="series-uv">
-    <div class="catalog-section">
-      <div class="series-header">
-        <div class="series-label" id="sc-uv-label">Series 04</div>
-        <h2 class="series-title" id="sc-uv-title">UV Series</h2>
-        <p class="series-desc" id="sc-uv-desc">Protected exterior-facing stone. UV-resistant coating supports facade, outdoor, and weather-exposed applications where surface stability and color control matter more.</p>
-        <div class="series-badges">
-          <span class="series-badge" id="sc-uv-b1">UV-Resistant Coating</span>
-          <span class="series-badge" id="sc-uv-b2">Exterior Grade</span>
-          <span class="series-badge" id="sc-uv-b3">5 Finishes</span>
-        </div>
-      </div>
-      <div class="swatch-grid">
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/nal-uv-black.jpg" alt="Black"><div class="sw-name">Black</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/nal-uv-dblack.jpg" alt="D.Black"><div class="sw-name">D.Black</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/nal-uv-indian-autumn.jpg" alt="Indian Autumn"><div class="sw-name">Indian Autumn</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/nal-uv-indian-autumn-rustic.jpg" alt="Indian Autumn Rustic"><div class="sw-name">Indian Autumn Rustic</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/nal-uv-terra-red.jpg" alt="Terra Red"><div class="sw-name">Terra Red</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="section-divider"></div>
-
-  <!-- 3D WALL PANEL -->
-  <div id="series-3d">
-    <div class="catalog-section">
-      <div class="series-header">
-        <div class="series-label" id="sc-3d-label">Series 05</div>
-        <h2 class="series-title" id="sc-3d-title">3D Stone Wall Panel</h2>
-        <p class="series-desc" id="sc-3d-desc">Dimensional relief stone for stronger wall effects. This series translates the stone platform into sculptural feature walls, decorative retail moments, and more approachable DIY-style upgrades.</p>
-        <div class="series-badges">
-          <span class="series-badge" id="sc-3d-b1">3D Relief Texture</span>
-          <span class="series-badge" id="sc-3d-b2">Natural Stone</span>
-          <span class="series-badge" id="sc-3d-b3">Feature Walls</span>
-          <span class="series-badge" id="sc-3d-b4">5 Finishes</span>
-        </div>
-      </div>
-      <div class="swatch-grid">
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740400644.jpg" alt="Arctic Storm"><div class="sw-name">Arctic Storm</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740401024.jpg" alt="Black"><div class="sw-name">Black</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740401048.jpg" alt="Burning Forest Copper"><div class="sw-name">Burning Forest Copper</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740401069.jpg" alt="Indian Autumn Rustic"><div class="sw-name">Indian Autumn Rustic</div></div>
-        <div class="stone-swatch"><img loading="lazy" decoding="async" src="nalexible/upload/product/1740401087.jpg" alt="Terra Red"><div class="sw-name">Terra Red</div></div>
-      </div>
-    </div>
-  </div>
-</div><!-- end #prod-stone -->
+<!-- STONE deep-library content moved to catalog-stone.html -->
 
 
 <!-- ══════════════════════════════════════════════════════════
@@ -909,6 +1034,103 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
       <span class="pb-badge" id="fiber-pb-b2">60% Lighter than Steel</span>
       <span class="pb-badge" id="fiber-pb-b3">Acoustic Performance</span>
       <span class="pb-badge" id="fiber-pb-b4">100% Recyclable</span>
+    </div>
+    <div class="fb-flow-grid" aria-label="Fiberboard selection flow">
+      <article class="fb-flow-card">
+        <span class="fb-flow-icon" aria-hidden="true">01</span>
+        <strong class="fb-flow-step" id="fb-flow-s1-label">Step 1</strong>
+        <h3 class="fb-flow-title" id="fb-flow-s1-title">Use Case</h3>
+        <p class="fb-flow-copy" id="fb-flow-s1">Start with use case: quiet door, room divider, wall/partition panel, or furniture/joinery.</p>
+        <a class="fb-flow-link" id="fb-flow-s1-link" href="#fb-dm-uc-title">Open use-case map →</a>
+      </article>
+      <article class="fb-flow-card">
+        <span class="fb-flow-icon" aria-hidden="true">02</span>
+        <strong class="fb-flow-step" id="fb-flow-s2-label">Step 2</strong>
+        <h3 class="fb-flow-title" id="fb-flow-s2-title">Build-up</h3>
+        <p class="fb-flow-copy" id="fb-flow-s2">Pick the build-up logic: panel core type (2+1 / 2+2 / 3+2) and thickness range (17.5 / 25 / 35mm).</p>
+        <a class="fb-flow-link" id="fb-flow-s2-link" href="#fb-natural" onclick="scrollToFb('fb-natural', document.getElementById('fbtab-natural')); return false;">See panel builds →</a>
+      </article>
+      <article class="fb-flow-card">
+        <span class="fb-flow-icon" aria-hidden="true">03</span>
+        <strong class="fb-flow-step" id="fb-flow-s3-label">Step 3</strong>
+        <h3 class="fb-flow-title" id="fb-flow-s3-title">Specs</h3>
+        <p class="fb-flow-copy" id="fb-flow-s3">Confirm technical data and send one focused request with project context.</p>
+        <a class="fb-flow-link" id="fb-flow-s3-link" href="#fb-specs" onclick="scrollToFb('fb-specs', document.getElementById('fbtab-specs')); return false;">Open specifications →</a>
+      </article>
+    </div>
+    <div class="fb-decision-matrix" aria-label="Fiberboard decision matrix">
+      <article class="fb-dm-card">
+        <div class="fb-dm-label" id="fb-dm-uc-label">Decision Block 1</div>
+        <h3 class="fb-dm-title" id="fb-dm-uc-title">Use Cases (All)</h3>
+        <p class="fb-dm-copy" id="fb-dm-uc-copy">Show every primary application first so users can route by project objective, not by material jargon.</p>
+        <div class="fb-dm-list">
+          <a class="fb-dm-chip" href="#fb-quiet-door" onclick="scrollToFb('fb-quiet-door', document.getElementById('fbtab-quiet')); return false;"><span id="fb-dm-uc-1">Quiet Door Systems</span><small id="fb-dm-uc-1-tag">Acoustic</small></a>
+          <a class="fb-dm-chip" href="#fb-quiet-door" onclick="scrollToFb('fb-quiet-door', document.getElementById('fbtab-quiet')); return false;"><span id="fb-dm-uc-2">Room Divider / Sliding Panels</span><small id="fb-dm-uc-2-tag">Divider</small></a>
+          <a class="fb-dm-chip" href="#fb-natural" onclick="scrollToFb('fb-natural', document.getElementById('fbtab-natural')); return false;"><span id="fb-dm-uc-3">Wall &amp; Partition Panels</span><small id="fb-dm-uc-3-tag">Panel</small></a>
+          <a class="fb-dm-chip" href="#fb-natural" onclick="scrollToFb('fb-natural', document.getElementById('fbtab-natural')); return false;"><span id="fb-dm-uc-4">Furniture / Joinery Substrate</span><small id="fb-dm-uc-4-tag">Interior</small></a>
+        </div>
+        <div class="fb-uc-visual-grid" aria-label="Use case visuals">
+          <a class="fb-uc-visual" href="#fb-quiet-door" onclick="scrollToFb('fb-quiet-door', document.getElementById('fbtab-quiet')); return false;">
+            <img loading="lazy" decoding="async" src="images/fiberboard/master/brochure-mixed/nalexible-brochure-p008-i029.jpg" alt="Quiet door application">
+            <div class="fb-uc-visual-name" id="fb-uc-vis-1">Quiet Door</div>
+          </a>
+          <a class="fb-uc-visual" href="#fb-quiet-door" onclick="scrollToFb('fb-quiet-door', document.getElementById('fbtab-quiet')); return false;">
+            <img loading="lazy" decoding="async" src="images/fiberboard/fb-commercial-partitions.jpg" alt="Room divider application">
+            <div class="fb-uc-visual-name" id="fb-uc-vis-2">Room Divider</div>
+          </a>
+          <a class="fb-uc-visual" href="#fb-natural" onclick="scrollToFb('fb-natural', document.getElementById('fbtab-natural')); return false;">
+            <img loading="lazy" decoding="async" src="images/fiberboard/fb-door-wall-panel-system.jpg" alt="Wall and partition panel application">
+            <div class="fb-uc-visual-name" id="fb-uc-vis-3">Wall / Panel</div>
+          </a>
+          <a class="fb-uc-visual" href="#fb-natural" onclick="scrollToFb('fb-natural', document.getElementById('fbtab-natural')); return false;">
+            <img loading="lazy" decoding="async" src="images/fiberboard/fb-joinery-builtin.jpg" alt="Furniture and joinery substrate application">
+            <div class="fb-uc-visual-name" id="fb-uc-vis-4">Furniture / Joinery</div>
+          </a>
+        </div>
+      </article>
+      <article class="fb-dm-card">
+        <div class="fb-dm-label" id="fb-dm-core-label">Decision Block 2</div>
+        <h3 class="fb-dm-title" id="fb-dm-core-title">Core Combinations (All)</h3>
+        <p class="fb-dm-copy" id="fb-dm-core-copy">Expose all core structures directly from narrow to thick: 2+1, 2+2, and 3+2 (17.5mm / 25mm / 35mm).</p>
+        <div class="fb-dm-list">
+          <a class="fb-dm-chip" href="#fb-natural" onclick="scrollToFb('fb-natural', document.getElementById('fbtab-natural')); return false;"><span id="fb-dm-core-1">2+1 Core</span><small id="fb-dm-core-1-tag">17.5mm</small></a>
+          <a class="fb-dm-chip" href="#fb-natural" onclick="scrollToFb('fb-natural', document.getElementById('fbtab-natural')); return false;"><span id="fb-dm-core-2">2+2 Core</span><small id="fb-dm-core-2-tag">25mm</small></a>
+          <a class="fb-dm-chip" href="#fb-natural" onclick="scrollToFb('fb-natural', document.getElementById('fbtab-natural')); return false;"><span id="fb-dm-core-3">3+2 Core</span><small id="fb-dm-core-3-tag">35mm</small></a>
+        </div>
+        <div class="fb-core-visual-grid" aria-label="Core combination visuals">
+          <a class="fb-core-visual" href="#fb-natural" onclick="scrollToFb('fb-natural', document.getElementById('fbtab-natural')); return false;">
+            <img loading="lazy" decoding="async" src="images/fiberboard/refine/fb-core-2p1-raw.png" alt="2+1 core section visual">
+            <div class="fb-core-visual-meta">
+              <div class="fb-core-visual-title" id="fb-core-vis-1-title">2+1 Core</div>
+              <div class="fb-core-visual-sub" id="fb-core-vis-1-sub">Nominal 17.5mm</div>
+            </div>
+          </a>
+          <a class="fb-core-visual" href="#fb-natural" onclick="scrollToFb('fb-natural', document.getElementById('fbtab-natural')); return false;">
+            <img loading="lazy" decoding="async" src="images/fiberboard/refine/fb-core-2p2-raw.png" alt="2+2 core section visual">
+            <div class="fb-core-visual-meta">
+              <div class="fb-core-visual-title" id="fb-core-vis-2-title">2+2 Core</div>
+              <div class="fb-core-visual-sub" id="fb-core-vis-2-sub">Nominal 25mm</div>
+            </div>
+          </a>
+          <a class="fb-core-visual" href="#fb-natural" onclick="scrollToFb('fb-natural', document.getElementById('fbtab-natural')); return false;">
+            <img loading="lazy" decoding="async" src="images/fiberboard/refine/fb-core-3p2-raw.png" alt="3+2 core section visual">
+            <div class="fb-core-visual-meta">
+              <div class="fb-core-visual-title" id="fb-core-vis-3-title">3+2 Core</div>
+              <div class="fb-core-visual-sub" id="fb-core-vis-3-sub">Nominal 35mm</div>
+            </div>
+          </a>
+        </div>
+      </article>
+      <article class="fb-dm-card">
+        <div class="fb-dm-label" id="fb-dm-face-label">Decision Block 3</div>
+        <h3 class="fb-dm-title" id="fb-dm-face-title">Face Boards + Spec Path</h3>
+        <p class="fb-dm-copy" id="fb-dm-face-copy">Let users choose preferred outer boards (MDF / OSB) first, then confirm structure and thickness scope before RFQ.</p>
+        <div class="fb-dm-list">
+          <a class="fb-dm-chip" href="#fb-specs" onclick="scrollToFb('fb-specs', document.getElementById('fbtab-specs')); return false;"><span id="fb-dm-face-1">MDF 3mm / 5mm / 9mm</span><small id="fb-dm-face-1-tag">Face Board</small></a>
+          <a class="fb-dm-chip" href="#fb-specs" onclick="scrollToFb('fb-specs', document.getElementById('fbtab-specs')); return false;"><span id="fb-dm-face-2">OSB 3mm / 8mm</span><small id="fb-dm-face-2-tag">Face Board</small></a>
+          <a class="fb-dm-chip" href="contact.html?intent=technical_report&amp;product=fiberboard&amp;from=catalog-fiberboard-specs"><span id="fb-dm-face-3">Technical request with project context</span><small id="fb-dm-face-3-tag">Support</small></a>
+        </div>
+      </article>
     </div>
   </div>
 
@@ -1060,6 +1282,18 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
             <td id="fb-sp-r6c">Treated (chemical)</td>
             <td id="fb-sp-r6d">Treated (chemical)</td>
           </tr>
+          <tr class="spec-win">
+            <td id="fb-sp-r7a">Core Structure &amp; Nominal Thickness</td>
+            <td id="fb-sp-r7b">3+2 = 35mm · 2+2 = 25mm · 2+1 = 17.5mm</td>
+            <td id="fb-sp-r7c">Not applicable</td>
+            <td id="fb-sp-r7d">Not applicable</td>
+          </tr>
+          <tr>
+            <td id="fb-sp-r8a">Outside Board Options</td>
+            <td id="fb-sp-r8b">MDF 3/5/9mm · OSB 3/8mm</td>
+            <td id="fb-sp-r8c">Project-dependent</td>
+            <td id="fb-sp-r8d">Project-dependent</td>
+          </tr>
         </tbody>
       </table>
       <p class="section-note" id="fb-spec-note">Data sourced from Ashley Kitchen manufacturer specifications. Contact Ashley Kitchen for certified test reports.</p>
@@ -1180,29 +1414,32 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
 function jumpTo(id, btn) {
   var el = document.getElementById(id);
   if (!el) return;
-  var offset = 94 + 44; // lang bar + nav + sticky tabs
+  var offset = getStickyOffset(8);
   var top = el.getBoundingClientRect().top + window.scrollY - offset;
   window.scrollTo({ top: top, behavior: 'smooth' });
   document.querySelectorAll('.cat-tab').forEach(function(t){ t.classList.remove('active'); });
   if (btn) btn.classList.add('active');
 }
 
-/* ── Stone series sub-nav ── */
-function scrollToSeries(id, btn) {
-  var el = document.getElementById('series-' + id);
-  if (!el) return;
-  var offset = 94 + 44 + 41; // lang bar + nav + tabs + subnav
-  var top = el.getBoundingClientRect().top + window.scrollY - offset;
-  window.scrollTo({ top: top, behavior: 'smooth' });
-  document.querySelectorAll('#prod-stone .series-tab').forEach(function(t){ t.classList.remove('active'); });
-  if (btn) btn.classList.add('active');
+function visibleStickyHeight(sel) {
+  var el = document.querySelector(sel);
+  if (!el) return 0;
+  var st = window.getComputedStyle(el);
+  if (st.display === 'none' || st.visibility === 'hidden') return 0;
+  if (el.offsetParent === null && st.position !== 'fixed' && st.position !== 'sticky') return 0;
+  return el.offsetHeight || 0;
+}
+
+function getStickyOffset(extra) {
+  var pad = typeof extra === 'number' ? extra : 0;
+  return visibleStickyHeight('.lang-bar') + visibleStickyHeight('nav') + pad;
 }
 
 /* ── Fiberboard sub-nav ── */
 function scrollToFb(id, btn) {
   var el = document.getElementById(id);
   if (!el) return;
-  var offset = 94 + 44 + 41;
+  var offset = getStickyOffset(8);
   var top = el.getBoundingClientRect().top + window.scrollY - offset;
   window.scrollTo({ top: top, behavior: 'smooth' });
   document.querySelectorAll('#prod-fiberboard .series-tab').forEach(function(t){ t.classList.remove('active'); });
@@ -1213,60 +1450,35 @@ function scrollToFb(id, btn) {
 function scrollToPlye(id, btn) {
   var el = document.getElementById(id);
   if (!el) return;
-  var offset = 94 + 44 + 41;
+  var offset = getStickyOffset(8);
   var top = el.getBoundingClientRect().top + window.scrollY - offset;
   window.scrollTo({ top: top, behavior: 'smooth' });
   document.querySelectorAll('#prod-plye .series-tab').forEach(function(t){ t.classList.remove('active'); });
   if (btn) btn.classList.add('active');
 }
 
-/* ── Update active top-tab on scroll ── */
-window.addEventListener('scroll', function(){
-  var sections = [
-    {id:'prod-plye', tab:'cattab-plye'},
-    {id:'prod-fiberboard', tab:'cattab-fiber'},
-    {id:'prod-stone', tab:'cattab-stone'}
-  ];
-  var offset = 200;
-  for (var i = 0; i < sections.length; i++) {
-    var el = document.getElementById(sections[i].id);
-    if (el && el.getBoundingClientRect().top <= offset) {
-      document.querySelectorAll('.cat-tab').forEach(function(t){ t.classList.remove('active'); });
-      var tab = document.getElementById(sections[i].tab);
-      if (tab) tab.classList.add('active');
-      break;
-    }
-  }
-});
-
-/* ── Stone series sub-tab scroll spy ── */
-window.addEventListener('scroll', function(){
-  var stoneIds = ['flexible','lumislate','easystone','uv','3d'];
-  var offset = 200;
-  for (var i = stoneIds.length - 1; i >= 0; i--) {
-    var el = document.getElementById('series-' + stoneIds[i]);
-    if (el && el.getBoundingClientRect().top <= offset) {
-      document.querySelectorAll('#prod-stone .series-tab').forEach(function(t){ t.classList.remove('active'); });
-      var tab = document.getElementById('stab-' + stoneIds[i]);
-      if (tab) tab.classList.add('active');
-      break;
-    }
-  }
-});
-
 /* ── Hash deep linking ── */
 window.addEventListener('DOMContentLoaded', function(){
+  var qbBtn = document.getElementById('qb-helper');
+  var qbTrack = document.querySelector('.qb-track');
+  if (qbBtn && qbTrack) {
+    qbBtn.addEventListener('click', function(){
+      var step = Math.max(220, Math.floor(qbTrack.clientWidth * 0.72));
+      qbTrack.scrollBy({ left: step, behavior: 'smooth' });
+    });
+  }
+
   var hash = window.location.hash.replace('#','');
   if (!hash) return;
   var mapping = {
-    'stone': {fn: function(){ jumpTo('prod-stone', document.getElementById('cattab-stone')); }},
-    'fiberboard': {fn: function(){ jumpTo('prod-fiberboard', document.getElementById('cattab-fiber')); }},
-    'plye': {fn: function(){ jumpTo('prod-plye', document.getElementById('cattab-plye')); }},
-    'flexible': {fn: function(){ scrollToSeries('flexible', document.getElementById('stab-flexible')); }},
-    'lumislate': {fn: function(){ scrollToSeries('lumislate', document.getElementById('stab-lumislate')); }},
-    'easystone': {fn: function(){ scrollToSeries('easystone', document.getElementById('stab-easystone')); }},
-    'uv': {fn: function(){ scrollToSeries('uv', document.getElementById('stab-uv')); }},
-    '3d': {fn: function(){ scrollToSeries('3d', document.getElementById('stab-3d')); }}
+    'stone': {fn: function(){ jumpTo('stone-routing'); }},
+    'fiberboard': {fn: function(){ jumpTo('prod-fiberboard'); }},
+    'plye': {fn: function(){ jumpTo('prod-plye'); }},
+    'flexible': {fn: function(){ jumpTo('stone-routing'); }},
+    'lumislate': {fn: function(){ jumpTo('stone-routing'); }},
+    'easystone': {fn: function(){ jumpTo('stone-routing'); }},
+    'uv': {fn: function(){ jumpTo('stone-routing'); }},
+    '3d': {fn: function(){ jumpTo('stone-routing'); }}
   };
   if (mapping[hash]) {
     setTimeout(mapping[hash].fn, 150);

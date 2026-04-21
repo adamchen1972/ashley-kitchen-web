@@ -1,5 +1,41 @@
 # Production Todo / Commit Log
 
+## 2026-04-21 (Status Reset)
+
+- Current focus (in progress): `catalog.html` Fiberboard flow refinement (use-case mapping clarity + visual consistency).
+  - Files: `catalog.html`, `script.js`
+  - Updates:
+    - Step 1 CTA copy normalized to a neutral flow action (`Open use-case map →`).
+    - Use-case visual tiles aligned to clearer application semantics:
+      - Quiet Door → `images/fiberboard/master/brochure-mixed/nalexible-brochure-p008-i029.jpg`
+      - Room Divider → `images/fiberboard/fb-commercial-partitions.jpg`
+      - Wall / Panel → `images/fiberboard/fb-door-wall-panel-system.jpg`
+      - Furniture / Joinery → `images/fiberboard/fb-joinery-builtin.jpg`
+
+- Batch status snapshot:
+  - Batch 1–5: completed (see `2026-04-19 Batch Reconciliation` below).
+  - Latest completed commit in repo history: `8114c88` (iPad tab-anchor QA log).
+  - Outstanding work is now incremental polish only (no unresolved core blocker batch).
+
+- Note:
+  - The large `Pending (Execution Queue)` block below contains historical queue items and should be treated as archived context unless explicitly re-opened.
+
+## 2026-04-21 (Clean Batch — catalog-stone + fiberboard + status sync)
+
+- `pending (current commit batch)` — Finalize stone tab-jump behavior + fiberboard engineering finish + todo sync.
+  - `catalog-stone.html`
+  - `catalog.html`
+  - `script.js`
+  - `docs/production-todo.md`
+  - Highlights:
+    - Hardens `catalog-stone` series-tab jump alignment with extended post-jump/post-rotation correction passes (mobile landscape + iPad rotation stability).
+    - Finishes `catalog.html` Fiberboard engineering block wording:
+      - Step 2 includes explicit thickness range (`17.5 / 25 / 35mm`).
+      - Core-combination copy normalized to narrow→thick logic.
+      - Decision Block 3 title normalized to `Face Boards + Spec Path`.
+      - Use-case map CTA and use-case visual mapping kept consistent.
+    - Updates production log to reflect latest real active batch state.
+
 ## 2026-04-20
 
 - `pending (current commit)` — Fix iPad stone-tab anchor occlusion after orientation change + QA closure.
@@ -156,7 +192,7 @@
     - Recommends a constrained v9 micro-revision (claim guardrail, final approval note, technical evidence pointer).
     - Identifies duplicate narrative lines to reduce without changing page architecture.
 
-## Pending (Coordination)
+## Archived Backlog (Historical — superseded, re-open only if needed)
 
 - `2026-04-18 17:00 (Asia/Taipei)` — Claude.ai brochure v8 print-fix pass.
   - Target output:
@@ -168,7 +204,7 @@
     - `docs/brochure/sources/lumislate-source-zh.pptx`
     - `docs/brochure/sources/nalexible-product-materials-zh.pptx`
 
-## Pending (Execution Queue)
+## Archived Queue (Historical implementation notes)
 
 - Homepage CTA report + conversion copy + mobile readability pass (EN/ZH) is implemented and queued for commit.
   - Files:

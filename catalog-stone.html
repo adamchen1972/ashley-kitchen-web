@@ -376,9 +376,9 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
 
 /* ── PRODUCT LINE JUMP SECTION ── */
 #prod-stone,#prod-fiberboard,#prod-plye{scroll-margin-top:160px}
-#series-ordinary,#series-lumislate,#series-cement,#series-marble,#series-sandstone,#series-metal,#series-rust,#series-diy{scroll-margin-top:176px}
+#series-ordinary,#series-lumislate,#series-cement,#series-marble,#series-sandstone,#series-metal,#series-rust,#series-diy{scroll-margin-top:170px}
 @media(max-width:1200px){
-  #series-ordinary,#series-lumislate,#series-cement,#series-marble,#series-sandstone,#series-metal,#series-rust,#series-diy{scroll-margin-top:196px}
+  #series-ordinary,#series-lumislate,#series-cement,#series-marble,#series-sandstone,#series-metal,#series-rust,#series-diy{scroll-margin-top:186px}
 }
 
 /* ── SEGMENT THEMES ── */
@@ -1646,9 +1646,8 @@ function scrollToSeries(id, btn) {
   var el = document.getElementById('series-' + id);
   if (!el) return;
   window.__stoneCurrentSeries = id;
-  var offset = getSeriesJumpOffset();
-  var top = el.getBoundingClientRect().top + window.scrollY - offset;
-  window.scrollTo({ top: top, behavior: 'smooth' });
+  jumpToSeriesAbsolute(el, window.innerWidth > 900 ? 'smooth' : 'auto');
+  scheduleSeriesAnchorAlignment(el, [120, 300, 620, 980, 1320]);
   if (window.history && window.history.replaceState) {
     window.history.replaceState(null, '', '#' + id);
   }
@@ -1672,9 +1671,76 @@ function getStoneStickyOffset(extra) {
 
 function getSeriesJumpOffset() {
   var isLandscape = window.matchMedia && window.matchMedia('(orientation: landscape)').matches;
-  if (isLandscape && window.innerWidth <= 1366) return getStoneStickyOffset(44);
-  if (window.innerWidth <= 760) return getStoneStickyOffset(28);
-  return getStoneStickyOffset(22);
+  var minSide = Math.min(window.innerWidth || 0, window.innerHeight || 0);
+  var dynamicTop = getTopOcclusionBottom();
+  if (isLandscape && minSide < 700) return Math.max(dynamicTop + 8, 64); // phone landscape
+  if (isLandscape && minSide >= 700 && window.innerWidth <= 1366) return Math.max(dynamicTop + 16, 96); // iPad/tablet landscape
+  if (window.innerWidth <= 760) return Math.max(dynamicTop + 12, 80);
+  return Math.max(dynamicTop + 10, 72);
+}
+
+function getTopOcclusionBottom() {
+  var sels = ['.lang-bar','nav','.catalog-nav'];
+  var bottom = 0;
+  sels.forEach(function(sel){
+    var el = document.querySelector(sel);
+    if (!el) return;
+    var st = window.getComputedStyle(el);
+    if (st.display === 'none' || st.visibility === 'hidden') return;
+    var rect = el.getBoundingClientRect();
+    if (rect.height < 1) return;
+    var pos = st.position;
+    if (pos === 'fixed') {
+      bottom = Math.max(bottom, rect.bottom);
+      return;
+    }
+    if (pos === 'sticky' && rect.top <= Math.max(160, window.innerHeight * 0.4)) {
+      bottom = Math.max(bottom, rect.bottom);
+    }
+  });
+  return Math.max(0, Math.round(bottom));
+}
+
+function forceSeriesAnchorPosition(el) {
+  if (!el) return;
+  jumpToSeriesAbsolute(el, 'auto');
+}
+
+function positionSeriesAnchorNow(el) {
+  if (!el) return;
+  jumpToSeriesAbsolute(el, 'auto');
+}
+
+function targetSeriesTop() {
+  var dynamicTop = getTopOcclusionBottom();
+  var isLandscape = window.matchMedia && window.matchMedia('(orientation: landscape)').matches;
+  var minSide = Math.min(window.innerWidth || 0, window.innerHeight || 0);
+  if (isLandscape && minSide < 700) return Math.max(dynamicTop + 2, 78); // phone landscape
+  if (window.innerWidth <= 560) return Math.max(dynamicTop + 6, 92); // phone portrait
+  if (window.innerWidth <= 900) return Math.max(dynamicTop + 8, 102); // tablet/small
+  return Math.max(dynamicTop + 10, 120); // desktop
+}
+
+function jumpToSeriesAbsolute(el, behavior) {
+  if (!el) return;
+  var top = Math.max(0, Math.round(window.pageYOffset + el.getBoundingClientRect().top - targetSeriesTop()));
+  window.scrollTo({ top: top, behavior: behavior || 'auto' });
+}
+
+function clearSeriesAnchorAlignmentTimers() {
+  if (!window.__stoneAlignTimers) window.__stoneAlignTimers = [];
+  window.__stoneAlignTimers.forEach(function(tid){ clearTimeout(tid); });
+  window.__stoneAlignTimers = [];
+}
+
+function scheduleSeriesAnchorAlignment(el, delays) {
+  clearSeriesAnchorAlignmentTimers();
+  var ds = Array.isArray(delays) ? delays : [260];
+  if (!window.__stoneAlignTimers) window.__stoneAlignTimers = [];
+  ds.forEach(function(ms){
+    var tid = setTimeout(function(){ forceSeriesAnchorPosition(el); }, ms);
+    window.__stoneAlignTimers.push(tid);
+  });
 }
 
 function normalizeStoneSeriesHash(rawHash) {
@@ -1695,8 +1761,8 @@ function alignStoneSeriesFromHash() {
   var el = document.getElementById('series-' + id);
   if (!el) return;
   window.__stoneCurrentSeries = id;
-  var top = el.getBoundingClientRect().top + window.scrollY - getSeriesJumpOffset();
-  window.scrollTo({ top: top, behavior: 'auto' });
+  positionSeriesAnchorNow(el);
+  scheduleSeriesAnchorAlignment(el, [120, 320, 560, 920, 1280]);
   document.querySelectorAll('#prod-stone .series-tab').forEach(function(t){ t.classList.remove('active'); });
   var tab = document.getElementById('stab-' + id);
   if (tab) tab.classList.add('active');
@@ -1744,18 +1810,31 @@ window.addEventListener('DOMContentLoaded', function(){
 });
 
 var stoneReflowTimer = null;
+var stoneLastOrientation = (window.matchMedia && window.matchMedia('(orientation: landscape)').matches) ? 'landscape' : 'portrait';
 function queueStoneSeriesRealign() {
   clearTimeout(stoneReflowTimer);
-  [120, 320, 620, 980].forEach(function(ms){
+  [120, 320, 620, 980, 1320, 1680].forEach(function(ms){
     setTimeout(alignStoneSeriesFromHash, ms);
   });
-  stoneReflowTimer = setTimeout(alignStoneSeriesFromHash, 1280);
+  stoneReflowTimer = setTimeout(alignStoneSeriesFromHash, 1880);
 }
-window.addEventListener('orientationchange', queueStoneSeriesRealign);
-window.addEventListener('resize', queueStoneSeriesRealign);
+function maybeQueueStoneSeriesRealign() {
+  var current = (window.matchMedia && window.matchMedia('(orientation: landscape)').matches) ? 'landscape' : 'portrait';
+  if (current !== stoneLastOrientation) {
+    stoneLastOrientation = current;
+    queueStoneSeriesRealign();
+  }
+}
+window.addEventListener('orientationchange', function(){
+  stoneLastOrientation = (window.matchMedia && window.matchMedia('(orientation: landscape)').matches) ? 'landscape' : 'portrait';
+  queueStoneSeriesRealign();
+});
 if (window.visualViewport) {
-  window.visualViewport.addEventListener('resize', queueStoneSeriesRealign);
+  window.visualViewport.addEventListener('resize', maybeQueueStoneSeriesRealign);
 }
+window.addEventListener('hashchange', function(){
+  setTimeout(alignStoneSeriesFromHash, 30);
+});
 
 const LUMI_PATTERNS = [
   { folder:'7001_California_Gold', skuSmall:'7001', skuLarge:'8001', en:'California Gold', zh:'加州金', noteEn:'Most popular export pattern', noteZh:'最受歡迎的出口色' },
