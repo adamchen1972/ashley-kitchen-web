@@ -1643,8 +1643,9 @@ html[lang="zh-TW"] .page-desc{line-height:1.85}
 <script>
 /* ── Stone series sub-nav ── */
 function scrollToSeries(id, btn) {
-  var el = document.getElementById('series-' + id);
-  if (!el) return;
+  var sectionEl = document.getElementById('series-' + id);
+  if (!sectionEl) return;
+  var el = getSeriesAnchorEl(sectionEl);
   window.__stoneCurrentSeries = id;
   jumpToSeriesAbsolute(el, window.innerWidth > 900 ? 'smooth' : 'auto');
   scheduleSeriesAnchorAlignment(el, [120, 300, 620, 980, 1320]);
@@ -1715,9 +1716,9 @@ function targetSeriesTop() {
   var dynamicTop = getTopOcclusionBottom();
   var isLandscape = window.matchMedia && window.matchMedia('(orientation: landscape)').matches;
   var minSide = Math.min(window.innerWidth || 0, window.innerHeight || 0);
-  if (isLandscape && minSide < 700) return Math.max(dynamicTop + 2, 78); // phone landscape
-  if (window.innerWidth <= 560) return Math.max(dynamicTop + 6, 92); // phone portrait
-  if (window.innerWidth <= 900) return Math.max(dynamicTop + 8, 102); // tablet/small
+  if (isLandscape && minSide < 700) return Math.max(dynamicTop + 0, 66); // phone landscape
+  if (window.innerWidth <= 560) return Math.max(dynamicTop + 4, 78); // phone portrait
+  if (window.innerWidth <= 900) return Math.max(dynamicTop + 8, 96); // tablet/small
   return Math.max(dynamicTop + 10, 120); // desktop
 }
 
@@ -1725,6 +1726,11 @@ function jumpToSeriesAbsolute(el, behavior) {
   if (!el) return;
   var top = Math.max(0, Math.round(window.pageYOffset + el.getBoundingClientRect().top - targetSeriesTop()));
   window.scrollTo({ top: top, behavior: behavior || 'auto' });
+}
+
+function getSeriesAnchorEl(sectionEl) {
+  if (!sectionEl) return null;
+  return sectionEl.querySelector('.series-title') || sectionEl.querySelector('.series-header') || sectionEl;
 }
 
 function clearSeriesAnchorAlignmentTimers() {
@@ -1758,8 +1764,9 @@ function normalizeStoneSeriesHash(rawHash) {
 function alignStoneSeriesFromHash() {
   var id = normalizeStoneSeriesHash(window.location.hash) || window.__stoneCurrentSeries || '';
   if (!id) return;
-  var el = document.getElementById('series-' + id);
-  if (!el) return;
+  var sectionEl = document.getElementById('series-' + id);
+  if (!sectionEl) return;
+  var el = getSeriesAnchorEl(sectionEl);
   window.__stoneCurrentSeries = id;
   positionSeriesAnchorNow(el);
   scheduleSeriesAnchorAlignment(el, [120, 320, 560, 920, 1280]);
@@ -1787,7 +1794,10 @@ window.addEventListener('scroll', function(){
 /* ── Hash deep linking ── */
 window.addEventListener('DOMContentLoaded', function(){
   var hash = window.location.hash.replace('#','');
-  if (!hash) return;
+  if (!hash) {
+    setTimeout(alignStoneSeriesFromHash, 30);
+    return;
+  }
   var mapping = {
     'stone': {fn: function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); }},
     'ordinary': {fn: function(){ scrollToSeries('ordinary', document.getElementById('stab-ordinary')); }},
@@ -1806,7 +1816,13 @@ window.addEventListener('DOMContentLoaded', function(){
   };
   if (mapping[hash]) {
     setTimeout(mapping[hash].fn, 150);
+  } else {
+    // Handles links like #series-marble / #series-lumislate and any future hash aliases
+    setTimeout(alignStoneSeriesFromHash, 60);
   }
+  // Always run one normalization pass after browser's native anchor jump settles.
+  setTimeout(alignStoneSeriesFromHash, 260);
+  setTimeout(alignStoneSeriesFromHash, 620);
 });
 
 var stoneReflowTimer = null;
@@ -1834,6 +1850,20 @@ if (window.visualViewport) {
 }
 window.addEventListener('hashchange', function(){
   setTimeout(alignStoneSeriesFromHash, 30);
+  setTimeout(alignStoneSeriesFromHash, 220);
+  setTimeout(alignStoneSeriesFromHash, 540);
+});
+
+window.addEventListener('pageshow', function(e){
+  // iOS Safari back/forward cache often restores pre-adjusted scroll positions.
+  // Re-apply series-anchor alignment after restore.
+  if (e && e.persisted) {
+    setTimeout(alignStoneSeriesFromHash, 40);
+    setTimeout(alignStoneSeriesFromHash, 260);
+    setTimeout(alignStoneSeriesFromHash, 620);
+  } else {
+    setTimeout(alignStoneSeriesFromHash, 40);
+  }
 });
 
 const LUMI_PATTERNS = [
