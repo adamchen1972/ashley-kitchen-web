@@ -36,6 +36,14 @@
       - Use-case map CTA and use-case visual mapping kept consistent.
     - Updates production log to reflect latest real active batch state.
 
+- `5d0725c` — iPhone Safari routing hardening for stone family entry points.
+  - `catalog.html`
+  - `catalog-stone.html`
+  - Highlights:
+    - Forces reliable navigation from stone family routing cards (including DIY) on iPhone Safari via explicit `location.assign` handling.
+    - Adds additional hash/pageshow alignment passes to stabilize deep-link anchor landing after browser back/forward behavior.
+    - Confirms `LumiSlate / Marble / DIY` entry flow lands at readable section headers on iPhone test path.
+
 ## 2026-04-20
 
 - `pending (current commit)` — Fix iPad stone-tab anchor occlusion after orientation change + QA closure.
